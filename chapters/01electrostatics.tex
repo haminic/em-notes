@@ -1,0 +1,307 @@
+\chapter{ไฟฟ้าสถิต}
+\section{สนามไฟฟ้า}
+\subsection{แรง Coulomb}
+\begin{lawbox}{กฎของ Coulomb}
+    สำหรับจุดประจุที่อยู่นิ่ง $q_1$ และ $q_2$ จะได้ว่าแรงที่กระทำต่อประจุ $q_1$ คือ
+    \begin{equation}
+        \vF = \kem q_1q_2\frac{\vr_1-\vr_2}{\abs{\vr_1-\vr_2}^3} = \kem\frac{q_1q_2}{\rr^2}\vrru\label{coulomb}
+    \end{equation}
+    เมื่อ $\vrr$ คือเวกเตอร์จาก $q_1$ ไป $q_2$
+\end{lawbox}
+โดย $\eps_0$ เป็นค่าคงที่ที่เรียกว่า\emph{สภาพยอมในสูญญากาศ} (\emph{permittivity of free space}) เราจะเรียกแรงนี้ว่า\emph{แรง Coulomb}
+\subsection{สนามไฟฟ้า}
+สังเกตว่าถ้ามีประจุวางไว้อยู่แล้ว เราสามารถนิยาม\emph{สนามไฟฟ้า}ได้ดังนี้:
+\begin{defbox}{สนามไฟฟ้า}
+\begin{equation}
+    \vE(\vr)\equiv\frac{\vF(\vr)}{q}
+\end{equation}
+\end{defbox}
+และโดยกฎของ Coulomb (\ref{coulomb}) จะได้ว่า
+\begin{eqbox}{สนามไฟฟ้าของจุดประจุ}
+    \vE(\vr)=\kem\sum_{\vr_k\neq\vr}q_k\frac{\vr-\vr_k}{\abs{\vr-\vr_k}^3}=\kem\sum_k\frac{q_k}{\rr_k^2}\vrru_k
+\end{eqbox}
+โดยถ้าประจุไม่ดิสครีตแต่กระจายตัวอย่างต่อเนื่องด้วยความหนาแน่นประจุ $\rho(\vr)$ จะได้ว่า
+\begin{eqbox}{สนามไฟฟ้าของประจุต่อเนื่อง}
+    \vE(\vr)=\kem\int\frac{\rho(\vr')}{\rr^2}\vrru\odif{\tau'}
+\end{eqbox} 
+เมื่อ $\odif{\tau'}=\odif[order=3]{r'}$ และในทำนองเดียวกันกับความหนาแน่นเชิงเส้น $\lambda$ และความหนาแน่นเชิงพื้นที่ $\sigma$
+
+\section{Divergence และ Curl ของสนามไฟฟ้าสถิต}
+\subsection{ฟลักซ์ไฟฟ้าและกฎของ Gauss}
+\begin{defbox}{ฟลักซ์ไฟฟ้า}
+    ฟลักซ์ของ $\vE$ ที่ผ่านผิว $\sur$ คือ
+    \begin{equation}
+        \Phi_E\equiv\int_\sur\vE\cdot\odif{\va}
+    \end{equation}
+\end{defbox}
+พิจารณาพื้นผิวปิด $\sur$ ที่มีจุดประจุ $q$ อยู่ภายในและพื้นที่เล็ก ๆ $\odif{\tau}$ บน $\sur$ โดยมี $\vrr$ เป็นเวกเตอร์จาก $q$ มายัง $\odif{a}$ และ $\odif{a'}$ เป็นภาพฉายของ $\odif{a}$ มาตั้งฉากกับ $\vrr$ จะได้
+\[\vE\cdot \odif{\va}=\kem\frac{q}{\rr^2}\odif{a}\cos\theta=\kem\frac{q}{\rr^2}\odif{a'}=\frac{q}{4\pi\eps_0}\odif{\Omega}\]
+เมื่อ $\odif{\Omega}$ คือมุมสเตอเรเดียนเทียบกับตำแหน่งของประจุ $q$ ดังนั้นฟลักซ์ไฟฟ้าจาก $q$ ที่ผ่านพื้นผิว $\sur$ เท่ากับ
+\begin{equation}
+\Phi_E^{(q\,\txt{in})}=\oint_\sur\vE\cdot\odif{\va}=\frac{q}{4\pi\eps_0}\oint_\sur\odif{\Omega}=\frac{q}{4\pi\eps_0}\cdot4\pi=\frac{q}{\eps_0}
+\end{equation}
+โดยทำในทำนองเดียวกันจะเห็นว่าถ้า $q$ อยู่นอก $\sur$ แล้ว $\vE\cdot\odif{\va}=(\cst)\odif{\Omega}$ const จะมีคู่ของมันที่เครื่องหมายตรงข้ามในอีกฝั่งของ $\sur$ จึงทำให้ตัดกันหมด ดังนั้นในกรณีจุดประจุ $q$ อยู่นอก $\sur$ จะได้ว่าฟลักซ์ไฟฟ้า:
+\begin{equation}
+\Phi_E^{(q\,\txt{out})}=\oint_\sur\vE\cdot\odif{\va}=0
+\end{equation}
+ดังนั้นจึงได้
+\begin{lawbox}{กฎของ Gauss (Integral form)}
+    สำหรับทุกพื้นผิวปิดจะได้ว่าฟลักซ์ไฟฟ้าที่ผ่านผิวนั้นเท่ากับ
+    \begin{equation}
+        \Phi_E=\oint\vE\cdot\odif{\va}=\frac{Q_\txt{enc}}{\eps_0}\label{gauss}
+    \end{equation}
+\end{lawbox}
+
+\subsection{Divergence และ Curl ของสนามไฟฟ้าสถิต}
+พิจารณาใช้ divergence theorem ($\oint_{\del\vol}\vF\cdot\odif{\va}=\int_\vol\gd\cdot\vF\odif{\tau}$) บนกฎของ Gauss (\ref{gauss}) จะได้ว่า
+\begin{align*}
+\int_\vol\gd\cdot\vE\odif{\tau}=\oint_{\del\vol}\vE\cdot\odif{\va}=\frac{Q_\txt{enc}}{\eps_0}&=\int_\vol\frac{\rho}{\eps_0}\odif{\tau}\\
+\int_\vol\ab(\gd\cdot\vE-\frac{\rho}{\eps_0})\odif{\tau}&=0
+\end{align*}
+เนื่องจากเป็นจริงทุกปริมาตร $\vol$ ดังนั้น
+\[\gd\cdot\vE-\frac{\rho}{\eps_0}=0\]
+ก็จะได้
+\begin{lawbox}{กฎของ Gauss (Differential form)}
+    \begin{equation}
+        \gd\cdot\vE = \frac{\rho}{\eps_0}\label{gaussde}
+    \end{equation}
+\end{lawbox}
+และเนื่องจาก curl ของจุดประจุเท่ากับ $\vzr$ ดังนั้นจึงได้ว่า curl ของสนาม $\vE$ สถิตใด ๆ จึงเท่ากับ $\vzr$ ด้วย
+\begin{ieqbox}{กฎของ Faraday สำหรับสนามไฟฟ้าสถิต}
+    \gd\times\vE = \vzr\label{curlezero}
+\end{ieqbox}
+
+\section{ศักย์ไฟฟ้า}
+\subsection{นิยามศักย์ไฟฟ้า}
+เนื่องจาก $\gd\times\vE=0$ โดย Stokes' theorem จะได้ว่า $\int\vE\cdot\odif{\vl}$ ไม่ขึ้นอยู่กับเส้นทาง เราจึงสามารถนิยามฟังก์ชันที่ขึ้นอยู่กับอินทิกรัลของสนามไฟฟ้า ณ ตำแหน่งใด ๆ ได้:
+\begin{defbox}{ศักย์ไฟฟ้า}
+    ให้ $\mathcal{O}$ เป็นจุดอ้างอิง เราสามารถนิยาม\emph{ศักย์ไฟฟ้า} $V(\vr)$ ที่จุด $\vr$ คือ
+    \begin{equation}
+        V(\vr)\equiv-\int_\mathcal{O}^\vr\vE\cdot\odif{\vl}
+    \end{equation}
+    ซึ่งโดยปกติแล้วเราจะนิยามศักย์ไฟฟ้าให้ $\eval{V}_{r\to\infty}=0$
+\end{defbox}
+โดยจะได้\emph{ความต่างศักย์}ระหว่าง $\va$ และ $\vbb$ คือ
+\begin{equation}
+    V(\vbb)-V(\va)=-\int_\va^\vbb\vE\cdot\odif{\vl}
+\end{equation}
+และจาก
+\[\int_\va^\vbb(\gd V)\cdot\odif{\vl}=V(\vbb)-V(\va)=-\int_\va^\vbb\vE\cdot\odif{\vl}\]
+จะได้ว่า
+\begin{eqbox}{ศักย์ไฟฟ้าในรูป Gradient}
+    \vE=-\gd V\label{gdephi}
+\end{eqbox}
+อีกสมการหนึ่งที่สำคัญที่ได้จากศักย์ไฟฟ้าโดยนำสมการ (\ref{gdephi}) ไปแทนใน (\ref{gaussde}) จะได้
+\begin{lawbox}{สมการ Poisson}
+    สำหรับสนามศักย์ไฟฟ้า $ V$:
+    \begin{equation}
+        \nabla^2 V = -\frac{\rho}{\eps_0}\label{poissoneq}
+    \end{equation}
+    โดยถ้า $\rho=0$ จะได้\emph{สมการ Laplace}
+    \begin{equation}
+        \nabla^2 V = 0\label{laplaceeq}
+    \end{equation}
+\end{lawbox}
+โดยสามารถหา $V$ ของจุดประจุ $q$ ได้จากกฎของ Coulomb (\ref{coulomb}):
+\[V(\vr)=-\int_\infty^\vr\vE(\vr')\cdot\odif{\vl'}=-\int_\infty^r\kem\frac{q}{(r')^2}\odif{r'}\]
+ก็จะได้ว่า
+\begin{eqbox}{ศักย์ไฟฟ้าของจุดประจุ}
+     V=\kem\frac{q}{\rr}
+\end{eqbox}
+ในทำนองเดียวกันกับสนามไฟฟ้า เราสามารถหาศักย์ไฟฟ้าที่ตำแหน่ง $\vr$ ที่เกิดจากประจุที่กระจายแบบต่อเนื่องด้วยความหนาแน่น $\rho$ ได้ดังนี้:
+\begin{eqbox}{ศักย์ไฟฟ้าของประจุต่อเนื่อง}
+     V(\vr)=\kem\int\frac{\rho(\vr')}{\rr}\odif{\tau'}\label{potentialcont}
+\end{eqbox}
+\subsection{สภาวะขอบเขต}
+ต่อมาจะมาดูสมบัติของ $\vE$ และ $V$ ในบริเวณแผ่นประจุบาง ๆ ที่มีความหนาแน่นประจุเชิงพื้นที่ $\sigma$
+\begin{enumerate}
+    \item พิจารณาผิว Gaussian ทรงกระบอกบางที่บางมากจนฟลักซ์ไฟฟ้าที่ผ่านบริเวณผิวข้างเท่ากับ $0$ ที่คลุมบริเวณเล็ก ๆ ของแผ่นประจุ จะได้ว่า
+    \[E^\perp_\txt{above}-E^\perp_\txt{below}=\frac{\sigma}{\eps_0}\]
+    จะเห็นได้ว่าส่วนของ $\vE$ ที่ตั้งฉากกับแผ่นประจุจะเกิดความไม่ต่อเนื่องแบบกระโดดด้วยผลต่าง $\frac{\sigma}{\eps_0}$
+    \item พิจารณาอินทิกรัลเส้นรูปสี่เหลี่ยมผืนผ้าเล็ก ๆ ที่ตั้งฉากกับแผ่นประจุ จาก (\ref{curlezero}) และ Stokes' theorem จะได้ว่า $\oint\vE\cdot\odif{\vl}=0$ ดังนั้น
+    \[E^\|_\txt{above}-E^\|_\txt{below}=0\]
+    จะเห็นได้ว่าส่วนของ $\vE$ ที่ขนานกับแผ่นประจุจะยังต่อเนื่องเมื่อผ่านแผ่นประจุ
+    \item พิจารณาจุด $\va$ และ $\vbb$ ที่อยู่ใกล้กันมาก ๆ แต่ $\vbb$ อยู่ด้านบนแผ่นส่วน $\va$ อยู่ด้านล่างแผ่น จะได้ว่า
+    \[V_\txt{above}-V_\txt{below}=V(\vbb)-V(\va)=-\int_\va^\vbb\vE\cdot\odif{\vl}=0\]
+    ดังนั้น $V$ ต่อเนื่องเมื่อผ่านแผ่นประจุ
+\end{enumerate}
+จึงสรุปได้ดังนี้:
+\begin{lawbox}{สภาวะขอบเขตของ $\vE$ และ $V$ เมื่อผ่านแผ่นประจุบาง}
+บนแผ่นประจุที่มีความหนาแน่นเชิงพื้นที่ $\sigma$ จะได้ว่า
+\begin{equation}
+    V_\txt{above}=V_\txt{below}\label{boundarystart}
+\end{equation}
+และ
+\begin{equation}
+    \vE_\txt{above}-\vE_\txt{below}=\frac{\sigma}{\eps_0}\vu{n}
+\end{equation}
+เมื่อ $\vu{n}$ คือเวกเตอร์หนึ่งหน่วยที่ตั้งฉากกับแผ่นประจุที่ชี้จากด้านล่างไปด้านบน หรือเขียนอีกอย่างหนึ่งได้ว่า
+\begin{equation}
+    \pdv{V_\txt{above}}{n}-\pdv{V_\txt{below}}{n}=-\frac{\sigma}{\eps_0}\label{boundaryend}
+\end{equation}
+\end{lawbox}
+
+\section{งานและพลังงาน}
+\subsection{พลังงานศักย์ไฟฟ้า}
+เนื่องจาก $\gd\times\vF=\gd\times q\vE=0$ ดังนั้นแรง Coulomb จึงเป็นแรงอนุรักษ์ซึ่งมีลักษณะคล้ายกับแรงโน้มถ่วงด้วย จึงหาพลังงานศักย์ของจุดประจุ $2$ ตัวได้คล้ายกัน
+\begin{eqbox}{พลังงานศักย์ไฟฟ้าสำหรับจุดประจุ}
+    U=\kem\frac{q_1q_2}{\rr}
+\end{eqbox}
+และจาก (\ref{gdephi}) ยังได้อีกว่า
+\begin{eqbox}{ศักย์ไฟฟ้าและพลังงานศักย์}
+    V=\frac{U}{q}
+\end{eqbox}
+ต่อมาจะมาหาพลังงานศักย์ไฟฟ้าของระบบประจุที่อยู่ภายใต้อิทธิพลของสนามภายนอก $\vE_\txt{ext}$ โดยพิจารณาการหาผลต่างของพลังงานศักย์ในการนำจุดประจุจาก $\infty$ มาวางทีจะตัว จะได้ผลต่างพลังงานศักย์ของประจุที่ $k$ เป็นดังนี้:
+\[\Delta U_k=q_k V_\txt{ext}(\vr_k)\]
+เนื่องจากนิยามให้ $\eval{U}_{r\to\infty}=\eval{qV}_{r\to\infty}=0$ ก็จะได้
+\begin{equation}
+U_\txt{ext}=\sum_k\Delta U_k=\sum_kq_k V_\txt{ext}(\vr_k)
+\end{equation}
+หรือขยายมาในกรณีต่อเนื่องก็คือ
+\begin{ieqbox}{พลังงานศักย์ไฟฟ้าจากสนามภายนอก}
+    U_\txt{ext}=\int\rho V_\txt{ext}\odif{\tau}
+\end{ieqbox}
+ส่วนพลังงานศักย์ไฟฟ้าที่เกิดจากระบบเองหาได้โดยการพิจารณาเอาจุดประจุจาก $\infty$ มาวางเช่นเดียวกัน จะได้ประจุตัวที่ $k$ มีพลังงานศักย์
+\[U_k=\sum_{k'<k}q_k V_{k'}(\vr_k)=\kem\sum_{k'<k}\frac{q_kq_{k'}}{\rr_{kk'}}\]
+ดังนั้นโดยใช้ความสมมาตร
+\begin{equation}
+U=\kem\sum_{k}\sum_{k'<k}\frac{q_kq_{k'}}{\rr_{kk'}}=\frac{1}{2}\kem\sum_{k\neq k'}\frac{q_kq_{k'}}{\rr_{kk'}}\label{disintenergy}
+\end{equation}
+แต่ในกรณีต่อเนื่องเราไม่จำเป็นต้องสนใจเงื่อนไข $k\neq k'$ เพราะอินทิกรัลลู่เข้าและส่วนที่มาจาก $k = k'$ สามารถมองเป็นส่วนพลังงานที่มาจากประจุที่ใกล้กันมาก ๆ ได้ จึงได้ว่า
+\[U=\frac{1}{2}\kem\iint\frac{\rho(\vr)\,\rho(\vr')}{\rr}\odif{\tau',\tau}\]
+เนื่องจาก $\kem\int\frac{\rho(\vr')\odif{\tau'}}{\rr}= V(\vr)$ ดังนั้น
+\begin{ieqbox}{พลังงานศักย์ไฟฟ้าจากสนามภายใน}
+    U=\frac{1}{2}\int\rho V\odif{\tau}\label{intpotential}
+\end{ieqbox}
+
+\subsection{พลังงานจากสนามไฟฟ้า}
+ต่อมาพิจารณาพลังงานศักย์ภายในของระบบอีกแบบโดยแทนสมการ Poisson (\ref{poissoneq}) เข้าไปใน (\ref{intpotential}) โดยอินทิเกรต บนปริมาตร $\vol$ ที่ใหญ่มาก ๆ จน $\vE$ ที่ผิวของ $\vol$ เข้าใกล้ศูนย์ จะได้ว่า
+\[U=-\frac{\eps_0}{2}\int_\vol V\nabla^2 V\odif{\tau}=-\frac{\eps_0}{2}\int_\vol V\ab(\gd\cdot(\gd V))\odif{\tau}=\frac{\eps_0}{2}\int_\vol V\ab(\gd\cdot\vE)\odif{\tau}\]
+โดย Chain Rule: $\gd\cdot( V\vF)=\gd V\cdot\vF+ V(\gd\cdot\vF)$ นำไปแทนต่อ จากนั้นใช้ divergence theorem จะได้ว่า
+\begin{align*}
+    U&=\frac{\eps_0}{2}\int_\vol V\ab(\gd\cdot\vE)\odif{\tau}\\
+    &=\frac{\eps_0}{2}\ab(\int_\vol\gd\cdot( V\vE)\odif{\tau}-\int_\vol(\gd V)\cdot(\vE)\odif{\tau})\\
+    &=\frac{\eps_0}{2}\ab(\oint_{\del\vol} V\vE\cdot\odif{\va}+\int_\vol E^2\odif{\tau})
+\end{align*}
+แต่จาก $\vE$ ที่ขอบเป็น $0$ พจน์แรกจึงหายไป ดังนั้น
+\begin{ieqbox}{พลังงานจากสนามไฟฟ้า}
+    U=\int u(\vr)\odif{\tau}\qq{เมื่อ} u(\vr)=\frac{\eps_0}{2}E^2(\vr)\label{energydensity}
+\end{ieqbox}
+โดยเราจะเรียก $u$ ว่า\emph{ความหนาแน่นพลังงานสนามไฟฟ้า} (energy density of the electric field)
+
+\emph{แต่คำถามคือ}: ทำไมสมการ (\ref{disintenergy}) ทำให้พลังงานศักย์เป็นลบได้แต่ (\ref{energydensity}) จึงเป็นบวกเสมอ? เหตุผลก็คือ (\ref{disintenergy}) ยังไม่ได้รวมพลังงานในการสร้างจุดประจุตั้งแต่แรก (ถ้ารวมด้วยจะทำให้เป็น $\infty$) ดังนั้นถ้าจะหาพลังงานของระบบที่เป็นจุดประจุ ถ้าใช้ (\ref{disintenergy}) จะสมเหตุสมผลกว่า
+
+ต่อมาเรามาพิจารณาพลังงานศักย์ไฟฟ้าเนื่องจากอิทธิพลของทั้งสนามภายนอกและภายใน:
+\[U=U_\txt{int}+U_\txt{ext}=\frac{1}{2}\int\rho V_\txt{int}\odif{\tau}+\int\rho V_\txt{ext}\odif{\tau}\]
+หาพจน์ฝั่งขวาโดยทำคล้าย ๆ (\ref{energydensity}):
+\begin{align*}
+    \int_\vol\rho V_\exr\odif{\tau}&=-\eps_0\int_\vol V_\exr\ab(\gd\cdot(\gd V_\inr))\odif{\tau}\\
+    &=-\eps_0\ab(\cancel{\oint_{\del\vol}- V_\exr\vE_\inr\cdot\odif{\va}}-\int_\vol\vE_\exr\cdot\vE_\inr\odif{\tau})\\
+    &=\eps_0\int_\vol\vE_\exr\cdot\vE_\inr\odif{\tau}
+\end{align*}
+นำไปแทนในสมการ $U$ และใช้ร่วมกับ (\ref{energydensity}) จะได้
+\begin{equation}
+U=\int u(\vr)\odif{\tau}\qq{เมื่อ}u(\vr)=\frac{\eps_0}{2}\ab\Big(E_\inr^2(\vr)+2\vE_\inr(\vr)\cdot\vE_\exr(\vr))
+\end{equation}
+ซึ่งจริง ๆ แล้วเหมือนกับ (\ref{energydensity}) เลย โดยบวกเข้าลบออกด้วย $E_\exr^2(\vr)$ ใน $u(\vr)$ และให้ $\vE=\vE_\inr+\vE_\exr$ จะได้
+\[U=\frac{\eps_0}{2}\int E^2(\vr)\odif{\tau}-\underbrace{\frac{\eps_0}{2}\int E_\exr^2(\vr)\odif{\tau}}_{\cst}\]
+เนื่องจากพจน์ด้านหลังเป็นค่าคงที่ เราจึงสามารถให้พจน์นั้นเป็นค่าอ้างอิงได้ จึงได้ว่าเราสามารถใช้ (\ref{energydensity}) ได้ในทุกกรณี เพียงแค่ต้องรวม $\vE_\exr$ ไปด้วย:
+\begin{equation}
+    U'=\frac{\eps_0}{2}\int E^2(\vr)\odif{\tau}
+\end{equation}
+สุดท้ายจะเป็นพิสูจน์ทฤษฎีบท:
+\begin{ieqbox}{Green's Reciprocity Theorem}
+    \int\rho_1 V_2\odif{\tau}=\int\rho_2 V_1\odif{\tau}\label{recipstatic}
+\end{ieqbox}
+ทฤษฎีบทนี้หมายความว่าพลังงานศักย์ไฟฟ้าในระบบ $1$ ที่เกิดจากระบบ $2$ มีค่าเท่ากับพลังงานศักย์ไฟฟ้าในระบบ $2$ ที่เกิดจากระบบ $1$ ซึ่งก็ไม่แปลกเพราะแรง Coulomb เป็นแรงที่เป็นไปตามกฎข้อที่ $3$ ของนิวตัน แต่จะมาพิสูจน์กันดังนี้:
+\begin{proof}
+พิจารณาปริมาตร $\vol$ ที่ใหญ่มาก ๆ
+\begin{align*}
+    \int_\vol\vE_1\cdot\vE_2\odif{\tau}&=-\int_\vol\gd V_1\cdot\vE_2\odif{\tau}\\
+    &=-\ab(\int_\vol\gd\cdot( V_1\vE_2)\cdot\odif{\va}-\int_\vol V_1\gd\cdot\vE_2\odif{\tau})\\
+    &=-\ab(\cancel{\oint_{\del\vol} V_1\vE_2\cdot\odif{\va}}-\frac{1}{\eps_0}\int_\vol V_1\rho_2\odif{\tau})\\
+    &=\frac{1}{\eps_0}\int_\vol V_1\rho_2\odif{\tau}
+\end{align*}
+ในทำนองเดียวกัน:
+\[\int_\vol\vE_1\cdot\vE_2\odif{\tau}=\frac{1}{\eps_0}\int_\vol V_2\rho_1\odif{\tau}\]
+ดังนั้น $\int\rho_1 V_2\odif{\tau}=\int\rho_2 V_1\odif{\tau}$ ตามต้องการ
+\end{proof}
+\section{ตัวนำและความจุไฟฟ้า}
+\subsection{ตัวนำไฟฟ้า}
+ในวัตถุที่เป็น\emph{ฉนวนไฟฟ้า} (หรือ\emph{ไดอิเล็กทริก}) อิเล็กตรอนจะเคลื่อนที่ภายในบริเวณอะตอมของมัน แต่ใน\emph{ตัวนำไฟฟ้า} จะมีอิเล็กตรอนจำนวนหนึ่งเคลื่อนที่ได้อย่างอิสระในเนื้อตัวนำ (ในตัวนำที่เป็นของเหลวเช่นน้ำเกลือจะเป็นไอออนอย่าง $\mathrm{Na}^+$ และ $\mathrm{Cl}^-$ ที่เคลื่อนที่ได้อย่างอิสระแทน) โดยตัวนำอุดมคติหมายถึงตัวนำที่มีประจุอิสระไม่จำกัด ซึ่งโลหะจะเป็นตัวนำที่ใกล้เคียงกับตัวนำอิสระพอที่จะใช้การประมาณดังต่อไปนี้ได้:
+\begin{lawbox}{สมบัติของตัวนำไฟฟ้าอุดมคติ}
+    ตัวนำไฟฟ้าในสภาวะสมดุลจะต้องไม่มีประจุเคลื่อนที่ในเนื้อตัวนำ จึงสามารถตั้งข้อสมมติเกี่ยวกับสนามไฟฟ้าภายในเนื้อตัวนำได้ว่า
+    \begin{equation}
+        \vE =\vzr\label{condasmp}
+    \end{equation}
+    ซึ่งจะเรียกว่า \emph{electric field screening effect} สังเกตว่าจากกฎของ Gauss จะแปลว่าไม่มีประจุอยู่ภายในเนื้อตัวนำ ประจุทั้งหมดจะรวมกันที่ผิวเท่านั้น
+    
+    โดย (\ref{condasmp}) สามารถเขียนได้ในอีกรูปคือ
+    \begin{equation}
+         V = \cst
+    \end{equation}
+    อีกสมบัติหนึ่งคือจาก (\ref{boundarystart}) ถึง (\ref{boundaryend}) และ (\ref{condasmp}) จะได้ว่าสนามไฟฟ้าที่ผิวตัวนำจะตั้งฉากกับผิวเสมอและมีความสัมพันธ์กับความหนาแน่นประจุดังนี้
+    \begin{equation}
+         \sigma=\eps_0E_\txt{out}=-\eps_0\pdv{V}{n}
+    \end{equation}
+\end{lawbox}
+สถานการณ์หนึ่งที่น่าสนใจคือเมื่อมี ``\emph{โพรง}" อยู่ในเนื้อตัวนำ โพรงนี้จะเปรียบเสมือนว่าไม่โดนผลกระทบจากสนามไฟฟ้าด้านนอกตัวนำเลย ซึ่งสามารถพิสูจน์ได้โดยใช้ทฤษฎีบท uniqueness ในบทถัดไป โดยจะเรียกตัวนำที่กันสนามภายนอกนี้ว่า \emph{Faraday's cage} (ในทางกลับกัน สนามด้านนอกตัวนำจะไม่โดนผลกระทบจากประจุด้านในโพรง) โดยถ้าในโพรงไม่มีประจุ จะได้ว่าสนามไฟฟ้าในโพรงเป็น $0$ (พิสูจน์กรณีนี้ไม่ยาก ได้จากการสังเกตว่าถ้ามีสนามไฟฟ้าจะต้องมีเส้นแรงไฟฟ้าที่ลากจากผิวไปผิวบนโพรง ถ้าสร้างเส้นทางปิดในการอินทิเกรตบนเส้นแรงนั้นจะได้ผลลัพธ์ไม่เป็น $0$ ซึ่งจาก (\ref{curlezero}) เกิดข้อขัดแย้ง) แต่ถ้านำประจุ $Q$ ไว้ในโพรง โดยกฎของ Gauss จะได้ว่าประจุที่อยู่บนผิวของโพรงจะต้องรวมได้ $-Q$
+
+และยิ่งไปกว่านั้น ถ้าโพรงดังกล่าวอยู่ในตัวนำทรงกลมที่ไม่มีประจุ (ประจุรวมเป็น $0$) สนามไฟฟ้าด้านนอกทรงกลมนั้นจะเปรียบเสมือนสนามไฟฟ้าของตัวนำทรงกลมประจุ $Q$ ทั้งนี้เป็นเพราะมัน ``\emph{เป็นไปได้}" ที่ประจุด้านในจะเรียงตัวให้ประจุที่ผิวของโพรงกับประจุ $Q$ ในโพรงหักล้างกันหมดด้านนอกโพรง และเมื่อมีวิธีการเรียงตัวหนึ่งที่เป็นไปได้ที่ทำให้สนามในเนื้อตัวนำเป็น $\vzr$ ปรากฏว่า (ซึ่งจะพิสูจน์ในบทถัดไป) วิธีการจัดเรียงประจุนั้นจะเป็นวิธีเดียวเท่านั้น
+
+\subsection{แรงบนตัวนำไฟฟ้า}
+ต่อมาพิจารณาแรงที่กระทำต่อผิวตัวนำ $\odif{a}$ ก้อนเล็ก ๆ จะได้ว่าสนามไฟฟ้าในบริเวณนั้นมาจากสองส่วนคือ $\vE_\txt{other}$ มาจากประจุอื่น ๆ นอกบริเวณ $\odif{a}$ และ $\vE_\txt{self}$ มาจาก $\odif{a}$ เอง โดยสนามด้านบนและด้านล่างของ $\vE_\txt{self}$ คือ $\sigma/2\eps_0$ และ $-\sigma/2\eps_0$ ตามลำดับ (เพราะสนามนี้ดูในบริเวณที่ใกล้ $\odif{a}$ มาก ๆ จนเปรียบเสมือน $\odif{a}$ เป็นผิวราบอนันต์) ดังนั้นจะได้
+\begin{align*}
+    \vE_\txt{above}&=\vE_\txt{other}+\frac{\sigma}{2\eps_0}\vu{n}\\
+    \vE_\txt{below}&=\vE_\txt{other}-\frac{\sigma}{2\eps_0}\vu{n}
+\end{align*}
+ดังนั้น
+\[\vE_\txt{other}=\frac{1}{2}\ab(\vE_\txt{above}+\vE_\txt{below})\]
+ก็จะได้แรงที่กระทำต่อ $\odif{a}$ คือ
+\[\odif{\vF}=\sigma\odif{a}\cdot\vE_\txt{other}\]
+ดังนั้นแรงต่อหน่วยพื้นที่ $\vf=\odif{\vF}/\odif{a}$ คือ
+\begin{ieqbox}{แรงต่อพื้นที่บนแผ่นประจุ}
+    \vf=\sigma\vE_\txt{average}=\frac{1}{2}\sigma\ab(\vE_\txt{above}+\vE_\txt{below})
+\end{ieqbox}
+ซึ่งจริง ๆ แล้วใช้ได้กับแผ่นประจุทุกกรณี แต่ในกรณีตัวนำ:
+\begin{eqbox}{แรงต่อพื้นที่บนผิวตัวนำ}
+    \vf=\frac{\sigma^2}{2\eps_0}\vu{n}
+\end{eqbox}
+จะได้ว่าเมื่อด้านนอกตัวนำมีสนาม $\vE$ แล้ว\emph{ความดันไฟฟ้าสถิต} (\emph{electrostatic pressure}: $P$) เป็นดังนี้
+\begin{eqbox}{ความดันไฟฟ้าสถิตบนผิวตัวนำ}
+    P=\frac{\eps_0}{2}E^2
+\end{eqbox}
+
+\subsection{ความจุไฟฟ้า}
+เมื่อมีตัวนำสองตัวโดยตัวหนึ่งมีประจุ $+Q$ และอีกตัว $-Q$ เนื่องจากเมื่อ $Q$ เพิ่มขึ้นจำนวน $k$ เท่า จะได้ว่าทำให้ $\sigma$ บนทั้งสองประจุเพิ่มขึ้นเป็น $k$ เท่าเช่นกัน (เพราะมีการจัดเรียงแบบเดียวเท่านั้นที่ทำให้เนื้อตัวนำมี $\vE=\vzr$ ซึ่งจะพิสูจน์ในบทถัดไป) ส่งผลให้ $\vE$ เพิ่มเป็น $k$ เท่า จึงทำให้ความต่างศักย์ $V=V_{+}-V_-$ ก็เพิ่มขึ้นเป็น $k$ เท่าด้วย จึงสรุปได้ว่า $Q\propto V$ ดังนั้นเราสามารถนิยามค่าคงที่การแปรผันนี้ว่า\emph{ความจุไฟฟ้า} (\emph{capacitance}: $C$) ดังนี้
+\begin{defbox}{ความจุไฟฟ้า}
+    \begin{equation}
+        C\equiv\frac{Q}{V}
+    \end{equation}
+\end{defbox}
+ส่วนความจุไฟฟ้าของตัวนำตัวเดียว (self-capacitance) คือให้จินตนาการว่ามีตัวนำเปลือกทรงกลมที่มีรัศมีใหญ่มาก ๆ หรือก็คือให้ใช้ $V$ เป็น $V$ ของตัวนำโดยมีจุดอ้างอิงเป็น $\infty$
+
+สุดท้าย งานในการชาร์จตัวเก็บประจุหาได้โดยรวมงานในการย้ายประจุ $\odif{q}$ จากฝั่งลบมาฝั่งบวก:
+\[\odif{W}=V\odif{q}=\frac{q}{C}\odif{q}\]
+ดังนั้นงานในการชาร์จประจุจาก $0$ มาเป็น $Q$ (หรือก็คือพลังงานสะสมในตัวเก็บประจุ) เท่ากับ
+\begin{ieqbox}{พลังงานสะสมในตัวเก็บประจุ}
+    U=\frac{1}{2}QV=\frac{1}{2}\frac{Q^2}{C}=\frac{1}{2}CV^2
+\end{ieqbox}
+
+\subsection{การต่อตัวเก็บประจุ}
+พิจารณาการต่อตัวเก็บประจุ $C_1$ และ $C_2$ แบบ\emph{อนุกรม} จะได้ว่า $Q$ บนตัวเก็บประจุ $C_1$ จะเท่ากับ $Q$ บนตัวเก็บประจุ $C_2$ ดังนั้น
+\[V_\text{รวม}=V_1+V_2=\frac{Q}{C_1}+\frac{Q}{C_2}\]
+จึงได้ความจุไฟฟ้ารวมเท่ากับ
+\[\frac{1}{C_\text{รวม}}=\frac{1}{C_1}+\frac{1}{C_2}\]
+โดยเราสามารถทำแบบนี้ไปได้เรื่อย ๆ ด้วยตัวเก็บประจุกี่ตัวก็ได้ ดังนั้น
+\begin{eqbox}{การต่อตัวเก็บประจุแบบอนุกรม}
+    \frac{1}{C_\text{รวม}}=\frac{1}{C_1}+\frac{1}{C_2}+\dots+\frac{1}{C_n}
+\end{eqbox}
+และพิจารณาการต่อตัวเก็บประจุ $C_1$ และ $C_2$ แบบ\emph{ขนาน} จะได้ว่าความต่างศักย์ของตัวเก็บประจุทั้งสองจะต้องเท่ากับ (เพราะเป็นเนื้อตัวนำเดียวกัน) ดังนั้น
+\[Q_\text{รวม}=Q_1+Q_2=C_1V+C_2V\]
+จึงได้ความจุไฟฟ้ารวมเท่ากับ
+\[C_\text{รวม}=C_1+C_2\]
+โดยเช่นเดียวกับการต่อแบบอนุกรม เราสามารถทำแบบนี้ไปได้เรื่อย ๆ ด้วยตัวเก็บประจุกี่ตัวก็ได้ ดังนั้น
+\begin{eqbox}{การต่อตัวเก็บประจุแบบขนาน}
+    C_\text{รวม}=C_1+C_2+\dots+C_n
+\end{eqbox}

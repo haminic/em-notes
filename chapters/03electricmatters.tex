@@ -1,0 +1,266 @@
+\chapter{สนามไฟฟ้าในสสาร}
+\section{โพลาไรเซชัน}
+\subsection{การเหนี่ยวนำ Dipole}
+เมื่อนำอะตอมที่เป็นกลางไปไว้ในสนามไฟฟ้า $\vE$ จะทำให้นิวเคลียสเคลื่อนที่ไปในทิศของ $\vE$ และกลุ่มหมอกอิเล็กตรอนเคลื่อนที่ไปในทิศตรงข้าม ถ้า $\vE$ มีค่ามากพอก็จะทำให้อิเล็กตรอนหลุดจากอะตอมทำให้อะตอมนั้นกลายเป็นไอออน แต่ถ้า $\vE$ มีค่าไม่มากนักจะทำให้กลุ่มหมอกอิเล็กตรอนและนิวเคลียสเหลื่อมกันเล็กน้อยจึงเหนี่ยวนำให้เกิด dipole moment $\vp$ ขึ้น (จะเรียกว่าอะตอมนี้โดน\emph{โพลาไรซ์}) โดยปกติเมื่อ $\vE$ เล็ก ๆ เราจะประมาณ dipole moment ที่เกิดนี้ได้ว่าแปรผันตรงกับสนาม:
+\begin{ieqbox}{Dipole เหนี่ยวนำ}
+    \vp = \alpha\vE\label{dipprop}
+\end{ieqbox}
+จะเรียก $\alpha$ นี้ว่า \emph{สภาพมีขั้วได้ของอะตอม} (atomic polarizability)
+
+สำหรับการปล่อยสนาม $\vE$ นี้ไปบนโมเลกุล การเหนี่ยวนำ dipole จะต่างกันเล็กน้อย เพราะโมเลกุลนี้อาจจะถูกโพ- ลาไรซ์ยากง่ายไม่เท่ากันในแกนที่ต่างกัน เช่นในตัวอย่างง่าย ๆ อย่าง $\mathrm{CO}_2$ ที่โมเลกุลมีรูปร่างเป็นเส้นตรง เมื่อปล่อยสนามผ่านโมเลกุลในทิศเอียงจะต้องคิด dipole moment แยกเป็นสองพจน์:
+\[\vp = \alpha_\perp\vE_\perp+\alpha_\|\vE_\|\]
+แต่ถ้าเป็นโมเลกุลที่ซับซ้อนกว่านี้จะต้องใช้\emph{เทนเซอร์สภาพโพลาไรซ์ได้} (polarizability tensor) $\alpha_{ij}$ ซึ่งเป็นเทนเซอร์สามมิติที่มีแรงก์ $2$ โดยมีความสัมพันธ์ระหว่าง $\vE$, $\vp$, และ $\alpha_{ij}$ ดังนี้:
+\begin{eqbox}{Dipole เหนี่ยวนำในโมเลกุล}
+    p_i = \alpha_{ij}E_j
+\end{eqbox}
+หรือก็คือ
+\begin{equation}
+\begin{rcases}
+    &p_x = \alpha_{xx}E_x+\alpha_{xy}E_y+\alpha_{xz}E_z\hspace{5pt}\\
+    &p_y = \alpha_{yx}E_x+\alpha_{yy}E_y+\alpha_{yz}E_z\\
+    &p_z = \alpha_{zx}E_x+\alpha_{zy}E_y+\alpha_{zz}E_z
+\end{rcases}
+\end{equation}
+(ถ้าเลือกแกนดี ๆ จะทำให้เหลือแค่พจน์ $\alpha_{xx}$, $\alpha_{yy}$, และ $\alpha_{zz}$ ได้)
+\subsection{การหมุนของโมเลกุลมีขั้ว}
+พิจารณาโมเลกุลน้ำ ($\mathrm{H}_2\mathrm{O}$) รูปร่างของโมเลกุลนี้จะมีออกซิเจนอยู่ตรงกลางที่เชื่อมอยู่กับไฮโดรเจน $2$ อะตอม โดยจะมีมุมบิดไป $105\dg$ การที่โมเลกุลน้ำมีลักษณะแบบนี้จะทำให้ฝั่งหนึ่งของโมเลกุลมีประจุบวกและอีกฝั่งหนึ่งมีประจุลบจึงทำให้โมเลกุลน้ำนี้เป็น dipole อยู่แล้ว (โดยจะเรียกโมเลกุลแบบนี้ว่า\emph{มีขั้ว}) ถ้าโมเลกุลนี้อยู่ในสนามไฟฟ้าสม่ำเสมอ $\vE$ (หรือเปลี่ยนแปลงไม่มาก) แรงลัพธ์ของโมเลกุลจะเป็น $\vzr$ ก็จริง แต่ฝั่งบวกจะเกิดแรงกระทำในทิศเดียวกับ $\vE$ ส่วนฝั่งลบจะเกิดแรงในทิศตรงข้าม จึงทำให้เกิดทอร์กบนโมเลกุล ถ้ากำหนดให้ $\vd$ เป็นเวกเตอร์จากจุดศูนย์กลางของฝั่งลบไปยังฝั่งบวก จะหาทอร์กได้ดังนี้:
+\begin{align*}
+    \vtau&=(\vr_+\times\vF_+)+(\vr_-\times\vF_-)\\
+    &=\ab(\frac{\vd}{2}\times(q\vE)) + \ab(\frac{-\vd}{2}\times(-q\vE))\\
+    &=q\vd\times\vE
+\end{align*}
+(ซึ่งในสนามไม่สม่ำเสมอก็ยังใช้ได้อยู่เพราะเนื่องจาก $d$ เล็กมากจะได้ว่า $\abs{\Delta\vE}\ll E$ ดังนั้น $\vE_++\vE_-\approx2\vE$)\\
+ดังนั้นจะได้ว่า
+\begin{ieqbox}{ทอร์กของ Dipole ในสนามไฟฟ้า}
+    \vtau = \vp\times\vE
+\end{ieqbox}
+ก็คือเมื่อนำโมเลกุลมีขั้วนี้ไปไว้ในสนามไฟฟ้า โมเลกุลจะหมุนไปเรื่อย ๆ จนกว่า dipole moment จะมีทิศตรงกับสนาม
+
+แต่ถ้าสนามเปลี่ยนเยอะในช่วงเล็ก ๆ จะเกิดแรงลัพธ์ด้วยทำให้โมเลกุลเคลื่อนที่:
+\begin{align*}
+    \vF&=q\,\Delta\vE\\
+    &\approx q\ab(\vd\cdot\gd)\vE
+\end{align*}
+เพราะระยะ $d$ เล็กมาก ๆ ดังนั้น
+\begin{ieqbox}{แรงลัพธ์ของ Dipole ในสนามไฟฟ้า}
+    \vF = \ab(\vp\cdot\gd)\vE
+\end{ieqbox}
+\subsection{เวกเตอร์โพลาไรเซชัน}
+สองหัวข้อด้านต้นเป็นตัวอย่างของการโพลาไรซ์ไดอิเล็กทริก โดยทั้งสองกรณีมีสิ่งที่เหมือนกันก็คือ: ทำให้เกิด dipole เล็ก ๆ จำนวนมากชี้ในทิศเดียวกับสนามไฟฟ้า ซึ่งเราจะนิยาม\emph{โพลาไรเซชัน} $\vP$ คือ:
+\begin{defbox}{โพลาไรเซชัน}
+\begin{equation}
+    \vP \equiv \odv{\vp}{\tau} = \text{\emph{dipole moment ต่อหน่วยปริมาตร}}
+\end{equation}
+\end{defbox}
+จริง ๆ แล้วโพลาไรเซชันนี้ซับซ้อนกว่าสองกรณีที่กล่าวมาและวัตถุที่ถูกโพลาไรซ์สามารถทำให้คงสภาพโพลาไรเซชันนี้ไว้ได้ด้วย เพราะฉะนั้นจากนี้เราจึงจะเลิกสนใจแหล่งกำเนิดของเวกเตอร์โพลาไรเซชันและใช้ตามนิยามไปเลย
+
+\section{สนามไฟฟ้าของวัตถุที่ถูกโพลาไรซ์}
+\subsection{Bound Charges}
+พิจารณาปริมาตร $\vol$ ที่ถูกโพลาไรซ์ให้มีโพลาไรเซชัน $\vP$ จาก (\ref{dippotential}) จะได้ว่าศักย์ที่ตำแหน่ง $\vr$ จาก dipole ในปริมาตรเล็ก ๆ ณ ตำแหน่ง $\vr'$ เท่ากับ
+\[\odif{V}(\vr)=\kem\frac{\odif{\vp}\cdot\vrru}{\rr^2}=\kem\frac{\vP\odif{\tau'}\cdot\vrru}{\rr^2}\]
+ดังนั้น
+\begin{align*}
+    V(\vr)&=\kem\int_\vol\frac{\vP\cdot\vrru}{\rr^2}\odif{\tau'}=\kem\int_\vol\vP\cdot\gd'\ab(\frac{1}{\rr})\odif{\tau'}
+\end{align*}
+เมื่อ $\gd'$ คือ gradient เทียบพิกัด $\vr'$ ต่อมาใช้ integration by parts จะได้: 
+\begin{align*}
+    V(\vr)&=\kem\ab(\int_\vol\gd'\cdot\ab(\frac{\vP}{\rr})\odif{\tau'}-\int_\vol\ab(\gd'\cdot\vP)\ab(\frac{1}{\rr})\odif{\tau'})\\
+    &=\kem\oint_{\del\vol}\frac{\vP}{\rr}\cdot\odif{\va'}+\kem\int_\vol\frac{-\gd'\cdot\vP}{\rr}\odif{\tau'}
+\end{align*}
+ซึ่งหน้าตาคล้าย ๆ ศักย์ของประจุบนปริมาตรรวมกับประจุในปริมาตร ดังนั้นเราจะนิยาม
+\begin{defbox}{ Bound Charges}
+    Bound surface charge $\sigma_b$ คือ:
+    \begin{equation}
+        \sigma_b\equiv\vP\cdot\vu{n}
+    \end{equation}
+    และ bound volume charge $\rho_b$ คือ:
+    \begin{equation}
+        \rho_b=-\gd\cdot\vP
+    \end{equation}
+\end{defbox}
+ก็จะได้ว่า:
+\begin{eqbox}{ศักย์ของวัตถุที่ถูกโพลาไรซ์}
+    V(\vr)=\kem\oint_{\del\vol}\frac{\sigma_b}{\rr}\odif{a'}+\kem\int_\vol\frac{\rho_b}{\rr}\odif{\tau'}
+\end{eqbox}
+โดยจาก (\ref{gdephi}) เราจึงหาสนามได้เช่นกัน
+
+หมายเหตุ: \emph{ไดอิเล็กทริกจริง ๆ ตามในส่วนที่แล้วไม่ได้เป็นเนื้อ dipole บริสุทธิ์ที่ต่อเนื่อง โดยสำหรับสนามและศักย์นอกไดอิเล็กทริกสามารถใช้การประมาณนี้ได้โดยไม่มีปัญหาเพราะระยะ {\normalfont$\rr$} ใหญ่มากเมื่อเทียบกับ $d$ แต่ถ้าเป็นสนามและศักย์ภายในเนื้อตัวนำ ถ้าจะให้การประมาณ dipole แบบต่อเนื่องใช้ได้ จะต้องเป็นศักย์หรือสนาม\underline{เฉลี่ย}ในระดับ macroscopic เท่านั้น (เฉลี่ยในปริมาตรที่มีโมเลกุลมาก ๆ แต่ยังเล็กเมื่อเทียบกับปริมาตรของไดอิเล็กทริกอยู่พอสมควร)}
+
+อีกวิธีหนึ่งที่อาจมีประโยชน์ในการหาศักย์หรือสนามของวัตถุที่ถูกโพลาไรซ์คือการนำวัตถุ $1$ และ $2$ ที่มีความหนาแน่นประจุ $+\rho$ และ $-\rho$ มาวางเหลื่อมกันด้วยระยะเล็ก ๆ $d$ แล้วคำนวณศักย์หรือสนามตามปกติ (ถ้าระบบนี้ง่ายพอ เช่น ทรงกลมที่มีโพลาไรเซชันสม่ำเสมอ)
+
+\section{การกระจัดไฟฟ้า}
+\subsection{กฎของ Gauss เมื่อมีไดอิเล็กทริก}
+เราสามารถแบ่งส่วนที่ทำให้เกิด $\vE$ ในกรณีที่มีไดอิเล็กทริกออกเป็นสองส่วนคือส่วนที่มาจาก bound charge และส่วนที่ไม่ได้มาจากโพลาไรเซชัน (เรียกว่า \emph{free charge}) หรือก็คือ
+\begin{align*}
+    \rho&=\rho_b+\rho_f\\
+    \gd\cdot(\eps_0\vE)&=-\gd\cdot\vP+\rho_f
+\end{align*}
+ดังนั้นถ้าเรานิยาม
+\begin{defbox}{การกระจัดไฟฟ้า}
+    \emph{การกระจัดไฟฟ้า} (\emph{electric displacement}: $\vD$) นิยามดังนี้:
+    \begin{equation}
+        \vD\equiv\eps_0\vE+\vP
+    \end{equation}
+\end{defbox}
+ก็จะได้ว่า
+\begin{ieqbox}{กฎของ Gauss สำหรับระบบที่มีไดอิเล็กทริก}
+    \gd\cdot\vD=\rho_f\qq{และ}\oint\vD\cdot\odif{\va}=Q_{f\,\txt{enc}}\label{gaussd}
+\end{ieqbox}
+เวกเตอร์การกระจัดไฟฟ้านี้มีสมบัติคล้าย ๆ $\vE$ แต่ต้องระวังเพราะสนาม $\vE$ ที่หาได้จากเพียง $\rho$ (ด้วยกฎของ Gauss) เป็นเพราะว่ายังมีอีกเงื่อนไขที่ $\gd\times\vE=\vzr$ ด้วย แต่ในกรณีของการกระจัดไฟฟ้า
+\begin{equation}
+\gd\times\vD=\gd\times\eps_0\vE+\gd\times\vP=\gd\times\vP\label{curld}
+\end{equation}
+ไม่จำเป็นต้องเป็น $\vzr$ ดังนั้น $\vD$ จึงไม่ได้กำหนดโดยเพียง $\rho_f$
+\subsection{รอยต่อแผ่นประจุสำหรับการกระจัดไฟฟ้า}
+ต่อมาเช่นเดียวกับ $\vE$ และ $V$ เรามาดูสมบัติของ $\vD$ ในบริเวณแผ่นประจุบาง ๆ ที่มีความหนาแน่นประจุเชิงพื้นที่ $\sigma_f$:
+\begin{enumerate}
+    \item โดย (\ref{gaussd}) จะได้ว่า
+    \begin{equation}
+        D_\txt{above}^\perp - D_\txt{below}^\perp = \sigma_f
+    \end{equation}
+    \item โดย (\ref{curld}) จะได้ว่า
+    \begin{equation}
+        D_\txt{above}^\|-D_\txt{below}^\|=P_\txt{above}^\|-P_\txt{below}^\|
+    \end{equation}
+\end{enumerate}
+\section{ไดอิเล็กทริกเชิงเส้น}
+\subsection{สภาพอ่อนไหว สภาพยอม และค่าคงที่ไดอิเล็กทริก}
+เราสามารถประมาณเวกเตอร์โพไรเซชันในไดอิเล็กทริกได้คล้ายกับ (\ref{dipprop}) ดังนี้:
+\begin{ieqbox}{ไดอิเล็กทริกเชิงเส้น}
+    \vP=\eps_0\chi_e\vE
+\end{ieqbox}
+หมายเหตุ: \emph{$\vE$ ในที่นี้คือสนาม\underline{ทั้งหมด} ดังนั้นสมการนี้ไม่ได้ใช้ง่ายอย่างที่คิด เพราะการโพลาไรซ์ด้วยสนามภายนอก $\vE^\exr$ จะทำให้เกิดสนามมาเพิ่มจาก $\vP$ ที่เกิดขึ้นอีกที วนไปวนมาเรื่อย ๆ วิธีที่ง่ายที่สุดในการคำนวณก็คือควรพิจารณา $\vD$ ก่อนและใช้กฎของ Gauss}
+
+โดยเราจะเรียกไดอิเล็กทริกที่เป็นไปตามสมการด้านบนว่า\emph{ไดอิเล็กทริกเชิงเส้น} และเราจะเรียก $\chi_e$ ว่า\emph{สภาพอ่อนไหวทางไฟฟ้า} (\emph{electric susceptibility}) ของไดอิเล็กทริกนั้น ๆ ต่อมาพิจารณา
+\[\vD=\eps_0\vE+\vP=\eps_0\ab(1+\chi_e)\vE\]
+จึงได้ว่า $\vD\propto\vE$ ด้วย เราจึงนิยาม\emph{สภาพยอมทางไฟฟ้า} (\emph{elctric permittivity}) ว่า
+\begin{defbox}{สภาพยอมทางไฟฟ้า}
+\begin{equation}
+    \eps\equiv\eps_0\ab(1+\chi_e)
+\end{equation}
+\end{defbox}
+ก็จะได้ว่า
+\begin{equation}
+    \vD=\eps\vE
+\end{equation}
+และนิยาม\emph{สภาพยอมสัมพัทธ์}หรือ\emph{ค่าคงที่ไดอิเล็กทริก}ว่า
+\begin{defbox}{ค่าคงที่ไดอิเล็กทริก}
+\begin{equation}
+    \eps_r\equiv 1+\chi_e = \frac{\eps}{\eps_0}
+\end{equation}
+\end{defbox}
+พิจารณาภายในบริเวณที่มี $\chi_e$ คงที่ จะได้ว่า
+\[\gd\cdot\vD=\rho_f\qq{และ}\gd\times\vD=\vzr\]
+โดย Helmholtz's theorem จึงได้ว่า
+\begin{equation}
+    \vD=\eps_0\vE_\txt{vac}
+\end{equation}
+เมื่อ $\vE_\txt{vac}$ คือสนามไฟฟ้าเมื่อระบบอยู่ในสุญญากาศ ก็จะได้
+\begin{eqbox}{สภาพยอมทางไฟฟ้าในไดอิเล็กทริกเชิงเส้น}
+    \vE=\frac{1}{\eps}\vD=\frac{1}{\eps_r}\vE_\txt{vac}
+\end{eqbox}
+ซึ่งเปรียบเสมือนการเปลี่ยนค่าจาก $\eps_0$ เป็น $\eps$ ในสมการต่าง ๆ คล้าย ๆ เป็นการ ``ต้าน" สนาม $\vE$ ให้มีค่าลดลง
+
+ไดอิเล็กทริกเชิงเส้นด้านบนไม่ได้เป็นไดอิเล็กทริกเชิงเส้นแบบ ``ทั่วไป" จริง ๆ แต่จะเรียกว่าเป็น \emph{isotropic linear dielectric} แต่ถ้าไม่ isotropic ไดอิเล็กทริกอาจถูกโพลาไรซ์ได้ยากง่ายไม่เท่ากันในแต่ละทิศจึงทำให้สภาพอ่อนไหวทางไฟฟ้าจะถูกอธิบายด้วยเทนเซอร์:
+\begin{eqbox}{เทนเซอร์สภาพอ่อนไหวทางไฟฟ้า}
+    P_i=\eps_0\chi_{e,ij}E_j
+\end{eqbox}
+หรือก็คือ
+\begin{equation}
+\begin{rcases}
+    &P_x = \eps_0(\chi_{e,xx}E_x+\chi_{e,xy}E_y+\chi_{e,xz}E_z)\hspace{5pt}\\
+    &P_y = \eps_0(\chi_{e,yx}E_x+\chi_{e,yy}E_y+\chi_{e,yz}E_z)\\
+    &P_z = \eps_0(\chi_{e,zx}E_x+\chi_{e,zy}E_y+\chi_{e,zz}E_z)
+\end{rcases}
+\end{equation}
+\subsection{ปัญหาสภาวะขอบเขตเกี่ยวกับไดอิเล็กทริกเชิงเส้น}
+เนื่องจาก
+\[\rho_b=-\gd\cdot\vP=-\gd\cdot\ab(\eps_0\frac{\chi_e}{\eps}\vD)=(\cst)\rho_f\]
+ดังนั้นในบริเวณที่ไม่มีประจุอิสระ จะได้ว่า $\rho=\rho_b+\rho_f=0$ ทำให้สามารถใช้สมการ Laplace แก้หา $V$ ได้โดยวิธีจากบทที่แล้ว โดยมีสภาวะขอบเขตดังนี้ (พิสูจน์โดย (\ref{gaussd})):
+\begin{lawbox}{สภาวะขอบเขตของรอยต่อไดอิเล็กทริก}
+    บนแผ่นประจุที่มีความหนาแน่นของประจุอิสระเชิงพื้นที่ $\sigma_f$ จะได้ว่า
+\begin{equation}
+    \eps_\txt{above}E^\perp_\txt{above}-\eps_\txt{below}E^\perp_\txt{below}=\sigma_f\label{dbound1}
+\end{equation}
+หรือ
+\begin{equation}
+    \eps_\txt{above}\pdv{V_\txt{above}}{n}-\eps_\txt{below}\pdv{V_\txt{below}}{n}=-\sigma_f\label{dbound2}
+\end{equation}
+เมื่อ $\vu{n}$ คือเวกเตอร์หนึ่งหน่วยที่ตั้งฉากกับแผ่นประจุที่ชี้จากด้านล่างไปด้านบน\\
+และสำหรับ $V$ จะต่อเนื่องเช่นเคย:
+\begin{equation}
+    V_\txt{above}=V_\txt{below}
+\end{equation}
+\end{lawbox}
+\begin{corbox}{ตัวอย่าง}
+    ทรงกลมไดอิเล็กทริกเชิงเส้นรัศมี $R$ ที่มีค่าคงที่ไดอิเล็กทริก $\eps_r$ ถูกวางไว้ที่จุด $(0,0,0)$ โดยมีสนามไฟฟ้าสม่ำเสมอ (เมื่อไม่รวมสนามจากไดอิเล็กทริก) $\vE_0$ ใหลผ่านในทิศ $+z$ จงหาสนามไฟฟ้าภายในไดอิเล็กทริก
+\end{corbox}
+\begin{soln}
+เห็นชัดว่าระบบนี้ในพิกัดทรงกลมจะสมมาตรแบบ azimuth ดังนั้นใช้คำตอบของสมการ Laplace จาก (\ref{sphere1}) และ (\ref{sphere2}) ได้ว่าข้างในไดอิเล็กทริก ($r<R$):
+\begin{equation}
+    V(r,\theta)=\sum_{l=0}^\infty A_lr^l\,P_l(\cos\theta)\tag{$\star$1}\label{exdi1}
+\end{equation}
+ข้างนอกไดอิเล็กทริกจะต้องมี $V(r,\theta)$ เมื่อ $r\to\infty$ เป็น
+\[V(r,\theta)\approx -E_0r\cos\theta\]
+ก็จะได้ว่าที่ $r>R$:
+\begin{equation}
+    V(r,\theta)=-E_0r\cos\theta+\sum_{l=0}^\infty \frac{B_l}{r^{l+1}}P_l(\cos\theta)\tag{$\star$2}\label{exdi2}
+\end{equation}
+เนื่องจาก $V$ ต้องต่อเนื่องที่ $r=R$ จาก (\ref{exdi1}) และ (\ref{exdi2}) จะได้ว่า
+\begin{alignat*}{2}
+    A_1R&=-E_0R+\dfrac{B_1}{R^2}&\qq{เมื่อ $l=1$}\\
+    A_lR^l&=\dfrac{B_l}{R^{l+1}}&\qq{เมื่อ $l\neq1$}
+\end{alignat*}
+ดังนั้น $A_l=B_l=0$ สำหรับทุก $l\neq 1$ ก็จะได้
+\[V(r,\theta)=\begin{cases}
+    A_1r\cos\theta&\qq{เมื่อ $r<R$}\\
+    -E_0r\cos\theta+\dfrac{(A_1+E_0)R^3}{r^2}\cos\theta&\qq{เมื่อ $r>R$}
+\end{cases}\]
+ต่อมาใช้ (\ref{dbound2}) จะแก้หา $A_1$ ได้
+\[A_1=\frac{-3E_0}{2+\eps_r}\]
+ก็จะได้ $V$ เมื่อ $r<R$:
+\begin{align*}
+    V(r,\theta)&=-\frac{3}{2+\eps_r}E_0r\cos\theta\\
+    V(x,y,z)&=-\frac{3}{2+\eps_r}E_0z
+\end{align*}
+ดังนั้นก็จะได้ $\vE_\txt{in}=\dfrac{3}{2+\eps_r}\vE_0$
+\end{soln}
+\subsection{พลังงานในระบบที่มีไดอิเล็กทริกเชิงเส้น}
+เราสามารถหาพลังงานของระบบไดอิเล็กทริกโดยการ ``ประกอบ" ระบบของประจุอิสระ $\rho_f$ ทีละนิด แล้วปล่อยให้ไดอิเล็กทริกเกิดการโพลาไรซ์ก่อนที่จะประกอบต่อไป งานที่ต้องใช้บนประจุ $\Delta \rho_f$ ในการนำมาประกอบจะเท่ากับ
+\[\Delta U=\int(\Delta\rho_f)V\odif{\tau}\]
+แต่ $\gd\cdot\vD=\rho_f$ ดังนั้น $\Delta\rho_f=\gd\cdot(\Delta\vD)$ นำไปแทนแล้วใช้ integration by parts และ Stokes' theorem จะได้ว่า
+\begin{align*}
+    \Delta U&=\int\ab\big(\gd\cdot(\Delta\vD))V\odif{\tau}\\
+    &=\int\gd\cdot(V\,\Delta\vD)\odif{\tau}+\int\Delta\vD\cdot\vE\odif{\tau}\\
+    &=\cancel{\oint V\,\Delta\vD\cdot\odif{\va}}+\int\Delta\vD\cdot\vE\odif{\tau}\\
+    &=\int\Delta\vD\cdot\vE\odif{\tau}
+\end{align*}
+ต่อมาพิจารณา
+\[\Delta\ab(\vD\cdot\vE)=\eps\,\Delta\ab(E^2)=2\eps E\,\Delta E=2\,\Delta\vD\cdot\vE\]
+ก็จะได้ว่า
+\[\Delta U=\frac{1}{2}\int\Delta\ab(\vD\cdot\vE)\odif{\tau}\]
+หรือก็คือ
+\begin{ieqbox}{พลังงานจากสนามไฟฟ้าและไดอิเล็กทริกเชิงเส้น}
+    U=\int u(\vr)\odif{\tau}\qq{เมื่อ} u(\vr)=\frac{1}{2}\ab\Big(\vD(\vr)\cdot\vE(\vr))\label{edensitydi}
+\end{ieqbox}
+หมายเหตุ: \emph{สังเกตว่า (\ref{edensitydi}) $\geq$ (\ref{energydensity}) เหตุผลเป็นเพราะว่า (\ref{energydensity}) จะเป็นพลังงานเนื่องจากสนามไฟฟ้าโดยตรง ไม่รวมพลังงานในการ ``แยก" ขั้วของไดอิเล็กทริกในการโพลาไรซ์ (อาจมองเหมือนเป็นสปริงที่เชื่อมขั้วทั้งสองเข้าด้วยกัน) ดังนั้นก็จะได้อีกว่าพลังงานภายในของ ``สปริง" นี้เท่ากับ $\int \vD\cdot\vE\odif{\tau} - \frac{\eps_0}{2}\int E^2\odif{\tau}$} 
+\subsection{แรงบนไดอิเล็กทริกเชิงเส้น}
+พิจารณาไดอิเล็กทริกที่ขั้นในตัวเก็บประจุแผ่นตัวนำคู่ขนานกว้าง $w$ ยาว $l$ หน้า $d$ (ให้แนวยาวขนานกับแกน $x$ และตัวเก็บประจุนี้ชิดกับระนาบ $yz$) โดยที่ไดอิเล็กทริกเหลื่อมกับตัวเก็บประจุไประยะ $+x$ ถ้าดังไดอิเล็กทริกออกมาอีก $\odif{x}$ จะได้ว่างานที่กระทำ:
+\[\odif{U}=\odif{W}=F_\exr\odif{x}\]
+ดังนั้นแรงที่สนามกระทำเท่ากับ
+\begin{equation}
+    F=-F_\exr=-\odv{U}{x}\tag{$\star$1}\label{forcedi}
+\end{equation}
+พิจารณาความจุไฟฟ้ารวมของตัวเก็บประจุที่มีระยะเหลื่อม $x$ ใด ๆ:
+\begin{equation}
+C=C_1+C_2=\frac{wx}{d}\eps_0+\frac{w(l-x)}{d}\eps_r\eps_0=\frac{\eps_0w}{d}\ab\big(\eps_rl-\chi_ex)\tag{$\star$2}\label{forcedi2}
+\end{equation}
+จะได้พลังงานสะสมในตัวเก็บประจุที่มีระยะเหลื่อม $x$ ใด ๆ เท่ากับ
+\[U=\frac{1}{2}\frac{Q^2}{C}\]
+ดังนั้น
+\[\odif{U}=-\frac{1}{2}\frac{Q^2}{C^2}\odif{C}=-\frac{1}{2}V^2\odif{C}\overset{\text{(\ref{forcedi2})}}{=}\frac{1}{2}V^2\frac{\eps_0\chi_ew}{d}\odif{x}\]
+นำกลับไปแทนใน (\ref{forcedi}) จะได้ว่า
+\begin{eqbox}{แรงบนไดอิเล็กทริกระหว่างแผ่นตัวนำ}
+    F=-\frac{\eps_0\chi_ew}{2d}V^2
+\end{eqbox}
+หมายเหตุ: \emph{สังเกตว่าเมื่อ $x=0$ ไม่ได้ทำให้ $F=0$ เพราะการใช้ $U$ เป็นค่านั้นเป็นการประมาณสำหรับ $x$ ที่มีค่ามาก ๆ}

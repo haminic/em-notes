@@ -1,0 +1,468 @@
+\ProvidesPackage{prehamble}
+
+% Thai
+\usepackage[no-math]{fontspec}
+\XeTeXlinebreaklocale "th_TH"
+\XeTeXlinebreakskip = 0pt plus 1pt  
+\newcommand{\setfont}[1]{
+  \setmainfont[Path=fonts/, 
+    Scale=1.4,
+    BoldFont={#1Bold.ttf},
+    ItalicFont={#1Italic.ttf},
+    BoldItalicFont={#1BoldItalic.ttf},
+  ]{#1Regular.ttf}
+}
+\setfont{THSarabunNew}
+\renewcommand{\baselinestretch}{1.2}
+
+% Useful packages
+\usepackage[hidelinks]{hyperref}
+\usepackage{mathtools}
+
+% Some macros
+% Small commands
+\usepackage{amsmath,cancel,amssymb}
+\usepackage[minimal]{yhmath}
+\usepackage{derivative}
+\newcommand{\cbrt}[1]{\sqrt[3]{#1}}
+\newcommand{\floor}[1]{\left\lfloor #1 \right\rfloor}
+\newcommand{\ceiling}[1]{\left\lceil #1 \right\rceil}
+\newcommand{\mailto}[1]{\href{mailto:#1}{\texttt{#1}}}
+\newcommand{\ol}{\overline}
+\newcommand{\ul}{\underline}
+\newcommand{\wt}{\widetilde}
+\newcommand{\wh}{\widehat}
+\newcommand{\eps}{\varepsilon}
+\newcommand{\vocab}[1]{\textbf{\color{blue} #1}}
+\providecommand{\alert}{\vocab}
+\providecommand{\half}{\frac{1}{2}}
+\newcommand{\catname}{\mathsf}
+\newcommand{\hrulebar}{
+  \par\hspace{\fill}\rule{0.95\linewidth}{.7pt}\hspace{\fill}
+  \par\nointerlineskip \vspace{\baselineskip}
+}
+\providecommand{\arc}[1]{\wideparen{#1}}
+
+
+%More commands and math operators
+\DeclareMathOperator{\cis}{cis}
+\DeclareMathOperator*{\lcm}{lcm}
+\DeclareMathOperator*{\argmin}{arg min}
+\DeclareMathOperator*{\argmax}{arg max}
+
+
+%Convenient Environments
+\newenvironment{soln}{\begin{proof}[วิธีทำ]}{\end{proof}}
+\newenvironment{parlist}{\begin{inparaenum}[(i)]}{\end{inparaenum}}
+\newenvironment{gobble}{\setbox\z@\vbox\bgroup}{\egroup}
+
+%Inequalities
+\newcommand{\cycsum}{\sum_{\mathrm{cyc}}}
+\newcommand{\symsum}{\sum_{\mathrm{sym}}}
+\newcommand{\cycprod}{\prod_{\mathrm{cyc}}}
+\newcommand{\symprod}{\prod_{\mathrm{sym}}}
+
+% Sets
+\newcommand{\CC}{\mathbb C}
+\newcommand{\FF}{\mathbb F}
+\newcommand{\NN}{\mathbb N}
+\newcommand{\QQ}{\mathbb Q}
+\newcommand{\RR}{\mathbb R}
+\newcommand{\ZZ}{\mathbb Z}
+
+% Geometry
+\newcommand{\abs}[1]{\left\lvert #1 \right\rvert}
+\newcommand{\norm}[1]{\left\lVert #1 \right\rVert}
+\newcommand{\dang}{\measuredangle}
+\newcommand{\ray}[1]{\overrightarrow{#1}}
+\newcommand{\seg}[1]{\overline{#1}}
+\newcommand{\dg}{^\circ}
+
+
+% Asymptote setup
+\usepackage{asymptote}
+
+\begin{asydef}
+    defaultpen(fontsize(10pt));
+    size(8cm); // set a reasonable default
+    usepackage("amsmath");
+    usepackage("amssymb");
+    settings.tex="pdflatex";
+    settings.outformat="pdf";
+    // Replacement for olympiad+cse5 which is not standard
+    import geometry;
+    // recalibrate fill and filldraw for conics
+    void filldraw(picture pic = currentpicture, conic g, pen fillpen=defaultpen, pen drawpen=defaultpen)
+      { filldraw(pic, (path) g, fillpen, drawpen); }
+    void fill(picture pic = currentpicture, conic g, pen p=defaultpen)
+      { filldraw(pic, (path) g, p); }
+    // some geometry
+    pair foot(pair P, pair A, pair B) { return foot(triangle(A,B,P).VC); }
+    pair centroid(pair A, pair B, pair C) { return (A+B+C)/3; }
+    // cse5 abbreviations
+    path CP(pair P, pair A) { return circle(P, abs(A-P)); }
+    path CR(pair P, real r) { return circle(P, r); }
+    pair IP(path p, path q) { return intersectionpoints(p,q)[0]; }
+    pair OP(path p, path q) { return intersectionpoints(p,q)[1]; }
+    path Line(pair A, pair B, real a=0.6, real b=a) { return (a*(A-B)+A)--(b*(B-A)+B); }
+    // cse5 more useful functions
+    picture CC() {
+      picture p=rotate(0)*currentpicture;
+      currentpicture.erase();
+      return p;
+    }
+    pair MP(Label s, pair A, pair B = plain.S, pen p = defaultpen) {
+      Label L = s;
+      L.s = "$"+s.s+"$";
+      label(L, A, B, p);
+      return A;
+    }
+    pair Drawing(Label s = "", pair A, pair B = plain.S, pen p = defaultpen) {
+      dot(MP(s, A, B, p), p);
+      return A;
+    }
+    path Drawing(path g, pen p = defaultpen, arrowbar ar = None) {
+      draw(g, p, ar);
+      return g;
+    }
+\end{asydef}
+
+
+% Hyperref
+  
+\PassOptionsToPackage{svgnames,dvipsnames,table}{xcolor}
+\usepackage{xcolor}
+\usepackage[nameinlink]{cleveref}
+  
+
+% New theorem styles
+  
+\usepackage{amsthm}
+\usepackage{thmtools}
+    
+\usepackage[framemethod=TikZ]{mdframed}
+\usetikzlibrary{shadows}
+% https://tex.stackexchange.com/a/292090/76888
+% https://github.com/marcodaniel/mdframed/issues/12
+\usepackage{xpatch}
+\xpatchcmd{\endmdframed}
+  {\aftergroup\endmdf@trivlist\color@endgroup}
+  {\endmdf@trivlist\color@endgroup\@doendpe}
+  {}{}
+
+\newcommand{\thmcolor}{MidnightBlue}
+\newcommand{\excolor}{RawSienna}
+\newcommand{\claimcolor}{ForestGreen!70!black}
+
+\mdfdefinestyle{mdbluebox}{%
+  roundcorner=10pt,
+  linewidth=1pt,
+  skipabove=12pt,
+  innerbottommargin=9pt,
+  skipbelow=2pt,
+  linecolor=blue,
+  nobreak=true,
+  backgroundcolor=TealBlue!5,
+}
+\declaretheoremstyle[
+  headfont=\bfseries\color{\thmcolor},
+  mdframed={style=mdbluebox},
+  headpunct={\\[3pt]},
+  postheadspace={0pt}
+]{thmbluebox}
+
+\mdfdefinestyle{mdredbox}{%
+  linewidth=0.5pt,
+  skipabove=12pt,
+  frametitleaboveskip=5pt,
+  frametitlebelowskip=0pt,
+  skipbelow=2pt,
+  frametitlefont=\bfseries,
+  innertopmargin=4pt,
+  innerbottommargin=8pt,
+  nobreak=true,
+  backgroundcolor=Salmon!5,
+  linecolor=RawSienna,
+}
+\declaretheoremstyle[
+  headfont=\bfseries\color{\excolor},
+  mdframed={style=mdredbox},
+  headpunct={\\[3pt]},
+  postheadspace={0pt},
+]{thmredbox}
+
+\mdfdefinestyle{mdgreenbox}{%
+  skipabove=8pt,
+  skipbelow=0pt,
+  linewidth=2pt,
+  rightline=false,
+  leftline=true,
+  topline=false,
+  bottomline=false,
+  linecolor=ForestGreen,
+  backgroundcolor=ForestGreen!5,
+}
+\declaretheoremstyle[
+  headfont=\bfseries\color{\claimcolor},
+  bodyfont=\normalfont,
+  spaceabove=2pt,
+  spacebelow=1pt,
+  mdframed={style=mdgreenbox},
+  headpunct={ --- },
+]{thmgreenbox}
+
+\mdfdefinestyle{mdblackbox}{%
+  skipabove=8pt,
+  linewidth=3pt,
+  rightline=false,
+  leftline=true,
+  topline=false,
+  bottomline=false,
+  linecolor=black,
+  backgroundcolor=RedViolet!5!gray!10,
+}
+\declaretheoremstyle[
+  headfont=\bfseries,
+  bodyfont=\normalfont\small,
+  spaceabove=0pt,
+  spacebelow=0pt,
+  mdframed={style=mdblackbox}
+]{thmblackbox}
+
+\mdfdefinestyle{mdpurplebox}{%
+  roundcorner=10pt,
+  linewidth=1pt,
+  skipabove=12pt,
+  skipbelow=12pt,
+  innertopmargin=9pt,
+  innerbottommargin=9pt,
+  linecolor=black,
+  nobreak=true,
+  backgroundcolor=Orchid!10,
+  shadow=true,
+  shadowsize=6pt,
+  shadowcolor=black!30,
+  frametitleaboveskip=8pt,
+  frametitlebelowskip=8pt,
+  frametitlebackgroundcolor=Violet!50!black,
+  frametitlefont=\bfseries\color{white},
+  frametitlerule=true,
+}
+\newcommand{\listhack}{$\empty$\vspace{-2em}}
+  
+
+% Theorem setup
+
+\theoremstyle{definition}
+\declaretheorem[style=thmbluebox,name=ทฤษฎีบท,numberwithin=section]{theorem}
+\declaretheorem[style=thmbluebox,name=บทตั้ง,sibling=theorem]{lemma}
+\declaretheorem[style=thmbluebox,name=ประพจน์,sibling=theorem]{proposition}
+\declaretheorem[style=thmbluebox,name=บทแทรก,sibling=theorem]{corollary}
+\declaretheorem[style=thmbluebox,name=ข้อสมมติ,sibling=theorem]{assume}
+\declaretheorem[style=thmbluebox,name=ทฤษฎีบท,numbered=no]{theorem*}
+\declaretheorem[style=thmbluebox,name=บทตั้ง,numbered=no]{lemma*}
+\declaretheorem[style=thmbluebox,name=ประพจน์,numbered=no]{proposition*}
+\declaretheorem[style=thmbluebox,name=บทแทรก,numbered=no]{corollary*}
+\declaretheorem[style=thmbluebox,name=ข้อสมมติ,numbered=no]{assume*}
+
+
+\declaretheorem[style=thmgreenbox,name=อัลกอริทึม,sibling=theorem]{algorithm}
+\declaretheorem[style=thmgreenbox,name=อัลกอริทึม,numbered=no]{algorithm*}
+\declaretheorem[style=thmgreenbox,name=ข้ออ้าง,sibling=theorem]{claim}
+\declaretheorem[style=thmgreenbox,name=ข้ออ้าง,numbered=no]{claim*}
+
+
+\declaretheorem[style=thmredbox,name=ตัวอย่าง,sibling=theorem]{example}
+\declaretheorem[style=thmredbox,name=ตัวอย่าง,numbered=no]{example*}
+
+
+\declaretheorem[style=thmblackbox,name=Remark,sibling=theorem]{remark}
+\declaretheorem[style=thmblackbox,name=Remark,numbered=no]{remark*}
+
+\declaretheoremstyle[
+headfont=\color{blue!40!black}\normalfont\bfseries,
+spaceabove=8pt,
+spacebelow=8pt,
+bodyfont=\normalfont
+]{basehead}
+
+\declaretheorem[style=basehead,name=คำตอบ,sibling=theorem]{answer}
+\declaretheorem[style=basehead,name=คำตอบ,numbered=no]{answer*}
+\declaretheorem[style=basehead,name=ข้อคาดการณ์,sibling=theorem]{conjecture}
+\declaretheorem[style=basehead,name=ข้อคาดการณ์,numbered=no]{conjecture*}
+\declaretheorem[style=basehead,name=นิยาม,sibling=theorem]{definition}
+\declaretheorem[style=basehead,name=นิยาม,numbered=no]{definition*}
+\declaretheorem[style=basehead,name=แบบฝึกหัด,sibling=theorem]{exercise}
+\declaretheorem[style=basehead,name=แบบฝึกหัด,numbered=no]{exercise*}
+\declaretheorem[style=basehead,name=ข้อควรรู้,sibling=theorem]{fact}
+\declaretheorem[style=basehead,name=ข้อควรรู้,numbered=no]{fact*}
+\declaretheorem[style=basehead,name=โจทย์ข้อ,sibling=theorem]{problem}
+\declaretheorem[style=basehead,name=โจทย์ข้อ,numbered=no]{problem*}
+\declaretheorem[style=basehead,name=คำถาม,sibling=theorem]{ques}
+\declaretheorem[style=basehead,name=คำถาม,numbered=no]{ques*}
+
+    
+\Crefname{answer}{คำตอบ}{คำตอบ}
+\Crefname{assume}{ข้อสมมติ}{ข้อสมมติ}
+\Crefname{claim}{ข้ออ้าง}{ข้ออ้าง}
+\Crefname{conjecture}{ข้อคาดการณ์}{ข้อคาดการณ์}
+\Crefname{exercise}{แบบฝึกหัด}{แบบฝึกหัด}
+\Crefname{fact}{ข้อควรรู้}{ข้อควรรู้}
+\Crefname{problem}{ปัญหาข้อที่}{ปัญหาข้อที่}
+\Crefname{ques}{คำถาม}{คำถาม}
+\renewcommand*{\proofname}{พิสูจน์}
+
+
+% More versatile environment setup
+\mdfsetup{skipabove=0pt,skipbelow=0pt}
+
+\newenvironment{lawbox}[1]{
+\begin{mdframed}[style=mdbluebox]
+\color{\thmcolor}\bfseries#1.\color{black}\normalfont
+}{
+\end{mdframed}
+}
+
+\newenvironment{eqbox}[1]{
+\begin{mdframed}[style=mdblackbox]
+\color{black}\bfseries#1.\color{black}\normalfont
+\begin{equation}
+}{
+\end{equation}
+\end{mdframed}
+}
+
+\newenvironment{corbox}[1]{
+\begin{mdframed}[style=mdblackbox]
+\color{black}\bfseries#1.\color{black}\normalfont
+}{
+\end{mdframed}
+}
+
+\newenvironment{ieqbox}[1]{
+\begin{lawbox}{#1}
+\begin{equation}
+}{
+\end{equation}
+\end{lawbox}
+}
+
+\newenvironment{defbox}[1]{
+\begin{mdframed}[style=mdgreenbox]
+\color{\claimcolor}\bfseries นิยาม#1.\color{black}\normalfont
+}{
+\end{mdframed}
+}
+    
+
+
+% Title macros configuration
+\providecommand{\thebloodytitle}{\@title}
+\providecommand{\theauthor}{\@author}
+\providecommand{\thedate}{\@date}
+\newcommand{\currentchapter}{}
+\let\oldchapter\chapter
+\renewcommand{\chapter}[1]{\oldchapter{#1}\renewcommand{\currentchapter}{#1}}
+
+% Page setup
+\usepackage{fancyhdr}
+\setlength{\headheight}{0.75in}
+\setlength{\oddsidemargin}{0in}
+\setlength{\evensidemargin}{0in}
+\setlength{\voffset}{-1.0in}
+\setlength{\headsep}{10pt}
+\setlength{\textwidth}{6.5in}
+\setlength{\headwidth}{6.5in}
+\setlength{\textheight}{8.75in}
+\setlength{\parskip}{1ex plus 0.5ex minus 0.2ex}
+\setlength{\footskip}{0.3in}
+\renewcommand{\headrulewidth}{0.5pt}
+\renewcommand{\footrulewidth}{0.0pt}
+\pagestyle{fancy}
+\lhead{\sffamily\bfseries\thebloodytitle\mdseries\ \ --\ \ \theauthor}
+\chead{}
+\rhead{\chaptertitlename\ \thechapter. \currentchapter}
+\lfoot{}
+\cfoot{\thepage}
+\rfoot{}
+
+% Title & Section formats
+
+\definecolor{gray50}{gray}{0.50}
+\definecolor{white}{rgb}{1,1,1}
+
+\usepackage{titlesec,color,float}
+\newcommand{\hsp}{\hspace{20pt}}
+\renewcommand{\chaptertitlename}{บทที่}
+\titleformat{\chapter}[hang]{\Huge\bfseries}{\color{purple}{\chaptertitlename\ \thechapter}\hsp\color{gray50}{|}\hsp}{0pt}{\Huge\bfseries}
+\titleformat{\section}{\normalfont\LARGE}{\bfseries \color{purple}$\blacktriangleright$ \thesection.\normalfont}{0.5em}{\bfseries}
+\titleformat{\subsection}{\normalfont\Large}{\bfseries \color{purple}$\blacktriangleright$\normalfont}{0.5em}{\bfseries}
+
+
+% TOC
+
+\usepackage{tocloft}
+\setcounter{tocdepth}{1}
+\renewcommand{\contentsname}{\color{purple}$\blacktriangleright$\color{black}\ Table of Contents}
+\renewcommand{\cfttoctitlefont}{\Huge\sffamily\bfseries}
+\setlength{\cftparskip}{3pt}
+\setlength{\cftchapnumwidth}{45pt}
+\renewcommand{\cftchapfont}{\large\bfseries}
+\renewcommand{\cftchappresnum}{\color{purple}บทที่ }
+\setlength{\cftsecnumwidth}{40pt}
+\renewcommand{\cftsecpresnum}{\color{purple}$\blacktriangleright$ \bfseries}
+% \renewcommand{\cftsubsecpresnum}{\color{purple}$\blacktriangleright$ \bfseries}
+% \setlength{\cftsubsecnumwidth}{45pt}
+
+
+% Physics utils
+\usepackage{upgreek}
+\usepackage{physics2}
+\usephysicsmodule{ab,braket,xmat,diagmat,qtext.legacy,ab.legacy}
+
+\makeatletter
+\newcommand{\vb}{\mathbf}
+\newcommand{\vbs}{\boldsymbol}
+\newcommand{\vu}[1]{\hat{\mathbf{#1}}}
+\newcommand{\vus}[1]{\hat{\boldsymbol{#1}}}
+\makeatother
+
+% macros
+\newcommand{\txt}[1]{\mathrm{#1}}
+\newcommand{\cst}{\txt{const.}}
+\newcommand{\del}{\partial}
+\newcommand{\gd}{\vbs{\nabla}}
+\newcommand{\exr}{\txt{ext}}
+\newcommand{\inr}{\txt{int}}
+
+% EM macros
+\newcommand{\vE}{\vb{E}}
+\newcommand{\vA}{\vb{A}}
+\newcommand{\va}{\vb{a}}
+\newcommand{\vB}{\vb{B}}
+\newcommand{\vbb}{\vb{b}}
+\newcommand{\vD}{\vb{D}}
+\newcommand{\vd}{\vb{d}}
+\newcommand{\vF}{\vb{F}}
+\newcommand{\vf}{\vb{f}}
+\newcommand{\vG}{\vb{G}}
+\newcommand{\vl}{\vbs{\ell}}
+\newcommand{\vr}{\vb{r}}
+\newcommand{\vru}{\vu{r}}
+\newcommand{\vp}{\vb{p}}
+\newcommand{\vP}{\vb{P}}
+\newcommand{\vzr}{\vb{0}}
+\newcommand{\vtheta}{\vbs{\uptheta}}
+\newcommand{\vthetau}{\vus{\uptheta}}
+\newcommand{\vtau}{\vbs{\uptau}}
+\newcommand{\kem}{\frac{1}{4\pi\eps_0}}
+
+% Cursive r
+\newfontfamily\cursivefont[AutoFakeBold=3, Path=fonts/]{NexaRustScriptL-0.otf}
+\newcommand{\rr}{\text{\cursivefont r}}
+\newcommand{\vrr}{\vbs{\text{\cursivefont\textbf{r}}}}
+\newcommand{\vrru}{\vus{\vbs{\text{\cursivefont\textbf{r}}}}}
+
+% Calculus macros
+\newcommand{\vol}{\mathcal{V}}
+\newcommand{\sur}{\mathcal{S}}

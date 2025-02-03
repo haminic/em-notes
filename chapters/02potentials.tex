@@ -1,0 +1,325 @@
+\chapter{ศักย์ไฟฟ้า}
+\section{สมการ Laplace}
+\subsection{สมการ Laplace ในสามมิติ}
+ในการแก้หาสนามไฟฟ้า ถ้าไม่มีความสมมาตรพอที่จะใช้กฎของ Gauss (\ref{gauss}) อาจจะง่ายกว่าที่จะหาศักย์ไฟฟ้าก่อน โดยเรามักสนใจศักย์ไฟฟ้าในบริเวณที่ไม่ได้อยู่ในเนื้อประจุ ดังนั้นสมการ Laplace (\ref{laplaceeq}) จึงเป็นสมการที่สำคัญ โดยมีสมบัติของผลเฉลยของมัน (ซึ่งเรียกว่า\emph{ฟังก์ชันฮาร์มอนิก}) ที่ควรรู้คือ
+\begin{lawbox}{สมบัติของผลเฉลยของสมการ Laplace ในสามมิติ}
+    ถ้า $V$ เป็นผลเฉลยของสมการ Laplace ($\nabla^2V=0$) แล้ว
+    \begin{enumerate}
+        \item $V$ มีค่าเท่ากับค่าเฉลี่ยของ $V$ รอบ ๆ หรือก็คือ สำหรับทุก $\vr$ และพื้นผิวทรงกลม $\sur$ รัศมี $R$ ที่มีจุดศูนย์กลางที่ $\vr$ จะได้ว่า
+        \begin{equation}
+            V(\vr)=\frac{1}{4\pi R^2}\oint_\sur V\odif{a}
+        \end{equation}
+        \item $V$ ไม่มีค่าสุดขีดสัมพัทธ์ นั่นคือค่าสุดขีดทั้งหมดของ $V$ ในปริมาตร $\vol$ จะอยู่บน $\del\vol$ เท่านั้น
+    \end{enumerate}
+\end{lawbox}
+หมายเหตุ: \emph{ทฤษฎีบทต่าง ๆ เกี่ยวกับสมการ Laplace มากจะใช้ได้เมื่อปริมาตร $\vol$ ที่สนใจนั้นมี $\rho=0$ เท่านั้น ดังนั้นต้องเลือกปริมาตรดี ๆ}
+\begin{proof}
+    ให้จุดประจุ $q$ อยู่ที่ $(0,0,z)$ พิจารณาค่าเฉลี่ยของ $V$ บนทรงกลมที่อยู่ที่จุดกำเนิดที่มีรัศมี $R$ (ให้ $\theta$ เป็นมุมที่ $\vr$ ทำกับแกน $+z$)
+    {\allowdisplaybreaks
+    \begin{align*}
+        \frac{1}{4\pi R^2}\oint_\sur V\odif{a}&=\frac{1}{4\pi R^2}\oint_S\kem\frac{q}{\rr}\odif{a}\\
+        &=\frac{1}{4\pi R^2}\frac{q}{4\pi\eps_0}\int_0^\pi\int_0^{2\pi}\frac{1}{\sqrt{z^2+R^2-2zR\cos\theta}}R^2\sin\theta\odif{\phi}\odif{\theta}\\
+        &=\frac{1}{2}\frac{q}{4\pi\eps_0}\int_0^\pi\frac{1}{\sqrt{z^2+R^2-2zR\cos\theta}}R^2\sin\theta\odif{\theta}\\
+        &=\frac{1}{2}\frac{q}{4\pi\eps_0}\frac{1}{zR}\eval{\sqrt{z^2+R^2-2zR\cos\theta}}_0^\pi\\
+        &=\frac{1}{2}\frac{q}{4\pi\eps_0}\frac{1}{zR}\ab\big(\ab(z+R)-\ab(z-R))\\
+        &=\kem\frac{q}{z}\\
+        &=V(\vzr)
+    \end{align*}
+    }
+    ซึ่งเป็นไปตามต้องการสำหรับจุดประจุ ดังนั้นจึงเป็นจริงสำหรับสนามใด ๆ ก็ตาม
+    
+    ส่วนข้อ 2. ได้มาจากข้อ 1. โดยตรง เพราะถ้าค่าใด ๆ ของ $V$ เกิดจากค่าเฉลี่ยของจุดรอบ ๆ ค่า $V$ ค่านั้นไม่มีทางเป็นค่าสุดขีดสัมพัทธ์
+\end{proof}
+\subsection{Uniqueness ของผลเฉลยของสมการ Laplace}
+\begin{lawbox}{ทฤษฎีบท Uniqueness ที่หนึ่ง}
+    สมการ Laplace จะมีผลเฉลยเดียวบนปริมาตร $\vol$ ถ้ารู้ค่า $V$ ทั้งหมดบน $\del\vol$
+\end{lawbox}
+\begin{proof}
+    ให้ $V_1$ และ $V_2$ เป็นผลเฉลยของสมการ Laplace บนปริมาตร $\vol$ ที่มีค่าตรงกันบน $\del\vol$ ดังนั้น
+    \[V_3\equiv V_1-V_2\]
+    เป็นผลเฉลยของสมการ Laplace ที่มีค่าที่ $\del\vol$ เท่ากับ $0$\\
+    แต่เนื่องจากค่าสุดขีดของสมการ Laplace จะต้องอยู่บน $\del\vol$ ดังนั้น $V_3=0$ ทุกที่ในปริมาตร หรือก็คือ
+    \[V_1=V_2\]
+    ตามต้องการ
+\end{proof}
+และไม่ยากที่จะขยายทฤษฎีบทนี้กับสมการ Poisson โดยใช้วิธีพิสูจน์คล้าย ๆ กับด้านบนจะได้ว่า:
+\begin{corbox}{บทตั้ง}
+    บนปริมาตร $\vol$ ถ้ารู้ $\rho$ ภายในปริมาตรและรู้ค่า $V$ ทั้งหมดบน $\del\vol$ แล้วจะได้ว่ามีสนาม $V$ ในปริมาตรนั้นที่สอดคล้องกับเงื่อนไขเพียงสนามเดียว
+\end{corbox}
+
+\begin{lawbox}{ทฤษฎีบท Uniqueness ที่สอง}
+    บนปริมาตร $\vol$ ที่มีขอบเขตอยู่บนผิวของตัวนำ (อาจมีขอบเขตหนึ่งเป็นตัวนำที่ $\infty$ ได้) ถ้ารู้ค่า $\rho$ ภายในปริมาตรและรู้ค่า $Q$ ของตัวนำทั้งหมดแล้วจะได้ว่ามีสนาม $\vE$ ในปริมาตรนั้นที่สอดคล้องกับเงื่อนไขทั้งหมดเพียงสนามเดียว
+\end{lawbox}
+\begin{proof}
+    ให้ $\vE_1$ และ $\vE_2$ เป็นสนามใน $\vol$ ที่สอดคล้องกับเงื่อนไข และให้ $\vE_3=\vE_1-\vE_2$ จาก (\ref{gaussde}) จะได้ว่า
+    \begin{equation}
+        \gd\cdot\vE_3=0\tag{$\star$1}
+    \end{equation}
+    และจาก (\ref{gauss}) จะได้ว่า
+    \begin{equation}
+        \oint\vE_3\cdot\odif{\va}=0\tag{$\star$2}\label{u2pf2}
+    \end{equation}
+    สำหรับทุก ``\emph{ผิวย่อย}" ของ $\del\vol$ ต่อมาพิจารณา
+    \[\gd\cdot(V_3\vE_3)=\gd V_3\cdot\vE_3+V_3(\cancel{\gd\cdot\vE_3})=-E_3^2\]
+    และโดย divergence theorem จะได้ว่า
+    \begin{equation}
+    \oint_{\del\vol}V_3\vE_3\cdot\odif{\va}=\int_\vol\gd\cdot(V_3\vE_3)\odif{\tau}=-\int_\vol E_3^2\odif{\tau}\tag{$\star$3}\label{u2pf3}
+    \end{equation}
+    แต่เนื่องจากทุกผิวย่อยของ $\del\vol$ บนแต่ละตัวนำมี $V_3$ คงที่จะได้ว่า
+    \[\oint_{\del\vol}V_3\vE_3\cdot\odif{\va}=\sum_{\txt{\sur}}V_\sur\oint_\sur\vE_3\cdot\odif{\va}\overset{\text{(\ref{u2pf2})}}{=}0\]
+    นำไปใส่กลับใส่ใน (\ref{u2pf3}) จะได้ว่า $\int_\vol E_3^2\odif{\tau}=0$ ดังนั้น $\vE_3=\vzr$ หรือก็คือ
+    \[\vE_1=\vE_2\]
+    ตามต้องการ
+\end{proof}
+
+\section{การจำลองภาพ}
+\subsection{การสร้างระบบใหม่เพื่อแก้หาสนาม}
+ในบางครั้งการหาศักย์ไฟฟ้าตรง ๆ อาจจะยาก แต่ถ้าหาระบบใหม่ที่มีค่า $V$ ที่บริเวณขอบเขตและ $\rho$ ตรงกับค่าบนระบบที่เราสนใจ จากทฤษฎีบท uniqueness ที่หนึ่ง จะได้ว่าศักย์ไฟฟ้าในบริเวณที่สนใจของทั้งสองระบบจะเท่ากันพอดี ยกตัวอย่างเช่น
+
+\begin{corbox}{ตัวอย่าง}
+    ในระบบพิกัดฉากสามมิติ มีแผ่นตัวนำที่ต่อสายดินวางอยู่ทั่วทั้งระนาบ $xy$ และมีจุดประจุ $q$ วางอยู่ ณ จุด $(0,0,d)$ จงหาศักย์ไฟฟ้าในบริเวณด้านบนแผ่นตัวนำ
+\end{corbox}
+\begin{soln}
+    พิจารณาอีกระบบที่มีจุดประจุ $q$ ที่ $(0,0,d)$ และ $-q$ ที่ $(0,0,-d)$ สังเกตว่าระบบนี้มีสภาวะขอบเขตของศักย์ไฟฟ้าในปริมาตรเหนือระนาบ $xy$ ตรงกันกับระบบในโจทย์เลย ($V=0$ บนระนาบ $xy$, $V=0$ ที่บริเวณไกลมาก ๆ) ดังนั้นโดยทฤษฎีบท uniqueness ที่หนึ่ง ทั้งสองระบบนี้จะต้องมีสนามศักย์ไฟฟ้าตรงกันบนปริมาตรเหนือระนาบ $xy$\\
+    ดังนั้นจึงได้ว่า
+    \[V(x,y,z)=\begin{cases}
+        \dfrac{q}{4\pi\eps_0}\ab(\ab(x^2+y^2+(z-d)^2)^{-1/2}-\ab(x^2+y^2+(z+d)^2)^{-1/2})&\qq{เมื่อ $z\geq0$}\\
+        0&\qq{เมื่อ $z< 0$}
+    \end{cases}\]
+    ($V(x,y,z)=0$ เมื่อ $z<0$ เพราะด้านล่างเหมือนกับระบบที่ไม่มีประจุที่ใดเลย)
+\end{soln}
+หมายเหตุ: \emph{ควรระวังว่าระบบที่สร้างขึ้นมาเปรียบเทียบนี้จะต้องมีการกระจายตัวของประจุในบริเวณที่สนใจเหมือนกับระบบตั้งต้นเท่านั้นจึงจะใช้ได้ และไม่ได้แปลว่าทุกย่างของทั้งสองระบบจะเหมือนกัน เช่น ถ้าลองคำนวณดูแล้วพลังงานของระบบโจทย์จะเป็นครึ่งหนึ่งของระบบที่สร้างขึ้นมาใหม่ (มาจากสนามอีกครึ่งที่หายไป)}
+\section{การแยกตัวแปร}
+\subsection{การแยกตัวแปรบนพิกัดคาร์ทีเซียน}
+เริ่มจากการ ``เดา" ว่า 
+\[V(x,y,z)=X(x)Y(y)Z(z)\]
+ดังนั้นจากสมการ Laplace จะได้ว่า
+\begin{align*}
+    YZ\odv[2]{X}{x}+XZ\odv[2]{Y}{y}+XY\odv[2]{Z}{z}&=0\\
+    \frac{1}{X}\odv[2]{X}{x}+\frac{1}{Y}\odv[2]{Y}{y}+\frac{1}{Z}\odv[2]{Z}{z}&=0
+\end{align*}
+เนื่องจากแต่ละพจน์เป็นฟังก์ชันตัวแปรเดียวโดยต้องรวมกันเท่ากับ $0$ ทุก $(x,y,z)$ ในปริมาตรที่สนใจ ดังนั้น
+\[\frac{1}{X}\odv[2]{X}{x}=C_x\qq*{,}\frac{1}{Y}\odv[2]{Y}{y}=C_y\qq*{,}\frac{1}{Z}\odv[2]{Z}{z}=C_z\]
+จากนั้นใช้เงื่อนไขขอบเขตในโจทย์เพื่อดูว่า $C$ ในแต่ละสมการควรเป็นค่าบวกหรือลบ และแก้สมการเชิงอนุพันธ์ออกมาโดยจะมีคำตอบดังนี้:
+\begin{lawbox}{สมการเชิงอนุพันธ์ของสมการ Laplace ในพิกัดคาร์ทีเซียน}
+    สมการเชิงอนุพันธ์
+    \begin{equation}
+        \odv[2]{T}{t}=CT
+    \end{equation}
+    มีคำตอบคือ
+    \begin{equation}
+        \begin{cases}
+            Ae^{kt}+Be^{-kt}&\qq{ถ้า $C=k^2>0$}\\
+            At+B&\qq{ถ้า $C=0$}\\
+            A\sin kt+B\cos kt&\qq{ถ้า $C=-k^2<0$}
+        \end{cases}
+    \end{equation}
+    เมื่อ $A$ และ $B$ เป็นค่าคงที่
+\end{lawbox}
+จากนั้นแก้หาค่าคงที่ให้ได้มากที่สุดเท่าที่เป็นไปได้จากเงื่อนไขโจทย์ จะได้เซตของผลเฉลยมาเซตหนึ่งที่อาจไม่มีผลเฉลยใดเลยสอดคล้องกับเงื่อนไขขอบเขตของโจทย์ เนื่องจากสมการ Laplace เป็นสมการเชิงเส้น ดังนั้นเราอาจจะหาวิธีการนำผลเฉลยที่ได้จากการแยกตัวแปรนี้มาบวกกันให้ได้คำตอบที่ตรงกับค่าขอบเขตได้ ซึ่งผลเฉลยเหล่านี้ในกรณีนี้จะอยู่ในรูป $\sin$ จึงสามารถใช้การวิเคราะห์ Fourier เพื่อนำผลเฉลยมาบวกกันให้ได้ค่าที่ตรงกับค่าขอบเขต โดยเราจะหาสัมประสิทธิ์ของแต่ละพจน์ในอนุกรม Fourier ได้โดยใช้ทริคดังต่อไปนี้
+\begin{eqbox}{อินทิกรัลสำคัญในการวิเคราะห์ Fourier}
+    \int_0^\pi\sin\ab(nt)\sin\ab(n't)\odif{t}=\begin{cases}
+        0&\qq{ถ้า $n'\neq n$}\\
+        \dfrac{\pi}{2}&\qq{ถ้า $n'=n$}
+    \end{cases}
+\end{eqbox}
+หรือแทนตัวแปร $t\mapsto(\pi/a)t$ ได้เป็น
+\begin{equation}
+    \int_0^a\sin\ab(\frac{n\pi t}{a})\sin\ab(\frac{n'\pi t}{a})\odif{t}=\begin{cases}
+        0&\qq{ถ้า $n'\neq n$}\\
+        \dfrac{a}{2}&\qq{ถ้า $n'=n$}
+    \end{cases}\label{fourierint}
+\end{equation}
+ดังนั้นถ้าต้องการหาสัมประสิทธิ์ของพจน์ที่ $n$ ที่ทำให้อนุกรม Fourier เท่ากับฟังก์ชัน $V(x)$ ฝั่งซ้าย:
+\[V(x)=\sum_{n=0}^\infty c_n\sin\ab(\frac{n\pi x}{a})\]
+สามารถคูณ $\sin\ab(n\pi x/a)$ เข้าไปทั้งสองฝั่งแล้วอินทิเกรตโดยใช้ (\ref{fourierint}) จะได้
+\begin{equation}
+    C_n=\int_0^a V(x)\sin\ab(\frac{n\pi x}{a})\odif{x}
+\end{equation}
+เหตุผลที่เราสามารถทำแบบนี้กับเซตของฟังก์ชัน $\sin$ เหล่านั้นได้เป็นเพราะ
+\begin{enumerate}
+    \item เซตของฟังก์ชันนี้เป็นเซตที่\emph{สมบูรณ์} (\emph{complete}) หมายความว่า ฟังก์ชันใด ๆ สามารถถูกเขียนได้ในรูปผลบวกเชิงเส้นของฟังก์ชันในเซต
+    \item เซตของฟังก์ชันนี้ (ให้เป็น $\{f_1,f_2,f_3,\dots\}$) เป็นเซตที่\emph{ตั้งฉากกัน} (\emph{orthogonal}) หมายความว่า
+    \[\int f_n(t)\,f_{n'}(t)\odif{t}=0\]
+    สำหรับทุก $n'\neq n$
+\end{enumerate}
+\subsection{การแยกตัวแปรบนพิกัดทรงกลม}
+ในส่วนนี้จะพิจารณาแค่ระบบที่มีความสมมาตรแบบ azimuth (สมมาตรรอบแกน $z$) ดังนั้นให้
+\[V(r,\theta,\phi)=R(r)\,\Theta(\theta)\]
+จากสมการ Laplace (ในระบบพิกัดทรงกลม) จะได้ว่า
+\begin{align*}
+    \Theta\odv{}{r}\ab(r^2\odv{R}{r})+\frac{R}{\sin\theta}\odv{}{\theta}\ab(\sin\theta\odv{\Theta}{\theta})&=0\\
+    \frac{1}{R}\odv{}{r}\ab(r^2\odv{R}{r})+\frac{1}{\Theta\sin\theta}\odv{}{\theta}\ab(\sin\theta\odv{\Theta}{\theta})&=0
+\end{align*}
+เช่นเดียวกับในพิกัดคาร์ทีเซียน แต่ละพจน์จะต้องเป็นค่าคงที่ ดังนั้น
+\[\frac{1}{R}\odv{}{r}\ab(r^2\odv{R}{r})=C_r\qq*{,}\frac{1}{\Theta\sin\theta}\odv{}{\theta}\ab(\sin\theta\odv{\Theta}{\theta})=C_\theta\]
+เมื่อให้ $C_r=l(l+1)$ และ $C_\theta=-l(l+1)$ จะแก้สมการได้คำตอบดังนี้:
+\begin{lawbox}{สมการเชิงอนุพันธ์ของสมการ Laplace ในพิกัดทรงกลม 1}
+    สมการเชิงอนุพันธ์
+    \begin{equation}
+        \odv{}{r}\ab(r^2\odv{R}{r})=l(l+1)R
+    \end{equation}
+    มีคำตอบคือ
+    \begin{equation}
+        R(r)=Ar^l+\frac{B}{r^{l+1}}\label{sphere1}
+    \end{equation}
+    เมื่อ $A$ และ $B$ คือค่าคงที่
+\end{lawbox}
+แต่อีกสมการหนึ่งจะยากหน่อย:
+\begin{lawbox}{สมการเชิงอนุพันธ์ของสมการ Laplace ในพิกัดทรงกลม 2}
+    สมการเชิงอนุพันธ์
+    \begin{equation}
+        \odv{}{\theta}\ab(\sin\theta\odv{\Theta}{\theta})=-l(l+1)\sin\theta\,\Theta
+    \end{equation}
+    มีคำตอบคือ
+    \begin{equation}
+        \Theta(\theta)=A\cdot P_l(\cos\theta)\label{sphere2}
+    \end{equation}
+    เมื่อ $P_l$ คือพหุนาม Legendre ดีกรี $l$ และ $A$ คือค่าคงที่
+\end{lawbox}
+หมายเหตุ: \emph{คำตอบในด้านบนเป็นเพียงส่วนเดียวจากคำตอบทั้งหมดเท่านั้น แต่ที่ไม่พิจารณาส่วนของค่าคงที่อีกตัวเพราะส่วนนั้นจะลู่ออกเสมอที่ค่า $\theta$ เท่ากับ $0$ และ $\pi$ (ในกรณีที่บนแกน $z$ ไม่นำมาคิดอาจต้องพิจารณาคำตอบอื่นนี้)}
+
+โดยพหุนาม Legendre หาได้ดังสูตรต่อไปนี้
+\begin{eqbox}{สูตร Rodrigues}
+    P_l(x)=\frac{1}{2^ll!}\odv[l]{}{x}(x^2-1)^l\label{rodrigues}
+\end{eqbox}
+ดังนั้นในการใช้สูตรนี้จึงจะสมมติว่า $l$ เป็นจำนวนเต็มไม่ลบและแต่ละพหุนามจะมีแค่พจน์กำลังคู่หรือคี่เท่านั้น โดยเมื่อแทนสูตร Rodrigues เข้าไปจะได้พหุนาม Legendre ที่มีดีกรีตั้งแต่ $0$ ถึง $5$ คือ:
+{\allowdisplaybreaks
+\begin{align*}
+    P_0(x)&=1\\
+    P_1(x)&=x\\
+    P_2(x)&=(3x^2-1)/2\\
+    P_3(x)&=(5x^3-3x)/2\\
+    P_4(x)&=(35x^4-30x^2+3)/8\\
+    P_5(x)&=(63x^5-70x^3+15x)/8
+\end{align*}
+}
+
+จากนั้นเมื่อแก้ค่าคงที่ออกมามักจะเหลือเซตของผลเฉลยที่เป็นพหุนาม Legendre โดยเซตของพหุนาม Legendre นี้ เช่นเดียวกับ $\sin$ เป็นเซตของฟังก์ชันที่สมบูรณ์และตั้งฉากกันบน $(-1,1)$ โดย
+\begin{eqbox}{สมบัติการตั้งฉากกันของพหุนาม Legendre}
+    \int_{-1}^1P_l(x)\,P_{l'}(x)\odif{x}=\begin{cases}
+        0&\qq{ถ้า $l'\neq l$}\\
+        \dfrac{2}{2l+1}&\qq{ถ้า $l'=l$}
+    \end{cases}
+\end{eqbox}
+หรือเมื่อแทนค่า $x=\cos\theta$ จะได้
+\begin{equation}
+    \int_{0}^\pi P_l(\cos\theta)\,P_{l'}(\cos\theta)\sin\theta\odif{\theta}=\begin{cases}
+        0&\qq{ถ้า $l'\neq l$}\\
+        \dfrac{2}{2l+1}&\qq{ถ้า $l'=l$}
+    \end{cases}
+\end{equation}
+ซึ่งสามารถใช้ในการแก้หาสัมประสิทธิ์ของคำตอบสุดท้ายที่เป็นการนำคำตอบแบบแยกตัวแปรมาบวกกันได้
+\subsection{การแยกตัวแปรบนพิกัดทรงกระบอก}
+จะพิจารณาระบบที่สมมาตรแบบทรงกระบอก (สมมาตรในแนวแกน $z$) ดังนั้นให้
+\[V(s,\phi,z)=S(s)\,\Phi(\phi)\]
+จากสมการ Laplace (ในระบบพิกัดทรงกระบอก) จะได้ว่า
+\begin{align*}
+    \frac{\Phi}{s}\odv{}{s}\ab(s\odv{S}{s})+\frac{S}{s^2}\odv[2]{\Phi}{\phi}&=0\\
+    \frac{s}{S}\odv{}{s}\ab(s\odv{S}{s})+\frac{1}{\Phi}\odv[2]{\Phi}{\phi}&=0
+\end{align*}
+จะได้ว่า
+\[\frac{s}{S}\odv{}{s}\ab(s\odv{S}{s})=C_s\qq*{,}\frac{1}{\Phi}\odv[2]{\Phi}{\phi}=C_\phi\]
+โดยถ้าให้ $C_s=k^2=-C_\phi$ (เพราะถ้า $C_\phi$ ไม่เป็นลบจะได้คำตอบในรูป exponential ทำให้ไม่เป็นฟังก์ชันคาบตามที่ต้องการ) จะได้คำตอบของ $\Phi$ เป็น $\Phi(\phi)=A\sin k\phi+B\cos k\phi$ เช่นเดียวกับในพิกัดคาร์ทีเซียน และ
+\begin{lawbox}{สมการเชิงอนุพันธ์ในพิกัดทรงกระบอก}
+    สมการเชิงอนุพันธ์
+    \begin{equation}
+    \odv{}{s}\ab(s\odv{S}{s})=\frac{k^2}{s}S\label{cylde}
+    \end{equation}
+    มีคำตอบคือ
+    \begin{equation}
+        S(s)=As^k+Bs^{-k}
+    \end{equation}
+    เมื่อ $A$ และ $B$ คือค่าคงที่
+\end{lawbox}
+แต่เมื่อ $k=0$ จะได้คำตอบเดียวคือค่าคงที่ ซึ่งไม่ครบกับอันดับของสมการ (เมื่อนำมารวมกันตอนสุดท้ายอาจทำให้ได้คำตอบไม่ครบได้ แต่กรณีของ $\Phi$ เหตุผลที่ไม่นำ $A\phi+B$ ที่เป็นผลเฉลยในกรณี $k=0$ มาใช้เพราะว่าเห็นชัดว่า $A$ ต้องเป็น $0$ ซึ่งรวมอยู่ในกรณี $k=0$ ของ $A\sin k\phi + B\cos k\phi$ อยู่แล้ว) จึงต้องคิดแยกกรณี:
+\begin{lawbox}{กรณี $k=0$}
+    สมการ (\ref{cylde}) ถ้า $k=0$ จะได้คำตอบคือ
+    \begin{equation}
+        S(s)=A\log s+B
+    \end{equation}
+    เมื่อ $A$ และ $B$ คือค่าคงที่
+\end{lawbox}
+โดยในการหาสัมประสิทธิ์ของคำตอบต่อไปให้ใช้การวิเคราะห์ Fourier แบบเดียวกับพิกัดคาร์ทีเซียน
+
+\section{การกระจาย Multipole}
+\subsection{การประมาณศักย์ไฟฟ้าระยะไกล}
+พิจารณา \emph{electric dipole} ที่ประกอบด้วยจุดประจุ $+q$ และ $-q$ ที่ห่างกัน $d$ โดยสมมติให้ dipole นี้ตั้งในแกน $z$ โดยมีประจุบวกอยู่ในทิศ $+z$ และจุดศูนย์กลางของ dipole อยู่ที่จุดกำเนิด และให้ $\vrr_+$, $\vrr_-$ เป็นเวกเตอร์จากขั้วบวกและลบมายัง $\vr$ ตามลำดับ จะได้ว่า
+\[V(\vr)=\kem\ab(\frac{q}{\rr_+}-\frac{q}{\rr_-})\]
+และจากกฎของ $\cos$ จะได้
+\[\rr_\pm^2=r^2+(d/2)^2\mp rd\cos\theta=r^2\ab(1\mp\frac{d}{r}\cos\theta+\frac{d^2}{4r^2})\]
+ดังนั้นเมื่อ $r\gg d$ จะได้ว่า
+\[\frac{1}{\rr_\pm}\approx \frac{1}{r}\ab(1\mp\frac{d}{r}\cos\theta)^{-1/2}\approx\frac{1}{r}\ab(1\pm \frac{d}{2r}\cos\theta)\]
+ก็จะได้ว่าที่ระยะ $r$ ไกล ๆ จาก dipole:
+\begin{equation}
+    V(\vr)\approx\kem\frac{qd\cos\theta}{r^2}\label{dipolefar}
+\end{equation}
+และเช่นเดียวกัน quadrupole, octopole, ... จะมีศักย์ที่โตแบบ $1/r^3$, $1/r^4$, ... ตามลำดับ ที่ระยะไกล ๆ
+
+ดังนั้นเราจึงอาจหาวิธีเขียนศักย์ของการกระจายตัวของประจุแบบใด ๆ ให้อยู่ในรูปอนุกรมของพจน์ multipole ($1/r$, $1/r^2$, $1/r^3$, ...) เพื่อที่จะประมาณค่าศักย์ไกล ๆ ด้วยพจน์ monopole และ dipole ได้:
+
+พิจารณาการให้ $\rr$ และ $\alpha$ เป็นมุมและระยะระหว่าง $\vr$ และ $\vr'$ ตามลำดับ จะได้
+\[\rr^2=r^2+(r')^2-2rr'\cos\alpha=r^2\ab(1+\ab(\frac{r'}{r})^2-2\ab(\frac{r'}{r})\cos\alpha)\]
+ดังนั้น
+\begin{equation}
+    \frac{1}{\rr}=\frac{1}{r}\ab(1+\ab(\frac{r'}{r})\ab(\frac{r'}{r}-2\cos\alpha))^{-1/2}\label{multipoleex}
+\end{equation}
+จากนั้นใช้ทฤษฎีบททวินามกับ (\ref{multipoleex}) และ (\ref{rodrigues}) จะพิสูจน์ได้ว่า
+\begin{equation}
+    \frac{1}{\rr}=\frac{1}{r}\sum_{n=0}^\infty\ab(\frac{r'}{r})^nP_n(\cos\alpha)
+\end{equation}
+นำไปแทนใน (\ref{potentialcont}) ก็จะได้ว่า
+\begin{ieqbox}{การกระจาย Multipole}
+    V(\vr)=\kem\sum_{n=0}^\infty\frac{1}{r^{n+1}}\int(r')^n\,P_n(\cos\alpha)\,\rho(\vr')\odif{\tau'}\label{multipole}
+\end{ieqbox}
+\subsection{พจน์ Monopole และ Dipole}
+สำหรับพจน์ monopole ($n=0$) จะมีค่าเท่ากับ
+\[V_\txt{mon}(\vr)=\kem\frac{1}{r}\int P_0(\cos\alpha)\,\rho(\vr')\odif{\tau'}=\kem\frac{1}{r}\int\rho(\vr')\odif{\tau'}\]
+ดังนั้น
+\begin{eqbox}{พจน์ Monopole}
+    V_\txt{mon}(\vr)=\kem\frac{Q}{r}
+\end{eqbox}
+ซึ่งก็ไม่น่าแปลกใจเพราะค่าศักย์ที่ระยะไกล ๆ ก็ควรจะโตคล้ายประจุรวม $Q$ ในระบบ (เรียก $Q$ นี้ว่า \emph{monopole moment}) โดยพจน์ monopole นี้จะไม่ขึ้นกับตำแหน่งของจุดกำเนิด ต่างจากพจน์อื่น ๆ ที่ขึ้นกับตำแหน่งที่ใช้เป็นจุดกำเนิดในระบบ
+
+ต่อมาพจน์ dipole ($n=1$) จะมีค่าเท่ากับ
+\[V_\txt{dip}(\vr)=\kem\frac{1}{r^2}\int r'\,P_1(\cos\alpha)\,\rho(\vr')\odif{\tau'}=\kem\frac{1}{r^2}\int r\cos\alpha\,\rho(\vr')\odif{\tau'}\]
+แต่ว่า $r'\cos\alpha=\vru\cdot\vr'$ ดังนั้น
+\[V_\txt{dip}(\vr)=\kem\frac{\vru}{r^2}\cdot\int\vr'\rho(\vr')\odif{\tau'}\]
+อินทิกรัลในด้านขวาไม่ขึ้นกับ $\vr$ ดังนั้นเราจะนิยาม \emph{dipole moment} $\vp$ รอบจุด ๆ หนึ่งว่า:
+\begin{defbox}{ Dipole Moment}
+    \begin{equation}
+        \vp\equiv\int\vr'\rho(\vr')\odif{\tau'}
+    \end{equation}
+\end{defbox}
+ก็จะได้ว่าพจน์ dipole คือ:
+\begin{eqbox}{พจน์ Dipole}
+    V_\txt{dip}(\vr)=\kem\frac{\vp\cdot\vru}{r^2}\label{dippotential}
+\end{eqbox}
+โดยพจน์ dipole จะไม่ขึ้นกับตำแหน่งของจุดกำเนิดเมื่อประจุรวม $Q=0$ (พิสูจน์จากการแทน $\bar{\vr}=\vr'-\va$)
+\subsection{Dipole บริสุทธิ์}
+จาก (\ref{dipolefar}) จะได้ว่า dipole จะเหลือแค่พจน์ dipole ในการกระจาย multipole ถ้าระยะ $\vr$ ไกลมาก ๆ หรืออาจมองกลับกันว่าถ้าระยะ $d$ น้อยมาก ๆ ก็จะเหลือแค่พจน์ dipole เช่นกัน ดังนั้นถ้าเรามองในลิมิต $q\to\infty$ และ $d\to0$ โดยให้ $\vp=q\vd$ คงที่ตลอด จะได้\emph{จุด dipole บริสุทธิ์} ที่จะมีสนามศักย์เป็นเพียง
+\begin{equation}
+    V(\vr)=V_\txt{dip}(\vr)=\kem\frac{p\cos\alpha}{r^2}
+\end{equation}
+ถ้ากำหนดว่า $\vp$ ชี้ในทิศ $+z$ ก็จะได้
+\[V(\vr)=\kem\frac{p\cos\theta}{r^2}\]
+ดังนั้นเมื่อใช้ (\ref{gdephi}) จะได้สนามไฟฟ้า:
+\begin{align*}
+    E_r&=-\pdv{V}{r}=\kem\frac{2p\cos\theta}{r^3}\\
+    E_\theta&=-\frac{1}{r}\pdv{V}{\theta}=\kem\frac{p\sin\theta}{r^3}\\
+    E_\phi&=-\frac{1}{r\sin\theta}\pdv{V}{\phi}=0
+\end{align*}
+ดังนั้น
+\begin{eqbox}{สนามไฟฟ้าของ Dipole บริสุทธิ์ในพิกัดทรงกลม}
+    \vE_\txt{dip}(r,\theta)=\kem\frac{p}{r^3}\ab(2\cos\theta\,\vru+\sin\theta\,\vthetau)
+\end{eqbox}
+แสดงว่าสนามไฟฟ้าของ dipole โตแบบ $1/r^3$ (และเช่นเดียวกัน สนามไฟฟ้าของ quadrupole, octopole, ... ก็จะโตแบบ $1/r^4$, $1/r^5$, ... เพราะในการใช้ gradient หาสนามไฟฟ้าจะเพิ่ม $1/r$ ขึ้นมาอีกหนึ่งตัว) แต่สูตรด้านบนยังเป็นสูตรที่ขึ้นกับระบบพิกัดทรงกลม เราสามารถหาสูตรที่ไม่ขึ้นกับระบบพิกัดได้ดังนี้:
+\begin{align*}
+    \vE_\txt{dip}&=\kem\frac{p}{r^3}\ab(2\cos\theta\,\vru+\sin\theta\,\vthetau)\\
+    &=\kem\frac{1}{r^3}\ab(2p\cos\theta\,\vru+p\sin\theta\,\vthetau)\\
+    &=\kem\frac{1}{r^3}\ab(3p\cos\theta\,\vru+p\sin\theta\,\vthetau-p\cos\theta\,\vru)\\
+    &=\kem\frac{1}{r^3}\ab\Big(3\,\ab(\vp\cdot\vr)\,\vru-\vp)
+\end{align*}
+\begin{eqbox}{สนามไฟฟ้าของ Dipole บริสุทธิ์}
+    \vE_\txt{dip}=\kem\frac{1}{r^3}\ab\Big(3\,\ab(\vp\cdot\vr)\,\vru-\vp)
+\end{eqbox}
