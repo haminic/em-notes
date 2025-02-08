@@ -100,6 +100,7 @@
 \end{ieqbox}
 
 \section{กฏของ Biot-Savart}
+\subsection{ระบบกระแสคงที่}
 ในบทก่อน ๆ เราได้หาสนามไฟฟ้าในระบบที่เป็นประจุหยุดหนึ่งไปแล้วหรือก็คือเป็นระบบ\emph{ไฟฟ้าสถิต} (\emph{electrostatics}) ต่อมาในกรณีสนามแม่เหล็ก ในการที่ระบบจะเป็น\emph{แม่เหล็กสถิต} (\emph{magnetostatics}) ระบบจะต้องมีกระแสคงเดิมตลอดเวลา หรือก็คือ:
 \begin{equation}
     \pdv{\rho}{t} = 0\qq{และ}\pdv{\vb{J}}{t} = 0
@@ -112,10 +113,27 @@
 \begin{lawbox}{กฎของ Biot-Savart}
     สนามแม่เหล็ก $\vb{B}$ ที่ตำแหน่ง $\vb{r}$ ในระบบที่เป็นแม่เหล็กสถิต หาได้จาก
     \begin{equation}
-        \vb{B}(\vb{r}) = \frac{\mu_0}{4\pi}\int\frac{\vb{I}\times\vus{\rad}}{\rad^2}\odif{\ell'} = \frac{\mu_0}{4\pi}I\int\frac{\odif{\vbs{\ell}'}\times\vus{\rad}}{\rad^2}
+        \vb{B}(\vb{r}) = \frac{\mu_0}{4\pi}\int\frac{\vb{I}\times\vus{\rad}}{\rad^2}\odif{\ell'} = \frac{\mu_0}{4\pi}I\int\frac{\odif{\vbs{\ell}'}\times\vus{\rad}}{\rad^2}\label{biot}
     \end{equation}
 \end{lawbox}
 เมื่อ $\mu_0$ คือ\emph{สภาพซึมผ่านได้ของสุญญากาศ} (\emph{permeability of free space}) โดยในกรณีความหนาแน่นกระแส:
 \begin{eqbox}{กฎของ Biot-Savart ของกระแสในสองและสามมิติ}
-    \vb{B}(\vb{r}) = \frac{\mu_0}{4\pi}\int\frac{\vb{K}(\vb{r}')\times\vus{\rad}}{\rad^2}\odif{a'}\qq{และ}\vb{B}(\vb{r}) = \frac{\mu_0}{4\pi}\int\frac{\vb{J}(\vb{r}')\times\vus{\rad}}{\rad^2}\odif{\tau'}
+    \vb{B}(\vb{r}) = \frac{\mu_0}{4\pi}\int\frac{\vb{K}(\vb{r}')\times\vus{\rad}}{\rad^2}\odif{a'}\qq{และ}\vb{B}(\vb{r}) = \frac{\mu_0}{4\pi}\int\frac{\vb{J}(\vb{r}')\times\vus{\rad}}{\rad^2}\odif{\tau'}\label{biotdim}
 \end{eqbox}
+
+\section{Divergence และ Curl ของสนามแม่เหล็กสถิต}
+\subsection{Divergence ของสนามแม่เหล็กสถิต}
+พิจารณา (\ref{biotdim}) จะได้ว่า
+\begin{align*}
+    \gd\cdot\vb{B} &= \frac{\mu_0}{4\pi}\int\gd\cdot\ab(\vb{J}\times\frac{\vus{\rad}}{\rad^2})\odif{\tau'}\\
+    &= \frac{\mu_0}{4\pi}\int\ab(\frac{\vus{\rad}}{\rad^2}\cdot\ab(\gd\times\vb{J})-\vb{J}\cdot\ab(\gd\times\frac{\vus{\rad}}{\rad^2})\odif{\tau'})
+\end{align*}
+เนื่องจาก $\vb{J}$ อยู่ในพิกัด $(x',y',z')$ จึงได้ว่า $\gd\times\vb{J}=\vb{0}$ และจาก
+\[
+\gd\times\frac{\vus{\rad}}{\rad^2} = \vb{0}
+\]
+ดังนั้น
+\begin{ieqbox}{กฎของ Gauss สำหรับสนามแม่เหล็ก}
+    \gd\cdot\vb{B} = 0
+\end{ieqbox}
+\subsection{Curl ของสนามแม่เหล็กสถิต}
