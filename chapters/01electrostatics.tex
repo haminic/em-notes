@@ -4,9 +4,9 @@
 \begin{lawbox}{กฎของ Coulomb}
     สำหรับจุดประจุที่อยู่นิ่ง $q_1$ และ $q_2$ จะได้ว่าแรงที่กระทำต่อประจุ $q_1$ คือ
     \begin{equation}
-        \vb{F} = \kem q_1q_2\frac{\vb{r}_1-\vb{r}_2}{\abs{\vb{r}_1-\vb{r}_2}^3} = \kem\frac{q_1q_2}{\nrr^2}\vrru\label{coulomb}
+        \vb{F} = \kem q_1q_2\frac{\vb{r}_1-\vb{r}_2}{\abs{\vb{r}_1-\vb{r}_2}^3} = \kem\frac{q_1q_2}{\rad^2}\vus{\rad}\label{coulomb}
     \end{equation}
-    เมื่อ $\vrr$ คือเวกเตอร์จาก $q_1$ ไป $q_2$
+    เมื่อ $\vbs{\rad}$ คือเวกเตอร์จาก $q_1$ ไป $q_2$
 \end{lawbox}
 โดย $\eps_0$ เป็นค่าคงที่ที่เรียกว่า\emph{สภาพยอมในสูญญากาศ} (\emph{permittivity of free space}) เราจะเรียกแรงนี้ว่า\emph{แรง Coulomb}
 \subsection{สนามไฟฟ้า}
@@ -18,11 +18,11 @@
 \end{defbox}
 และโดยกฎของ Coulomb (\ref{coulomb}) จะได้ว่า
 \begin{eqbox}{สนามไฟฟ้าของจุดประจุ}
-    \vb{E}(\vb{r})=\kem\sum_{\vb{r}_k\neq\vb{r}}q_k\frac{\vb{r}-\vb{r}_k}{\abs{\vb{r}-\vb{r}_k}^3}=\kem\sum_k\frac{q_k}{\nrr_k^2}\vrru_k
+    \vb{E}(\vb{r})=\kem\sum_{\vb{r}_k\neq\vb{r}}q_k\frac{\vb{r}-\vb{r}_k}{\abs{\vb{r}-\vb{r}_k}^3}=\kem\sum_k\frac{q_k}{\rad_k^2}\vus{\rad}_k
 \end{eqbox}
 โดยถ้าประจุไม่ดิสครีตแต่กระจายตัวอย่างต่อเนื่องด้วยความหนาแน่นประจุ $\rho(\vb{r})$ จะได้ว่า
 \begin{eqbox}{สนามไฟฟ้าของประจุต่อเนื่อง}
-    \vb{E}(\vb{r})=\kem\int\frac{\rho(\vb{r}')}{\nrr^2}\vrru\odif{\tau'}
+    \vb{E}(\vb{r})=\kem\int\frac{\rho(\vb{r}')}{\rad^2}\vus{\rad}\odif{\tau'}
 \end{eqbox} 
 เมื่อ $\odif{\tau'}=\odif[order=3]{r'}$ และในทำนองเดียวกันกับความหนาแน่นเชิงเส้น $\lambda$ และความหนาแน่นเชิงพื้นที่ $\sigma$
 
@@ -34,9 +34,9 @@
         \Phi_E\equiv\int_\sur\vb{E}\cdot\odif{\vb{a}}
     \end{equation}
 \end{defbox}
-พิจารณาพื้นผิวปิด $\sur$ ที่มีจุดประจุ $q$ อยู่ภายในและพื้นที่เล็ก ๆ $\odif{\tau}$ บน $\sur$ โดยมี $\vrr$ เป็นเวกเตอร์จาก $q$ มายัง $\odif{a}$ และ $\odif{a'}$ เป็นภาพฉายของ $\odif{a}$ มาตั้งฉากกับ $\vrr$ จะได้
+พิจารณาพื้นผิวปิด $\sur$ ที่มีจุดประจุ $q$ อยู่ภายในและพื้นที่เล็ก ๆ $\odif{\tau}$ บน $\sur$ โดยมี $\vbs{\rad}$ เป็นเวกเตอร์จาก $q$ มายัง $\odif{a}$ และ $\odif{a'}$ เป็นภาพฉายของ $\odif{a}$ มาตั้งฉากกับ $\vbs{\rad}$ จะได้
 \[
-\vb{E}\cdot \odif{\vb{a}}=\kem\frac{q}{\nrr^2}\odif{a}\cos\theta=\kem\frac{q}{\nrr^2}\odif{a'}=\frac{q}{4\pi\eps_0}\odif{\Omega}
+\vb{E}\cdot \odif{\vb{a}}=\kem\frac{q}{\rad^2}\odif{a}\cos\theta=\kem\frac{q}{\rad^2}\odif{a'}=\frac{q}{4\pi\eps_0}\odif{\Omega}
 \]
 เมื่อ $\odif{\Omega}$ คือมุมสเตอเรเดียนเทียบกับตำแหน่งของประจุ $q$ ดังนั้นฟลักซ์ไฟฟ้าจาก $q$ ที่ผ่านพื้นผิว $\sur$ เท่ากับ
 \begin{equation}
@@ -114,11 +114,11 @@ V(\vb{r})=-\int_\infty^\vb{r}\vb{E}(\vb{r}')\cdot\odif{\vb{l}'}=-\int_\infty^r\k
 \]
 ก็จะได้ว่า
 \begin{eqbox}{ศักย์ไฟฟ้าของจุดประจุ}
-     V=\kem\frac{q}{\nrr}
+     V=\kem\frac{q}{\rad}
 \end{eqbox}
 ในทำนองเดียวกันกับสนามไฟฟ้า เราสามารถหาศักย์ไฟฟ้าที่ตำแหน่ง $\vb{r}$ ที่เกิดจากประจุที่กระจายแบบต่อเนื่องด้วยความหนาแน่น $\rho$ ได้ดังนี้:
 \begin{eqbox}{ศักย์ไฟฟ้าของประจุต่อเนื่อง}
-     V(\vb{r})=\kem\int\frac{\rho(\vb{r}')}{\nrr}\odif{\tau'}\label{potentialcont}
+     V(\vb{r})=\kem\int\frac{\rho(\vb{r}')}{\rad}\odif{\tau'}\label{potentialcont}
 \end{eqbox}
 \subsection{สภาวะขอบเขต}
 ต่อมาจะมาดูสมบัติของ $\vb{E}$ และ $V$ ในบริเวณแผ่นประจุบาง ๆ ที่มีความหนาแน่นประจุเชิงพื้นที่ $\sigma$
@@ -159,7 +159,7 @@ V(\vb{r})=-\int_\infty^\vb{r}\vb{E}(\vb{r}')\cdot\odif{\vb{l}'}=-\int_\infty^r\k
 \subsection{พลังงานศักย์ไฟฟ้า}
 เนื่องจาก $\gd\times\vb{F}=\gd\times q\vb{E}=0$ ดังนั้นแรง Coulomb จึงเป็นแรงอนุรักษ์ซึ่งมีลักษณะคล้ายกับแรงโน้มถ่วงด้วย จึงหาพลังงานศักย์ของจุดประจุ $2$ ตัวได้คล้ายกัน
 \begin{eqbox}{พลังงานศักย์ไฟฟ้าสำหรับจุดประจุ}
-    U=\kem\frac{q_1q_2}{\nrr}
+    U=\kem\frac{q_1q_2}{\rad}
 \end{eqbox}
 และจาก (\ref{gdephi}) ยังได้อีกว่า
 \begin{eqbox}{ศักย์ไฟฟ้าและพลังงานศักย์}
@@ -179,17 +179,17 @@ U_\txt{ext}=\sum_k\Delta U_k=\sum_kq_k V_\txt{ext}(\vb{r}_k)
 \end{ieqbox}
 ส่วนพลังงานศักย์ไฟฟ้าที่เกิดจากระบบเองหาได้โดยการพิจารณาเอาจุดประจุจาก $\infty$ มาวางเช่นเดียวกัน จะได้ประจุตัวที่ $k$ มีพลังงานศักย์
 \[
-U_k=\sum_{k'<k}q_k V_{k'}(\vb{r}_k)=\kem\sum_{k'<k}\frac{q_kq_{k'}}{\nrr_{kk'}}
+U_k=\sum_{k'<k}q_k V_{k'}(\vb{r}_k)=\kem\sum_{k'<k}\frac{q_kq_{k'}}{\rad_{kk'}}
 \]
 ดังนั้นโดยใช้ความสมมาตร
 \begin{equation}
-U=\kem\sum_{k}\sum_{k'<k}\frac{q_kq_{k'}}{\nrr_{kk'}}=\frac{1}{2}\kem\sum_{k\neq k'}\frac{q_kq_{k'}}{\nrr_{kk'}}\label{disintenergy}
+U=\kem\sum_{k}\sum_{k'<k}\frac{q_kq_{k'}}{\rad_{kk'}}=\frac{1}{2}\kem\sum_{k\neq k'}\frac{q_kq_{k'}}{\rad_{kk'}}\label{disintenergy}
 \end{equation}
 แต่ในกรณีต่อเนื่องเราไม่จำเป็นต้องสนใจเงื่อนไข $k\neq k'$ เพราะอินทิกรัลลู่เข้าและส่วนที่มาจาก $k = k'$ สามารถมองเป็นส่วนพลังงานที่มาจากประจุที่ใกล้กันมาก ๆ ได้ จึงได้ว่า
 \[
-U=\frac{1}{2}\kem\iint\frac{\rho(\vb{r})\,\rho(\vb{r}')}{\nrr}\odif{\tau',\tau}
+U=\frac{1}{2}\kem\iint\frac{\rho(\vb{r})\,\rho(\vb{r}')}{\rad}\odif{\tau',\tau}
 \]
-เนื่องจาก $\kem\int\frac{\rho(\vb{r}')\odif{\tau'}}{\nrr}= V(\vb{r})$ ดังนั้น
+เนื่องจาก $\kem\int\frac{\rho(\vb{r}')\odif{\tau'}}{\rad}= V(\vb{r})$ ดังนั้น
 \begin{ieqbox}{พลังงานศักย์ไฟฟ้าจากสนามภายใน}
     U=\frac{1}{2}\int\rho V\odif{\tau}\label{intpotential}
 \end{ieqbox}

@@ -60,16 +60,16 @@
 \subsection{Bound Charges}
 พิจารณาปริมาตร $\vol$ ที่ถูกโพลาไรซ์ให้มีโพลาไรเซชัน $\vb{P}$ จาก (\ref{dippotential}) จะได้ว่าศักย์ที่ตำแหน่ง $\vb{r}$ จาก dipole ในปริมาตรเล็ก ๆ ณ ตำแหน่ง $\vb{r}'$ เท่ากับ
 \[
-\odif{V}(\vb{r})=\kem\frac{\odif{\vb{p}}\cdot\vrru}{\nrr^2}=\kem\frac{\vb{P}\odif{\tau'}\cdot\vrru}{\nrr^2}
+\odif{V}(\vb{r})=\kem\frac{\odif{\vb{p}}\cdot\vus{\rad}}{\rad^2}=\kem\frac{\vb{P}\odif{\tau'}\cdot\vus{\rad}}{\rad^2}
 \]
 ดังนั้น
 \begin{align*}
-    V(\vb{r})&=\kem\int_\vol\frac{\vb{P}\cdot\vrru}{\nrr^2}\odif{\tau'}=\kem\int_\vol\vb{P}\cdot\gd'\ab(\frac{1}{\nrr})\odif{\tau'}
+    V(\vb{r})&=\kem\int_\vol\frac{\vb{P}\cdot\vus{\rad}}{\rad^2}\odif{\tau'}=\kem\int_\vol\vb{P}\cdot\gd'\ab(\frac{1}{\rad})\odif{\tau'}
 \end{align*}
 เมื่อ $\gd'$ คือ gradient เทียบพิกัด $\vb{r}'$ ต่อมาใช้ integration by parts จะได้: 
 \begin{align*}
-    V(\vb{r})&=\kem\ab(\int_\vol\gd'\cdot\ab(\frac{\vb{P}}{\nrr})\odif{\tau'}-\int_\vol\ab(\gd'\cdot\vb{P})\ab(\frac{1}{\nrr})\odif{\tau'})\\
-    &=\kem\oint_{\del\vol}\frac{\vb{P}}{\nrr}\cdot\odif{\vb{a}'}+\kem\int_\vol\frac{-\gd'\cdot\vb{P}}{\nrr}\odif{\tau'}
+    V(\vb{r})&=\kem\ab(\int_\vol\gd'\cdot\ab(\frac{\vb{P}}{\rad})\odif{\tau'}-\int_\vol\ab(\gd'\cdot\vb{P})\ab(\frac{1}{\rad})\odif{\tau'})\\
+    &=\kem\oint_{\del\vol}\frac{\vb{P}}{\rad}\cdot\odif{\vb{a}'}+\kem\int_\vol\frac{-\gd'\cdot\vb{P}}{\rad}\odif{\tau'}
 \end{align*}
 ซึ่งหน้าตาคล้าย ๆ ศักย์ของประจุบนปริมาตรรวมกับประจุในปริมาตร ดังนั้นเราจะนิยาม
 \begin{defbox}{ Bound Charges}
@@ -84,11 +84,11 @@
 \end{defbox}
 ก็จะได้ว่า:
 \begin{eqbox}{ศักย์ของวัตถุที่ถูกโพลาไรซ์}
-    V(\vb{r})=\kem\oint_{\del\vol}\frac{\sigma_b}{\nrr}\odif{a'}+\kem\int_\vol\frac{\rho_b}{\nrr}\odif{\tau'}
+    V(\vb{r})=\kem\oint_{\del\vol}\frac{\sigma_b}{\rad}\odif{a'}+\kem\int_\vol\frac{\rho_b}{\rad}\odif{\tau'}
 \end{eqbox}
 โดยจาก (\ref{gdephi}) เราจึงหาสนามได้เช่นกัน
 
-หมายเหตุ: \emph{ไดอิเล็กทริกจริง ๆ ตามในส่วนที่แล้วไม่ได้เป็นเนื้อ dipole บริสุทธิ์ที่ต่อเนื่อง โดยสำหรับสนามและศักย์นอกไดอิเล็กทริกสามารถใช้การประมาณนี้ได้โดยไม่มีปัญหาเพราะระยะ {\normalfont$\nrr$} ใหญ่มากเมื่อเทียบกับ $d$ แต่ถ้าเป็นสนามและศักย์ภายในเนื้อตัวนำ ถ้าจะให้การประมาณ dipole แบบต่อเนื่องใช้ได้ จะต้องเป็นศักย์หรือสนาม\underline{เฉลี่ย}ในระดับ macroscopic เท่านั้น (เฉลี่ยในปริมาตรที่มีโมเลกุลมาก ๆ แต่ยังเล็กเมื่อเทียบกับปริมาตรของไดอิเล็กทริกอยู่พอสมควร)}
+หมายเหตุ: \emph{ไดอิเล็กทริกจริง ๆ ตามในส่วนที่แล้วไม่ได้เป็นเนื้อ dipole บริสุทธิ์ที่ต่อเนื่อง โดยสำหรับสนามและศักย์นอกไดอิเล็กทริกสามารถใช้การประมาณนี้ได้โดยไม่มีปัญหาเพราะระยะ {\normalfont$\rad$} ใหญ่มากเมื่อเทียบกับ $d$ แต่ถ้าเป็นสนามและศักย์ภายในเนื้อตัวนำ ถ้าจะให้การประมาณ dipole แบบต่อเนื่องใช้ได้ จะต้องเป็นศักย์หรือสนาม\underline{เฉลี่ย}ในระดับ macroscopic เท่านั้น (เฉลี่ยในปริมาตรที่มีโมเลกุลมาก ๆ แต่ยังเล็กเมื่อเทียบกับปริมาตรของไดอิเล็กทริกอยู่พอสมควร)}
 
 อีกวิธีหนึ่งที่อาจมีประโยชน์ในการหาศักย์หรือสนามของวัตถุที่ถูกโพลาไรซ์คือการนำวัตถุ $1$ และ $2$ ที่มีความหนาแน่นประจุ $+\rho$ และ $-\rho$ มาวางเหลื่อมกันด้วยระยะเล็ก ๆ $d$ แล้วคำนวณศักย์หรือสนามตามปกติ (ถ้าระบบนี้ง่ายพอ เช่น ทรงกลมที่มีโพลาไรเซชันสม่ำเสมอ)
 

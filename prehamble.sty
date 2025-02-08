@@ -437,10 +437,10 @@ bodyfont=\normalfont
 \newcommand{\kem}{\frac{1}{4\pi\eps_0}}
 
 % Cursive r
-\newfontfamily\cursivefont[AutoFakeBold=3, Path=fonts/]{NexaRustScriptL-0.otf}
-\newcommand{\nrr}{\text{\cursivefont r}}
-\newcommand{\vrr}{\vbs{\text{\cursivefont\textbf{r}}}}
-\newcommand{\vrru}{\vus{\vbs{\text{\cursivefont\textbf{r}}}}}
+\newfontfamily\cursivefont[AutoFakeBold=3, Path=fonts/, NFSSFamily=cursive]{NexaRustScriptL-0.otf}
+\DeclareMathAlphabet{\mathcursive}{TU}{cursive}{m}{n}
+\SetMathAlphabet{\mathcursive}{bold}{TU}{cursive}{b}{n}
+\newcommand{\rad}{\mathcursive{r}}
 
 % Calculus macros
 \newcommand{\vol}{\mathcal{V}}

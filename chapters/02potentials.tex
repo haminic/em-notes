@@ -17,7 +17,7 @@
     ให้จุดประจุ $q$ อยู่ที่ $(0,0,z)$ พิจารณาค่าเฉลี่ยของ $V$ บนทรงกลมที่อยู่ที่จุดกำเนิดที่มีรัศมี $R$ (ให้ $\theta$ เป็นมุมที่ $\vb{r}$ ทำกับแกน $+z$)
     {\allowdisplaybreaks
     \begin{align*}
-        \frac{1}{4\pi R^2}\oint_\sur V\odif{a}&=\frac{1}{4\pi R^2}\oint_S\kem\frac{q}{\nrr}\odif{a}\\
+        \frac{1}{4\pi R^2}\oint_\sur V\odif{a}&=\frac{1}{4\pi R^2}\oint_S\kem\frac{q}{\rad}\odif{a}\\
         &=\frac{1}{4\pi R^2}\frac{q}{4\pi\eps_0}\int_0^\pi\int_0^{2\pi}\frac{1}{\sqrt{z^2+R^2-2zR\cos\theta}}R^2\sin\theta\odif{\phi}\odif{\theta}\\
         &=\frac{1}{2}\frac{q}{4\pi\eps_0}\int_0^\pi\frac{1}{\sqrt{z^2+R^2-2zR\cos\theta}}R^2\sin\theta\odif{\theta}\\
         &=\frac{1}{2}\frac{q}{4\pi\eps_0}\frac{1}{zR}\eval{\sqrt{z^2+R^2-2zR\cos\theta}}_0^\pi\\
@@ -272,17 +272,17 @@ V(s,\phi,z)=S(s)\,\Phi(\phi)
 
 \section{การกระจาย Multipole}
 \subsection{การประมาณศักย์ไฟฟ้าระยะไกล}
-พิจารณา \emph{electric dipole} ที่ประกอบด้วยจุดประจุ $+q$ และ $-q$ ที่ห่างกัน $d$ โดยสมมติให้ dipole นี้ตั้งในแกน $z$ โดยมีประจุบวกอยู่ในทิศ $+z$ และจุดศูนย์กลางของ dipole อยู่ที่จุดกำเนิด และให้ $\vrr_+$, $\vrr_-$ เป็นเวกเตอร์จากขั้วบวกและลบมายัง $\vb{r}$ ตามลำดับ จะได้ว่า
+พิจารณา \emph{electric dipole} ที่ประกอบด้วยจุดประจุ $+q$ และ $-q$ ที่ห่างกัน $d$ โดยสมมติให้ dipole นี้ตั้งในแกน $z$ โดยมีประจุบวกอยู่ในทิศ $+z$ และจุดศูนย์กลางของ dipole อยู่ที่จุดกำเนิด และให้ $\vbs{\rad}_+$, $\vbs{\rad}_-$ เป็นเวกเตอร์จากขั้วบวกและลบมายัง $\vb{r}$ ตามลำดับ จะได้ว่า
 \[
-V(\vb{r})=\kem\ab(\frac{q}{\nrr_+}-\frac{q}{\nrr_-})
+V(\vb{r})=\kem\ab(\frac{q}{\rad_+}-\frac{q}{\rad_-})
 \]
 และจากกฎของ $\cos$ จะได้
 \[
-\nrr_\pm^2=r^2+(d/2)^2\mp rd\cos\theta=r^2\ab(1\mp\frac{d}{r}\cos\theta+\frac{d^2}{4r^2})
+\rad_\pm^2=r^2+(d/2)^2\mp rd\cos\theta=r^2\ab(1\mp\frac{d}{r}\cos\theta+\frac{d^2}{4r^2})
 \]
 ดังนั้นเมื่อ $r\gg d$ จะได้ว่า
 \[
-\frac{1}{\nrr_\pm}\approx \frac{1}{r}\ab(1\mp\frac{d}{r}\cos\theta)^{-1/2}\approx\frac{1}{r}\ab(1\pm \frac{d}{2r}\cos\theta)
+\frac{1}{\rad_\pm}\approx \frac{1}{r}\ab(1\mp\frac{d}{r}\cos\theta)^{-1/2}\approx\frac{1}{r}\ab(1\pm \frac{d}{2r}\cos\theta)
 \]
 ก็จะได้ว่าที่ระยะ $r$ ไกล ๆ จาก dipole:
 \begin{equation}
@@ -292,17 +292,17 @@ V(\vb{r})=\kem\ab(\frac{q}{\nrr_+}-\frac{q}{\nrr_-})
 
 ดังนั้นเราจึงอาจหาวิธีเขียนศักย์ของการกระจายตัวของประจุแบบใด ๆ ให้อยู่ในรูปอนุกรมของพจน์ multipole ($1/r$, $1/r^2$, $1/r^3$, ...) เพื่อที่จะประมาณค่าศักย์ไกล ๆ ด้วยพจน์ monopole และ dipole ได้:
 
-พิจารณาการให้ $\nrr$ และ $\alpha$ เป็นมุมและระยะระหว่าง $\vb{r}$ และ $\vb{r}'$ ตามลำดับ จะได้
+พิจารณาการให้ $\rad$ และ $\alpha$ เป็นมุมและระยะระหว่าง $\vb{r}$ และ $\vb{r}'$ ตามลำดับ จะได้
 \[
-\nrr^2=r^2+(r')^2-2rr'\cos\alpha=r^2\ab(1+\ab(\frac{r'}{r})^2-2\ab(\frac{r'}{r})\cos\alpha)
+\rad^2=r^2+(r')^2-2rr'\cos\alpha=r^2\ab(1+\ab(\frac{r'}{r})^2-2\ab(\frac{r'}{r})\cos\alpha)
 \]
 ดังนั้น
 \begin{equation}
-    \frac{1}{\nrr}=\frac{1}{r}\ab(1+\ab(\frac{r'}{r})\ab(\frac{r'}{r}-2\cos\alpha))^{-1/2}\label{multipoleex}
+    \frac{1}{\rad}=\frac{1}{r}\ab(1+\ab(\frac{r'}{r})\ab(\frac{r'}{r}-2\cos\alpha))^{-1/2}\label{multipoleex}
 \end{equation}
 จากนั้นใช้ทฤษฎีบททวินามกับ (\ref{multipoleex}) และ (\ref{rodrigues}) จะพิสูจน์ได้ว่า
 \begin{equation}
-    \frac{1}{\nrr}=\frac{1}{r}\sum_{n=0}^\infty\ab(\frac{r'}{r})^nP_n(\cos\alpha)
+    \frac{1}{\rad}=\frac{1}{r}\sum_{n=0}^\infty\ab(\frac{r'}{r})^nP_n(\cos\alpha)
 \end{equation}
 นำไปแทนใน (\ref{potentialcont}) ก็จะได้ว่า
 \begin{ieqbox}{การกระจาย Multipole}
