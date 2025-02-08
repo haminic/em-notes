@@ -5,25 +5,25 @@
 \begin{lawbox}{สมบัติของผลเฉลยของสมการ Laplace ในสามมิติ}
     ถ้า $V$ เป็นผลเฉลยของสมการ Laplace ($\nabla^2V=0$) แล้ว
     \begin{enumerate}
-        \item $V$ มีค่าเท่ากับค่าเฉลี่ยของ $V$ รอบ ๆ หรือก็คือ สำหรับทุก $\vr$ และพื้นผิวทรงกลม $\sur$ รัศมี $R$ ที่มีจุดศูนย์กลางที่ $\vr$ จะได้ว่า
+        \item $V$ มีค่าเท่ากับค่าเฉลี่ยของ $V$ รอบ ๆ หรือก็คือ สำหรับทุก $\vb{r}$ และพื้นผิวทรงกลม $\sur$ รัศมี $R$ ที่มีจุดศูนย์กลางที่ $\vb{r}$ จะได้ว่า
         \begin{equation}
-            V(\vr)=\frac{1}{4\pi R^2}\oint_\sur V\odif{a}
+            V(\vb{r})=\frac{1}{4\pi R^2}\oint_\sur V\odif{a}
         \end{equation}
         \item $V$ ไม่มีค่าสุดขีดสัมพัทธ์ นั่นคือค่าสุดขีดทั้งหมดของ $V$ ในปริมาตร $\vol$ จะอยู่บน $\del\vol$ เท่านั้น
     \end{enumerate}
 \end{lawbox}
 หมายเหตุ: \emph{ทฤษฎีบทต่าง ๆ เกี่ยวกับสมการ Laplace มากจะใช้ได้เมื่อปริมาตร $\vol$ ที่สนใจนั้นมี $\rho=0$ เท่านั้น ดังนั้นต้องเลือกปริมาตรดี ๆ}
 \begin{proof}
-    ให้จุดประจุ $q$ อยู่ที่ $(0,0,z)$ พิจารณาค่าเฉลี่ยของ $V$ บนทรงกลมที่อยู่ที่จุดกำเนิดที่มีรัศมี $R$ (ให้ $\theta$ เป็นมุมที่ $\vr$ ทำกับแกน $+z$)
+    ให้จุดประจุ $q$ อยู่ที่ $(0,0,z)$ พิจารณาค่าเฉลี่ยของ $V$ บนทรงกลมที่อยู่ที่จุดกำเนิดที่มีรัศมี $R$ (ให้ $\theta$ เป็นมุมที่ $\vb{r}$ ทำกับแกน $+z$)
     {\allowdisplaybreaks
     \begin{align*}
-        \frac{1}{4\pi R^2}\oint_\sur V\odif{a}&=\frac{1}{4\pi R^2}\oint_S\kem\frac{q}{\rr}\odif{a}\\
+        \frac{1}{4\pi R^2}\oint_\sur V\odif{a}&=\frac{1}{4\pi R^2}\oint_S\kem\frac{q}{\nrr}\odif{a}\\
         &=\frac{1}{4\pi R^2}\frac{q}{4\pi\eps_0}\int_0^\pi\int_0^{2\pi}\frac{1}{\sqrt{z^2+R^2-2zR\cos\theta}}R^2\sin\theta\odif{\phi}\odif{\theta}\\
         &=\frac{1}{2}\frac{q}{4\pi\eps_0}\int_0^\pi\frac{1}{\sqrt{z^2+R^2-2zR\cos\theta}}R^2\sin\theta\odif{\theta}\\
         &=\frac{1}{2}\frac{q}{4\pi\eps_0}\frac{1}{zR}\eval{\sqrt{z^2+R^2-2zR\cos\theta}}_0^\pi\\
         &=\frac{1}{2}\frac{q}{4\pi\eps_0}\frac{1}{zR}\ab\big(\ab(z+R)-\ab(z-R))\\
         &=\kem\frac{q}{z}\\
-        &=V(\vzr)
+        &=V(\vb{0})
     \end{align*}
     }
     ซึ่งเป็นไปตามต้องการสำหรับจุดประจุ ดังนั้นจึงเป็นจริงสำหรับสนามใด ๆ ก็ตาม
@@ -48,27 +48,27 @@
 \end{corbox}
 
 \begin{lawbox}{ทฤษฎีบท Uniqueness ที่สอง}
-    บนปริมาตร $\vol$ ที่มีขอบเขตอยู่บนผิวของตัวนำ (อาจมีขอบเขตหนึ่งเป็นตัวนำที่ $\infty$ ได้) ถ้ารู้ค่า $\rho$ ภายในปริมาตรและรู้ค่า $Q$ ของตัวนำทั้งหมดแล้วจะได้ว่ามีสนาม $\vE$ ในปริมาตรนั้นที่สอดคล้องกับเงื่อนไขทั้งหมดเพียงสนามเดียว
+    บนปริมาตร $\vol$ ที่มีขอบเขตอยู่บนผิวของตัวนำ (อาจมีขอบเขตหนึ่งเป็นตัวนำที่ $\infty$ ได้) ถ้ารู้ค่า $\rho$ ภายในปริมาตรและรู้ค่า $Q$ ของตัวนำทั้งหมดแล้วจะได้ว่ามีสนาม $\vb{E}$ ในปริมาตรนั้นที่สอดคล้องกับเงื่อนไขทั้งหมดเพียงสนามเดียว
 \end{lawbox}
 \begin{proof}
-    ให้ $\vE_1$ และ $\vE_2$ เป็นสนามใน $\vol$ ที่สอดคล้องกับเงื่อนไข และให้ $\vE_3=\vE_1-\vE_2$ จาก (\ref{gaussde}) จะได้ว่า
+    ให้ $\vb{E}_1$ และ $\vb{E}_2$ เป็นสนามใน $\vol$ ที่สอดคล้องกับเงื่อนไข และให้ $\vb{E}_3=\vb{E}_1-\vb{E}_2$ จาก (\ref{gaussde}) จะได้ว่า
     \begin{equation}
-        \gd\cdot\vE_3=0\tag{$\star$1}
+        \gd\cdot\vb{E}_3=0\tag{$\star$1}
     \end{equation}
     และจาก (\ref{gauss}) จะได้ว่า
     \begin{equation}
-        \oint\vE_3\cdot\odif{\va}=0\tag{$\star$2}\label{u2pf2}
+        \oint\vb{E}_3\cdot\odif{\vb{a}}=0\tag{$\star$2}\label{u2pf2}
     \end{equation}
     สำหรับทุก ``\emph{ผิวย่อย}" ของ $\del\vol$ ต่อมาพิจารณา
-    \[\gd\cdot(V_3\vE_3)=\gd V_3\cdot\vE_3+V_3(\cancel{\gd\cdot\vE_3})=-E_3^2\]
+    \[\gd\cdot(V_3\vb{E}_3)=\gd V_3\cdot\vb{E}_3+V_3(\cancel{\gd\cdot\vb{E}_3})=-E_3^2\]
     และโดย divergence theorem จะได้ว่า
     \begin{equation}
-    \oint_{\del\vol}V_3\vE_3\cdot\odif{\va}=\int_\vol\gd\cdot(V_3\vE_3)\odif{\tau}=-\int_\vol E_3^2\odif{\tau}\tag{$\star$3}\label{u2pf3}
+    \oint_{\del\vol}V_3\vb{E}_3\cdot\odif{\vb{a}}=\int_\vol\gd\cdot(V_3\vb{E}_3)\odif{\tau}=-\int_\vol E_3^2\odif{\tau}\tag{$\star$3}\label{u2pf3}
     \end{equation}
     แต่เนื่องจากทุกผิวย่อยของ $\del\vol$ บนแต่ละตัวนำมี $V_3$ คงที่จะได้ว่า
-    \[\oint_{\del\vol}V_3\vE_3\cdot\odif{\va}=\sum_{\txt{\sur}}V_\sur\oint_\sur\vE_3\cdot\odif{\va}\overset{\text{(\ref{u2pf2})}}{=}0\]
-    นำไปใส่กลับใส่ใน (\ref{u2pf3}) จะได้ว่า $\int_\vol E_3^2\odif{\tau}=0$ ดังนั้น $\vE_3=\vzr$ หรือก็คือ
-    \[\vE_1=\vE_2\]
+    \[\oint_{\del\vol}V_3\vb{E}_3\cdot\odif{\vb{a}}=\sum_{\txt{\sur}}V_\sur\oint_\sur\vb{E}_3\cdot\odif{\vb{a}}\overset{\text{(\ref{u2pf2})}}{=}0\]
+    นำไปใส่กลับใส่ใน (\ref{u2pf3}) จะได้ว่า $\int_\vol E_3^2\odif{\tau}=0$ ดังนั้น $\vb{E}_3=\vb{0}$ หรือก็คือ
+    \[\vb{E}_1=\vb{E}_2\]
     ตามต้องการ
 \end{proof}
 
@@ -244,65 +244,65 @@
 
 \section{การกระจาย Multipole}
 \subsection{การประมาณศักย์ไฟฟ้าระยะไกล}
-พิจารณา \emph{electric dipole} ที่ประกอบด้วยจุดประจุ $+q$ และ $-q$ ที่ห่างกัน $d$ โดยสมมติให้ dipole นี้ตั้งในแกน $z$ โดยมีประจุบวกอยู่ในทิศ $+z$ และจุดศูนย์กลางของ dipole อยู่ที่จุดกำเนิด และให้ $\vrr_+$, $\vrr_-$ เป็นเวกเตอร์จากขั้วบวกและลบมายัง $\vr$ ตามลำดับ จะได้ว่า
-\[V(\vr)=\kem\ab(\frac{q}{\rr_+}-\frac{q}{\rr_-})\]
+พิจารณา \emph{electric dipole} ที่ประกอบด้วยจุดประจุ $+q$ และ $-q$ ที่ห่างกัน $d$ โดยสมมติให้ dipole นี้ตั้งในแกน $z$ โดยมีประจุบวกอยู่ในทิศ $+z$ และจุดศูนย์กลางของ dipole อยู่ที่จุดกำเนิด และให้ $\vrr_+$, $\vrr_-$ เป็นเวกเตอร์จากขั้วบวกและลบมายัง $\vb{r}$ ตามลำดับ จะได้ว่า
+\[V(\vb{r})=\kem\ab(\frac{q}{\nrr_+}-\frac{q}{\nrr_-})\]
 และจากกฎของ $\cos$ จะได้
-\[\rr_\pm^2=r^2+(d/2)^2\mp rd\cos\theta=r^2\ab(1\mp\frac{d}{r}\cos\theta+\frac{d^2}{4r^2})\]
+\[\nrr_\pm^2=r^2+(d/2)^2\mp rd\cos\theta=r^2\ab(1\mp\frac{d}{r}\cos\theta+\frac{d^2}{4r^2})\]
 ดังนั้นเมื่อ $r\gg d$ จะได้ว่า
-\[\frac{1}{\rr_\pm}\approx \frac{1}{r}\ab(1\mp\frac{d}{r}\cos\theta)^{-1/2}\approx\frac{1}{r}\ab(1\pm \frac{d}{2r}\cos\theta)\]
+\[\frac{1}{\nrr_\pm}\approx \frac{1}{r}\ab(1\mp\frac{d}{r}\cos\theta)^{-1/2}\approx\frac{1}{r}\ab(1\pm \frac{d}{2r}\cos\theta)\]
 ก็จะได้ว่าที่ระยะ $r$ ไกล ๆ จาก dipole:
 \begin{equation}
-    V(\vr)\approx\kem\frac{qd\cos\theta}{r^2}\label{dipolefar}
+    V(\vb{r})\approx\kem\frac{qd\cos\theta}{r^2}\label{dipolefar}
 \end{equation}
 และเช่นเดียวกัน quadrupole, octopole, ... จะมีศักย์ที่โตแบบ $1/r^3$, $1/r^4$, ... ตามลำดับ ที่ระยะไกล ๆ
 
 ดังนั้นเราจึงอาจหาวิธีเขียนศักย์ของการกระจายตัวของประจุแบบใด ๆ ให้อยู่ในรูปอนุกรมของพจน์ multipole ($1/r$, $1/r^2$, $1/r^3$, ...) เพื่อที่จะประมาณค่าศักย์ไกล ๆ ด้วยพจน์ monopole และ dipole ได้:
 
-พิจารณาการให้ $\rr$ และ $\alpha$ เป็นมุมและระยะระหว่าง $\vr$ และ $\vr'$ ตามลำดับ จะได้
-\[\rr^2=r^2+(r')^2-2rr'\cos\alpha=r^2\ab(1+\ab(\frac{r'}{r})^2-2\ab(\frac{r'}{r})\cos\alpha)\]
+พิจารณาการให้ $\nrr$ และ $\alpha$ เป็นมุมและระยะระหว่าง $\vb{r}$ และ $\vb{r}'$ ตามลำดับ จะได้
+\[\nrr^2=r^2+(r')^2-2rr'\cos\alpha=r^2\ab(1+\ab(\frac{r'}{r})^2-2\ab(\frac{r'}{r})\cos\alpha)\]
 ดังนั้น
 \begin{equation}
-    \frac{1}{\rr}=\frac{1}{r}\ab(1+\ab(\frac{r'}{r})\ab(\frac{r'}{r}-2\cos\alpha))^{-1/2}\label{multipoleex}
+    \frac{1}{\nrr}=\frac{1}{r}\ab(1+\ab(\frac{r'}{r})\ab(\frac{r'}{r}-2\cos\alpha))^{-1/2}\label{multipoleex}
 \end{equation}
 จากนั้นใช้ทฤษฎีบททวินามกับ (\ref{multipoleex}) และ (\ref{rodrigues}) จะพิสูจน์ได้ว่า
 \begin{equation}
-    \frac{1}{\rr}=\frac{1}{r}\sum_{n=0}^\infty\ab(\frac{r'}{r})^nP_n(\cos\alpha)
+    \frac{1}{\nrr}=\frac{1}{r}\sum_{n=0}^\infty\ab(\frac{r'}{r})^nP_n(\cos\alpha)
 \end{equation}
 นำไปแทนใน (\ref{potentialcont}) ก็จะได้ว่า
 \begin{ieqbox}{การกระจาย Multipole}
-    V(\vr)=\kem\sum_{n=0}^\infty\frac{1}{r^{n+1}}\int(r')^n\,P_n(\cos\alpha)\,\rho(\vr')\odif{\tau'}\label{multipole}
+    V(\vb{r})=\kem\sum_{n=0}^\infty\frac{1}{r^{n+1}}\int(r')^n\,P_n(\cos\alpha)\,\rho(\vb{r}')\odif{\tau'}\label{multipole}
 \end{ieqbox}
 \subsection{พจน์ Monopole และ Dipole}
 สำหรับพจน์ monopole ($n=0$) จะมีค่าเท่ากับ
-\[V_\txt{mon}(\vr)=\kem\frac{1}{r}\int P_0(\cos\alpha)\,\rho(\vr')\odif{\tau'}=\kem\frac{1}{r}\int\rho(\vr')\odif{\tau'}\]
+\[V_\txt{mon}(\vb{r})=\kem\frac{1}{r}\int P_0(\cos\alpha)\,\rho(\vb{r}')\odif{\tau'}=\kem\frac{1}{r}\int\rho(\vb{r}')\odif{\tau'}\]
 ดังนั้น
 \begin{eqbox}{พจน์ Monopole}
-    V_\txt{mon}(\vr)=\kem\frac{Q}{r}
+    V_\txt{mon}(\vb{r})=\kem\frac{Q}{r}
 \end{eqbox}
 ซึ่งก็ไม่น่าแปลกใจเพราะค่าศักย์ที่ระยะไกล ๆ ก็ควรจะโตคล้ายประจุรวม $Q$ ในระบบ (เรียก $Q$ นี้ว่า \emph{monopole moment}) โดยพจน์ monopole นี้จะไม่ขึ้นกับตำแหน่งของจุดกำเนิด ต่างจากพจน์อื่น ๆ ที่ขึ้นกับตำแหน่งที่ใช้เป็นจุดกำเนิดในระบบ
 
 ต่อมาพจน์ dipole ($n=1$) จะมีค่าเท่ากับ
-\[V_\txt{dip}(\vr)=\kem\frac{1}{r^2}\int r'\,P_1(\cos\alpha)\,\rho(\vr')\odif{\tau'}=\kem\frac{1}{r^2}\int r\cos\alpha\,\rho(\vr')\odif{\tau'}\]
-แต่ว่า $r'\cos\alpha=\vru\cdot\vr'$ ดังนั้น
-\[V_\txt{dip}(\vr)=\kem\frac{\vru}{r^2}\cdot\int\vr'\rho(\vr')\odif{\tau'}\]
-อินทิกรัลในด้านขวาไม่ขึ้นกับ $\vr$ ดังนั้นเราจะนิยาม \emph{dipole moment} $\vp$ รอบจุด ๆ หนึ่งว่า:
+\[V_\txt{dip}(\vb{r})=\kem\frac{1}{r^2}\int r'\,P_1(\cos\alpha)\,\rho(\vb{r}')\odif{\tau'}=\kem\frac{1}{r^2}\int r\cos\alpha\,\rho(\vb{r}')\odif{\tau'}\]
+แต่ว่า $r'\cos\alpha=\vu{r}\cdot\vb{r}'$ ดังนั้น
+\[V_\txt{dip}(\vb{r})=\kem\frac{\vu{r}}{r^2}\cdot\int\vb{r}'\rho(\vb{r}')\odif{\tau'}\]
+อินทิกรัลในด้านขวาไม่ขึ้นกับ $\vb{r}$ ดังนั้นเราจะนิยาม \emph{dipole moment} $\vb{p}$ รอบจุด ๆ หนึ่งว่า:
 \begin{defbox}{ Dipole Moment}
     \begin{equation}
-        \vp\equiv\int\vr'\rho(\vr')\odif{\tau'}
+        \vb{p}\equiv\int\vb{r}'\rho(\vb{r}')\odif{\tau'}
     \end{equation}
 \end{defbox}
 ก็จะได้ว่าพจน์ dipole คือ:
 \begin{eqbox}{พจน์ Dipole}
-    V_\txt{dip}(\vr)=\kem\frac{\vp\cdot\vru}{r^2}\label{dippotential}
+    V_\txt{dip}(\vb{r})=\kem\frac{\vb{p}\cdot\vu{r}}{r^2}\label{dippotential}
 \end{eqbox}
-โดยพจน์ dipole จะไม่ขึ้นกับตำแหน่งของจุดกำเนิดเมื่อประจุรวม $Q=0$ (พิสูจน์จากการแทน $\bar{\vr}=\vr'-\va$)
+โดยพจน์ dipole จะไม่ขึ้นกับตำแหน่งของจุดกำเนิดเมื่อประจุรวม $Q=0$ (พิสูจน์จากการแทน $\bar{\vb{r}}=\vb{r}'-\vb{a}$)
 \subsection{Dipole บริสุทธิ์}
-จาก (\ref{dipolefar}) จะได้ว่า dipole จะเหลือแค่พจน์ dipole ในการกระจาย multipole ถ้าระยะ $\vr$ ไกลมาก ๆ หรืออาจมองกลับกันว่าถ้าระยะ $d$ น้อยมาก ๆ ก็จะเหลือแค่พจน์ dipole เช่นกัน ดังนั้นถ้าเรามองในลิมิต $q\to\infty$ และ $d\to0$ โดยให้ $\vp=q\vd$ คงที่ตลอด จะได้\emph{จุด dipole บริสุทธิ์} ที่จะมีสนามศักย์เป็นเพียง
+จาก (\ref{dipolefar}) จะได้ว่า dipole จะเหลือแค่พจน์ dipole ในการกระจาย multipole ถ้าระยะ $\vb{r}$ ไกลมาก ๆ หรืออาจมองกลับกันว่าถ้าระยะ $d$ น้อยมาก ๆ ก็จะเหลือแค่พจน์ dipole เช่นกัน ดังนั้นถ้าเรามองในลิมิต $q\to\infty$ และ $d\to0$ โดยให้ $\vb{p}=q\vb{d}$ คงที่ตลอด จะได้\emph{จุด dipole บริสุทธิ์} ที่จะมีสนามศักย์เป็นเพียง
 \begin{equation}
-    V(\vr)=V_\txt{dip}(\vr)=\kem\frac{p\cos\alpha}{r^2}
+    V(\vb{r})=V_\txt{dip}(\vb{r})=\kem\frac{p\cos\alpha}{r^2}
 \end{equation}
-ถ้ากำหนดว่า $\vp$ ชี้ในทิศ $+z$ ก็จะได้
-\[V(\vr)=\kem\frac{p\cos\theta}{r^2}\]
+ถ้ากำหนดว่า $\vb{p}$ ชี้ในทิศ $+z$ ก็จะได้
+\[V(\vb{r})=\kem\frac{p\cos\theta}{r^2}\]
 ดังนั้นเมื่อใช้ (\ref{gdephi}) จะได้สนามไฟฟ้า:
 \begin{align*}
     E_r&=-\pdv{V}{r}=\kem\frac{2p\cos\theta}{r^3}\\
@@ -311,15 +311,15 @@
 \end{align*}
 ดังนั้น
 \begin{eqbox}{สนามไฟฟ้าของ Dipole บริสุทธิ์ในพิกัดทรงกลม}
-    \vE_\txt{dip}(r,\theta)=\kem\frac{p}{r^3}\ab(2\cos\theta\,\vru+\sin\theta\,\vthetau)
+    \vb{E}_\txt{dip}(r,\theta)=\kem\frac{p}{r^3}\ab(2\cos\theta\,\vu{r}+\sin\theta\,\vus{\uptheta})
 \end{eqbox}
 แสดงว่าสนามไฟฟ้าของ dipole โตแบบ $1/r^3$ (และเช่นเดียวกัน สนามไฟฟ้าของ quadrupole, octopole, ... ก็จะโตแบบ $1/r^4$, $1/r^5$, ... เพราะในการใช้ gradient หาสนามไฟฟ้าจะเพิ่ม $1/r$ ขึ้นมาอีกหนึ่งตัว) แต่สูตรด้านบนยังเป็นสูตรที่ขึ้นกับระบบพิกัดทรงกลม เราสามารถหาสูตรที่ไม่ขึ้นกับระบบพิกัดได้ดังนี้:
 \begin{align*}
-    \vE_\txt{dip}&=\kem\frac{p}{r^3}\ab(2\cos\theta\,\vru+\sin\theta\,\vthetau)\\
-    &=\kem\frac{1}{r^3}\ab(2p\cos\theta\,\vru+p\sin\theta\,\vthetau)\\
-    &=\kem\frac{1}{r^3}\ab(3p\cos\theta\,\vru+p\sin\theta\,\vthetau-p\cos\theta\,\vru)\\
-    &=\kem\frac{1}{r^3}\ab\Big(3\,\ab(\vp\cdot\vr)\,\vru-\vp)
+    \vb{E}_\txt{dip}&=\kem\frac{p}{r^3}\ab(2\cos\theta\,\vu{r}+\sin\theta\,\vus{\uptheta})\\
+    &=\kem\frac{1}{r^3}\ab(2p\cos\theta\,\vu{r}+p\sin\theta\,\vus{\uptheta})\\
+    &=\kem\frac{1}{r^3}\ab(3p\cos\theta\,\vu{r}+p\sin\theta\,\vus{\uptheta}-p\cos\theta\,\vu{r})\\
+    &=\kem\frac{1}{r^3}\ab\Big(3\,\ab(\vb{p}\cdot\vb{r})\,\vu{r}-\vb{p})
 \end{align*}
 \begin{eqbox}{สนามไฟฟ้าของ Dipole บริสุทธิ์}
-    \vE_\txt{dip}=\kem\frac{1}{r^3}\ab\Big(3\,\ab(\vp\cdot\vr)\,\vru-\vp)
+    \vb{E}_\txt{dip}=\kem\frac{1}{r^3}\ab\Big(3\,\ab(\vb{p}\cdot\vb{r})\,\vu{r}-\vb{p})
 \end{eqbox}
