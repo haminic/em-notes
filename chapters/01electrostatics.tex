@@ -35,7 +35,9 @@
     \end{equation}
 \end{defbox}
 พิจารณาพื้นผิวปิด $\sur$ ที่มีจุดประจุ $q$ อยู่ภายในและพื้นที่เล็ก ๆ $\odif{\tau}$ บน $\sur$ โดยมี $\vrr$ เป็นเวกเตอร์จาก $q$ มายัง $\odif{a}$ และ $\odif{a'}$ เป็นภาพฉายของ $\odif{a}$ มาตั้งฉากกับ $\vrr$ จะได้
-\[\vb{E}\cdot \odif{\vb{a}}=\kem\frac{q}{\nrr^2}\odif{a}\cos\theta=\kem\frac{q}{\nrr^2}\odif{a'}=\frac{q}{4\pi\eps_0}\odif{\Omega}\]
+\[
+\vb{E}\cdot \odif{\vb{a}}=\kem\frac{q}{\nrr^2}\odif{a}\cos\theta=\kem\frac{q}{\nrr^2}\odif{a'}=\frac{q}{4\pi\eps_0}\odif{\Omega}
+\]
 เมื่อ $\odif{\Omega}$ คือมุมสเตอเรเดียนเทียบกับตำแหน่งของประจุ $q$ ดังนั้นฟลักซ์ไฟฟ้าจาก $q$ ที่ผ่านพื้นผิว $\sur$ เท่ากับ
 \begin{equation}
 \Phi_E^{(q\,\txt{in})}=\oint_\sur\vb{E}\cdot\odif{\vb{a}}=\frac{q}{4\pi\eps_0}\oint_\sur\odif{\Omega}=\frac{q}{4\pi\eps_0}\cdot4\pi=\frac{q}{\eps_0}
@@ -59,7 +61,9 @@
 \int_\vol\ab(\gd\cdot\vb{E}-\frac{\rho}{\eps_0})\odif{\tau}&=0
 \end{align*}
 เนื่องจากเป็นจริงทุกปริมาตร $\vol$ ดังนั้น
-\[\gd\cdot\vb{E}-\frac{\rho}{\eps_0}=0\]
+\[
+\gd\cdot\vb{E}-\frac{\rho}{\eps_0}=0
+\]
 ก็จะได้
 \begin{lawbox}{กฎของ Gauss (Differential form)}
     \begin{equation}
@@ -86,7 +90,9 @@
     V(\vb{b})-V(\vb{a})=-\int_\vb{a}^\vb{b}\vb{E}\cdot\odif{\vb{l}}
 \end{equation}
 และจาก
-\[\int_\vb{a}^\vb{b}(\gd V)\cdot\odif{\vb{l}}=V(\vb{b})-V(\vb{a})=-\int_\vb{a}^\vb{b}\vb{E}\cdot\odif{\vb{l}}\]
+\[
+\int_\vb{a}^\vb{b}(\gd V)\cdot\odif{\vb{l}}=V(\vb{b})-V(\vb{a})=-\int_\vb{a}^\vb{b}\vb{E}\cdot\odif{\vb{l}}
+\]
 จะได้ว่า
 \begin{eqbox}{ศักย์ไฟฟ้าในรูป Gradient}
     \vb{E}=-\gd V\label{gdephi}
@@ -103,7 +109,9 @@
     \end{equation}
 \end{lawbox}
 โดยสามารถหา $V$ ของจุดประจุ $q$ ได้จากกฎของ Coulomb (\ref{coulomb}):
-\[V(\vb{r})=-\int_\infty^\vb{r}\vb{E}(\vb{r}')\cdot\odif{\vb{l}'}=-\int_\infty^r\kem\frac{q}{(r')^2}\odif{r'}\]
+\[
+V(\vb{r})=-\int_\infty^\vb{r}\vb{E}(\vb{r}')\cdot\odif{\vb{l}'}=-\int_\infty^r\kem\frac{q}{(r')^2}\odif{r'}
+\]
 ก็จะได้ว่า
 \begin{eqbox}{ศักย์ไฟฟ้าของจุดประจุ}
      V=\kem\frac{q}{\nrr}
@@ -116,13 +124,19 @@
 ต่อมาจะมาดูสมบัติของ $\vb{E}$ และ $V$ ในบริเวณแผ่นประจุบาง ๆ ที่มีความหนาแน่นประจุเชิงพื้นที่ $\sigma$
 \begin{enumerate}
     \item พิจารณาผิว Gaussian ทรงกระบอกบางที่บางมากจนฟลักซ์ไฟฟ้าที่ผ่านบริเวณผิวข้างเท่ากับ $0$ ที่คลุมบริเวณเล็ก ๆ ของแผ่นประจุ จะได้ว่า
-    \[E^\perp_\txt{above}-E^\perp_\txt{below}=\frac{\sigma}{\eps_0}\]
+    \[
+    E^\perp_\txt{above}-E^\perp_\txt{below}=\frac{\sigma}{\eps_0}
+    \]
     จะเห็นได้ว่าส่วนของ $\vb{E}$ ที่ตั้งฉากกับแผ่นประจุจะเกิดความไม่ต่อเนื่องแบบกระโดดด้วยผลต่าง $\frac{\sigma}{\eps_0}$
     \item พิจารณาอินทิกรัลเส้นรูปสี่เหลี่ยมผืนผ้าเล็ก ๆ ที่ตั้งฉากกับแผ่นประจุ จาก (\ref{curlezero}) และ Stokes' theorem จะได้ว่า $\oint\vb{E}\cdot\odif{\vb{l}}=0$ ดังนั้น
-    \[E^\|_\txt{above}-E^\|_\txt{below}=0\]
+    \[
+    E^\|_\txt{above}-E^\|_\txt{below}=0
+    \]
     จะเห็นได้ว่าส่วนของ $\vb{E}$ ที่ขนานกับแผ่นประจุจะยังต่อเนื่องเมื่อผ่านแผ่นประจุ
     \item พิจารณาจุด $\vb{a}$ และ $\vb{b}$ ที่อยู่ใกล้กันมาก ๆ แต่ $\vb{b}$ อยู่ด้านบนแผ่นส่วน $\vb{a}$ อยู่ด้านล่างแผ่น จะได้ว่า
-    \[V_\txt{above}-V_\txt{below}=V(\vb{b})-V(\vb{a})=-\int_\vb{a}^\vb{b}\vb{E}\cdot\odif{\vb{l}}=0\]
+    \[
+    V_\txt{above}-V_\txt{below}=V(\vb{b})-V(\vb{a})=-\int_\vb{a}^\vb{b}\vb{E}\cdot\odif{\vb{l}}=0
+    \]
     ดังนั้น $V$ ต่อเนื่องเมื่อผ่านแผ่นประจุ
 \end{enumerate}
 จึงสรุปได้ดังนี้:
@@ -152,7 +166,9 @@
     V=\frac{U}{q}
 \end{eqbox}
 ต่อมาจะมาหาพลังงานศักย์ไฟฟ้าของระบบประจุที่อยู่ภายใต้อิทธิพลของสนามภายนอก $\vb{E}_\txt{ext}$ โดยพิจารณาการหาผลต่างของพลังงานศักย์ในการนำจุดประจุจาก $\infty$ มาวางทีจะตัว จะได้ผลต่างพลังงานศักย์ของประจุที่ $k$ เป็นดังนี้:
-\[\Delta U_k=q_k V_\txt{ext}(\vb{r}_k)\]
+\[
+\Delta U_k=q_k V_\txt{ext}(\vb{r}_k)
+\]
 เนื่องจากนิยามให้ $\eval{U}_{r\to\infty}=\eval{qV}_{r\to\infty}=0$ ก็จะได้
 \begin{equation}
 U_\txt{ext}=\sum_k\Delta U_k=\sum_kq_k V_\txt{ext}(\vb{r}_k)
@@ -162,13 +178,17 @@ U_\txt{ext}=\sum_k\Delta U_k=\sum_kq_k V_\txt{ext}(\vb{r}_k)
     U_\txt{ext}=\int\rho V_\txt{ext}\odif{\tau}
 \end{ieqbox}
 ส่วนพลังงานศักย์ไฟฟ้าที่เกิดจากระบบเองหาได้โดยการพิจารณาเอาจุดประจุจาก $\infty$ มาวางเช่นเดียวกัน จะได้ประจุตัวที่ $k$ มีพลังงานศักย์
-\[U_k=\sum_{k'<k}q_k V_{k'}(\vb{r}_k)=\kem\sum_{k'<k}\frac{q_kq_{k'}}{\nrr_{kk'}}\]
+\[
+U_k=\sum_{k'<k}q_k V_{k'}(\vb{r}_k)=\kem\sum_{k'<k}\frac{q_kq_{k'}}{\nrr_{kk'}}
+\]
 ดังนั้นโดยใช้ความสมมาตร
 \begin{equation}
 U=\kem\sum_{k}\sum_{k'<k}\frac{q_kq_{k'}}{\nrr_{kk'}}=\frac{1}{2}\kem\sum_{k\neq k'}\frac{q_kq_{k'}}{\nrr_{kk'}}\label{disintenergy}
 \end{equation}
 แต่ในกรณีต่อเนื่องเราไม่จำเป็นต้องสนใจเงื่อนไข $k\neq k'$ เพราะอินทิกรัลลู่เข้าและส่วนที่มาจาก $k = k'$ สามารถมองเป็นส่วนพลังงานที่มาจากประจุที่ใกล้กันมาก ๆ ได้ จึงได้ว่า
-\[U=\frac{1}{2}\kem\iint\frac{\rho(\vb{r})\,\rho(\vb{r}')}{\nrr}\odif{\tau',\tau}\]
+\[
+U=\frac{1}{2}\kem\iint\frac{\rho(\vb{r})\,\rho(\vb{r}')}{\nrr}\odif{\tau',\tau}
+\]
 เนื่องจาก $\kem\int\frac{\rho(\vb{r}')\odif{\tau'}}{\nrr}= V(\vb{r})$ ดังนั้น
 \begin{ieqbox}{พลังงานศักย์ไฟฟ้าจากสนามภายใน}
     U=\frac{1}{2}\int\rho V\odif{\tau}\label{intpotential}
@@ -176,7 +196,9 @@ U=\kem\sum_{k}\sum_{k'<k}\frac{q_kq_{k'}}{\nrr_{kk'}}=\frac{1}{2}\kem\sum_{k\neq
 
 \subsection{พลังงานจากสนามไฟฟ้า}
 ต่อมาพิจารณาพลังงานศักย์ภายในของระบบอีกแบบโดยแทนสมการ Poisson (\ref{poissoneq}) เข้าไปใน (\ref{intpotential}) โดยอินทิเกรต บนปริมาตร $\vol$ ที่ใหญ่มาก ๆ จน $\vb{E}$ ที่ผิวของ $\vol$ เข้าใกล้ศูนย์ จะได้ว่า
-\[U=-\frac{\eps_0}{2}\int_\vol V\nabla^2 V\odif{\tau}=-\frac{\eps_0}{2}\int_\vol V\ab(\gd\cdot(\gd V))\odif{\tau}=\frac{\eps_0}{2}\int_\vol V\ab(\gd\cdot\vb{E})\odif{\tau}\]
+\[
+U=-\frac{\eps_0}{2}\int_\vol V\nabla^2 V\odif{\tau}=-\frac{\eps_0}{2}\int_\vol V\ab(\gd\cdot(\gd V))\odif{\tau}=\frac{\eps_0}{2}\int_\vol V\ab(\gd\cdot\vb{E})\odif{\tau}
+\]
 โดย Chain Rule: $\gd\cdot( V\vb{F})=\gd V\cdot\vb{F}+ V(\gd\cdot\vb{F})$ นำไปแทนต่อ จากนั้นใช้ divergence theorem จะได้ว่า
 \begin{align*}
     U&=\frac{\eps_0}{2}\int_\vol V\ab(\gd\cdot\vb{E})\odif{\tau}\\
@@ -192,7 +214,9 @@ U=\kem\sum_{k}\sum_{k'<k}\frac{q_kq_{k'}}{\nrr_{kk'}}=\frac{1}{2}\kem\sum_{k\neq
 \emph{แต่คำถามคือ}: ทำไมสมการ (\ref{disintenergy}) ทำให้พลังงานศักย์เป็นลบได้แต่ (\ref{energydensity}) จึงเป็นบวกเสมอ? เหตุผลก็คือ (\ref{disintenergy}) ยังไม่ได้รวมพลังงานในการสร้างจุดประจุตั้งแต่แรก (ถ้ารวมด้วยจะทำให้เป็น $\infty$) ดังนั้นถ้าจะหาพลังงานของระบบที่เป็นจุดประจุ ถ้าใช้ (\ref{disintenergy}) จะสมเหตุสมผลกว่า
 
 ต่อมาเรามาพิจารณาพลังงานศักย์ไฟฟ้าเนื่องจากอิทธิพลของทั้งสนามภายนอกและภายใน:
-\[U=U_\txt{int}+U_\txt{ext}=\frac{1}{2}\int\rho V_\txt{int}\odif{\tau}+\int\rho V_\txt{ext}\odif{\tau}\]
+\[
+U=U_\txt{int}+U_\txt{ext}=\frac{1}{2}\int\rho V_\txt{int}\odif{\tau}+\int\rho V_\txt{ext}\odif{\tau}
+\]
 หาพจน์ฝั่งขวาโดยทำคล้าย ๆ (\ref{energydensity}):
 \begin{align*}
     \int_\vol\rho V_\txt{ext}\odif{\tau}&=-\eps_0\int_\vol V_\txt{ext}\ab(\gd\cdot(\gd V_\txt{int}))\odif{\tau}\\
@@ -204,7 +228,9 @@ U=\kem\sum_{k}\sum_{k'<k}\frac{q_kq_{k'}}{\nrr_{kk'}}=\frac{1}{2}\kem\sum_{k\neq
 U=\int u(\vb{r})\odif{\tau}\qq{เมื่อ}u(\vb{r})=\frac{\eps_0}{2}\ab\Big(E_\txt{int}^2(\vb{r})+2\vb{E}_\txt{int}(\vb{r})\cdot\vb{E}_\txt{ext}(\vb{r}))
 \end{equation}
 ซึ่งจริง ๆ แล้วเหมือนกับ (\ref{energydensity}) เลย โดยบวกเข้าลบออกด้วย $E_\txt{ext}^2(\vb{r})$ ใน $u(\vb{r})$ และให้ $\vb{E}=\vb{E}_\txt{int}+\vb{E}_\txt{ext}$ จะได้
-\[U=\frac{\eps_0}{2}\int E^2(\vb{r})\odif{\tau}-\underbrace{\frac{\eps_0}{2}\int E_\txt{ext}^2(\vb{r})\odif{\tau}}_{\cst}\]
+\[
+U=\frac{\eps_0}{2}\int E^2(\vb{r})\odif{\tau}-\underbrace{\frac{\eps_0}{2}\int E_\txt{ext}^2(\vb{r})\odif{\tau}}_{\cst}
+\]
 เนื่องจากพจน์ด้านหลังเป็นค่าคงที่ เราจึงสามารถให้พจน์นั้นเป็นค่าอ้างอิงได้ จึงได้ว่าเราสามารถใช้ (\ref{energydensity}) ได้ในทุกกรณี เพียงแค่ต้องรวม $\vb{E}_\txt{ext}$ ไปด้วย:
 \begin{equation}
     U'=\frac{\eps_0}{2}\int E^2(\vb{r})\odif{\tau}
@@ -223,7 +249,9 @@ U=\int u(\vb{r})\odif{\tau}\qq{เมื่อ}u(\vb{r})=\frac{\eps_0}{2}\ab\Big
     &=\frac{1}{\eps_0}\int_\vol V_1\rho_2\odif{\tau}
 \end{align*}
 ในทำนองเดียวกัน:
-\[\int_\vol\vb{E}_1\cdot\vb{E}_2\odif{\tau}=\frac{1}{\eps_0}\int_\vol V_2\rho_1\odif{\tau}\]
+\[
+\int_\vol\vb{E}_1\cdot\vb{E}_2\odif{\tau}=\frac{1}{\eps_0}\int_\vol V_2\rho_1\odif{\tau}
+\]
 ดังนั้น $\int\rho_1 V_2\odif{\tau}=\int\rho_2 V_1\odif{\tau}$ ตามต้องการ
 \end{proof}
 \section{ตัวนำและความจุไฟฟ้า}
@@ -256,9 +284,13 @@ U=\int u(\vb{r})\odif{\tau}\qq{เมื่อ}u(\vb{r})=\frac{\eps_0}{2}\ab\Big
     \vb{E}_\txt{below}&=\vb{E}_\txt{other}-\frac{\sigma}{2\eps_0}\vu{n}
 \end{align*}
 ดังนั้น
-\[\vb{E}_\txt{other}=\frac{1}{2}\ab(\vb{E}_\txt{above}+\vb{E}_\txt{below})\]
+\[
+\vb{E}_\txt{other}=\frac{1}{2}\ab(\vb{E}_\txt{above}+\vb{E}_\txt{below})
+\]
 ก็จะได้แรงที่กระทำต่อ $\odif{a}$ คือ
-\[\odif{\vb{F}}=\sigma\odif{a}\cdot\vb{E}_\txt{other}\]
+\[
+\odif{\vb{F}}=\sigma\odif{a}\cdot\vb{E}_\txt{other}
+\]
 ดังนั้นแรงต่อหน่วยพื้นที่ $\vb{f}=\odif{\vb{F}}/\odif{a}$ คือ
 \begin{ieqbox}{แรงต่อพื้นที่บนแผ่นประจุ}
     \vb{f}=\sigma\vb{E}_\txt{average}=\frac{1}{2}\sigma\ab(\vb{E}_\txt{above}+\vb{E}_\txt{below})
@@ -282,7 +314,9 @@ U=\int u(\vb{r})\odif{\tau}\qq{เมื่อ}u(\vb{r})=\frac{\eps_0}{2}\ab\Big
 ส่วนความจุไฟฟ้าของตัวนำตัวเดียว (self-capacitance) คือให้จินตนาการว่ามีตัวนำเปลือกทรงกลมที่มีรัศมีใหญ่มาก ๆ หรือก็คือให้ใช้ $V$ เป็น $V$ ของตัวนำโดยมีจุดอ้างอิงเป็น $\infty$
 
 สุดท้าย งานในการชาร์จตัวเก็บประจุหาได้โดยรวมงานในการย้ายประจุ $\odif{q}$ จากฝั่งลบมาฝั่งบวก:
-\[\odif{W}=V\odif{q}=\frac{q}{C}\odif{q}\]
+\[
+\odif{W}=V\odif{q}=\frac{q}{C}\odif{q}
+\]
 ดังนั้นงานในการชาร์จประจุจาก $0$ มาเป็น $Q$ (หรือก็คือพลังงานสะสมในตัวเก็บประจุ) เท่ากับ
 \begin{ieqbox}{พลังงานสะสมในตัวเก็บประจุ}
     U=\frac{1}{2}QV=\frac{1}{2}\frac{Q^2}{C}=\frac{1}{2}CV^2
@@ -290,17 +324,25 @@ U=\int u(\vb{r})\odif{\tau}\qq{เมื่อ}u(\vb{r})=\frac{\eps_0}{2}\ab\Big
 
 \subsection{การต่อตัวเก็บประจุ}
 พิจารณาการต่อตัวเก็บประจุ $C_1$ และ $C_2$ แบบ\emph{อนุกรม} จะได้ว่า $Q$ บนตัวเก็บประจุ $C_1$ จะเท่ากับ $Q$ บนตัวเก็บประจุ $C_2$ ดังนั้น
-\[V_\text{รวม}=V_1+V_2=\frac{Q}{C_1}+\frac{Q}{C_2}\]
+\[
+V_\text{รวม}=V_1+V_2=\frac{Q}{C_1}+\frac{Q}{C_2}
+\]
 จึงได้ความจุไฟฟ้ารวมเท่ากับ
-\[\frac{1}{C_\text{รวม}}=\frac{1}{C_1}+\frac{1}{C_2}\]
+\[
+\frac{1}{C_\text{รวม}}=\frac{1}{C_1}+\frac{1}{C_2}
+\]
 โดยเราสามารถทำแบบนี้ไปได้เรื่อย ๆ ด้วยตัวเก็บประจุกี่ตัวก็ได้ ดังนั้น
 \begin{eqbox}{การต่อตัวเก็บประจุแบบอนุกรม}
     \frac{1}{C_\text{รวม}}=\frac{1}{C_1}+\frac{1}{C_2}+\dots+\frac{1}{C_n}
 \end{eqbox}
 และพิจารณาการต่อตัวเก็บประจุ $C_1$ และ $C_2$ แบบ\emph{ขนาน} จะได้ว่าความต่างศักย์ของตัวเก็บประจุทั้งสองจะต้องเท่ากับ (เพราะเป็นเนื้อตัวนำเดียวกัน) ดังนั้น
-\[Q_\text{รวม}=Q_1+Q_2=C_1V+C_2V\]
+\[
+Q_\text{รวม}=Q_1+Q_2=C_1V+C_2V
+\]
 จึงได้ความจุไฟฟ้ารวมเท่ากับ
-\[C_\text{รวม}=C_1+C_2\]
+\[
+C_\text{รวม}=C_1+C_2
+\]
 โดยเช่นเดียวกับการต่อแบบอนุกรม เราสามารถทำแบบนี้ไปได้เรื่อย ๆ ด้วยตัวเก็บประจุกี่ตัวก็ได้ ดังนั้น
 \begin{eqbox}{การต่อตัวเก็บประจุแบบขนาน}
     C_\text{รวม}=C_1+C_2+\dots+C_n

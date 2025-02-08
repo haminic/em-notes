@@ -36,10 +36,14 @@
 \end{lawbox}
 \begin{proof}
     ให้ $V_1$ และ $V_2$ เป็นผลเฉลยของสมการ Laplace บนปริมาตร $\vol$ ที่มีค่าตรงกันบน $\del\vol$ ดังนั้น
-    \[V_3\equiv V_1-V_2\]
+    \[
+    V_3\equiv V_1-V_2
+    \]
     เป็นผลเฉลยของสมการ Laplace ที่มีค่าที่ $\del\vol$ เท่ากับ $0$\\
     แต่เนื่องจากค่าสุดขีดของสมการ Laplace จะต้องอยู่บน $\del\vol$ ดังนั้น $V_3=0$ ทุกที่ในปริมาตร หรือก็คือ
-    \[V_1=V_2\]
+    \[
+    V_1=V_2
+    \]
     ตามต้องการ
 \end{proof}
 และไม่ยากที่จะขยายทฤษฎีบทนี้กับสมการ Poisson โดยใช้วิธีพิสูจน์คล้าย ๆ กับด้านบนจะได้ว่า:
@@ -60,15 +64,21 @@
         \oint\vb{E}_3\cdot\odif{\vb{a}}=0\tag{$\star$2}\label{u2pf2}
     \end{equation}
     สำหรับทุก ``\emph{ผิวย่อย}" ของ $\del\vol$ ต่อมาพิจารณา
-    \[\gd\cdot(V_3\vb{E}_3)=\gd V_3\cdot\vb{E}_3+V_3(\cancel{\gd\cdot\vb{E}_3})=-E_3^2\]
+    \[
+    \gd\cdot(V_3\vb{E}_3)=\gd V_3\cdot\vb{E}_3+V_3(\cancel{\gd\cdot\vb{E}_3})=-E_3^2
+    \]
     และโดย divergence theorem จะได้ว่า
     \begin{equation}
     \oint_{\del\vol}V_3\vb{E}_3\cdot\odif{\vb{a}}=\int_\vol\gd\cdot(V_3\vb{E}_3)\odif{\tau}=-\int_\vol E_3^2\odif{\tau}\tag{$\star$3}\label{u2pf3}
     \end{equation}
     แต่เนื่องจากทุกผิวย่อยของ $\del\vol$ บนแต่ละตัวนำมี $V_3$ คงที่จะได้ว่า
-    \[\oint_{\del\vol}V_3\vb{E}_3\cdot\odif{\vb{a}}=\sum_{\txt{\sur}}V_\sur\oint_\sur\vb{E}_3\cdot\odif{\vb{a}}\overset{\text{(\ref{u2pf2})}}{=}0\]
+    \[
+    \oint_{\del\vol}V_3\vb{E}_3\cdot\odif{\vb{a}}=\sum_{\txt{\sur}}V_\sur\oint_\sur\vb{E}_3\cdot\odif{\vb{a}}\overset{\text{(\ref{u2pf2})}}{=}0
+    \]
     นำไปใส่กลับใส่ใน (\ref{u2pf3}) จะได้ว่า $\int_\vol E_3^2\odif{\tau}=0$ ดังนั้น $\vb{E}_3=\vb{0}$ หรือก็คือ
-    \[\vb{E}_1=\vb{E}_2\]
+    \[
+    \vb{E}_1=\vb{E}_2
+    \]
     ตามต้องการ
 \end{proof}
 
@@ -82,24 +92,30 @@
 \begin{soln}
     พิจารณาอีกระบบที่มีจุดประจุ $q$ ที่ $(0,0,d)$ และ $-q$ ที่ $(0,0,-d)$ สังเกตว่าระบบนี้มีสภาวะขอบเขตของศักย์ไฟฟ้าในปริมาตรเหนือระนาบ $xy$ ตรงกันกับระบบในโจทย์เลย ($V=0$ บนระนาบ $xy$, $V=0$ ที่บริเวณไกลมาก ๆ) ดังนั้นโดยทฤษฎีบท uniqueness ที่หนึ่ง ทั้งสองระบบนี้จะต้องมีสนามศักย์ไฟฟ้าตรงกันบนปริมาตรเหนือระนาบ $xy$\\
     ดังนั้นจึงได้ว่า
-    \[V(x,y,z)=\begin{cases}
+    \[
+    V(x,y,z)=\begin{cases}
         \dfrac{q}{4\pi\eps_0}\ab(\ab(x^2+y^2+(z-d)^2)^{-1/2}-\ab(x^2+y^2+(z+d)^2)^{-1/2})&\qq{เมื่อ $z\geq0$}\\
         0&\qq{เมื่อ $z< 0$}
-    \end{cases}\]
+    \end{cases}
+    \]
     ($V(x,y,z)=0$ เมื่อ $z<0$ เพราะด้านล่างเหมือนกับระบบที่ไม่มีประจุที่ใดเลย)
 \end{soln}
 หมายเหตุ: \emph{ควรระวังว่าระบบที่สร้างขึ้นมาเปรียบเทียบนี้จะต้องมีการกระจายตัวของประจุในบริเวณที่สนใจเหมือนกับระบบตั้งต้นเท่านั้นจึงจะใช้ได้ และไม่ได้แปลว่าทุกย่างของทั้งสองระบบจะเหมือนกัน เช่น ถ้าลองคำนวณดูแล้วพลังงานของระบบโจทย์จะเป็นครึ่งหนึ่งของระบบที่สร้างขึ้นมาใหม่ (มาจากสนามอีกครึ่งที่หายไป)}
 \section{การแยกตัวแปร}
 \subsection{การแยกตัวแปรบนพิกัดคาร์ทีเซียน}
 เริ่มจากการ ``เดา" ว่า 
-\[V(x,y,z)=X(x)Y(y)Z(z)\]
+\[
+V(x,y,z)=X(x)Y(y)Z(z)
+\]
 ดังนั้นจากสมการ Laplace จะได้ว่า
 \begin{align*}
     YZ\odv[2]{X}{x}+XZ\odv[2]{Y}{y}+XY\odv[2]{Z}{z}&=0\\
     \frac{1}{X}\odv[2]{X}{x}+\frac{1}{Y}\odv[2]{Y}{y}+\frac{1}{Z}\odv[2]{Z}{z}&=0
 \end{align*}
 เนื่องจากแต่ละพจน์เป็นฟังก์ชันตัวแปรเดียวโดยต้องรวมกันเท่ากับ $0$ ทุก $(x,y,z)$ ในปริมาตรที่สนใจ ดังนั้น
-\[\frac{1}{X}\odv[2]{X}{x}=C_x\qq*{,}\frac{1}{Y}\odv[2]{Y}{y}=C_y\qq*{,}\frac{1}{Z}\odv[2]{Z}{z}=C_z\]
+\[
+\frac{1}{X}\odv[2]{X}{x}=C_x\qq*{,}\frac{1}{Y}\odv[2]{Y}{y}=C_y\qq*{,}\frac{1}{Z}\odv[2]{Z}{z}=C_z
+\]
 จากนั้นใช้เงื่อนไขขอบเขตในโจทย์เพื่อดูว่า $C$ ในแต่ละสมการควรเป็นค่าบวกหรือลบ และแก้สมการเชิงอนุพันธ์ออกมาโดยจะมีคำตอบดังนี้:
 \begin{lawbox}{สมการเชิงอนุพันธ์ของสมการ Laplace ในพิกัดคาร์ทีเซียน}
     สมการเชิงอนุพันธ์
@@ -131,7 +147,9 @@
     \end{cases}\label{fourierint}
 \end{equation}
 ดังนั้นถ้าต้องการหาสัมประสิทธิ์ของพจน์ที่ $n$ ที่ทำให้อนุกรม Fourier เท่ากับฟังก์ชัน $V(x)$ ฝั่งซ้าย:
-\[V(x)=\sum_{n=0}^\infty c_n\sin\ab(\frac{n\pi x}{a})\]
+\[
+V(x)=\sum_{n=0}^\infty c_n\sin\ab(\frac{n\pi x}{a})
+\]
 สามารถคูณ $\sin\ab(n\pi x/a)$ เข้าไปทั้งสองฝั่งแล้วอินทิเกรตโดยใช้ (\ref{fourierint}) จะได้
 \begin{equation}
     C_n=\int_0^a V(x)\sin\ab(\frac{n\pi x}{a})\odif{x}
@@ -140,19 +158,25 @@
 \begin{enumerate}
     \item เซตของฟังก์ชันนี้เป็นเซตที่\emph{สมบูรณ์} (\emph{complete}) หมายความว่า ฟังก์ชันใด ๆ สามารถถูกเขียนได้ในรูปผลบวกเชิงเส้นของฟังก์ชันในเซต
     \item เซตของฟังก์ชันนี้ (ให้เป็น $\{f_1,f_2,f_3,\dots\}$) เป็นเซตที่\emph{ตั้งฉากกัน} (\emph{orthogonal}) หมายความว่า
-    \[\int f_n(t)\,f_{n'}(t)\odif{t}=0\]
+    \[
+    \int f_n(t)\,f_{n'}(t)\odif{t}=0
+    \]
     สำหรับทุก $n'\neq n$
 \end{enumerate}
 \subsection{การแยกตัวแปรบนพิกัดทรงกลม}
 ในส่วนนี้จะพิจารณาแค่ระบบที่มีความสมมาตรแบบ azimuth (สมมาตรรอบแกน $z$) ดังนั้นให้
-\[V(r,\theta,\phi)=R(r)\,\Theta(\theta)\]
+\[
+V(r,\theta,\phi)=R(r)\,\Theta(\theta)
+\]
 จากสมการ Laplace (ในระบบพิกัดทรงกลม) จะได้ว่า
 \begin{align*}
     \Theta\odv{}{r}\ab(r^2\odv{R}{r})+\frac{R}{\sin\theta}\odv{}{\theta}\ab(\sin\theta\odv{\Theta}{\theta})&=0\\
     \frac{1}{R}\odv{}{r}\ab(r^2\odv{R}{r})+\frac{1}{\Theta\sin\theta}\odv{}{\theta}\ab(\sin\theta\odv{\Theta}{\theta})&=0
 \end{align*}
 เช่นเดียวกับในพิกัดคาร์ทีเซียน แต่ละพจน์จะต้องเป็นค่าคงที่ ดังนั้น
-\[\frac{1}{R}\odv{}{r}\ab(r^2\odv{R}{r})=C_r\qq*{,}\frac{1}{\Theta\sin\theta}\odv{}{\theta}\ab(\sin\theta\odv{\Theta}{\theta})=C_\theta\]
+\[
+\frac{1}{R}\odv{}{r}\ab(r^2\odv{R}{r})=C_r\qq*{,}\frac{1}{\Theta\sin\theta}\odv{}{\theta}\ab(\sin\theta\odv{\Theta}{\theta})=C_\theta
+\]
 เมื่อให้ $C_r=l(l+1)$ และ $C_\theta=-l(l+1)$ จะแก้สมการได้คำตอบดังนี้:
 \begin{lawbox}{สมการเชิงอนุพันธ์ของสมการ Laplace ในพิกัดทรงกลม 1}
     สมการเชิงอนุพันธ์
@@ -212,14 +236,18 @@
 ซึ่งสามารถใช้ในการแก้หาสัมประสิทธิ์ของคำตอบสุดท้ายที่เป็นการนำคำตอบแบบแยกตัวแปรมาบวกกันได้
 \subsection{การแยกตัวแปรบนพิกัดทรงกระบอก}
 จะพิจารณาระบบที่สมมาตรแบบทรงกระบอก (สมมาตรในแนวแกน $z$) ดังนั้นให้
-\[V(s,\phi,z)=S(s)\,\Phi(\phi)\]
+\[
+V(s,\phi,z)=S(s)\,\Phi(\phi)
+\]
 จากสมการ Laplace (ในระบบพิกัดทรงกระบอก) จะได้ว่า
 \begin{align*}
     \frac{\Phi}{s}\odv{}{s}\ab(s\odv{S}{s})+\frac{S}{s^2}\odv[2]{\Phi}{\phi}&=0\\
     \frac{s}{S}\odv{}{s}\ab(s\odv{S}{s})+\frac{1}{\Phi}\odv[2]{\Phi}{\phi}&=0
 \end{align*}
 จะได้ว่า
-\[\frac{s}{S}\odv{}{s}\ab(s\odv{S}{s})=C_s\qq*{,}\frac{1}{\Phi}\odv[2]{\Phi}{\phi}=C_\phi\]
+\[
+\frac{s}{S}\odv{}{s}\ab(s\odv{S}{s})=C_s\qq*{,}\frac{1}{\Phi}\odv[2]{\Phi}{\phi}=C_\phi
+\]
 โดยถ้าให้ $C_s=k^2=-C_\phi$ (เพราะถ้า $C_\phi$ ไม่เป็นลบจะได้คำตอบในรูป exponential ทำให้ไม่เป็นฟังก์ชันคาบตามที่ต้องการ) จะได้คำตอบของ $\Phi$ เป็น $\Phi(\phi)=A\sin k\phi+B\cos k\phi$ เช่นเดียวกับในพิกัดคาร์ทีเซียน และ
 \begin{lawbox}{สมการเชิงอนุพันธ์ในพิกัดทรงกระบอก}
     สมการเชิงอนุพันธ์
@@ -245,11 +273,17 @@
 \section{การกระจาย Multipole}
 \subsection{การประมาณศักย์ไฟฟ้าระยะไกล}
 พิจารณา \emph{electric dipole} ที่ประกอบด้วยจุดประจุ $+q$ และ $-q$ ที่ห่างกัน $d$ โดยสมมติให้ dipole นี้ตั้งในแกน $z$ โดยมีประจุบวกอยู่ในทิศ $+z$ และจุดศูนย์กลางของ dipole อยู่ที่จุดกำเนิด และให้ $\vrr_+$, $\vrr_-$ เป็นเวกเตอร์จากขั้วบวกและลบมายัง $\vb{r}$ ตามลำดับ จะได้ว่า
-\[V(\vb{r})=\kem\ab(\frac{q}{\nrr_+}-\frac{q}{\nrr_-})\]
+\[
+V(\vb{r})=\kem\ab(\frac{q}{\nrr_+}-\frac{q}{\nrr_-})
+\]
 และจากกฎของ $\cos$ จะได้
-\[\nrr_\pm^2=r^2+(d/2)^2\mp rd\cos\theta=r^2\ab(1\mp\frac{d}{r}\cos\theta+\frac{d^2}{4r^2})\]
+\[
+\nrr_\pm^2=r^2+(d/2)^2\mp rd\cos\theta=r^2\ab(1\mp\frac{d}{r}\cos\theta+\frac{d^2}{4r^2})
+\]
 ดังนั้นเมื่อ $r\gg d$ จะได้ว่า
-\[\frac{1}{\nrr_\pm}\approx \frac{1}{r}\ab(1\mp\frac{d}{r}\cos\theta)^{-1/2}\approx\frac{1}{r}\ab(1\pm \frac{d}{2r}\cos\theta)\]
+\[
+\frac{1}{\nrr_\pm}\approx \frac{1}{r}\ab(1\mp\frac{d}{r}\cos\theta)^{-1/2}\approx\frac{1}{r}\ab(1\pm \frac{d}{2r}\cos\theta)
+\]
 ก็จะได้ว่าที่ระยะ $r$ ไกล ๆ จาก dipole:
 \begin{equation}
     V(\vb{r})\approx\kem\frac{qd\cos\theta}{r^2}\label{dipolefar}
@@ -259,7 +293,9 @@
 ดังนั้นเราจึงอาจหาวิธีเขียนศักย์ของการกระจายตัวของประจุแบบใด ๆ ให้อยู่ในรูปอนุกรมของพจน์ multipole ($1/r$, $1/r^2$, $1/r^3$, ...) เพื่อที่จะประมาณค่าศักย์ไกล ๆ ด้วยพจน์ monopole และ dipole ได้:
 
 พิจารณาการให้ $\nrr$ และ $\alpha$ เป็นมุมและระยะระหว่าง $\vb{r}$ และ $\vb{r}'$ ตามลำดับ จะได้
-\[\nrr^2=r^2+(r')^2-2rr'\cos\alpha=r^2\ab(1+\ab(\frac{r'}{r})^2-2\ab(\frac{r'}{r})\cos\alpha)\]
+\[
+\nrr^2=r^2+(r')^2-2rr'\cos\alpha=r^2\ab(1+\ab(\frac{r'}{r})^2-2\ab(\frac{r'}{r})\cos\alpha)
+\]
 ดังนั้น
 \begin{equation}
     \frac{1}{\nrr}=\frac{1}{r}\ab(1+\ab(\frac{r'}{r})\ab(\frac{r'}{r}-2\cos\alpha))^{-1/2}\label{multipoleex}
@@ -274,7 +310,9 @@
 \end{ieqbox}
 \subsection{พจน์ Monopole และ Dipole}
 สำหรับพจน์ monopole ($n=0$) จะมีค่าเท่ากับ
-\[V_\txt{mon}(\vb{r})=\kem\frac{1}{r}\int P_0(\cos\alpha)\,\rho(\vb{r}')\odif{\tau'}=\kem\frac{1}{r}\int\rho(\vb{r}')\odif{\tau'}\]
+\[
+V_\txt{mon}(\vb{r})=\kem\frac{1}{r}\int P_0(\cos\alpha)\,\rho(\vb{r}')\odif{\tau'}=\kem\frac{1}{r}\int\rho(\vb{r}')\odif{\tau'}
+\]
 ดังนั้น
 \begin{eqbox}{พจน์ Monopole}
     V_\txt{mon}(\vb{r})=\kem\frac{Q}{r}
@@ -282,9 +320,13 @@
 ซึ่งก็ไม่น่าแปลกใจเพราะค่าศักย์ที่ระยะไกล ๆ ก็ควรจะโตคล้ายประจุรวม $Q$ ในระบบ (เรียก $Q$ นี้ว่า \emph{monopole moment}) โดยพจน์ monopole นี้จะไม่ขึ้นกับตำแหน่งของจุดกำเนิด ต่างจากพจน์อื่น ๆ ที่ขึ้นกับตำแหน่งที่ใช้เป็นจุดกำเนิดในระบบ
 
 ต่อมาพจน์ dipole ($n=1$) จะมีค่าเท่ากับ
-\[V_\txt{dip}(\vb{r})=\kem\frac{1}{r^2}\int r'\,P_1(\cos\alpha)\,\rho(\vb{r}')\odif{\tau'}=\kem\frac{1}{r^2}\int r\cos\alpha\,\rho(\vb{r}')\odif{\tau'}\]
+\[
+V_\txt{dip}(\vb{r})=\kem\frac{1}{r^2}\int r'\,P_1(\cos\alpha)\,\rho(\vb{r}')\odif{\tau'}=\kem\frac{1}{r^2}\int r\cos\alpha\,\rho(\vb{r}')\odif{\tau'}
+\]
 แต่ว่า $r'\cos\alpha=\vu{r}\cdot\vb{r}'$ ดังนั้น
-\[V_\txt{dip}(\vb{r})=\kem\frac{\vu{r}}{r^2}\cdot\int\vb{r}'\rho(\vb{r}')\odif{\tau'}\]
+\[
+V_\txt{dip}(\vb{r})=\kem\frac{\vu{r}}{r^2}\cdot\int\vb{r}'\rho(\vb{r}')\odif{\tau'}
+\]
 อินทิกรัลในด้านขวาไม่ขึ้นกับ $\vb{r}$ ดังนั้นเราจะนิยาม \emph{dipole moment} $\vb{p}$ รอบจุด ๆ หนึ่งว่า:
 \begin{defbox}{ Dipole Moment}
     \begin{equation}
@@ -302,7 +344,9 @@
     V(\vb{r})=V_\txt{dip}(\vb{r})=\kem\frac{p\cos\alpha}{r^2}
 \end{equation}
 ถ้ากำหนดว่า $\vb{p}$ ชี้ในทิศ $+z$ ก็จะได้
-\[V(\vb{r})=\kem\frac{p\cos\theta}{r^2}\]
+\[
+V(\vb{r})=\kem\frac{p\cos\theta}{r^2}
+\]
 ดังนั้นเมื่อใช้ (\ref{gdephi}) จะได้สนามไฟฟ้า:
 \begin{align*}
     E_r&=-\pdv{V}{r}=\kem\frac{2p\cos\theta}{r^3}\\

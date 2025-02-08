@@ -8,7 +8,9 @@
 จะเรียก $\alpha$ นี้ว่า \emph{สภาพมีขั้วได้ของอะตอม} (atomic polarizability)
 
 สำหรับการปล่อยสนาม $\vb{E}$ นี้ไปบนโมเลกุล การเหนี่ยวนำ dipole จะต่างกันเล็กน้อย เพราะโมเลกุลนี้อาจจะถูกโพ- ลาไรซ์ยากง่ายไม่เท่ากันในแกนที่ต่างกัน เช่นในตัวอย่างง่าย ๆ อย่าง $\mathrm{CO}_2$ ที่โมเลกุลมีรูปร่างเป็นเส้นตรง เมื่อปล่อยสนามผ่านโมเลกุลในทิศเอียงจะต้องคิด dipole moment แยกเป็นสองพจน์:
-\[\vb{p} = \alpha_\perp\vb{E}_\perp+\alpha_\|\vb{E}_\|\]
+\[
+\vb{p} = \alpha_\perp\vb{E}_\perp+\alpha_\|\vb{E}_\|
+\]
 แต่ถ้าเป็นโมเลกุลที่ซับซ้อนกว่านี้จะต้องใช้\emph{เทนเซอร์สภาพโพลาไรซ์ได้} (polarizability tensor) $\alpha_{ij}$ ซึ่งเป็นเทนเซอร์สามมิติที่มีแรงก์ $2$ โดยมีความสัมพันธ์ระหว่าง $\vb{E}$, $\vb{p}$, และ $\alpha_{ij}$ ดังนี้:
 \begin{eqbox}{Dipole เหนี่ยวนำในโมเลกุล}
     p_i = \alpha_{ij}E_j
@@ -57,7 +59,9 @@
 \section{สนามไฟฟ้าของวัตถุที่ถูกโพลาไรซ์}
 \subsection{Bound Charges}
 พิจารณาปริมาตร $\vol$ ที่ถูกโพลาไรซ์ให้มีโพลาไรเซชัน $\vb{P}$ จาก (\ref{dippotential}) จะได้ว่าศักย์ที่ตำแหน่ง $\vb{r}$ จาก dipole ในปริมาตรเล็ก ๆ ณ ตำแหน่ง $\vb{r}'$ เท่ากับ
-\[\odif{V}(\vb{r})=\kem\frac{\odif{\vb{p}}\cdot\vrru}{\nrr^2}=\kem\frac{\vb{P}\odif{\tau'}\cdot\vrru}{\nrr^2}\]
+\[
+\odif{V}(\vb{r})=\kem\frac{\odif{\vb{p}}\cdot\vrru}{\nrr^2}=\kem\frac{\vb{P}\odif{\tau'}\cdot\vrru}{\nrr^2}
+\]
 ดังนั้น
 \begin{align*}
     V(\vb{r})&=\kem\int_\vol\frac{\vb{P}\cdot\vrru}{\nrr^2}\odif{\tau'}=\kem\int_\vol\vb{P}\cdot\gd'\ab(\frac{1}{\nrr})\odif{\tau'}
@@ -132,7 +136,9 @@
 หมายเหตุ: \emph{$\vb{E}$ ในที่นี้คือสนาม\underline{ทั้งหมด} ดังนั้นสมการนี้ไม่ได้ใช้ง่ายอย่างที่คิด เพราะการโพลาไรซ์ด้วยสนามภายนอก $\vb{E}^\txt{ext}$ จะทำให้เกิดสนามมาเพิ่มจาก $\vb{P}$ ที่เกิดขึ้นอีกที วนไปวนมาเรื่อย ๆ วิธีที่ง่ายที่สุดในการคำนวณก็คือควรพิจารณา $\vb{D}$ ก่อนและใช้กฎของ Gauss}
 
 โดยเราจะเรียกไดอิเล็กทริกที่เป็นไปตามสมการด้านบนว่า\emph{ไดอิเล็กทริกเชิงเส้น} และเราจะเรียก $\chi_e$ ว่า\emph{สภาพอ่อนไหวทางไฟฟ้า} (\emph{electric susceptibility}) ของไดอิเล็กทริกนั้น ๆ ต่อมาพิจารณา
-\[\vb{D}=\eps_0\vb{E}+\vb{P}=\eps_0\ab(1+\chi_e)\vb{E}\]
+\[
+\vb{D}=\eps_0\vb{E}+\vb{P}=\eps_0\ab(1+\chi_e)\vb{E}
+\]
 จึงได้ว่า $\vb{D}\propto\vb{E}$ ด้วย เราจึงนิยาม\emph{สภาพยอมทางไฟฟ้า} (\emph{elctric permittivity}) ว่า
 \begin{defbox}{สภาพยอมทางไฟฟ้า}
 \begin{equation}
@@ -150,7 +156,9 @@
 \end{equation}
 \end{defbox}
 พิจารณาภายในบริเวณที่มี $\chi_e$ คงที่ จะได้ว่า
-\[\gd\cdot\vb{D}=\rho_f\qq{และ}\gd\times\vb{D}=\vb{0}\]
+\[
+\gd\cdot\vb{D}=\rho_f\qq{และ}\gd\times\vb{D}=\vb{0}
+\]
 โดย Helmholtz's theorem จึงได้ว่า
 \begin{equation}
     \vb{D}=\eps_0\vb{E}_\txt{vac}
@@ -175,7 +183,9 @@
 \end{equation}
 \subsection{ปัญหาสภาวะขอบเขตเกี่ยวกับไดอิเล็กทริกเชิงเส้น}
 เนื่องจาก
-\[\rho_b=-\gd\cdot\vb{P}=-\gd\cdot\ab(\eps_0\frac{\chi_e}{\eps}\vb{D})=(\cst)\rho_f\]
+\[
+\rho_b=-\gd\cdot\vb{P}=-\gd\cdot\ab(\eps_0\frac{\chi_e}{\eps}\vb{D})=(\cst)\rho_f
+\]
 ดังนั้นในบริเวณที่ไม่มีประจุอิสระ จะได้ว่า $\rho=\rho_b+\rho_f=0$ ทำให้สามารถใช้สมการ Laplace แก้หา $V$ ได้โดยวิธีจากบทที่แล้ว โดยมีสภาวะขอบเขตดังนี้ (พิสูจน์โดย (\ref{gaussd})):
 \begin{lawbox}{สภาวะขอบเขตของรอยต่อไดอิเล็กทริก}
     บนแผ่นประจุที่มีความหนาแน่นของประจุอิสระเชิงพื้นที่ $\sigma_f$ จะได้ว่า
@@ -201,7 +211,9 @@
     V(r,\theta)=\sum_{l=0}^\infty A_lr^l\,P_l(\cos\theta)\tag{$\star$1}\label{exdi1}
 \end{equation}
 ข้างนอกไดอิเล็กทริกจะต้องมี $V(r,\theta)$ เมื่อ $r\to\infty$ เป็น
-\[V(r,\theta)\approx -E_0r\cos\theta\]
+\[
+V(r,\theta)\approx -E_0r\cos\theta
+\]
 ก็จะได้ว่าที่ $r>R$:
 \begin{equation}
     V(r,\theta)=-E_0r\cos\theta+\sum_{l=0}^\infty \frac{B_l}{r^{l+1}}P_l(\cos\theta)\tag{$\star$2}\label{exdi2}
@@ -212,12 +224,16 @@
     A_lR^l&=\dfrac{B_l}{R^{l+1}}&\qq{เมื่อ $l\neq1$}
 \end{alignat*}
 ดังนั้น $A_l=B_l=0$ สำหรับทุก $l\neq 1$ ก็จะได้
-\[V(r,\theta)=\begin{cases}
+\[
+V(r,\theta)=\begin{cases}
     A_1r\cos\theta&\qq{เมื่อ $r<R$}\\
     -E_0r\cos\theta+\dfrac{(A_1+E_0)R^3}{r^2}\cos\theta&\qq{เมื่อ $r>R$}
-\end{cases}\]
+\end{cases}
+\]
 ต่อมาใช้ (\ref{dbound2}) จะแก้หา $A_1$ ได้
-\[A_1=\frac{-3E_0}{2+\eps_r}\]
+\[
+A_1=\frac{-3E_0}{2+\eps_r}
+\]
 ก็จะได้ $V$ เมื่อ $r<R$:
 \begin{align*}
     V(r,\theta)&=-\frac{3}{2+\eps_r}E_0r\cos\theta\\
@@ -227,7 +243,9 @@
 \end{soln}
 \subsection{พลังงานในระบบที่มีไดอิเล็กทริกเชิงเส้น}
 เราสามารถหาพลังงานของระบบไดอิเล็กทริกโดยการ ``ประกอบ" ระบบของประจุอิสระ $\rho_f$ ทีละนิด แล้วปล่อยให้ไดอิเล็กทริกเกิดการโพลาไรซ์ก่อนที่จะประกอบต่อไป งานที่ต้องใช้บนประจุ $\Delta \rho_f$ ในการนำมาประกอบจะเท่ากับ
-\[\Delta U=\int(\Delta\rho_f)V\odif{\tau}\]
+\[
+\Delta U=\int(\Delta\rho_f)V\odif{\tau}
+\]
 แต่ $\gd\cdot\vb{D}=\rho_f$ ดังนั้น $\Delta\rho_f=\gd\cdot(\Delta\vb{D})$ นำไปแทนแล้วใช้ integration by parts และ Stokes' theorem จะได้ว่า
 \begin{align*}
     \Delta U&=\int\ab\big(\gd\cdot(\Delta\vb{D}))V\odif{\tau}\\
@@ -236,9 +254,13 @@
     &=\int\Delta\vb{D}\cdot\vb{E}\odif{\tau}
 \end{align*}
 ต่อมาพิจารณา
-\[\Delta\ab(\vb{D}\cdot\vb{E})=\eps\,\Delta\ab(E^2)=2\eps E\,\Delta E=2\,\Delta\vb{D}\cdot\vb{E}\]
+\[
+\Delta\ab(\vb{D}\cdot\vb{E})=\eps\,\Delta\ab(E^2)=2\eps E\,\Delta E=2\,\Delta\vb{D}\cdot\vb{E}
+\]
 ก็จะได้ว่า
-\[\Delta U=\frac{1}{2}\int\Delta\ab(\vb{D}\cdot\vb{E})\odif{\tau}\]
+\[
+\Delta U=\frac{1}{2}\int\Delta\ab(\vb{D}\cdot\vb{E})\odif{\tau}
+\]
 หรือก็คือ
 \begin{ieqbox}{พลังงานจากสนามไฟฟ้าและไดอิเล็กทริกเชิงเส้น}
     U=\int u(\vb{r})\odif{\tau}\qq{เมื่อ} u(\vb{r})=\frac{1}{2}\ab\Big(\vb{D}(\vb{r})\cdot\vb{E}(\vb{r}))\label{edensitydi}
@@ -246,7 +268,9 @@
 หมายเหตุ: \emph{สังเกตว่า (\ref{edensitydi}) $\geq$ (\ref{energydensity}) เหตุผลเป็นเพราะว่า (\ref{energydensity}) จะเป็นพลังงานเนื่องจากสนามไฟฟ้าโดยตรง ไม่รวมพลังงานในการ ``แยก" ขั้วของไดอิเล็กทริกในการโพลาไรซ์ (อาจมองเหมือนเป็นสปริงที่เชื่อมขั้วทั้งสองเข้าด้วยกัน) ดังนั้นก็จะได้อีกว่าพลังงานภายในของ ``สปริง" นี้เท่ากับ $\int \vb{D}\cdot\vb{E}\odif{\tau} - \frac{\eps_0}{2}\int E^2\odif{\tau}$} 
 \subsection{แรงบนไดอิเล็กทริกเชิงเส้น}
 พิจารณาไดอิเล็กทริกที่ขั้นในตัวเก็บประจุแผ่นตัวนำคู่ขนานกว้าง $w$ ยาว $l$ หน้า $d$ (ให้แนวยาวขนานกับแกน $x$ และตัวเก็บประจุนี้ชิดกับระนาบ $yz$) โดยที่ไดอิเล็กทริกเหลื่อมกับตัวเก็บประจุไประยะ $+x$ ถ้าดังไดอิเล็กทริกออกมาอีก $\odif{x}$ จะได้ว่างานที่กระทำ:
-\[\odif{U}=\odif{W}=F_\txt{ext}\odif{x}\]
+\[
+\odif{U}=\odif{W}=F_\txt{ext}\odif{x}
+\]
 ดังนั้นแรงที่สนามกระทำเท่ากับ
 \begin{equation}
     F=-F_\txt{ext}=-\odv{U}{x}\tag{$\star$1}\label{forcedi}
@@ -256,9 +280,13 @@
 C=C_1+C_2=\frac{wx}{d}\eps_0+\frac{w(l-x)}{d}\eps_r\eps_0=\frac{\eps_0w}{d}\ab\big(\eps_rl-\chi_ex)\tag{$\star$2}\label{forcedi2}
 \end{equation}
 จะได้พลังงานสะสมในตัวเก็บประจุที่มีระยะเหลื่อม $x$ ใด ๆ เท่ากับ
-\[U=\frac{1}{2}\frac{Q^2}{C}\]
+\[
+U=\frac{1}{2}\frac{Q^2}{C}
+\]
 ดังนั้น
-\[\odif{U}=-\frac{1}{2}\frac{Q^2}{C^2}\odif{C}=-\frac{1}{2}V^2\odif{C}\overset{\text{(\ref{forcedi2})}}{=}\frac{1}{2}V^2\frac{\eps_0\chi_ew}{d}\odif{x}\]
+\[
+\odif{U}=-\frac{1}{2}\frac{Q^2}{C^2}\odif{C}=-\frac{1}{2}V^2\odif{C}\overset{\text{(\ref{forcedi2})}}{=}\frac{1}{2}V^2\frac{\eps_0\chi_ew}{d}\odif{x}
+\]
 นำกลับไปแทนใน (\ref{forcedi}) จะได้ว่า
 \begin{eqbox}{แรงบนไดอิเล็กทริกระหว่างแผ่นตัวนำ}
     F=-\frac{\eps_0\chi_ew}{2d}V^2
