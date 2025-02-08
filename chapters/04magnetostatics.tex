@@ -72,11 +72,11 @@
     \end{equation}
     สำหรับประจุที่ไหลในปริมาตรสามมิติ ถ้าในท่อเล็ก ๆ ที่ขนานกับทิศในการไหลของกระแส $\odif{\vb{I}}$ มีพื้นที่ $\odif{a_\perp}$ เราจะนิยาม\emph{ความหนาแน่นกระแสไฟฟ้าเชิงปริมาตร} ($\vb{J}$) ว่า
     \begin{equation}
-        \vb{J}\equiv\frac{\odif{\vb{I}}}{\odif{a_\perp}}=\rho\vb{v}
+        \vb{J}\equiv\frac{\odif{\vb{I}}}{\odif{a_\perp}}=\rho\vb{v}\label{curdensdef}
     \end{equation}
 \end{defbox}
 และเช่นเดียวกับ (\ref{magforcei}) จะได้ว่า
-\begin{corbox}{แรงแม่เหล็กบนกระแสไฟฟ้าในสองและสามมิติ}
+\begin{corbox}{แรงแม่เหล็กบนกระแสในสองและสามมิติ}
     \begin{equation}
         \vb{F}_\txt{mag}=\int\ab(\vb{K}\times\vb{B})\odif{a}
     \end{equation}
@@ -85,3 +85,37 @@
         \vb{F}_\txt{mag}=\int\ab(\vb{J}\times\vb{B})\odif{\tau}
     \end{equation}
 \end{corbox}
+
+จากสมการ (\ref{curdensdef}) จะได้ว่า
+\begin{equation}
+    I=\int_{\sur}\vb{J}\cdot \odif{\vb{a}}
+\end{equation}
+และเนื่องจากประจุที่ไหลออก ($I$) จะต้องเท่ากับประจุที่หายไป ดังนั้น
+\[
+\int_\vol\ab(\gd\cdot \vb{J}) \odif{\tau} = \oint_{\del\vol} \vb{J}\cdot \odif{\vb{a}} = I = -\odv{Q_\txt{enc}}{t} = -\odv{}{t}\int_\vol\rho \odif{\tau} = -\int_\vol\ab(\pdv{\rho}{\tau})\odif{\tau}
+\]
+ก็จะได้ว่า
+\begin{ieqbox}{สมการความต่อเนื่อง}
+    \gd\cdot \vb{J} = -\pdv{\rho}{t}\label{contj}
+\end{ieqbox}
+
+\section{กฏของ Biot-Savart}
+ในบทก่อน ๆ เราได้หาสนามไฟฟ้าในระบบที่เป็นประจุหยุดหนึ่งไปแล้วหรือก็คือเป็นระบบ\emph{ไฟฟ้าสถิต} (\emph{electrostatics}) ต่อมาในกรณีสนามแม่เหล็ก ในการที่ระบบจะเป็น\emph{แม่เหล็กสถิต} (\emph{magnetostatics}) ระบบจะต้องมีกระแสคงเดิมตลอดเวลา หรือก็คือ:
+\begin{equation}
+    \pdv{\rho}{t} = 0\qq{และ}\pdv{\vb{J}}{t} = 0
+\end{equation}
+เมื่อนำไปแทนใน \ref{contj} จะได้ว่า
+\begin{equation}
+    \gd\cdot\vb{J}=0
+\end{equation}
+โดยในระบบกระแสคงที่นี้เราจะหาสนามแม่เหล็กได้จาก:
+\begin{lawbox}{กฎของ Biot-Savart}
+    สนามแม่เหล็ก $\vb{B}$ ที่ตำแหน่ง $\vb{r}$ ในระบบที่เป็นแม่เหล็กสถิต หาได้จาก
+    \begin{equation}
+        \vb{B}(\vb{r}) = \frac{\mu_0}{4\pi}\int\frac{\vb{I}\times\vus{\rad}}{\rad^2}\odif{\ell'} = \frac{\mu_0}{4\pi}I\int\frac{\odif{\vbs{\ell}'}\times\vus{\rad}}{\rad^2}
+    \end{equation}
+\end{lawbox}
+เมื่อ $\mu_0$ คือ\emph{สภาพซึมผ่านได้ของสุญญากาศ} (\emph{permeability of free space}) โดยในกรณีความหนาแน่นกระแส:
+\begin{eqbox}{กฎของ Biot-Savart ของกระแสในสองและสามมิติ}
+    \vb{B}(\vb{r}) = \frac{\mu_0}{4\pi}\int\frac{\vb{K}(\vb{r}')\times\vus{\rad}}{\rad^2}\odif{a'}\qq{และ}\vb{B}(\vb{r}) = \frac{\mu_0}{4\pi}\int\frac{\vb{J}(\vb{r}')\times\vus{\rad}}{\rad^2}\odif{\tau'}
+\end{eqbox}
