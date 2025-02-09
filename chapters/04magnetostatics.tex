@@ -137,3 +137,35 @@
     \gd\cdot\vb{B} = 0
 \end{ieqbox}
 \subsection{Curl ของสนามแม่เหล็กสถิต}
+เช่นเดิม จาก (\ref{biotdim}) จะได้ว่า
+\begin{align*}
+    \gd\times\vb{B} &= \frac{\mu_0}{4\pi} \int\gd\times\ab(\vb{J}\times\frac{\vus{\rad}}{\rad^2})\odif{\tau'}\\
+    &= \frac{\mu_0}{4\pi}\int\ab(\ab(\frac{\vus{\rad}}{\rad^2}\cdot\gd)\,\vb{J} - \ab(\vb{J}\cdot\gd)\frac{\vus{\rad}}{\rad^2} + \vb{J}\,\ab(\gd\cdot\frac{\vus{\rad}}{\rad^2}) - \frac{\vus{\rad}}{\rad^2}\ab(\gd\cdot\vb{J}))\odif{\tau'}
+\end{align*}
+เนื่องจาก $\vb{J}$ ขึ้นกับพิกัด $(x',y',z')$:
+\begin{equation}
+    \gd\times\vb{B} = \frac{\mu_0}{4\pi} \int\ab(\vb{J}\,\ab(\gd\cdot\frac{\vus{\rad}}{\rad^2}) - \ab(\vb{J}\cdot\gd)\frac{\vus{\rad}}{\rad^2}) \odif{\tau'}\label{proofcurlb}\tag{$\star$1}
+\end{equation}
+พิจารณาพจน์ด้านหลัง เนื่องจาก $\vus{\rad} / \rad^2 = f(\vb{r} - \vb{r}')$ ดังนั้น $\gd = -\gd'$ จะได้ว่า
+\[
+\int -\ab(\vb{J}\cdot\gd)\frac{\vus{\rad}}{\rad^2} \odif{\tau'} = \int \ab(\vb{J}\cdot\gd')\frac{\vus{\rad}}{\rad^2} \odif{\tau'}
+\]
+คิดแยกแกน โดยให้ $\vol$ คือปริมาตรที่อินทิเกรต (ปริมาตรที่ใหญ่มาก ๆ):
+\begin{align*}
+    \ab(\int_\vol -\ab(\vb{J}\cdot\gd)\frac{\vus{\rad}}{\rad^2} \odif{\tau'})_x &= \int_\vol \ab(\vb{J}\cdot\gd')\,\frac{x-x'}{\rad^2} \odif{\tau'}\\
+    &= \int_\vol \gd'\cdot\ab(\frac{x-x'}{\rad^2}\vb{J})\odif{\tau'} - \cancel{\int_\vol \ab(\gd'\cdot\vb{J})\,\frac{x-x'}{\rad^2} \odif{\tau'}}\\
+    &= \oint_{\del\vol} \ab(\frac{x-x'}{\rad^2}\vb{J})\cdot\odif{\vb{a}}
+\end{align*}
+เนื่องจาก $\vol$ ใหญ่มาก ดังนั้นจะได้ว่าไม่มีกระแสไหลออกจากระบบเลย ดังนั้น
+\[
+\int_\vol -\ab(\vb{J}\cdot\gd)\frac{\vus{\rad}}{\rad^2} \odif{\tau'} = \vb{0}
+\]
+นำไปแทนใน (\ref{proofcurlb}) จะได้ว่า
+\begin{align*}
+    \gd\times\vb{B} &= \frac{\mu_0}{4\pi}\int\vb{J}\,\ab(\gd\cdot\frac{\vus{\rad}}{\rad^2})\odif{\tau'}\\
+    &= \frac{\mu_0}{4\pi} \int \vb{J}\,\ab(4\pi\,\delta^3(\vbs{\rad})) \odif{\tau'}
+\end{align*}
+ดังนั้น
+\begin{ieqbox}{กฎของ Ampère (Differential Form)}
+    \gd\times\vb{B} = \mu_0\vb{J}
+\end{ieqbox}
