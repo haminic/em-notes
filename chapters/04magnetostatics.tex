@@ -134,7 +134,7 @@
 \]
 ดังนั้น
 \begin{ieqbox}{กฎของ Gauss สำหรับสนามแม่เหล็ก}
-    \gd\cdot\vb{B} = 0
+    \gd\cdot\vb{B} = 0\label{gaussb}
 \end{ieqbox}
 \subsection{Curl ของสนามแม่เหล็กสถิต}
 เช่นเดิม จาก (\ref{biotdim}) จะได้ว่า
@@ -167,5 +167,53 @@
 \end{align*}
 ดังนั้น
 \begin{ieqbox}{กฎของ Ampère (Differential Form)}
-    \gd\times\vb{B} = \mu_0\vb{J}
+    \gd\times\vb{B} = \mu_0\vb{J}\label{amperedif}
 \end{ieqbox}
+ต่อมาอินทิเกรตบนผิวใด ๆ:
+\[
+\int \ab(\gd\times\vb{B})\cdot\odif{\vb{a}} = \mu_0 \int \vb{J}\cdot\odif{\vb{a}} = \mu_0 I_\txt{enc}
+\]
+โดย Stokes' Theorem จะได้ว่า
+\begin{ieqbox}{กฎของ Ampère (Integral Form)}
+    \oint\vb{B}\cdot\odif{\vbs{\ell}} = \mu_0 I_\txt{enc}\label{ampereint}
+\end{ieqbox}
+
+\section{เวกเตอร์ศักย์แม่เหล็ก}
+\subsection{นิยามศักย์แม่เหล็ก}
+ในบทสนามไฟฟ้า เนื่องจาก $\gd\times\vb{E} = \vb{0}$ ทำให้เราสามารถนิยามสนามสเกลาร์ $V$ (ศักย์ไฟฟ้า) ซึ่ง
+\[
+\vb{E} = -\gd V
+\]
+ในกรณีของสนามแม่เหล็ก เรามี (\ref{gaussb}) ที่กล่าวว่า $\gd\cdot\vb{B} = 0$ จึงทำให้เราสามารถนิยาม\emph{ศักย์แม่เหล็ก}ซึ่งเป็นสนามเวกเตอร์ได้ว่า
+\begin{defbox}{ศักย์แม่เหล็ก}
+    \begin{equation}
+        \vb{B} = \gd\times\vb{A}\label{magpot}
+    \end{equation}
+\end{defbox}
+พิจารณา (\ref{amperedif}):
+\begin{align*}
+    \mu_0\vb{J} &= \gd\times\vb{B}\\
+    &= \gd\times\ab(\gd\times\vb{A})\\
+    &= \gd(\gd\cdot\vb{A}) - \nabla^2\vb{A}
+\end{align*}
+สังเกตว่าถ้า $\vb{A}_0$ สอดคล้องกับ (\ref{magpot}) แล้ว $\vb{A} = \vb{A}_0 + \gd\lambda$ ก็สอดคล้องด้วย พิจารณา $\gd\cdot\vb{A}$:
+\begin{align*}
+    \gd\cdot\vb{A} = \gd\cdot\vb{A}_0 + \nabla^2\lambda
+\end{align*}
+ดังนั้นเราจึงสามารถเลือกสนามศักย์แม่เหล็กให้มี $\gd\cdot\vb{A} = 0$ ได้เสมอ (เพราะเรารู้ว่าสมการ Poisson $\nabla^2\lambda = -f(x) = -\gd\cdot\vb{A}_0$ มีคำตอบ) ก็จะได้ว่า
+\begin{eqbox}{สมการ Poisson ของศักย์แม่เหล็ก}
+    \nabla^2 \vb{A} = \mu_0\vb{J}\label{poissonb}
+\end{eqbox}
+ในบทไฟฟ้าสถิตเรามีคำตอบของสมการ $\nabla^2 V = \rho / \eps_0$ อยู่แล้ว (เมื่อ $\rho\to 0$ เมื่อ $\vb{r}\to\infty$) คือ
+\[
+V(\vb{r}) = \frac{1}{4\pi\eps_0}\int\frac{\rho(\vb{r}')}{\rad} \odif{\tau'}
+\]
+จังดัดแปลงให้เป็นคำตอบของ (\ref{poissonb}) ได้ว่า
+\begin{ieqbox}{ศักย์แม่เหล็กจากสนามกระแส}
+    \vb{A}(\vb{r}) = \frac{\mu_0}{4\pi}\int\frac{\vb{J}(\vb{r}')}{\rad} \odif{\tau'}
+\end{ieqbox}
+หรือสำหรับหนึ่งและสองมิติ:
+\begin{eqbox}{ศักย์แม่เหล็กจากสนามกระแสในหนึ่งและสองมิติ}
+    \vb{A}(\vb{r}) = \frac{\mu_0}{4\pi} \int \frac{\vb{K}(\vb{r}')}{\rad} \odif{a'}\qq{และ}\vb{A}(\vb{r}) = \frac{\mu_0}{4\pi} \int \frac{\vb{I}(\vb{r})}{\rad} \odif{\ell'} = \frac{\mu_0 I}{4\pi} \int \frac{1}{\rad} \odif{\vbs{\ell}'}
+\end{eqbox}
+โดยสมการศักย์นี้ใช้ได้เมื่อ $\vb{J}\to\vb{0}$ เมื่อ $\vb{r}\to\infty$ แต่ถ้าไม่ใช่ อาจต้องหาศักย์โดยใช้วิธีอื่นเช่นเดียวกับบางหัวข้อในบทศักย์ไฟฟ้า
