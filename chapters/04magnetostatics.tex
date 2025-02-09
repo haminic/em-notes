@@ -144,7 +144,7 @@
 \end{align*}
 เนื่องจาก $\vb{J}$ ขึ้นกับพิกัด $(x',y',z')$:
 \begin{equation}
-    \gd\times\vb{B} = \frac{\mu_0}{4\pi} \int\ab(\vb{J}\,\ab(\gd\cdot\frac{\vus{\rad}}{\rad^2}) - \ab(\vb{J}\cdot\gd)\frac{\vus{\rad}}{\rad^2}) \odif{\tau'}\label{proofcurlb}\tag{$\star$1}
+    \gd\times\vb{B} = \frac{\mu_0}{4\pi} \int\ab(\vb{J}\,\ab(\gd\cdot\frac{\vus{\rad}}{\rad^2}) - \ab(\vb{J}\cdot\gd)\frac{\vus{\rad}}{\rad^2}) \odif{\tau'}\label{proofcurlb}\tag{$\dagger$}
 \end{equation}
 พิจารณาพจน์ด้านหลัง เนื่องจาก $\vus{\rad} / \rad^2 = f(\vb{r} - \vb{r}')$ ดังนั้น $\gd = -\gd'$ จะได้ว่า
 \[
@@ -216,4 +216,84 @@ V(\vb{r}) = \frac{1}{4\pi\eps_0}\int\frac{\rho(\vb{r}')}{\rad} \odif{\tau'}
 \begin{eqbox}{ศักย์แม่เหล็กจากสนามกระแสในหนึ่งและสองมิติ}
     \vb{A}(\vb{r}) = \frac{\mu_0}{4\pi} \int \frac{\vb{K}(\vb{r}')}{\rad} \odif{a'}\qq{และ}\vb{A}(\vb{r}) = \frac{\mu_0}{4\pi} \int \frac{\vb{I}(\vb{r})}{\rad} \odif{\ell'} = \frac{\mu_0 I}{4\pi} \int \frac{1}{\rad} \odif{\vbs{\ell}'}
 \end{eqbox}
-โดยสมการศักย์นี้ใช้ได้เมื่อ $\vb{J}\to\vb{0}$ เมื่อ $\vb{r}\to\infty$ แต่ถ้าไม่ใช่ อาจต้องหาศักย์โดยใช้วิธีอื่นเช่นเดียวกับบางหัวข้อในบทศักย์ไฟฟ้า
+โดยสมการศักย์นี้ใช้ได้เมื่อ $\vb{J}\to\vb{0}$ เมื่อ $\vb{r}\to\infty$ แต่ถ้าไม่ใช่ อาจต้องหาศักย์โดยใช้วิธีอื่น วิธีหนึ่งคือสังเกตว่า
+\[
+\oint_{\del\sur} \vb{A}\cdot\odif{\vbs{\ell}} = \int_\sur \ab(\gd\times\vb{A})\cdot\odif{\vb{a}} = \int_\sur\vb{B}\cdot\odif{\vb{a}} 
+\]
+โดยเราจะเรียกพจน์ฝั่งขวาว่า\emph{ฟลักซ์แม่เหล็ก} ($\Phi_B$):
+\begin{defbox}{ฟลักซ์แม่เหล็ก}
+    ฟลักซ์ของ $\vb{B}$ ที่ผ่านผิว $\sur$ คือ
+    \begin{equation}
+        \Phi_B\equiv\int_\sur\vb{B}\cdot\odif{\vb{a}}
+    \end{equation}
+\end{defbox}
+ดังนั้นสมการด้านบนก็จะได้ว่า
+\begin{equation}
+    \oint\vb{A}\cdot\odif{\vbs{\ell}} = \Phi_B\label{atofluxb}
+\end{equation}
+ซึ่งสามารถนำมาใช้หา $\vb{A}$ ได้เช่นเดียวกับการใช้ (\ref{ampereint}) ในการหา $\vb{B}$ ในระบบที่มีความสมมาตร
+
+\subsection{สภาวะขอบเขต}
+ต่อมาเรามาหาสภาวะขอบเขตของสนามแม่เหล็ก $\vb{B}$ และศักย์แม่เหล็ก $\vb{A}$ เช่นเดียวกับในบทไฟฟ้าสถิต โดยพิจารณาที่บริเวณแผ่นที่มีกระแส $\vb{K}$ ไหลอยู่:
+\begin{enumerate}
+    \item พิจารณาผิว Gaussian ทรงกระบอกที่บางมาก ๆ ดั่งในตอนหาสภาวะขอบเขตของ $\vb{E}$ และใช้ (\ref{gaussb}) จะได้ว่า
+    \[
+    B_\txt{above}^\perp - B_\txt{below}^\perp = 0
+    \]
+    ดังนั้นส่วนของ $\vb{B}$ ที่ตั้งฉากกับแผ่นกระแสจะต่อเนื่อง
+    \item พิจารณาลูป Amperian รูปสี่เหลี่ยมผืนผ้าแคบ ๆ ที่มีด้านขนานกับแผ่นกระแสแต่ตั้งฉากกับ $\vb{K}$ จะได้ว่า
+    \[
+    B_\txt{above}^\| - B_\txt{below}^\| = \mu_0K
+    \]
+    ดังนั้นส่วนของ $\vb{B}$ ที่ขนานกับแผ่นกระแสแต่ตั้งฉากกับ $\vb{K}$ จะไม่ต่อเนื่องแบบกระโดดด้วยผลต่าง $\mu_0K$
+    \item เนื่องจาก $\gd\cdot\vb{A} = 0$ จะได้ว่า $A^\perp$ ต่อเนื่อง และจาก (\ref{atofluxb}) ก็จะได้ว่า $A^\|$ ก็ต่อเนื่อง ดังนั้น
+    \[
+    \vb{A}_\txt{above} = \vb{A}_\txt{below}
+    \]
+    หรือก็คือ $\vb{A}$ ต่อเนื่องเมื่อผ่านแนวแผ่นกระแส
+    \item กำหนดให้ $\Delta\vb{A} \equiv \vb{A}_\txt{above}-\vb{A}_\txt{below}$, $\vu{k}\equiv\vu{K}$, และ $\vu{p}\equiv\vu{k}\times\vu{n}$ จากข้อ 1 และ 2 จะได้ว่า 
+    \begin{align*}
+        \mu_0\,\ab(\vb{K}\times\vu{n}) &= \vb{B}_\txt{above}-\vb{B}_\txt{below}\\
+        \mu_0K\vu{p} &= \gd\times\ab(\vb{A}_\txt{above}-\vb{A}_\txt{below})\\
+        &=\gd\times\Delta\vb{A}\\
+        &=  \begin{vmatrix}
+                \vu{k}      & \vu{n}    & \vu{p}\\
+                D_k         & D_n       & D_p\\
+                \Delta A_k  & \Delta A_n& \Delta A_p
+            \end{vmatrix}\\
+        &= \vu{p}\ab(\cancel{\pdv{}{k}\Delta A_n} - \pdv{}{n}\Delta A_k) + \vu{k}\ab(\pdv{}{n}\Delta A_p - \cancel{\pdv{}{p}\Delta A_n})
+    \end{align*}
+    (เนื่องจาก $\vb{A}$ ต่อเนื่อง $\del/\del k$ และ $\del/\del p$ ของข้างบนและข้างล่างจึงเท่ากัน) ดังนั้นก็จะได้ว่า
+    \begin{equation}
+        \pdv{}{n}\Delta A_k = -\mu_0 K\qq{และ}\pdv{}{n}\Delta A_p = 0\tag{$\heartsuit$1}\label{proofbounda1}
+    \end{equation}
+    ต่อมา จาก
+    \[
+    0=\gd\cdot\Delta\vb{A} = \cancel{\pdv{}{k}\Delta A_k} + \pdv{}{n}\Delta A_n + \cancel{\pdv{}{p}\Delta A_p}
+    \]
+    ก็จะได้ว่า
+    \begin{equation}
+        \pdv{}{n}\Delta A_n = 0\tag{$\heartsuit$2}\label{proofbounda2}
+    \end{equation}
+    จาก (\ref{proofbounda1}) และ (\ref{proofbounda2}) ก็จะได้
+    \[
+    \pdv{\vb{A}_\txt{above}}{n}-\pdv{\vb{A}_\txt{below}}{n}=-\mu_0\vb{K}
+    \]
+\end{enumerate}
+สรุปก็คือ
+\begin{lawbox}{สภาวะขอบเขตของ $\vb{B}$ และ $\vb{A}$ เมื่อผ่านแผ่นกระแส}
+    บนแผ่นประจุที่มีความหนาแน่นเชิงพื้นที่ $\sigma$ จะได้ว่า
+    \begin{equation}
+        \vb{A}_\txt{above}=\vb{A}_\txt{below}
+    \end{equation}
+    และ
+    \begin{equation}
+        \vb{B}_\txt{above}-\vb{B}_\txt{below}=\mu_0\,\ab(\vb{K}\times\vu{n})
+    \end{equation}
+    เมื่อ $\vu{n}$ คือเวกเตอร์หนึ่งหน่วยที่ตั้งฉากกับแผ่นกระแสที่ชี้จากด้านล่างไปด้านบน หรือก็จะได้
+    \begin{equation}
+        \pdv{\vb{A}_\txt{above}}{n}-\pdv{\vb{A}_\txt{below}}{n}=-\mu_0\vb{K}
+    \end{equation}
+\end{lawbox}
+
+\subsection{การกระจาย Multipole ของศักย์แม่เหล็ก}
