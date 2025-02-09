@@ -328,7 +328,7 @@ V_\txt{dip}(\vb{r})=\kem\frac{1}{r^2}\int r'\,P_1(\cos\alpha)\,\rho(\vb{r}')\odi
 V_\txt{dip}(\vb{r})=\kem\frac{\vu{r}}{r^2}\cdot\int\vb{r}'\rho(\vb{r}')\odif{\tau'}
 \]
 อินทิกรัลในด้านขวาไม่ขึ้นกับ $\vb{r}$ ดังนั้นเราจะนิยาม \emph{dipole moment} $\vb{p}$ รอบจุด ๆ หนึ่งว่า:
-\begin{defbox}{ Dipole Moment}
+\begin{defbox}{ Electric Dipole Moment}
     \begin{equation}
         \vb{p}\equiv\int\vb{r}'\rho(\vb{r}')\odif{\tau'}
     \end{equation}
@@ -338,6 +338,7 @@ V_\txt{dip}(\vb{r})=\kem\frac{\vu{r}}{r^2}\cdot\int\vb{r}'\rho(\vb{r}')\odif{\ta
     V_\txt{dip}(\vb{r})=\kem\frac{\vb{p}\cdot\vu{r}}{r^2}\label{dippotential}
 \end{eqbox}
 โดยพจน์ dipole จะไม่ขึ้นกับตำแหน่งของจุดกำเนิดเมื่อประจุรวม $Q=0$ (พิสูจน์จากการแทน $\bar{\vb{r}}=\vb{r}'-\vb{a}$)
+
 \subsection{Dipole บริสุทธิ์}
 จาก (\ref{dipolefar}) จะได้ว่า dipole จะเหลือแค่พจน์ dipole ในการกระจาย multipole ถ้าระยะ $\vb{r}$ ไกลมาก ๆ หรืออาจมองกลับกันว่าถ้าระยะ $d$ น้อยมาก ๆ ก็จะเหลือแค่พจน์ dipole เช่นกัน ดังนั้นถ้าเรามองในลิมิต $q\to\infty$ และ $d\to0$ โดยให้ $\vb{p}=q\vb{d}$ คงที่ตลอด จะได้\emph{จุด dipole บริสุทธิ์} ที่จะมีสนามศักย์เป็นเพียง
 \begin{equation}
@@ -362,8 +363,8 @@ V(\vb{r})=\kem\frac{p\cos\theta}{r^2}
     \vb{E}_\txt{dip}&=\kem\frac{p}{r^3}\ab(2\cos\theta\,\vu{r}+\sin\theta\,\vus{\uptheta})\\
     &=\kem\frac{1}{r^3}\ab(2p\cos\theta\,\vu{r}+p\sin\theta\,\vus{\uptheta})\\
     &=\kem\frac{1}{r^3}\ab(3p\cos\theta\,\vu{r}+p\sin\theta\,\vus{\uptheta}-p\cos\theta\,\vu{r})\\
-    &=\kem\frac{1}{r^3}\ab\Big(3\,\ab(\vb{p}\cdot\vb{r})\,\vu{r}-\vb{p})
+    &=\kem\frac{1}{r^3}\ab\Big(3\,\ab(\vb{p}\cdot\vu{r})\,\vu{r}-\vb{p})
 \end{align*}
 \begin{eqbox}{สนามไฟฟ้าของ Dipole บริสุทธิ์}
-    \vb{E}_\txt{dip}=\kem\frac{1}{r^3}\ab\Big(3\,\ab(\vb{p}\cdot\vb{r})\,\vu{r}-\vb{p})
+    \vb{E}_\txt{dip}=\kem\frac{1}{r^3}\ab\Big(3\,\ab(\vb{p}\cdot\vu{r})\,\vu{r}-\vb{p})\label{dipe}
 \end{eqbox}

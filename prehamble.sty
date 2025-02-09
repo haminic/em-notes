@@ -386,6 +386,16 @@ bodyfont=\normalfont
 \cfoot{\thepage}
 \rfoot{}
 
+% TOC Header & Footer
+\fancypagestyle{toc}{
+  \lhead{\sffamily\bfseries\thebloodytitle\mdseries\ \ --\ \ \theauthor}
+  \chead{}
+  \rhead{\sffamily{Table of Contents}}
+  \lfoot{}
+  \cfoot{\thepage}
+  \rfoot{}
+}
+
 % Title & Section formats
 
 \definecolor{gray50}{gray}{0.50}
@@ -445,3 +455,4 @@ bodyfont=\normalfont
 % Calculus macros
 \newcommand{\vol}{\mathcal{V}}
 \newcommand{\sur}{\mathcal{S}}
+\newcommand{\pth}{\mathcal{P}}

@@ -299,17 +299,73 @@ V(\vb{r}) = \frac{1}{4\pi\eps_0}\int\frac{\rho(\vb{r}')}{\rad} \odif{\tau'}
 \subsection{การกระจาย Multipole ของศักย์แม่เหล็ก}
 พิจารณาการกระจาย multipole ของ $\vb{A}$ (อนุกรมกำลังในรูป $1 / r$) โดยใช้ (\ref{mpradinv}) และ (\ref{magpotfromik}):
 \begin{align*}
-    \vb{A}(\vb{r}) &= \frac{\mu_0}{4\pi}\oint \frac{1}{\rad}\odif{\vbs{\ell}'}\\
-    &=\frac{\mu_0}{4\pi} \sum_{n=0}^{\infty}\frac{1}{r^{n+1}}\oint\ab(r')^nP_n(\cos\alpha)\odif{\vbs{\ell}'}
+    \vb{A}(\vb{r}) &= \frac{\mu_0I}{4\pi}\oint \frac{1}{\rad}\odif{\vbs{\ell}'}\\
+    &=\frac{\mu_0I}{4\pi} \sum_{n=0}^{\infty}\frac{1}{r^{n+1}}\oint\ab(r')^nP_n(\cos\alpha)\odif{\vbs{\ell}'}
 \end{align*}
 ก็จะได้พจน์
 \[
-\vb{A}_\txt{mon}(\vb{r}) = \frac{\mu_0}{4\pi r}\oint\odif{\vbs{\ell}'} = \vb{0}
+\vb{A}_\txt{mon}(\vb{r}) = \frac{\mu_0I}{4\pi r}\oint\odif{\vbs{\ell}'} = \vb{0}
 \]
-ตามที่คาด (เพราะจาก (\ref{gaussb}) เราสมมติไม่มี magnetic monopole)\\
-ต่อมาเรามาดูพจน์ dipole:
+ตามที่คาด (เพราะจาก (\ref{gaussb}) เราสมมติไม่มี magnetic monopole)
+
+ก่อนที่จะไปดูพจน์ dipole เราจะต้องพิสูจน์เอกลักษณ์หนึ่งที่จะต้องใช้ก่อน:
+\begin{eqbox}{Claim}
+    \oint_{\del\sur}\ab(\vb{c}\cdot\vb{r})\odif{\vbs{\ell}} = \int_\sur\odif{\vb{a}}\times\vb{c} = \vb{a}\times\vb{c}\label{claimbdip}
+\end{eqbox}
+\begin{proof}
+    พิจารณา Stokes' Theorem บน $\vb{c}(\vb{c}\cdot\vb{r})$:
+    \[
+    \oint_{\del\sur}\vb{c}\ab(\vb{c}\cdot\vb{r})\cdot\odif{\vbs{\ell}} = \int_\sur\ab(\gd\times\vb{c}\ab(\vb{c}\cdot\vb{r}))\odif{\vb{a}}
+    \]
+    จากนั้นสลับการคูณของสเกลาร์ในฝั่งซ้ายและใช้กฎการคูณในฝั่งขวา จะได้
+    \begin{align*}
+        \oint_{\del\sur}\vb{c}\cdot\ab(\vb{c}\cdot\vb{r})\odif{\vbs{\ell}} &= \cancel{\int_\sur\ab(\vb{c}\cdot\vb{r})\ab(\gd\times\vb{c})\cdot\odif{\vb{a}}} - \int_\sur\ab(\vb{c}\times\gd\ab(\vb{c}\cdot\vb{r}))\cdot\odif{A}\\
+        &= -\int_\sur\ab(\vb{c}\times\vb{c})\cdot\odif{a}\\
+        &= -\int_\sur\vb{c}\cdot\ab(\vb{c}\times\odif{\vb{a}})
+    \end{align*}
+    ตัด $\vb{c}$ ทั้งสองฝั่ง ก็จะได้
+    \[
+    \oint_{\del\sur}\ab(\vb{c}\cdot\vb{r})\odif{\vbs{\ell}} = \int_\sur\odif{\vb{a}}\times\vb{c}
+    \]
+    ตามต้องการ
+\end{proof}
+ต่อมาเรามาพิจารณาพจน์ dipole:
 \begin{align*}
-    \vb{A}_\txt{dip}(\vb{r}) &= \frac{\mu_0}{4\pi r^2}\oint r'\cos\alpha\odif{\vbs{\ell}'}\\
-    &= \frac{\mu_0}{4\pi r^2}\oint\ab(\vu{r}\cdot\vb{r}')\odif{\vbs{\ell}'}\\
-    &= 
+    \vb{A}_\txt{dip}(\vb{r}) &= \frac{\mu_0I}{4\pi r^2}\oint r'\cos\alpha\odif{\vbs{\ell}'}\\
+    &= \frac{\mu_0I}{4\pi r^2}\oint\ab(\vu{r}\cdot\vb{r}')\odif{\vbs{\ell}'}
 \end{align*}
+แต่จาก claim (\ref{claimbdip}) ก็จะได้ว่า $\oint_{\del\sur}\ab(\vu{r}\cdot\vb{r}')\odif{\vbs{\ell}'} = \int_\sur\odif{\vb{a}}\times\vu{r} = \vb{a}\times\vu{r}$ ดังนั้น
+\[
+\vb{A}_\txt{dip}(\vb{r}) = \frac{\mu_0I}{4\pi}\frac{\vb{a}\times\vu{r}}{r^2}
+\]
+เราจึงนิยาม \emph{magnetic dipole moment} ($\vb{m}$):
+\begin{defbox}{ Magnetic Dipole Moment}
+    \begin{equation}
+        \vb{m}\equiv I\int\odif{\vb{a}} = I\vb{a}
+    \end{equation}
+\end{defbox}
+ก็จะได้ว่า
+\begin{eqbox}{พจน์ Dipole}
+    \vb{A}_\txt{dip}(\vb{r}) = \frac{\mu_0}{4\pi}\frac{\vb{m}\times\vu{r}}{r^2}
+\end{eqbox}
+โดยสังเกตว่า $\vb{m}$ นี้ไม่ขึ้นกับจุดกำเนิด
+
+\subsection{Dipole บริสุทธิ์}
+เช่นเดียวกับ electric dipole บริสุทธิ์ เราสามารถสร้างจุดที่เป็น magnetic dipole บริสุทธิ์ได้ถ้ามองในลิมิต $I\to\infty$ และ $a\to 0$ โดยให้ $\vb{m} = I\vb{a}$ คงที่
+
+สมมติให้ $\vb{m}$ ของ dipole บริสุทธิ์นี้ชี้ในทิศ $+z$ จะได้ว่า
+\[
+\vb{A}_\txt{dip}(\vb{r}) = \frac{\mu_0}{4\pi}\frac{m\sin\theta}{r^2}\vus{\upphi}
+\]
+ดังนั้นจึงได้สนามแม่เหล็กของ dipole บริสุทธิ์:
+\[
+\vb{B}_\txt{dip}(\vb{r}) = \gd\times\vb{A} = \gd\times\ab(\frac{\mu_0}{4\pi}\frac{m\sin\theta}{r^2}\vus{\upphi})
+\]
+เมื่อคำนวณออกมาจะได้ว่า
+\begin{eqbox}{สนามแม่เหล็กของ Dipole บริสุทธิ์ในพิกัดทรงกลม}
+    \vb{B}_\txt{dip}(r,\theta)=\frac{\mu_0}{4\pi}\frac{m}{r^3}\ab(2\cos\theta\,\vu{r}+\sin\theta\,\vus{\uptheta})
+\end{eqbox}
+ได้เหมือนกับสนามของ electric dipole บริสุทธิ์พอดี เราจึงหาสูตรในรูปทั่วไปที่ไม่ขึ้นกับพิกัดทรงกลมได้ในแบบเดียวกับ (\ref{dipe}) ก็จะได้ว่า
+\begin{eqbox}{สนามแม่เหล็กของ Dipole บริสุทธิ์}
+    \vb{B}_\txt{dip} = \frac{\mu_0}{4\pi}\frac{1}{r^3}\ab\Big(3\,\ab(\vb{m}\cdot\vu{r})\,\vu{r} - \vb{m})
+\end{eqbox}
