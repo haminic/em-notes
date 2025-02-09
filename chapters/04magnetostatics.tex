@@ -214,7 +214,7 @@ V(\vb{r}) = \frac{1}{4\pi\eps_0}\int\frac{\rho(\vb{r}')}{\rad} \odif{\tau'}
 \end{ieqbox}
 หรือสำหรับหนึ่งและสองมิติ:
 \begin{eqbox}{ศักย์แม่เหล็กจากสนามกระแสในหนึ่งและสองมิติ}
-    \vb{A}(\vb{r}) = \frac{\mu_0}{4\pi} \int \frac{\vb{K}(\vb{r}')}{\rad} \odif{a'}\qq{และ}\vb{A}(\vb{r}) = \frac{\mu_0}{4\pi} \int \frac{\vb{I}(\vb{r})}{\rad} \odif{\ell'} = \frac{\mu_0 I}{4\pi} \int \frac{1}{\rad} \odif{\vbs{\ell}'}
+    \vb{A}(\vb{r}) = \frac{\mu_0}{4\pi} \int \frac{\vb{K}(\vb{r}')}{\rad} \odif{a'}\qq{และ}\vb{A}(\vb{r}) = \frac{\mu_0}{4\pi} \int \frac{\vb{I}(\vb{r})}{\rad} \odif{\ell'} = \frac{\mu_0 I}{4\pi} \int \frac{1}{\rad} \odif{\vbs{\ell}'}\label{magpotfromik}
 \end{eqbox}
 โดยสมการศักย์นี้ใช้ได้เมื่อ $\vb{J}\to\vb{0}$ เมื่อ $\vb{r}\to\infty$ แต่ถ้าไม่ใช่ อาจต้องหาศักย์โดยใช้วิธีอื่น วิธีหนึ่งคือสังเกตว่า
 \[
@@ -297,3 +297,19 @@ V(\vb{r}) = \frac{1}{4\pi\eps_0}\int\frac{\rho(\vb{r}')}{\rad} \odif{\tau'}
 \end{lawbox}
 
 \subsection{การกระจาย Multipole ของศักย์แม่เหล็ก}
+พิจารณาการกระจาย multipole ของ $\vb{A}$ (อนุกรมกำลังในรูป $1 / r$) โดยใช้ (\ref{mpradinv}) และ (\ref{magpotfromik}):
+\begin{align*}
+    \vb{A}(\vb{r}) &= \frac{\mu_0}{4\pi}\oint \frac{1}{\rad}\odif{\vbs{\ell}'}\\
+    &=\frac{\mu_0}{4\pi} \sum_{n=0}^{\infty}\frac{1}{r^{n+1}}\oint\ab(r')^nP_n(\cos\alpha)\odif{\vbs{\ell}'}
+\end{align*}
+ก็จะได้พจน์
+\[
+\vb{A}_\txt{mon}(\vb{r}) = \frac{\mu_0}{4\pi r}\oint\odif{\vbs{\ell}'} = \vb{0}
+\]
+ตามที่คาด (เพราะจาก (\ref{gaussb}) เราสมมติไม่มี magnetic monopole)\\
+ต่อมาเรามาดูพจน์ dipole:
+\begin{align*}
+    \vb{A}_\txt{dip}(\vb{r}) &= \frac{\mu_0}{4\pi r^2}\oint r'\cos\alpha\odif{\vbs{\ell}'}\\
+    &= \frac{\mu_0}{4\pi r^2}\oint\ab(\vu{r}\cdot\vb{r}')\odif{\vbs{\ell}'}\\
+    &= 
+\end{align*}
