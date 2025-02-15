@@ -74,7 +74,7 @@ v_d = \frac{1}{2}at = \frac{a\lambda}{2v_\txt{thermal}}
     V = -\int_{\vb{a}}^{\vb{b}} \vb{E}\cdot\odif{\vbs{\ell}} = \int_{\vb{a}}^{\vb{b}} \ab(\vb{f}_s - \frac{\vb{J}}{\sigma})\cdot\odif{\vbs{\ell}} = \emf + \int_{\vb{a}}^{\vb{b}} \vb{E}_\txt{off}\cdot\odif{\vbs{\ell}} = \emf - V_\txt{off} = \emf - Ir
 \end{equation}
 
-\subsection{กฎฟลักซ์แม่เหล็ก}
+\subsection{แรงเคลื่อนไฟฟ้าจากสายไฟเคลื่อนที่}
 
 เราสามารถเหนี่ยวนำเส้นลวดให้เกิด emf ได้โดยอาศัยสนามแม่เหล็ก ซึ่งเป็นวิธีที่\emph{เครื่องกำเนิดไฟฟ้า} (\emph{generator}) ใช้ในการสร้างกระแสไฟฟ้า โดยยกตัวอย่างเช่น ถ้าเราเอาสายไฟรูปสี่เหลี่ยมมุมฉากที่กว้าง $h$ ไปวางในสนามแม่เหล็ก $\vb{B}$ ที่มีทิศตั้งฉากกับสายไฟ แล้วทำการดึงสายไฟออกด้วยอัตราเร็ว $v$ ในทิศตั้งฉากกับทั้งสายไฟและ $\vb{B}$ ก็จะได้
 \[
@@ -88,7 +88,7 @@ v_d = \frac{1}{2}at = \frac{a\lambda}{2v_\txt{thermal}}
 
 พิจารณาสายไฟวงปิดที่เกิดการเคลื่อนที่หรือบิด ทำให้เกิดการเปลี่ยนแปลงฟลักซ์แม่เหล็กที่ผ่านผิวที่กำหนดเส้นขอบโดยสายไฟ เมื่อเวลาผ่านไป $\odif{t}$ ก็จะเกิด ``ริบบิ้น'' ของพื้นที่ส่วนที่เปลี่ยนแปลงขึ้น ก็จะได้
 \begin{equation}
-    \odif{\Phi} = \int_{\txt{ribbon}}\vb{B}\cdot\odif{\vb{a}}\tag{$\circ$1}\label{circ1}
+    \odif{\Phi_B} = \int_{\txt{ribbon}}\vb{B}\cdot\odif{\vb{a}}\tag{$\circ$1}\label{circ1}
 \end{equation}
 ถ้าพิจารณา $\odif{\vb{a}}$ ที่จุด ๆ หนึ่งโดยให้ความเร็วของอิเล็กตรอน $\vb{w}$ มาจากสองส่วนคือส่วน $\vb{v}$ ที่เป็นความเร็วของสายไฟ และ $\vb{u}$ ที่เป็นความเร็วของกระแส ก็จะได้ว่า
 \begin{equation}
@@ -96,9 +96,36 @@ v_d = \frac{1}{2}at = \frac{a\lambda}{2v_\txt{thermal}}
 \end{equation}
 นำ (\ref{circ2}) ไปแทนใน (\ref{circ1}) จะได้
 \[
-\odv{\Phi}{t} = \int\vb{B}\cdot\ab(\vb{w}\odif{t}\times\odif{\vbs{\ell}}) = -\int\ab(\vb{w}\times\vb{B})\cdot\odif{\vbs{\ell}} = -\emf
+\odv{\Phi_B}{t} = \int\vb{B}\cdot\ab(\vb{w}\odif{t}\times\odif{\vbs{\ell}}) = -\int\ab(\vb{w}\times\vb{B})\cdot\odif{\vbs{\ell}} = -\emf
 \]
 ดังนั้น
-\begin{ieqbox}{กฎฟลักซ์แม่เหล็ก}
-    \emf = -\odv{\Phi}{t}
+\begin{ieqbox}{กฎฟลักซ์แม่เหล็กสำหรับสายไฟเคลื่อนที่}
+    \emf = -\odv{\Phi_B}{t}\label{motionalemf}
 \end{ieqbox}
+หมายเหตุ: \emph{กฎนนี้เห็นชัดจากการพิสูจน์ว่าต้องเกิดจากการเคลื่อนที่ของสายไฟ ดังนั้นการสับสวิทช์ที่ทำให้วงสายไฟใหญ่ขึ้นจึงไม่ทำให้เกิด emf เป็นอนันต์}
+
+\section{การเหนี่ยวนำแม่เหล็กไฟฟ้า}
+
+\subsection{กฎของ Faraday}
+
+ต่อมา Micheal Faraday ได้ทำการทดลองเพิ่มจาก (\ref{motionalemf}) โดยแทนที่จะขยับสายไฟ เขาทำการขยับแม่เหล็กและปรับขนาดของฟลักซ์แม่เหล็กแทน ปรากฏว่า emf ที่เกิดขึ้นก็ยังคงเป็นไปตาม (\ref{motionalemf}) อยู่ดี โดยไม่ต้องขยับสายไฟเลย โดยแรงที่เกิดขึ้นนี้เป็นแรงไฟฟ้าไม่ใช่แรงแม่เหล็ก ดังนั้น
+\begin{ieqbox}{กฎของ Faraday (Integral Form)}
+    \emf = \oint \vb{E}\cdot\odif{\vbs{\ell}} = -\int \pdv{\vb{B}}{t}\cdot\odif{\vb{a}} = -\odv{\Phi}{t}\label{faradayint}
+\end{ieqbox}
+โดยถ้าใช้ Stokes' theorem ต่อก็จะได้
+\[
+\int\ab(\gd\times\vb{E})\cdot\odif{\vb{a}} = -\int \pdv{\vb{B}}{t}\cdot\odif{\vb{a}}
+\]
+หรือก็คือ
+\begin{ieqbox}{กฎของ Faraday (Differential Form)}
+    \gd\times\vb{E} = -\pdv{\vb{B}}{t}
+\end{ieqbox}
+
+เราสามารถรวมกฎของ Faraday (\ref{faradayint}) และกฎฟลักซ์แม่เหล็กสำหรับสายไฟเคลื่อนที่ (\ref{motionalemf}) ได้เป็นกฎฟลักซ์แม่เหล็กรวม (หรือบางคนเรียกว่ากฎของ Faraday) ดังนี้:
+\begin{eqbox}{กฎฟลักซ์แม่เหล็กรวม}
+    \emf = -\odv{\Phi_B}{t}
+\end{eqbox}
+โดยทิศของกระแสอาจจะมึนจึงมีกฎของ Lenz มาช่วยให้คิดทิศของสนามไฟฟ้าเหนี่ยวนำง่ายขึ้น:
+\begin{corbox}{กฎของ Lenz}
+    ธรรมชาติต่อต้านการเปลี่ยนแปลงฟลักซ์แม่เหล็กโดยสร้างกระแสไฟฟ้าเหนี่ยวนำในทิศที่จะเกิดสนามแม่เหล็กต้านการเปลี่ยนแปลงของฟลักซ์
+\end{corbox}

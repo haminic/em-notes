@@ -413,16 +413,32 @@ bodyfont=\normalfont
 
 \usepackage{tocloft}
 \setcounter{tocdepth}{1}
+
+% Table of Contents Title
 \renewcommand{\contentsname}{\color{purple}$\blacktriangleright$\color{black}\ Table of Contents}
 \renewcommand{\cfttoctitlefont}{\Huge\sffamily\bfseries}
 \setlength{\cftparskip}{3pt}
+
+% Chapter Formatting
 \setlength{\cftchapnumwidth}{45pt}
 \renewcommand{\cftchapfont}{\large\bfseries}
 \renewcommand{\cftchappresnum}{\color{purple}บทที่ }
-\setlength{\cftsecnumwidth}{40pt}
+\renewcommand{\cftchapaftersnum}{.}
+\renewcommand{\cftchapafterpnum}{}
+
+% Section Formatting
+\setlength{\cftsecnumwidth}{35pt}
+% \renewcommand{\cftsecfont}{\bfseries}
 \renewcommand{\cftsecpresnum}{\color{purple}$\blacktriangleright$ \bfseries}
-% \renewcommand{\cftsubsecpresnum}{\color{purple}$\blacktriangleright$ \bfseries}
+\setlength{\cftsecindent}{20pt}
+\renewcommand{\cftsecaftersnum}{.}
+
+% Subsection Formatting
 % \setlength{\cftsubsecnumwidth}{45pt}
+% \renewcommand{\cftsubsecpresnum}{\color{purple}$\blacktriangleright$ \bfseries}
+% \renewcommand{\thesubsection}{}
+% \setlength{\cftsubsecnumwidth}{20pt}
+% \setlength{\cftsubsecindent}{40pt}
 
 
 % Physics utils
