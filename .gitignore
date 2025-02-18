@@ -309,3 +309,6 @@ TSWLatexianTemp*
 
 # VS Code workspace file
 *.code-workspace
+
+# Preamble
+prehamble/
