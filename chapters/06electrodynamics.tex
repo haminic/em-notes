@@ -134,11 +134,11 @@ v_d = \frac{1}{2}at = \frac{a\lambda}{2v_\txt{thermal}}
 
 เราสามารถสังเกตว่าในกฎของ Faraday ถ้าพิจารณาในปริเวณที่ไม่มีประจุแล้ว
 \[ 
-\gd\cdot\vb{E} = 0\qq{และ}\gd\times\vb{E} = -\odv{\vb{B}}{t} 
+\gd\cdot\vb{E} = 0\qq{และ}\gd\times\vb{E} = -\pdv{\vb{B}}{t} 
 \]
 ซึ่งเหมือนกับสมการของแม่เหล็กสถิต ดังนั้นเราสามารถใช้ทริคต่าง ๆ คล้ายในบทแม่เหล็กสถิต เช่นจะได้ ``กฎ Biot-Savart'' ว่า:
 \begin{eqbox}{กฎ Biot-Savart ของสนามไฟฟ้า} 
-    \vb{E} = -\frac{1}{4\pi} \pdv{}{t}\int\frac{\vb{B}\times\vbs{\rad}}{\rad^2} 
+    \vb{E} = -\frac{1}{4\pi} \pdv{}{t}\int\frac{\vb{B}\times\vus{\rad}}{\rad^2} 
 \end{eqbox}
 หรือเราอาจจะใช้ (\ref{faradayint}) เพื่อสร้างลูป Amperian ในการคำนวณสนามไฟฟ้าเหนี่ยวนำได้เช่นกัน
 
@@ -254,11 +254,13 @@ U = \frac{1}{2} \Phi_B I = \frac{1}{2} I \int \vb{B}\cdot\odif{\vb{a}} = \frac{1
     \gd\cdot\ab(\gd\times\vb{B}) &= \mu_0\ab(\gd\cdot\vb{J}) + \mu_0\pdv{\rho}{t}\\
     \gd\cdot\ab(\gd\times\vb{B}) &= \mu_0\ab(\gd\cdot\vb{J}) + \mu_0\eps_0\ab(\gd\cdot\pdv{\vb{E}}{t})
 \end{align*}
-ดังนั้น
+ดังนั้นถ้าแก้ไขสมการกฎของ Ampere เป็นดังต่อไปนี้ จะได้กฎที่ไร้ข้อขัดแย้ง:
 \begin{ieqbox}{กฎของ Ampère-Maxwell}
     \gd\times\vb{B} = \mu_0\vb{J} + \mu_0\eps_0\pdv{\vb{E}}{t}
 \end{ieqbox}
-รวมกันทั้งหมดก็จะได้\emph{สมการ Maxwell} (\emph{Maxwell's equations}):
+และเราจะเรียกพจน์ $\eps_0 (\del\vb{E} / \del t)$ ว่า\emph{กระแสแทนที่} (\emph{displacement current})
+
+โดยนำสมการทั้งสี่มารวมกันทั้งหมดจะได้\emph{สมการ Maxwell} (\emph{Maxwell's equations}):
 \begin{lawbox}{สมการ Maxwell}
     การเปลี่ยนแปลงของสนามไฟฟ้า $\vb{E}$ และสนามแม่เหล็ก $\vb{B}$ ทั้งหมดถูกอธิบายได้ด้วยสี่สมการ:
     \begin{align*}
