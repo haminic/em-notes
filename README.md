@@ -10,7 +10,7 @@ This repository is public only for convenience, so I'd prefer it not be forked. 
 
 ## ▸ Credits 💳
 
-A big thanks to Evan Chen for inspiring much of my preamble and formatting. Specifically, parts of my preamble are adapted from his [`evan.sty`](https://github.com/vEnhance/dotfiles/blob/main/texmf/tex/latex/evan/evan.sty). While my preamble is currently a bit messy, filled with random macros and inconsistent naming schemes, I do plan on cleaning it up at *some* point.
+A big thanks to Evan Chen for inspiring much of my preamble and formatting. Parts of my preamble are adapted from his [`evan.sty`](https://github.com/vEnhance/dotfiles/blob/main/texmf/tex/latex/evan/evan.sty). The preamble is currently in a separate private repository, but you can still see the older parts of it in previous commits.
 
 ## ▸ References 🔎
 
