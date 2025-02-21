@@ -184,3 +184,93 @@ v_d = \frac{1}{2}at = \frac{a\lambda}{2v_\txt{thermal}}
 \begin{ieqbox}{สูตรของ Neumann}
     M = \frac{\mu_0}{4\pi} \oint\oint\frac{\odif{\vbs{\ell}_1}\cdot\odif{\vbs{\ell}_2}}{\rad}
 \end{ieqbox}
+
+จริง ๆ แล้วการเหนี่ยวนำให้เกิดการเปลี่ยนแปลงฟลักซ์แม่เหล็กของสายไฟ ไม่จำเป็นต้องใช้สายไฟสองเส้นก็ได้ เราจึงนิยาม\emph{ความเหนี่ยวนำตัวเอง} (\emph{self inductace}: $L$) หรืออาจจะเรียกสั้น ๆ ว่า\emph{ความเหนี่ยวนำ} ดังนี้
+\begin{defbox}{ความเหนี่ยวนำ}
+    \begin{equation}
+        L \equiv \frac{\Phi_B}{I}\qq{หรือ}\Phi_B = LI
+    \end{equation}
+\end{defbox}
+และโดยกฎของ Faraday ก็จะได้ว่าเมื่อพยายามจะทำให้เกิดการเปลี่ยนแปลงของกระแสในวงจรแบบ quasistatic แล้วจะเกิด emf ในทิศย้อนศร (back emf) เป็นแรงเคลื่อนไฟฟ้าต้านการเปลี่ยนแปลงของกระแส:
+\begin{eqbox}{Back Emf}
+    \emf_\txt{back} = -L\odv{I}{t}\label{backemf}
+\end{eqbox}
+
+ในวงจรหนึ่ง เราสามารถสร้างขดลวดโซลีนอยด์เพื่อให้มีความเหนี่ยวนำตามที่ต้องการได้ เราจะเรียกขดลวดนี้ว่า\emph{ตัวเหนี่ยวนำ} (\emph{inductor})
+
+\subsection{พลังงานในสนามแม่เหล็ก}
+
+จาก (\ref{backemf}) จะเห็นได้ว่าเราจะต้องใช้พลังงานมากกว่าปกติเพื่อที่จะทำให้เกิดกระแสที่ต้องการในตัวเหนี่ยวนำ (หรือในวงจร) โดยงานที่จะต้องต้าน back emf นี้เพื่อให้เกิดกระแส $I$ เท่ากับ
+\[
+\odv{W}{t} = -\emf I = LI\odv{I}{t}
+\]
+ดังนั้นจะได้ว่างานที่ต้องใช้ในการสร้างกระแสในตัวเหนี่ยวนำเท่ากับ
+\begin{ieqbox}{พลังงานสะสมในตัวเหนี่ยวนำ}
+    U = \frac{1}{2}\Phi_B I = \frac{1}{2}LI^2 = \frac{1}{2} \frac{\Phi_B^2}{L}\label{energyinductor}
+\end{ieqbox}
+เราสามารถเขียน (\ref{energyinductor}) ได้ในอีกรูป พิจารณา
+\[
+U = \frac{1}{2} \Phi_B I = \frac{1}{2} I \int \vb{B}\cdot\odif{\vb{a}} = \frac{1}{2} I \int \ab(\gd\times\vb{A})\cdot\odif{\vb{a}} = \frac{1}{2} I \oint \vb{A}\cdot\odif{\vbs{\ell}} = \frac{1}{2} \oint\ab(\vb{A}\cdot\vb{I})\odif{\ell}
+\]
+ขยายมาในสามมิติจะได้
+\begin{equation}
+    U = \frac{1}{2} \int\ab(\vb{A}\cdot\vb{J})\odif{\tau}
+\end{equation}
+ใช้ (\ref{amperedif}) ก็จะได้
+\begin{align*}
+    U &= \frac{1}{2\mu_0} \int_\vol\ab(\vb{A}\cdot\ab(\gd\times\vb{B}))\odif{\tau}\\
+    &= \frac{1}{2\mu_0} \ab(\int_\vol \vb{B}\cdot\ab(\gd\times\vb{A})\odif{\tau} - \int_\vol \gd\cdot\ab(\vb{A}\times\vb{B})\odif{\tau}) \\
+    &= \frac{1}{2\mu_0}\ab(\int_\vol B^2\odif{\tau} - \oint_{\del\vol} \ab(\vb{A}\times\vb{B})\cdot\odif{\vb{a}})
+\end{align*}
+เนื่องจากที่ระยะไกล ๆ $\vb{B}$ และ $\vb{A}$ เข้าใกล้ $\vb{0}$ ดังนั้นพจน์หลังจึงหายไป ก็จะได้
+\begin{ieqbox}{พลังงานในสนามแม่เหล็ก}
+    U = \frac{1}{2\mu_0}\int B^2\odif{\tau}
+\end{ieqbox}
+
+\section{สมการ Maxwell}
+
+\subsection{ข้อบกพร่องของกฎของ Ampère}
+
+ตอนนี้เรามีสมการสี่สมการที่อธิบายแม่เหล็กไฟฟ้า ดังนี้
+\begin{align*}
+    \gd\cdot\vb{E} &= \frac{\rho}{\epsilon_0} \tag{กฎของ Gauss}\\
+    \gd\cdot\vb{B} &= 0 \\
+    \gd\times\vb{E} &= -\pdv{\vb{B}}{t} \tag{กฎของ Faraday}\\
+    \gd\times\vb{B} &= \mu_0\vb{J} \tag{กฎของ Ampère} 
+\end{align*}
+แต่ยังมีข้อบกพร่องอยู่ในกฎของ Ampère เพราะว่ากฎนี้เราอธิบายมาจากกฎ Biot-Savart ซึ่งใช้ได้เฉพาะระบบที่เป็นแม่เหล็กสถิตหรือมีกระแสคงที่ ข้อบกพร้องนี้เห็นได้ชัดถ้าเราพิจารณา divergence ของสมการกฎของ Ampère:
+\begin{align*}
+    \gd\cdot\ab(\gd\times\vb{B}) &= \mu_0\ab(\gd\cdot\vb{J})\\
+    0 &= \mu_0\ab(\gd\cdot\vb{J})
+\end{align*}
+ซึ่งไม่ได้เป็นจริงเสมอไป
+
+ต่อมา James Clerk Maxwell จึงได้ทำการแก้ข้อบกพร่องนี้โดยอาศัยสมการความต่อเนื่อง:
+\[
+\gd\cdot\vb{J} + \pdv{\rho}{t} = 0
+\]
+นำไปเพิ่มในกฎของ Ampère จากสมการด้านบนจะได้
+\begin{align*}
+    \gd\cdot\ab(\gd\times\vb{B}) &= \mu_0\ab(\gd\cdot\vb{J}) + \mu_0\pdv{\rho}{t}\\
+    \gd\cdot\ab(\gd\times\vb{B}) &= \mu_0\ab(\gd\cdot\vb{J}) + \mu_0\eps_0\ab(\gd\cdot\pdv{\vb{E}}{t})
+\end{align*}
+ดังนั้น
+\begin{ieqbox}{กฎของ Ampère-Maxwell}
+    \gd\times\vb{B} = \mu_0\vb{J} + \mu_0\eps_0\pdv{\vb{E}}{t}
+\end{ieqbox}
+รวมกันทั้งหมดก็จะได้\emph{สมการ Maxwell} (\emph{Maxwell's equations}):
+\begin{lawbox}{สมการ Maxwell}
+    การเปลี่ยนแปลงของสนามไฟฟ้า $\vb{E}$ และสนามแม่เหล็ก $\vb{B}$ ทั้งหมดถูกอธิบายได้ด้วยสี่สมการ:
+    \begin{align*}
+        \gd\cdot\vb{E} &= \frac{\rho}{\epsilon_0} \tag{กฎของ Gauss}\\
+        \gd\cdot\vb{B} &= 0 \\
+        \gd\times\vb{E} &= -\pdv{\vb{B}}{t} \tag{กฎของ Faraday}\\
+        \gd\times\vb{B} &= \mu_0\vb{J} + \mu_0\eps_0\pdv{\vb{E}}{t}\tag{กฎของ Ampère-Maxwell} 
+    \end{align*}
+    โดยแรงที่ทำให้เกิดกระแสและการเคลื่อนที่ทั้งหมดอธิบายโดยกฎแรง Lorentz (\ref{lorentz})
+\end{lawbox}
+
+\subsection{สมการ Maxwell ในสสาร (TO-DO)}
+
+
+

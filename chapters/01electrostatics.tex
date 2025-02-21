@@ -194,7 +194,7 @@ U=\frac{1}{2}\kem\iint\frac{\rho(\vb{r})\,\rho(\vb{r}')}{\rad}\odif{\tau',\tau}
     U=\frac{1}{2}\int\rho V\odif{\tau}\label{intpotential}
 \end{ieqbox}
 
-\subsection{พลังงานจากสนามไฟฟ้า}
+\subsection{พลังงานในสนามไฟฟ้า}
 ต่อมาพิจารณาพลังงานศักย์ภายในของระบบอีกแบบโดยแทนสมการ Poisson (\ref{poissoneq}) เข้าไปใน (\ref{intpotential}) โดยอินทิเกรต บนปริมาตร $\vol$ ที่ใหญ่มาก ๆ จน $\vb{E}$ ที่ผิวของ $\vol$ เข้าใกล้ศูนย์ จะได้ว่า
 \[ 
 U=-\frac{\eps_0}{2}\int_\vol V\nabla^2 V\odif{\tau}=-\frac{\eps_0}{2}\int_\vol V\ab(\gd\cdot(\gd V))\odif{\tau}=\frac{\eps_0}{2}\int_\vol V\ab(\gd\cdot\vb{E})\odif{\tau}
@@ -206,10 +206,10 @@ U=-\frac{\eps_0}{2}\int_\vol V\nabla^2 V\odif{\tau}=-\frac{\eps_0}{2}\int_\vol V
     &=\frac{\eps_0}{2}\ab(\oint_{\del\vol} V\vb{E}\cdot\odif{\vb{a}}+\int_\vol E^2\odif{\tau})
 \end{align*}
 แต่จาก $\vb{E}$ ที่ขอบเป็น $0$ พจน์แรกจึงหายไป ดังนั้น
-\begin{ieqbox}{พลังงานจากสนามไฟฟ้า}
-    U=\int u(\vb{r})\odif{\tau}\qq{เมื่อ} u(\vb{r})=\frac{\eps_0}{2}E^2(\vb{r})\label{energydensity}
+\begin{ieqbox}{พลังงานในสนามไฟฟ้า}
+    U = \frac{\eps_0}{2}\int E^2\odif{\tau}\label{energydensity}
 \end{ieqbox}
-โดยเราจะเรียก $u$ ว่า\emph{ความหนาแน่นพลังงานสนามไฟฟ้า} (\emph{energy density of the electric field})
+โดยเราจะเรียก $u(\vb{r}) \equiv \frac{\eps_0}{2} E^2(\vb{r})$ ว่า\emph{ความหนาแน่นพลังงานสนามไฟฟ้า} (\emph{energy density of the electric field})
 
 \emph{แต่คำถามคือ}: ทำไมสมการ (\ref{disintenergy}) ทำให้พลังงานศักย์เป็นลบได้แต่ (\ref{energydensity}) จึงเป็นบวกเสมอ? เหตุผลก็คือ (\ref{disintenergy}) ยังไม่ได้รวมพลังงานในการสร้างจุดประจุตั้งแต่แรก (ถ้ารวมด้วยจะทำให้เป็น $\infty$) ดังนั้นถ้าจะหาพลังงานของระบบที่เป็นจุดประจุ ถ้าใช้ (\ref{disintenergy}) จะสมเหตุสมผลกว่า
 
