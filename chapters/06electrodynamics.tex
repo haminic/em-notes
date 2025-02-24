@@ -224,8 +224,14 @@ U = \frac{1}{2} \Phi_B I = \frac{1}{2} I \int \vb{B}\cdot\odif{\vb{a}} = \frac{1
 \end{align*}
 เนื่องจากที่ระยะไกล ๆ $\vb{B}$ และ $\vb{A}$ เข้าใกล้ $\vb{0}$ ดังนั้นพจน์หลังจึงหายไป ก็จะได้
 \begin{ieqbox}{พลังงานในสนามแม่เหล็ก}
-    U = \frac{1}{2\mu_0}\int B^2\odif{\tau}
+    U = \frac{1}{2\mu_0}\int B^2\odif{\tau}\label{magnetdensity}
 \end{ieqbox}
+โดยเราสามารถใช้ (\ref{magnetdensity}) และ (\ref{energyinductor}) เพื่อนิยามความเหนี่ยวนำที่เป็นระบบสายไฟเชิงพื้นที่หรือเชิงปริมาตรได้ (การหาฟลักซ์จากระบบเหล่านี้อาจไม่มีนิยามี่ตายตัว) ดังนี้
+\begin{defbox}{ความเหนี่ยวนำจากพลังงาน}
+    \begin{equation}
+        L \equiv \frac{1}{\mu_0I^2}\int B^2 \odif{\tau}
+    \end{equation}
+\end{defbox}
 
 \section{สมการ Maxwell}
 
