@@ -18,7 +18,7 @@
         v = L\odv{i}{t} \label{endohm}
     \end{equation}
 \end{lawbox}
-(ในที่นี้เราจะใช้ตัวอักษร $v$ และ $i$ ที่เป็นตัวพิมพ์เล็กเพื่อแทนความต่างศักย์และกระแสที่อาจขึ้นกับเวลา) ซึ่งสามารถนำมาใช้ในการวิเคราะห์วงจรได้ด้วยกฎของ Kirchhoff:
+(ในบทนี้เราจะใช้ตัวอักษร $v$ และ $i$ ที่เป็นตัวพิมพ์เล็กเพื่อแทนความต่างศักย์และกระแสที่อาจขึ้นกับเวลา) ซึ่งสามารถนำมาใช้ในการวิเคราะห์วงจรได้ด้วยกฎของ Kirchhoff:
 
 พิจารณาวงจร ณ จุด ๆ หนึ่ง ถ้าที่จุดนั้นไม่มีประจุสะสมอยู่เลยโดย \ref{contj} จะได้ว่า
 \begin{ieqbox}{Kirchhoff's Current Law (KCL)}
@@ -97,7 +97,7 @@ v_\txt{total} = v_1 + v_2=L_1\odv{i}{t}+L_2\odv{i}{t}=L_1\odv{i}{t}+L_2\odv{i}{t
     \frac{1}{L_\txt{total}}=\frac{1}{L_1}+\frac{1}{L_2}+\dots+\frac{1}{L_n}
 \end{eqbox}
 
-\section{วงจรไฟฟ้ากระแสตรง}
+\section{วงจรอันดับหนึ่ง}
 
 \subsection{อันดับของวงจร}
 
@@ -167,6 +167,97 @@ v = L\cancel{\odv{i}{t}} = 0
 \]
 ดังนั้นเมื่อ $t\to\infty$ จะสามารถมองได้ว่า $L$ เปรียบเสมือนสายไฟเปล่า
 
-\subsection{วงจร RLC}
+\section{วงจรอันดับสอง}
 
-วงจร RLC เป็นวงจรอันดับสอง
+\subsection{วงจร RLC แบบอนุกรม}
+
+พิจารณากระแก้สมการของวงจรที่เป็น RLC ที่ต่อแบบอนุกรมโดยไม่มีแบตเตอรี่ โดย KVL จะได้ (ให้กระแสไหลออกจากฝั่งลบของตัวเก็บประจุ)
+\begin{align*}
+    v_R + v_L + v_C &= 0\\
+    \odv{}{t}\ab(v_R + v_L + v_C) &= 0\\
+    L\odv[2]{i}{t} + R\odv{i}{t} + \frac{1}{C}i &= 0
+\end{align*}
+
+เราสามารถแก้สมการนี้ได้โดยการใช้ราก $s_{1,2}$ ของ characteristic equation:
+\[
+x^2 + (R/L)x + 1/LC =0
+\]
+ก็จะได้คำตอบคือ
+\begin{eqbox}{คำตอบของ Characteristic Equation ของ RLC แบบอนุกรม}
+    s_{1,2} = -\frac{R}{2L}\pm\sqrt{\ab(\frac{R}{2L})^2 - \frac{1}{LC}}
+\end{eqbox}
+
+โดยเราจะนิยามราก $s_{1,2}$ ของสมการว่าเป็น\emph{ความถี่ธรรมชาติ}ของวงจร และก็จะนิยาม \emph{damping factor} ($\alpha$) และ\emph{ความถี่ resonant} ($\omega_0$) (\emph{undamped natural frequency}) ดังนี้:
+\begin{defbox}{ Damping Factor และความถี่ Resonant}
+    \begin{equation}
+    s_{1,2} \equiv -\alpha \pm \sqrt{\alpha^2 - \omega_0^2}
+    \end{equation}
+\end{defbox}
+หมายเหตุ: \emph{โดยเราจะใช้หน่วย $\txt{Np}/\txt{s}$ สำหรับ $\alpha$ แต่จริง ๆ แล้วหน่วย $\txt{Np}$ (neper) นี้เป็นน่วยที่ไม่มีมิติเหมือนกับ $\txt{rad}$}
+
+ในที่นี้ก็จะได้
+\begin{eqbox}{Damping Factor และความถี่ Resonant ของ RLC แบบอนุกรม}
+    \alpha = \frac{R}{2L}\qq{และ}\omega_0 = \frac{1}{\sqrt{LC}}
+\end{eqbox}
+
+เมื่อแก้สมการเชิงอนุพันธ์ ถ้าราก $s_{1,2}$ เป็นจำนวนจริง ($\alpha > \omega_0$) จะได้ว่า
+\begin{eqbox}{วงจร RLC อนุกรมแบบ Underdamped}
+    i(t) = A_1\exp(s_1 t) + A_2\exp(s_2 t)
+\end{eqbox}
+โดยเราจะเรียกว่าเป็นวงจร \emph{underdamped}
+
+แต่ถ้าราก $s_{1,2}$ เป็นรากซ้ำ ($\alpha = \omega_0$) โดยให้เป็น $s$ จะได้ว่า
+\begin{eqbox}{วงจร RLC อนุกรมแบบ Critically Damped}
+    i(t) = (A_2 + A_1t)\exp(st)
+\end{eqbox}
+โดยเราจะเรียกว่าเป็นวงจร \emph{critically damped}
+
+และสุดท้าย ถ้าราก $s_{1,2}$ ไม่เป็นจำนวนจริง ($\alpha < \omega_0$) เราจะนิยาม\emph{ความถี่ damped} (\emph{damped natural frequency}):
+\begin{defbox}{ความถี่ Damped}
+    \begin{equation}
+        \omega_d \equiv \sqrt{\omega_0^2 - \alpha^2}
+    \end{equation}
+\end{defbox}
+และก็จะได้คำตอบของสมการว่า
+\begin{eqbox}{วงจร RLC อนุกรมแบบ Overdamped}
+    i(t) = \exp(-\alpha t) \left( A_1 \cos(\omega_d t) + A_2 \sin(\omega_d t) \right)
+\end{eqbox}
+โดยเราจะเรียกว่าเป็นวงจร \emph{overdamped}
+
+\subsection{วงจร RLC แบบขนาน}
+
+พิจารณากระแก้สมการของวงจรที่เป็น RLC ที่ต่อแบบขนานโดยไม่มีแบตเตอรี่ โดย KCL จะได้ (ให้กระแสไหลออกจากฝั่งลบของตัวเก็บประจุ)
+\begin{align*}
+    i_R + i_L + i_C &= 0\\
+    \odv{}{t}\ab(i_R + i_L + i_C) &= 0\\
+    C\odv[2]{v}{t} + \frac{1}{R}\odv{v}{t} + \frac{1}{L}v &= 0
+\end{align*}
+
+ก็จะได้ characteristic equation:
+\[
+x^2 + (1/RC)x + 1/LC = 0
+\]
+มีคำตอบ $s_{1,2}$ คือ
+\begin{eqbox}{คำตอบของ Characteristic Equation ของ RLC แบบขนาน}
+    s_{1,2} = -\frac{1}{2RC}\pm\sqrt{\ab(\frac{1}{2RC})^2 - \frac{1}{LC}}
+\end{eqbox}
+ก็จะได้ว่า
+\begin{eqbox}{Damping Factor และความถี่ Resonant ของ RLC แบบอนุกรม}
+    \alpha = \frac{1}{2RC}\qq{และ}\omega_0 = \frac{1}{\sqrt{LC}}
+\end{eqbox}
+
+ต่อมาเมื่อแก้สมการเชิงอนุพันธ์ (เช่นเดียวกับในกรณีต่อแบบอนุกรมแต่ทีนี้หา $v$ แทน $i$) ก็จะได้
+\begin{eqbox}{วงจร RLC ขนานแบบ Underdamped}
+    v(t) = A_1\exp(s_1 t) + A_2\exp(s_2 t)
+\end{eqbox}
+ในกรณี underdamped,
+\begin{eqbox}{วงจร RLC ขนานแบบ Critically Damped}
+    v(t) = (A_2 + A_1t)\exp(st)
+\end{eqbox}
+ในกรณี critically damped, และ
+\begin{eqbox}{วงจร RLC อนุกรมแบบ Overdamped}
+    v(t) = \exp(-\alpha t) \left( A_1 \cos(\omega_d t) + A_2 \sin(\omega_d t) \right)
+\end{eqbox}
+ในกรณี overdamped
+
+\section{วงจรไฟฟ้ากระแสสลับ}
