@@ -14,7 +14,8 @@ A big thanks to Evan Chen for inspiring much of my preamble and formatting. Part
 
 ## ▸ References 🔎
 
-The notes are primarily based on *"Introduction to Electrodynamics"* by David J. Griffiths, along with additional material from other textbooks, listed (in no specific order) below:
-
+The notes are primarily based on *"Introduction to Electrodynamics"* by David J. Griffiths, along with additional material from other textbooks. The referenced textbooks are listed (in no specific order) below:
+- *"Introduction to Electrodynamics"* by David J. Griffiths
 - *"Part EM: Classical Electrodynamics"* by Konstantin Likharev
 - *"Physics for Scientists and Engineers"* by John W. Jewett and Raymond A. Serway
+- *"Fundamentals of Electric Circuits"* by Charles K. Alexander and Matthew N.O. Sadiku
