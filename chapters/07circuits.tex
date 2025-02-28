@@ -97,7 +97,7 @@ v_\txt{total} = v_1 + v_2=L_1\odv{i}{t}+L_2\odv{i}{t}=L_1\odv{i}{t}+L_2\odv{i}{t
     \frac{1}{L_\txt{total}}=\frac{1}{L_1}+\frac{1}{L_2}+\dots+\frac{1}{L_n}
 \end{eqbox}
 
-\section{วงจรอันดับหนึ่ง}
+\section{วงจรไฟฟ้ากระแสตรง}
 
 \subsection{อันดับของวงจร}
 
@@ -166,8 +166,6 @@ i_C = C\cancel{\odv{v}{t}} = 0
 v = L\cancel{\odv{i}{t}} = 0 
 \]
 ดังนั้นเมื่อ $t\to\infty$ จะสามารถมองได้ว่า $L$ เปรียบเสมือนสายไฟเปล่า
-
-\section{วงจรอันดับสอง}
 
 \subsection{วงจร RLC แบบอนุกรม}
 
@@ -242,7 +240,7 @@ x^2 + (1/RC)x + 1/LC = 0
     s_{1,2} = -\frac{1}{2RC}\pm\sqrt{\ab(\frac{1}{2RC})^2 - \frac{1}{LC}}
 \end{eqbox}
 ก็จะได้ว่า
-\begin{eqbox}{Damping Factor และความถี่ Resonant ของ RLC แบบอนุกรม}
+\begin{eqbox}{Damping Factor และความถี่ Resonant ของ RLC แบบขนาน}
     \alpha = \frac{1}{2RC}\qq{และ}\omega_0 = \frac{1}{\sqrt{LC}}
 \end{eqbox}
 
@@ -255,9 +253,176 @@ x^2 + (1/RC)x + 1/LC = 0
     v(t) = (A_2 + A_1t)\exp(st)
 \end{eqbox}
 ในกรณี critically damped, และ
-\begin{eqbox}{วงจร RLC อนุกรมแบบ Overdamped}
+\begin{eqbox}{วงจร RLC ขนานแบบ Overdamped}
     v(t) = \exp(-\alpha t) \left( A_1 \cos(\omega_d t) + A_2 \sin(\omega_d t) \right)
 \end{eqbox}
 ในกรณี overdamped
 
 \section{วงจรไฟฟ้ากระแสสลับ}
+
+\subsection{แหล่งกำเนิดไฟฟ้ากระแสสลับ}
+
+วงจรทั้งหมดที่เราเจอมาเรียกว่า\emph{วงจรไฟฟ้ากระแสตรง} (\emph{direct current} หรือ \emph{DC}) ซึ่งเกิดจากแหล่งกำเนิดที่ให้ความต่างศักย์คงที่ (หรือกระแสคงที่) ตลอดเวลา แต่วงจรไฟฟ้าที่เราใช้ในบ้านจะเป็น\emph{วงจรไฟฟ้ากระแสสลับ} (\emph{alternating current} หรือ \emph{AC}) ซึ่งเป็นวงจรที่แหล่งกำเนิดมี emf สลับทิศไปมาเป็นฟังก์ชันคาบ โดยไฟฟ้ากระแสสลับที่เราจะมาดูกันเราจะสมมติมาเป็นไฟฟ้ากระแสสลับรูปไซน์ (sinusoidal) ก็คือ
+\begin{eqbox}{ไฟฟ้ากระแสสลับ}
+    (i\txt{\ or\ }v)(t) = (I\txt{\ or\ }V)_m\cos \omega t
+\end{eqbox}
+เมื่อ $I_m$ และ $V_m$ คือ\emph{แอมพลิจูด}ของกราฟไซน์และ $\omega$ เรียกว่า\emph{ความถี่เชิงมุม} โดย argument ที่อยู่ในฟังก์ชันเราจะเรียกว่า\emph{เฟส} ณ ขณะนั้น และเราจะนิยาม\emph{คาบ} ($T$) และ\emph{ความถี่} ($f$) ตามปกติ:
+\begin{defbox}{คาบและความถี่}
+    \begin{equation}
+        T\equiv\frac{2\pi}{\omega}\qq{และ}f\equiv\frac{1}{T} = \frac{\omega}{2\pi}
+    \end{equation}
+\end{defbox}
+
+โดยยกตัวอย่างแหล่งกำเนิดไฟฟ้ากระแสสลับเช่น ลองพิจารณาสายไฟที่หมุนรอบแกน $x$ และมีสนามแม่เหล็กสม่ำเสมอขนาด $B$ ชี้ในแกน $+y$ ก็จะได้ว่าถ้าเราหมุนลูปสายไฟนี้ด้วยอัตราเร็วเชิงมุม $\omega$ แล้วก็จะได้ว่า
+\[
+\Phi_B = BA\cos\omega t
+\]
+ดังนั้น
+\[
+\emf = -\odv{\Phi_B}{t} = BA\omega \sin \omega t
+\]
+\begin{eqbox}{แหล่งกำเนิดไฟฟ้ากระแสสลับ}
+    \emf = BA\omega\sin\omega t = BA\omega\cos\ab(\omega t + \pi/2)
+\end{eqbox}
+
+\subsection{ตัวต้านทาน, ตัวเก็บประจุ, และตัวเหนี่ยวนำ}
+
+ต่อมาเรามาพิจารณาอุปกรณ์ที่เราคุ้นเคยกัน เริ่มจากตัวต้านทานเมื่อให้กระแสที่ไหลผ่าน $i(t) = I_m\cos\omega t$ เนื่องจาก $v = iR$ จะได้ว่า
+\[
+v(t) = Ri(t) = I_mR\cos\omega t = V_m\cos\omega t
+\]
+ดังนั้น
+\begin{lawbox}{เฟสของ $v$ และ $i$ บนตัวต้านทาน}
+    เฟสของ $v$ และ $i$ จะ\emph{ตรงกัน}บนตัวต้านทาน $R$ โดยที่
+    \begin{equation}
+        V_m = RI_m\label{resac}
+    \end{equation}
+\end{lawbox}
+
+พิจารณาตัวเก็บประจุเมื่อให้ $v(t) = V_m\cos\omega t$ จะได้ว่า
+\[
+i(t) = C\odv{v}{t} = CV_m\odv{}{t}\cos\omega t = -\omega CV_m\sin\omega t = I_m\cos\ab(\omega t + \pi/2)
+\]
+ดังนั้น
+\begin{lawbox}{เฟสของ $v$ และ $i$ บนตัวเก็บประจุ}
+    เฟสของ $i$ จะนำ $v$ อยู่ $\pi/2$ บนตัวเก็บประจุ $C$ โดยที่
+    \begin{equation}
+        V_m = \ab(\frac{1}{\omega C})I_m\label{capac}
+    \end{equation}
+\end{lawbox}
+
+สุดท้าย พิจารณาตัวเหนี่ยวนำเมื่อให้ $i(t) = I_m\cos\omega t$ จะได้ว่า
+\[
+v(t) = L\odv{i}{t} = LI_m\odv{}{t}\cos\omega t = -\omega LI_m\sin\omega t = V_m\cos\ab(\omega t + \pi/2)
+\]
+ดังนั้น
+\begin{lawbox}{เฟสของ $v$ และ $i$ บนตัวเหนี่ยวนำ}
+    เฟสของ $v$ จะนำ $i$ อยู่ $\pi/2$ บนตัวเหนี่ยวนำ $L$ โดยที่
+    \begin{equation}
+        V_m = \ab(\omega L)I_m\label{indac}
+    \end{equation}
+\end{lawbox}
+
+สังเกตว่าสมการ (\ref{resac}) ถึง (\ref{indac}) หน้าตาคล้ายกับกฎของ Ohm เราจึงนิยามค่าความต้านทานเสมือนของตัวเก็บประจุและตัวเหนี่ยวนำว่า \emph{รีแอคแตนซ์เชิงประจุ}และ\emph{รีแอคแตนซ์เชิงเหนี่ยวนำ} (\emph{capacitive}/\emph{inductive reactance}: $X_C$ และ $X_L$) ดังนี้:
+\begin{defbox}{Reactance}
+    \begin{equation}
+        X_C \equiv \frac{1}{\omega C}\qq{และ}X_L \equiv \omega L
+    \end{equation}
+\end{defbox}
+
+\subsection{เฟสเซอร์}
+
+เราสามารถแทนฟังก์ชันไซน์ด้วยส่วนจริงของฟังก์ชัน exponential เชิงซ้อน:
+\[
+a(t) = A_m\cos\ab(\omega t + \phi) = \Re(A_me^{j\phi}\cex) \equiv \Re(A\cex)
+\]
+(ในการวิเคราะห์วงจรเราจะใช้ $j$ แทนหน่วยจินตภาพเพราะ $i$ ซ้ำกับกระแส) โดยจำนวนเชิงซ้อน $A$ เรียกว่าเป็นรูปใน\emph{โดเมนเฟสเซอร์/ความถี่} (\emph{phasor/frequency domain}) ของ $a(t)$ (โดยจะเรียก $a(t)$ ว่ารูป\emph{โดเมนเวลา}หรือ \emph{time domain}) โดยเราจะแทน $A = A_me^{j\phi}$ ด้วยสัญลักษณ์
+\begin{defbox}{สัญลักษณ์แทนจำนวนเชิงซ้อนในการวิเคราะห์วงจร}
+    \begin{equation}
+        A_m\phase{\phi} \equiv A_me^{j\phi} = A 
+    \end{equation}
+\end{defbox}
+
+ต่อมาเรามาดู ``กฎของ Ohm" ของแต่ละอุปกรณ์ใน frequency domain, จาก (\ref{resac}) ถึง (\ref{indac}) ก็จะไดh
+\begin{lawbox}{อุปกรณ์ต่าง ๆ ใน Frequency Domain}
+    สำหรับตัวต้านทาน $R$:
+    \begin{equation}
+        V = RI
+    \end{equation}
+    สำหรับตัวเก็บประจุ $C$:
+    \begin{equation}
+        V = \ab(\frac{1}{j\omega C})I
+    \end{equation}
+    สำหรับตัวเหนี่ยวนำ $L$:
+    \begin{equation}
+        V = \ab(j\omega L)I
+    \end{equation}
+\end{lawbox}
+เราจึงจะนิยามค่า\emph{อิมพีแดนซ์} (\emph{impedance}: $Z$) และ\emph{แอดมิตแทนซ์} (\emph{admittance}: $Y$) ว่า
+\begin{defbox}{ Impedance และ Admittance}
+    \begin{equation}
+        Z\equiv \frac{V}{I}\qq{และ} Y\equiv\frac{1}{Z}=\frac{I}{V}
+    \end{equation}
+\end{defbox}
+ก็จะได้ impedance ของอุปกรณ์ต่าง ๆ:
+\begin{eqbox}{Impedance ของอุปกรณ์ต่าง ๆ}
+    Z_R = R\quad\quad Z_L = j\omega L \quad\quad Z_C = \frac{1}{j\omega C}
+\end{eqbox}
+และ admittance ของอุปกรณ์ต่าง ๆ:
+\begin{eqbox}{Admittance ของอุปกรณ์ต่าง ๆ}
+    Y_R = \frac{1}{R}\quad\quad Y_L = \frac{1}{j\omega L} \quad\quad Y_C = j\omega C
+\end{eqbox}
+
+เนื่องจากฟังก์ชัน $\Re$ และ $\Im$ มีสมบัติเชิงเส้น การแทนฟังก์ชันรูปไซน์ใน frequency domain จึงมีประโยชน์ต่อการคำนวณ เพราะกฎที่สำคัญต่าง ๆ ใน time domain ยังคงเป็นจริงใน frequency domain โดยที่สำคัญสุดเลยก็คือกฎของ Kirchhoff:
+\begin{ieqbox}{KCL ใน Frequency Domain}
+    \sum I_\txt{in} = \sum I_\txt{out}
+\end{ieqbox}
+และ
+\begin{ieqbox}{KVL ใน Frequency Domain}
+    \sum_\txt{loop} V = 0
+\end{ieqbox}
+
+\subsection{การรวม Impedance}
+
+พิจารณาการต่อวงจรแบบอนุกรม โดยมีอุปกรณ์อยู่สองชิ้นที่มี impedance $Z_1$ และ $Z_2$ จะได้ว่ากระแส $I$ ที่ไหลผ่านอุปกรณ์ทั้งสองต้องเท่ากัน ดังนั้น
+\begin{align*}
+    v_\txt{total}(t) &= \Re(V_1\cex) + \Re(V_2\cex)\\
+    &= \Re(IZ_1\cex) + \Re(IZ_2\cex)\\
+    &= \Re\ab(I(Z_1+Z_2)\cex) 
+\end{align*}
+ดังนั้น $V_\txt{total} = I(Z_1+Z_2)$ แล้วก็จะได้
+\[
+Z_\txt{total} = Z_1 + Z_2
+\]
+ขยายเป็น $n$ อุปกรณ์จะได้
+\begin{ieqbox}{การรวม Impedance แบบอนุกรม}
+    Z_\txt{total} = Z_1 + Z_2 + \dots Z_n
+\end{ieqbox}
+
+ต่อมาพิจารณาการต่อวงจรแบบขนาน โดยมีอุปกรณ์สองชิ้นเดิม จะได้ว่าความต่างศักย์ $V$ คร่อมอุปกรณ์ทั้งสองต้องเท่ากัน ดังนั้น
+\begin{align*}
+    i_\txt{total}(t) &= \Re(I_1\cex) + \Re(I_2\cex)\\
+    &= \Re\ab(\frac{V}{Z_1}\cex) + \Re\ab(\frac{V}{Z_2}\cex)\\
+    &= \Re\ab(V\ab(\frac{1}{Z_1} + \frac{1}{Z_2})\cex)
+\end{align*}
+ดังนั้น $I_\txt{total} = V\ab(\frac{1}{Z_1} + \frac{1}{Z_2})$ และจะได้
+\[
+Y_\txt{total} = \frac{1}{Z_\txt{total}} = \frac{1}{Z_1} + \frac{1}{Z_2}
+\]
+ขยายเป็น $n$ อุปกรณ์จะได้
+\begin{ieqbox}{การรวม Impedance แบบขนาน}
+    \frac{1}{Z_\txt{total}} = \frac{1}{Z_1} + \frac{1}{Z_2} + \dots + \frac{1}{Z_n}
+\end{ieqbox}
+หรือ
+\begin{eqbox}{การรวม Admittance แบบขนาน}
+    Y_\txt{total} = Y_1 + Y_2 + \dots Y_n
+\end{eqbox}
+
+\subsection{Resonance ในวงจรไฟฟ้ากระแสสลับ}
+
+
+
+
+
+
+
