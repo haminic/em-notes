@@ -126,7 +126,7 @@ v_\txt{total} = v_1 + v_2=L_1\odv{i}{t}+L_2\odv{i}{t}=L_1\odv{i}{t}+L_2\odv{i}{t
     \end{align*}
     เนื่องจาก $V_0 = Q_0 / C$ ก็จะได้
     \[
-    v(t) = \frac{Q_0}{C}\exp\ab(-\frac{1}{RC}t)
+    v(t) = \frac{Q_0}{C}e^{-\frac{1}{RC}t}
     \]
     โยเราจะเรียก $\tau \equiv RC$ ว่า\emph{ค่าคงที่เวลา} (\emph{time constant})
 \end{soln}
@@ -156,7 +156,7 @@ i_C = C\cancel{\odv{v}{t}} = 0
     \end{align*}
     ดังนั้นก็จะได้
     \[
-    i(t) = \frac{\emf}{R}\ab(1-\exp\ab(-\frac{R}{L}t))
+    i(t) = \frac{\emf}{R}\ab(1-e^{-\frac{R}{L}t})
     \]
     และค่าคงที่เวลา $\tau = L / R$
 \end{soln}
@@ -170,11 +170,11 @@ v = L\cancel{\odv{i}{t}} = 0
 \subsection{วงจร RLC แบบอนุกรม}
 
 พิจารณากระแก้สมการของวงจรที่เป็น RLC ที่ต่อแบบอนุกรมโดยไม่มีแบตเตอรี่ โดย KVL จะได้ (ให้กระแสไหลออกจากฝั่งลบของตัวเก็บประจุ)
-\begin{align*}
-    v_R + v_L + v_C &= 0\\
-    \odv{}{t}\ab(v_R + v_L + v_C) &= 0\\
-    L\odv[2]{i}{t} + R\odv{i}{t} + \frac{1}{C}i &= 0
-\end{align*}
+\begin{align}
+    v_R + v_L + v_C &= 0\notag\\
+    \odv{}{t}\ab(v_R + v_L + v_C) &= 0\notag\\
+    L\odv[2]{i}{t} + R\odv{i}{t} + \frac{1}{C}i &= 0\label{rlcseries}
+\end{align}
 
 เราสามารถแก้สมการนี้ได้โดยการใช้ราก $s_{1,2}$ ของ characteristic equation:
 \[
@@ -200,13 +200,13 @@ x^2 + (R/L)x + 1/LC =0
 
 เมื่อแก้สมการเชิงอนุพันธ์ ถ้าราก $s_{1,2}$ เป็นจำนวนจริง ($\alpha > \omega_0$) จะได้ว่า
 \begin{eqbox}{วงจร RLC อนุกรมแบบ Underdamped}
-    i(t) = A_1\exp(s_1 t) + A_2\exp(s_2 t)
+    i(t) = A_1e^{s_1 t} + A_2e^{s_2 t}
 \end{eqbox}
 โดยเราจะเรียกว่าเป็นวงจร \emph{underdamped}
 
 แต่ถ้าราก $s_{1,2}$ เป็นรากซ้ำ ($\alpha = \omega_0$) โดยให้เป็น $s$ จะได้ว่า
 \begin{eqbox}{วงจร RLC อนุกรมแบบ Critically Damped}
-    i(t) = (A_2 + A_1t)\exp(st)
+    i(t) = (A_2 + A_1t)e^{st}
 \end{eqbox}
 โดยเราจะเรียกว่าเป็นวงจร \emph{critically damped}
 
@@ -218,18 +218,18 @@ x^2 + (R/L)x + 1/LC =0
 \end{defbox}
 และก็จะได้คำตอบของสมการว่า
 \begin{eqbox}{วงจร RLC อนุกรมแบบ Overdamped}
-    i(t) = \exp(-\alpha t) \left( A_1 \cos(\omega_d t) + A_2 \sin(\omega_d t) \right)
+    i(t) = e^{-\alpha t} \left( A_1 \cos(\omega_d t) + A_2 \sin(\omega_d t) \right)
 \end{eqbox}
 โดยเราจะเรียกว่าเป็นวงจร \emph{overdamped}
 
 \subsection{วงจร RLC แบบขนาน}
 
 พิจารณากระแก้สมการของวงจรที่เป็น RLC ที่ต่อแบบขนานโดยไม่มีแบตเตอรี่ โดย KCL จะได้ (ให้กระแสไหลออกจากฝั่งลบของตัวเก็บประจุ)
-\begin{align*}
-    i_R + i_L + i_C &= 0\\
-    \odv{}{t}\ab(i_R + i_L + i_C) &= 0\\
-    C\odv[2]{v}{t} + \frac{1}{R}\odv{v}{t} + \frac{1}{L}v &= 0
-\end{align*}
+\begin{align}
+    i_R + i_L + i_C &= 0\notag\\
+    \odv{}{t}\ab(i_R + i_L + i_C) &= 0\notag\\
+    C\odv[2]{v}{t} + \frac{1}{R}\odv{v}{t} + \frac{1}{L}v &= 0\label{rlcparallel}
+\end{align}
 
 ก็จะได้ characteristic equation:
 \[
@@ -246,15 +246,15 @@ x^2 + (1/RC)x + 1/LC = 0
 
 ต่อมาเมื่อแก้สมการเชิงอนุพันธ์ (เช่นเดียวกับในกรณีต่อแบบอนุกรมแต่ทีนี้หา $v$ แทน $i$) ก็จะได้
 \begin{eqbox}{วงจร RLC ขนานแบบ Underdamped}
-    v(t) = A_1\exp(s_1 t) + A_2\exp(s_2 t)
+    v(t) = A_1e^{s_1 t} + A_2e^{s_2 t}
 \end{eqbox}
 ในกรณี underdamped,
 \begin{eqbox}{วงจร RLC ขนานแบบ Critically Damped}
-    v(t) = (A_2 + A_1t)\exp(st)
+    v(t) = (A_2 + A_1t)e^{st}
 \end{eqbox}
 ในกรณี critically damped, และ
 \begin{eqbox}{วงจร RLC ขนานแบบ Overdamped}
-    v(t) = \exp(-\alpha t) \left( A_1 \cos(\omega_d t) + A_2 \sin(\omega_d t) \right)
+    v(t) = e^{-\alpha t} \left( A_1 \cos(\omega_d t) + A_2 \sin(\omega_d t) \right)
 \end{eqbox}
 ในกรณี overdamped
 
@@ -324,7 +324,7 @@ v(t) = L\odv{i}{t} = LI_m\odv{}{t}\cos\omega t = -\omega LI_m\sin\omega t = V_m\
 \end{lawbox}
 
 สังเกตว่าสมการ (\ref{resac}) ถึง (\ref{indac}) หน้าตาคล้ายกับกฎของ Ohm เราจึงนิยามค่าความต้านทานเสมือนของตัวเก็บประจุและตัวเหนี่ยวนำว่า \emph{รีแอคแตนซ์เชิงประจุ}และ\emph{รีแอคแตนซ์เชิงเหนี่ยวนำ} (\emph{capacitive}/\emph{inductive reactance}: $X_C$ และ $X_L$) ดังนี้:
-\begin{defbox}{Reactance}
+\begin{defbox}{ Reactance}
     \begin{equation}
         X_C \equiv \frac{1}{\omega C}\qq{และ}X_L \equiv \omega L
     \end{equation}
@@ -336,7 +336,7 @@ v(t) = L\odv{i}{t} = LI_m\odv{}{t}\cos\omega t = -\omega LI_m\sin\omega t = V_m\
 \[
 a(t) = A_m\cos\ab(\omega t + \phi) = \Re(A_me^{j\phi}\cex) \equiv \Re(A\cex)
 \]
-(ในการวิเคราะห์วงจรเราจะใช้ $j$ แทนหน่วยจินตภาพเพราะ $i$ ซ้ำกับกระแส) โดยจำนวนเชิงซ้อน $A$ เรียกว่าเป็นรูปใน\emph{โดเมนเฟสเซอร์/ความถี่} (\emph{phasor/frequency domain}) ของ $a(t)$ (โดยจะเรียก $a(t)$ ว่ารูป\emph{โดเมนเวลา}หรือ \emph{time domain}) โดยเราจะแทน $A = A_me^{j\phi}$ ด้วยสัญลักษณ์
+(ในการวิเคราะห์วงจรเราจะใช้ $j$ แทนหน่วยจินตภาพเพราะ $i$ ซ้ำกับกระแส) โดยจำนวนเชิงซ้อน $A$ เรียกว่าเป็นรูปใน\emph{โดเมนเฟสเซอร์}/\emph{ความถี่} (\emph{phasor}/\emph{frequency domain}) ของ $a(t)$ (โดยจะเรียก $a(t)$ ว่ารูป \emph{time domain}) โดยเราจะแทน $A = A_me^{j\phi}$ ด้วยสัญลักษณ์
 \begin{defbox}{สัญลักษณ์แทนจำนวนเชิงซ้อนในการวิเคราะห์วงจร}
     \begin{equation}
         A_m\phase{\phi} \equiv A_me^{j\phi} = A 
@@ -418,9 +418,18 @@ Y_\txt{total} = \frac{1}{Z_\txt{total}} = \frac{1}{Z_1} + \frac{1}{Z_2}
     Y_\txt{total} = Y_1 + Y_2 + \dots Y_n
 \end{eqbox}
 
+โดยที่ในส่วนจริงและส่วนจินตภาพของ impedance จะเป็นส่วนความต้านทาน (resistance: $R$) และส่วน reactance ($X$) ตามลำดับ:
+\begin{eqbox}{ส่วนจริงและส่วนจินตภาพของ impedance}
+    \Re(Z) = R\qq{และ}\Im(Z) = X\qq{หรือก็คือ}Z = R + jX
+\end{eqbox}
+และส่วนจริงและส่วนจินตภาพของ admittance จะเป็นส่วนความนำไฟฟ้า (conductance: $G$) และส่วน susceptance ($B$) ตามลำดับ:
+\begin{eqbox}{ส่วนจริงและส่วนจินตภาพของ impedance}
+    \Re(Y) = G\qq{และ}\Im(Y) = B\qq{หรือก็คือ}Y = G + jB
+\end{eqbox}
+
 \subsection{Resonance ในวงจรไฟฟ้ากระแสสลับ}
 
-
+จากสมการ (\ref{rlcseries}) และ (\ref{rlcparallel}) 
 
 
 
