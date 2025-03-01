@@ -22,7 +22,7 @@
 
 พิจารณาวงจร ณ จุด ๆ หนึ่ง ถ้าที่จุดนั้นไม่มีประจุสะสมอยู่เลยโดย \ref{contj} จะได้ว่า
 \begin{ieqbox}{Kirchhoff's Current Law (KCL)}
-    \sum i_\txt{in} = \sum i_\txt{out}\label{kcl}
+    \sum_\txt{junction} i = 0\label{kcl}
 \end{ieqbox}
 
 โดยกฎนี้ใช้ในการวิเคราะห์วงจรแบบ\emph{โนด} (\emph{nodal analysis}) โดยเริ่มจากการตั้งศักย์ไฟฟ้าบนแต่ละโนดและกระแสที่ไหลเข้าและออกจากแต่ละโนด จากนั้นใช้ (\ref{kcl}) และ (\ref{begohm}) ถึง (\ref{endohm}) ในการเขียนทุกตัวแปรให้อยู่ในรูป $V$
@@ -135,7 +135,7 @@ v_\txt{total} = v_1 + v_2=L_1\odv{i}{t}+L_2\odv{i}{t}=L_1\odv{i}{t}+L_2\odv{i}{t
 i_C = C\cancel{\odv{v}{t}} = 0 
 \]
 ดังนั้นจึงได้ว่า
-\begin{lawbox}{ตัวเก็บประจุที่ Steady State}
+\begin{lawbox}{ตัวเก็บประจุในวงจรไฟฟ้ากระแสตรงที่ Steady State}
     เมื่อ $t\to\infty$ จะสามารถมองได้ว่าตัวเก็บประจุ $C$ เปรียบเสมือนสายไฟขาด
 \end{lawbox}
 
@@ -168,7 +168,7 @@ i_C = C\cancel{\odv{v}{t}} = 0
 v = L\cancel{\odv{i}{t}} = 0 
 \]
 ดังนั้นจึงได้ว่า
-\begin{lawbox}{ตัวเหนี่ยวนำที่ Steady State}
+\begin{lawbox}{ตัวเหนี่ยวนำในวงจรไฟฟ้ากระแสตรงที่ Steady State}
     เมื่อ $t\to\infty$ จะสามารถมองได้ว่าตัวเหนี่ยวนำ $L$ เปรียบเสมือนสายไฟเปล่า
 \end{lawbox}
 
@@ -186,6 +186,7 @@ A\odv{i}{t} + Bi = C
 \begin{ieqbox}{ค่าคงที่เวลาโดยทั่วไป}
     \tau = \frac{A}{B}
 \end{ieqbox}
+เราจะเรียกช่วงแรกที่เกิดการปรับตัวของกระแสหรือความต่างศักย์อย่างรวดเร็ว (ก่อน steady state) ว่า \emph{transient response}
 
 \section{วงจรอันดับสอง}
 
@@ -306,7 +307,7 @@ A\odv[2]{i}{t} + B\odv{i}{t} + Ci = D
 \]
 (หรืออาจติดอยู่ในรูป $v$) โดยจะได้
 \begin{ieqbox}{Damping Factor, ความถี่ Resonant, และ Damping Ratio โดยทั่วไป}
-    \alpha = B\qquad\omega_0 = 2\sqrt{AC}\qquad\zeta = \frac{B}{2\sqrt{AC}}
+    \alpha = \frac{B}{2A}\qquad\omega_0 = \sqrt{\frac{C}{A}}\qquad\zeta = \frac{B}{2\sqrt{AC}}\label{resonant}
 \end{ieqbox}
 และจะได้ homogeneous solution เป็น (\ref{starthom}), (\ref{midhom}), (\ref{endhom}), และ (\ref{finalhom}) เมื่อ $\zeta > 1$, $\zeta = 1$, $0 < \zeta < 1$, และ $\zeta = 0$ ตามลำดับ และเมื่อแก้ particular solution ก็จะได้
 \begin{ieqbox}{คำตอบทั่วไปของวงจรอันดับสอง}
@@ -327,4 +328,4 @@ A\odv[2]{i}{t} + B\odv{i}{t} + Ci = D
         \eta \equiv \frac{W}{Q}
     \end{equation}
 \end{defbox}
-หมายเหตุ: \emph{$Q_C = Q - W$ เป็นความร้อนที่ถูกปล่อยทิ้งลงใน cold sink ซึ่งโดยกฎข้อที่สองของ thermodynamics จะได้ว่า $Q_C \geq 0$ ดังนั้น $\eta \leq 1$}
+หมายเหตุ: \emph{$Q_C = Q - W$ เป็นความร้อนที่ถูกปล่อยทิ้งลงใน cold sink ซึ่งโดยกฎข้อที่สองของ thermodynamics จะได้ว่า $Q_C > 0$ ดังนั้น $\eta < 1$}

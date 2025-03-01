@@ -13,7 +13,7 @@
     \begin{equation}
         T\equiv\frac{2\pi}{\omega}\qq{และ}f\equiv\frac{1}{T} = \frac{\omega}{2\pi}
     \end{equation}
-\end{defbox}
+\end{defbox} 
 
 โดยยกตัวอย่างแหล่งกำเนิดไฟฟ้ากระแสสลับเช่น ลองพิจารณาสายไฟที่หมุนรอบแกน $x$ และมีสนามแม่เหล็กสม่ำเสมอขนาด $B$ ชี้ในแกน $+y$ ก็จะได้ว่าถ้าเราหมุนลูปสายไฟนี้ด้วยอัตราเร็วเชิงมุม $\omega$ แล้วก็จะได้ว่า
 \[
@@ -74,40 +74,43 @@ v(t) = L\odv{i}{t} = LI_m\odv{}{t}\cos\omega t = -\omega LI_m\sin\omega t = V_m\
 
 \section{เฟสเซอร์}
 
-\subsection{Frequency Domain}
+\subsection{Steady State และ Frequency Domain}
+
+การวิเคราะห์วงจรไฟฟ้ากระแสสลับ เช่นเดียวกับไฟฟ้ากระแสตรง ก็จะมี transient response ซึ่งขึ้นอยู่กับค่าเริ่มต้นของวงจร แต่เมื่อเวลาผ่านไปเรื่อย ๆ ที่ steady state เราจะได้ว่าแอมพลิจูดจะคงที่และความถี่ของทั้งวงจรจะเท่ากันหมด โดยเราจะมาดูปรากฏการณ์ที่ steady state ดังนั้นต่อไปนี้จะสมมติว่า $\omega$ คงที่ทั้งวงจร
 
 เราสามารถแทนฟังก์ชันไซน์ด้วยส่วนจริงของฟังก์ชัน exponential เชิงซ้อน:
 \[
-a(t) = A_m\cos\ab(\omega t + \phi) = \Re(A_me^{j\phi}\cex) \equiv \Re(A\cex)
+a(t) = A_m\cos\ab(\omega t + \phi) = \Re(A_me^{j\phi}\cex) \equiv \Re(\tilde{A}\cex)
 \]
-(ในการวิเคราะห์วงจรเราจะใช้ $j$ แทนหน่วยจินตภาพเพราะ $i$ ซ้ำกับกระแส) โดยจำนวนเชิงซ้อน $A$ เรียกว่าเป็นรูปใน\emph{โดเมนเฟสเซอร์}/\emph{ความถี่} (\emph{phasor}/\emph{frequency domain}) ของ $a(t)$ (โดยจะเรียก $a(t)$ ว่ารูป \emph{time domain}) โดยเราจะแทน $A = A_me^{j\phi}$ ด้วยสัญลักษณ์
+(ในการวิเคราะห์วงจรเราจะใช้ $j$ แทนหน่วยจินตภาพเพราะ $i$ ซ้ำกับกระแส) โดยจำนวนเชิงซ้อน $\tilde{A}$ เรียกว่าเป็นรูปใน\emph{โดเมนเฟสเซอร์}/\emph{ความถี่} (\emph{phasor}/\emph{frequency domain}) ของ $a(t)$ (โดยจะเรียก $a(t)$ ว่ารูป \emph{time domain}) โดยเราจะแทน $\tilde{A} = A_me^{j\phi}$ ด้วยสัญลักษณ์
 \begin{defbox}{สัญลักษณ์แทนจำนวนเชิงซ้อนในการวิเคราะห์วงจร}
     \begin{equation}
-        A_m\phase{\phi} \equiv A_me^{j\phi} = A 
+        A_m\phase{\phi} \equiv A_me^{j\phi} = \tilde{A} 
     \end{equation}
 \end{defbox}
+ซึ่งเป็นรูปที่มีประโยชน์ในการวิเคราะห์ steady state ของวงจรไฟฟ้ากระแสสลับ เพราะเราสามารถที่จะดำเนินการบวกและลบบน frequency domain เพื่อหา $\tilde{I}_\txt{total}$ หรือ $\tilde{V}_\txt{total}$ ได้เลย (เนื่องจากที่ steady state มี $\omega$ คงที่)
 
 \subsection{Impedance และ Admittance}
 
-ต่อมาเรามาดู ``กฎของ Ohm" ของแต่ละอุปกรณ์ใน frequency domain, จาก (\ref{resac}) ถึง (\ref{indac}) ก็จะไดh
+ต่อมาเรามาดู ``กฎของ Ohm" ของแต่ละอุปกรณ์ใน frequency domain, จาก (\ref{resac}) ถึง (\ref{indac}) ก็จะได้
 \begin{lawbox}{อุปกรณ์ต่าง ๆ ใน Frequency Domain}
     สำหรับตัวต้านทาน $R$:
     \begin{equation}
-        V = RI
+        \tilde{V} = R\tilde{I}
     \end{equation}
     สำหรับตัวเก็บประจุ $C$:
     \begin{equation}
-        V = \ab(\frac{1}{j\omega C})I
+        \tilde{V} = \ab(\frac{1}{j\omega C})\tilde{I}
     \end{equation}
     สำหรับตัวเหนี่ยวนำ $L$:
     \begin{equation}
-        V = \ab(j\omega L)I
+        \tilde{V} = \ab(j\omega L)\tilde{I}
     \end{equation}
 \end{lawbox}
 เราจึงจะนิยามค่า\emph{อิมพีแดนซ์} (\emph{impedance}: $Z$) และ\emph{แอดมิตแทนซ์} (\emph{admittance}: $Y$) ว่า
 \begin{defbox}{ Impedance และ Admittance}
     \begin{equation}
-        Z\equiv \frac{V}{I}\qq{และ} Y\equiv\frac{1}{Z}=\frac{I}{V}
+        Z\equiv \frac{\tilde{V}}{\tilde{I}}\qq{และ} Y\equiv\frac{1}{Z}=\frac{\tilde{I}}{\tilde{V}}
     \end{equation}
 \end{defbox}
 
@@ -125,49 +128,48 @@ a(t) = A_m\cos\ab(\omega t + \phi) = \Re(A_me^{j\phi}\cex) \equiv \Re(A\cex)
     Z_R = R\quad\quad Z_L = j\omega L \quad\quad Z_C = \frac{1}{j\omega C}
 \end{eqbox}
 admittance ของอุปกรณ์ต่าง ๆ:
+\newpage
 \begin{eqbox}{Admittance ของอุปกรณ์ต่าง ๆ}
     Y_R = \frac{1}{R}\quad\quad Y_L = \frac{1}{j\omega L} \quad\quad Y_C = j\omega C
 \end{eqbox}
-
-
 
 \section{การวิเคราะห์วงจรใน Frequency Domain}
 
 \subsection{กฎของ Kirchhoff ใน Frequency Domain}
 
-เนื่องจากฟังก์ชัน $\Re$ และ $\Im$ มีสมบัติเชิงเส้น การแทนฟังก์ชันรูปไซน์ใน frequency domain จึงมีประโยชน์ต่อการคำนวณ เพราะกฎที่สำคัญต่าง ๆ ใน time domain ยังคงเป็นจริงใน frequency domain โดยที่สำคัญสุดเลยก็คือกฎของ Kirchhoff:
+เนื่องจากฟังก์ชัน $\Re$ และ $\Im$ มีสมบัติเชิงเส้น การแทนฟังก์ชันรูปไซน์ใน frequency domain จึงมีประโยชน์ต่อการคำนวณด้วย เพราะกฎที่สำคัญต่าง ๆ ใน time domain ยังคงเป็นจริงใน frequency domain โดยที่สำคัญสุดเลยก็คือกฎของ Kirchhoff:
 \begin{ieqbox}{KCL ใน Frequency Domain}
-    \sum I_\txt{in} = \sum I_\txt{out}
+    \sum_\txt{junction} \tilde{I} = 0
 \end{ieqbox}
 และ
 \begin{ieqbox}{KVL ใน Frequency Domain}
-    \sum_\txt{loop} V = 0
+    \sum_\txt{loop} \tilde{V} = 0
 \end{ieqbox}
 
 \subsection{การรวม Impedance}
 
-พิจารณาการต่อวงจรแบบอนุกรม โดยมีอุปกรณ์อยู่สองชิ้นที่มี impedance $Z_1$ และ $Z_2$ จะได้ว่ากระแส $I$ ที่ไหลผ่านอุปกรณ์ทั้งสองต้องเท่ากัน ดังนั้น
+พิจารณาการต่อวงจรแบบอนุกรม โดยมีอุปกรณ์อยู่สองชิ้นที่มี impedance $Z_1$ และ $Z_2$ จะได้ว่ากระแส $\tilde{I}$ ที่ไหลผ่านอุปกรณ์ทั้งสองต้องเท่ากัน ดังนั้น
 \begin{align*}
-    v_\txt{total}(t) &= \Re(V_1\cex) + \Re(V_2\cex)\\
-    &= \Re(IZ_1\cex) + \Re(IZ_2\cex)\\
-    &= \Re\ab(I(Z_1+Z_2)\cex) 
+    v_\txt{total}(t) &= \Re(\tilde{V}_1\cex) + \Re(\tilde{V}_2\cex)\\
+    &= \Re(\tilde{I}Z_1\cex) + \Re(\tilde{I}Z_2\cex)\\
+    &= \Re\ab(\tilde{I}(Z_1+Z_2)\cex) 
 \end{align*}
-ดังนั้น $V_\txt{total} = I(Z_1+Z_2)$ แล้วก็จะได้
+ดังนั้น $\tilde{V}_\txt{total} = \tilde{I}(Z_1+Z_2)$ แล้วก็จะได้
 \[
 Z_\txt{total} = Z_1 + Z_2
 \]
 ขยายเป็น $n$ อุปกรณ์จะได้
 \begin{ieqbox}{การรวม Impedance แบบอนุกรม}
-    Z_\txt{total} = Z_1 + Z_2 + \dots Z_n
+    Z_\txt{total} = Z_1 + Z_2 + \dots + Z_n
 \end{ieqbox}
 
-ต่อมาพิจารณาการต่อวงจรแบบขนาน โดยมีอุปกรณ์สองชิ้นเดิม จะได้ว่าความต่างศักย์ $V$ คร่อมอุปกรณ์ทั้งสองต้องเท่ากัน ดังนั้น
+ต่อมาพิจารณาการต่อวงจรแบบขนาน โดยมีอุปกรณ์สองชิ้นเดิม จะได้ว่าความต่างศักย์ $\tilde{V}$ คร่อมอุปกรณ์ทั้งสองต้องเท่ากัน ดังนั้น
 \begin{align*}
-    i_\txt{total}(t) &= \Re(I_1\cex) + \Re(I_2\cex)\\
-    &= \Re\ab(\frac{V}{Z_1}\cex) + \Re\ab(\frac{V}{Z_2}\cex)\\
-    &= \Re\ab(V\ab(\frac{1}{Z_1} + \frac{1}{Z_2})\cex)
+    i_\txt{total}(t) &= \Re(\tilde{I}_1\cex) + \Re(\tilde{I}_2\cex)\\
+    &= \Re\ab(\frac{\tilde{V}}{Z_1}\cex) + \Re\ab(\frac{\tilde{V}}{Z_2}\cex)\\
+    &= \Re\ab(\tilde{V}\ab(\frac{1}{Z_1} + \frac{1}{Z_2})\cex)
 \end{align*}
-ดังนั้น $I_\txt{total} = V\ab(\frac{1}{Z_1} + \frac{1}{Z_2})$ และจะได้
+ดังนั้น $\tilde{I}_\txt{total} = \tilde{V}\ab(\frac{1}{Z_1} + \frac{1}{Z_2})$ และจะได้
 \[
 Y_\txt{total} = \frac{1}{Z_\txt{total}} = \frac{1}{Z_1} + \frac{1}{Z_2}
 \]
@@ -177,11 +179,167 @@ Y_\txt{total} = \frac{1}{Z_\txt{total}} = \frac{1}{Z_1} + \frac{1}{Z_2}
 \end{ieqbox}
 หรือ
 \begin{eqbox}{การรวม Admittance แบบขนาน}
-    Y_\txt{total} = Y_1 + Y_2 + \dots Y_n
+    Y_\txt{total} = Y_1 + Y_2 + \dots + Y_n
 \end{eqbox}
 
 \subsection{Resonance ในวงจรไฟฟ้ากระแสสลับ}
 
-จากสมการ
+จากในส่วนของวงจรอันดับสองในบทไฟฟ้ากระแสตรง เราได้ดูผลเฉลยทั่วไปของสมการเชิงอนุพันธ์
+\[
+A\odv[2]{i}{t} + B\odv{i}{t} + Ci = D
+\]
+ซึ่งจะมี particular solution เป็น $i_p(t) = \frac{D}{C}$ แต่ถ้าเราเปลี่ยนแหล่งกำเนิดเป็นแหล่งกำเนิดกระแสสลับก็จะได้ (โดยพิจารณา KVL และให้ emf ที่แหล่งกำเนิด $\emf = \emf_m\sin\omega t$)
+\[
+    A\odv[2]{i}{t} + B\odv{i}{t} + Ci = \odv{}{t}\emf_m\sin\omega t = \emf_m\omega\cos\omega t
+\]
+โดยถ้าเดาคำตอบให้อยู่ในรูป $I_m\cos\ab(\omega t - \phi)$ จะแก้ particular solution ได้เป็น
+\begin{lawbox}{Particular Solution ของวงจรไฟฟ้ากระแสสลับ}
+    \begin{equation}
+        i_p(t) = I_m\cos\ab(\omega t -\phi)
+    \end{equation}
+    เมื่อ
+    \begin{equation}
+        \frac{\emf_m}{\sqrt{B^2 + (A\omega - C/\omega)^2}}\qq{และ}\phi = \arctan\ab(\frac{B\omega}{C-A\omega^2})
+    \end{equation}
+\end{lawbox}
+แต่เพราะส่วนที่เป็น homogeneous solution มีการ decay ลงเรื่อย ๆ จนที่ $t\to\infty$ จะได้ว่า $i_h(t) \to 0$ ดังนั้น particular solution นี้จึงเป็น steady state ของวงจร ต่อมาสังเกตว่าความถี่ resonant ใน (\ref{resonant}) เป็นค่าที่ทำให้เฟสของ driving emf และเฟสของกระแสตรงกัน (จะได้ $\phi = \pi / 2$ ซึ่งตรงกับความต่างเฟสของ $\cos$ ในกระแสและ $\sin$ ใน emf) ดังนั้นเราอาจนิยามความถี่ resonant ใหม่ได้ดังนี้
+\begin{defbox}{ความถี่ Resonant (แบบเฟส)}
+    ความถี่ resonant ($\omega_0$) คือความถี่เชิงมุมที่ทำให้เฟสของกระแสและ emf ตรงกัน
+\end{defbox}
+หมายเหตุ: \emph{บางครั้งเราอาจจะนิยามความถี่ resonant เป็นความถี่ที่ทำให้แอมพลิจูดสูงสุด (ซึ่งสำหรับหลาย ๆ ระบบนิยามแบบเฟสก็จะทำให้เกิดแอมพลิจูดสูงสุด) แต่เพื่อให้นิยามตรงกับ (\ref{resonant}) จึงขอใช้นิยามแบบเฟส}
+
+เนื่องจาก $\tilde{V} = Z\tilde{I}$ ถ้าอยากให้เฟสตรงกัน $Z$ ต้องมีแต่ส่วนความต้านทาน (reactance เป็น 0) ดังนั้น
+\begin{lawbox}{ความถี่ Resonant}
+    ความถี่ resonant ($\omega_0$) คือความถี่เชิงมุมที่ทำให้
+    \begin{equation}
+        \Im(Z) = 0
+    \end{equation}
+\end{lawbox}
+ยกตัวอย่างเช่น
+\begin{corbox}{ตัวอย่าง}
+    จงหาความถี่ resonant ของวงจรที่มีตัวต้านทาน $R$ ต่อแบบอนุกรมกับวงจรที่มีตัวเหนี่ยวนำ $L$, ตัวเก็บประจุ $C$ ต่อกันแบบขนาน โดยที่ตัวเก็บประจุ $C$ มีความต้านทานภายใน $r$
+\end{corbox}
+\begin{soln}
+    เริ่มจากหา impedance รวมของวงจร LC แบบขนาน จะได้
+    \begin{align*}
+        Z_{LC} &= \frac{Z_L(Z_C + r)}{Z_L + Z_C + r} = \frac{j\omega L (\frac{1}{j\omega C} + r)}{j\omega L + \frac{1}{j\omega C} + r} \\
+        &= \frac{1}{\cst}\ab(\cst + j\ab(-\frac{\omega L^2}{C} + \frac{L}{\omega C^2} + r^2\omega L)) 
+    \end{align*}
+    เนื่องจาก $R$ ที่ต่อออกมามี impedance เป็นจำนวนจริงอยู่แล้ว จึงสามารถพิจารณาแค่ $\Im(Z_{LC}) = 0$ ได้ ดังนั้น
+    \begin{align*}
+        -\frac{\omega_0 L^2}{C} + \frac{L}{\omega_0 C^2} + r^2\omega_0 L &= 0\\
+        -\frac{L^2}{C}\omega_0^2 + \frac{L}{C^2} + r^2L\omega_0^2 &= 0\\
+        \ab(r^2L - \frac{L^2}{C})\omega_0^2 &= -\frac{L}{C^2}
+    \end{align*}
+    ก็จะได้
+    \[
+    \omega_0 = \sqrt{\frac{1}{LC - r^2C^2}}
+    \]
+    เป็นความถี่ resonant
+\end{soln}
 
 \section{กำลังไฟฟ้าและค่ายังผล}
+
+\subsection{กำลังไฟฟ้าเฉลี่ย}
+
+ในไฟฟ้ากระแสตรงเราสามารถใช้กำลังไฟฟ้าในรูปของ $\tilde{I}$ และ $\tilde{V}$ ที่คงที่ ณ steady state ได้เลย แต่ไฟฟ้ากระแสสลับ ณ steady state เรายังมี $i(t)$ และ $v(t)$ เป็นฟังก์ชันรูปไซน์ เราจึงพิจารณาการหา\emph{กำลังไฟฟ้าเฉลี่ย}บนอุปกรณ์ โดยมีกระแส $i(t) = I_m\cos\ab(\omega t + \phi_1)$ และความต่างศักย์คร่อม $v(t) = V_m\cos\ab(\omega t + \phi_2)$ โดยเริ่มจากการหากำลัง ณ เวลาใด ๆ:
+\begin{align*}
+    p(t) &= i(t)v(t) = I_mV_m\cos(\omega t + \phi_i)\cos(\omega t + \phi_v)\\
+    &= \frac{1}{2}I_mV_m\cos(\phi_i-\phi_v) + \frac{1}{2}I_mV_m\cos(2\omega t + \phi_i + \phi_v)
+\end{align*}
+จะได้กำลังเฉลี่ยในหนึ่งคาบเท่ากับ
+\begin{align*}
+    P &= \frac{1}{T}\int_0^T p(t)\odif{t} \\
+    &= \frac{1}{T}\frac{1}{2}I_mV_m\cos(\phi_i-\phi_v)\int_0^T \odif{t} + \frac{1}{T}\frac{1}{2}I_mV_m\cancel{\int_0^T \cos(2\omega t + \phi_i + \phi_v)\odif{t}}
+\end{align*}
+เนื่องจากพจน์หลังเป็นฟังก์ชัน $\cos$ คาบ $T / 2$ จึงเหลือ $0$ ดังนั้น
+\begin{ieqbox}{กำลังไฟฟ้าเฉลี่ย}
+    P = \frac{1}{2}I_mV_m\cos\Delta\phi
+\end{ieqbox}
+โดยเราจะเรียก $\cos\Delta\phi$ ว่า\emph{อัตราส่วนกำลัง} (\emph{power factor})
+
+\subsection{กระแสและความต่างศักย์ยังผล}
+
+เวลามากระแสผ่านโหลดต้านทาน $R$ เราอาจจะต้องการ\emph{กระแสยังผล} (\emph{effective current}: $I_\txt{eff}$) เพื่อที่จะนำมาคำนวณกำลังไฟฟ้าแบบไฟฟ้ากระแสปกติ โดยพิจารณาโดยทั่วไป กระแสสลับ $i(t)$ ที่มีคาบ $T$ (ไม่จำเป็นต้องเป็นรูปไซน์) จะได้
+\begin{align*}
+    P &= I_\txt{eff}^2R\\
+    \cancel{R}\frac{1}{T}\int_0^T i^2(t)\odif{t} &= I_\txt{eff}^2\cancel{R}\\
+    I_\txt{eff} &= \sqrt{\frac{1}{T}\int_0^T i^2(t)\odif{t}}\\
+    I_\txt{eff} &= \sqrt{\ab<i^2>}
+\end{align*}
+ในทำน้องเดียวกันจะได้\emph{ความต่างศักย์ยังผล} (\emph{effective voltage}: $V_\txt{eff}$) เท่ากับ
+\[
+V_\txt{eff} = \sqrt{\ab<v^2>}
+\]
+ก็จะได้
+\begin{ieqbox}{กระแสและความต่างศักย์ยังผล}
+    I_\txt{eff} = I_\txt{rms} = \sqrt{\ab<i^2>}\qq{และ}V_\txt{eff} = V_\txt{rms} = \sqrt{\ab<v^2>}
+\end{ieqbox}
+
+โดยถ้า $i(t)$ และ $v(t)$ เป็นฟังก์ชันรูปไซน์ เมื่ออินทิเกรตออกมาจะได้ว่า
+\begin{eqbox}{กระแสและความต่าง rms ของไฟฟ้ากระแสสลับรูปไซน์}
+    I_\txt{rms} = \frac{I_m}{\sqrt{2}}\qq{และ}V_\txt{rms} = \frac{V_m}{\sqrt{2}}
+\end{eqbox}
+
+และเราจะนิยาม $\tilde{I}_\txt{rms}$ และ $\tilde{V}_\txt{rms}$ ว่า
+\begin{defbox}{กระแสและความต่างศักย์ rms ในรูปเฟสเซอร์}
+    \begin{equation}
+        \tilde{I}_\txt{rms} \equiv I_\txt{rms}\phase{\phi_i}\qq{และ}\tilde{V}_\txt{rms} \equiv V_\txt{rms}\phase{\phi_v}
+    \end{equation}
+\end{defbox}
+
+\subsection{กำลังไฟฟ้าเชิงซ้อน}
+
+สังเกตว่ากำลังไฟฟ้าเฉลียนี้เราสามารถหาได้จาก
+\begin{equation}
+    P = \Re(\tilde{I}_\txt{rms}^*\tilde{V}_\txt{rms}) = \frac{1}{2}\Re(\tilde{I}^*\tilde{V})
+\end{equation}
+(เมื่อ ${}^*$ แทน complex conjugate) ดังนั้นจึงนิยาม\emph{กำลังไฟฟ้าเชิงซ้อน} (\emph{complex power}: $\tilde{P}$) ว่า
+\begin{defbox}{กำลังไฟฟ้าเชิงซ้อน}
+    \begin{equation}
+        \tilde{S} \equiv \tilde{I}_\txt{rms}^*\tilde{V}_\txt{rms}
+    \end{equation}
+    หรือสำหรับไฟฟ้ากระแสสลับรูปไซน์:
+    \begin{equation}
+        \tilde{S} = \frac{1}{2}\tilde{I}^*\tilde{V}
+    \end{equation}
+\end{defbox}
+ซึ่งจะมีหน่วย SI เป็น $\unit{VA}$ (volt-ampere) เพื่อแสดงให้เห็นว่าไม่ใช่กำลังจริง ๆ โดยจะเรียกขนาดของมันว่า\emph{กำลังปรากฏ} (\emph{apparent power}: $S$), ส่วนจริงของมัน ($P$) ตามด้านบน คือ\emph{กำลังจริง} ($P$), และส่วนจินตภาพเรียกว่า\emph{กำลังเชิงรีแอค} (\emph{reactive power}: $Q$) ซึ่งมีหน่วย SI เป็น $\unit{VA}$ เช่นกัน สรุปก็คือ
+\begin{defbox}{กำลังปรากฏ}
+    \begin{equation}
+        S \equiv |\tilde{S}| = I_\txt{rms}V_\txt{rms}
+    \end{equation}
+\end{defbox}
+(เหตุผลที่เรียกกำลังปรากฏเพราะเป็นค่าที่ดูเหมือนจะเป็นกำลังจริง ๆ แต่ไม่ใช่) และ
+\begin{defbox}{กำลังเชิงรีแอค}
+    \begin{equation}
+        Q \equiv \Im(\tilde{S}) = I_\txt{rms}V_\txt{rms}\sin(\phi_v - \phi_i)
+    \end{equation}
+\end{defbox}
+
+โดยกำลังเชิงซ้อนนี้ยังคงเป็นค่าที่อนุรักษ์เหมือนกับกำลังจริง กล่าวคือ
+\begin{equation}
+    \tilde{S} = \tilde{S}_1 + \tilde{S}_2 + \dots + \tilde{S}_n
+\end{equation}
+
+\subsection{การคิดค่าไฟ}
+
+ไฟฟ้าที่ใช้กันทั่วไปตามบ้านเรือนนั้นเป็นไฟฟ้ากระแสสลับที่มีค่า emf ยังผลประมาณ $\qty{220}{V}$ โดยการคิดค่าไฟนั้นอาจมีหรือไม่มีส่วนแรกที่คงที่และมีอีกส่วนหลังที่แปรผันตามพลังงานที่ใช้ (นับเป็นเงินต่อหน่วยหรือต่อ $\unit{kWh}$) เช่น ในประเทศไทยมีอัตราค่าไฟดังนี้:
+\begin{table}[h]
+    \centering
+    \begin{tabular}{|c|c|}
+        \hline
+        \bfseries{หน่วยที่ใช้ (หน่วย)} & \bfseries{อัตราค่าไฟ (บาท/หน่วย)} \\
+        \hline
+        $1-15$ & $2.3488$ \\
+        $16-25$ & $2.9882$ \\
+        $26-35$ & $3.2405$ \\
+        $36-100$ & $3.6237$ \\
+        $101-150$ & $3.7171$ \\
+        $151-400$ & $4.2218$ \\
+        $401$ ขึ้นไป & $4.4217$ \\
+        \hline
+    \end{tabular}
+\end{table}
+
+
