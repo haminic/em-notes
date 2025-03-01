@@ -5,10 +5,6 @@
 
 เรามี ``กฎของ Ohm'' สำหรับแต่ละ \emph{passive component} (อุปกรณ์ที่ไม่สร้างพลังงาน) ดังนี้
 \begin{lawbox}{ความสัมพันธ์ของ $V$ และ $I$ สำหรับ Passive Component}
-    สำหรับดัวเก็บประจุ:
-    \begin{equation}
-        i = C\odv{v}{t} \label{begohm}
-    \end{equation}
     สำหรับตัวต้านทาน:
     \begin{equation}
         v = iR
@@ -16,6 +12,10 @@
     และสำหรับตัวเหนี่ยวนำ:
     \begin{equation}
         v = L\odv{i}{t} \label{endohm}
+    \end{equation}
+    สำหรับดัวเก็บประจุ:
+    \begin{equation}
+        i = C\odv{v}{t} \label{begohm}
     \end{equation}
 \end{lawbox}
 (ในบทนี้เราจะใช้ตัวอักษร $v$ และ $i$ ที่เป็นตัวพิมพ์เล็กเพื่อแทนความต่างศักย์และกระแสที่อาจขึ้นกับเวลา) ซึ่งสามารถนำมาใช้ในการวิเคราะห์วงจรได้ด้วยกฎของ Kirchhoff:
@@ -35,49 +35,48 @@
 
 กฎนี้ใช้ในการวิเคราะห์วงจรแบบ\emph{ลูป} (\emph{mesh analysis}) โดยเริ่มจากกำหนดกระแสที่วนอยู่ในแต่ละลูปที่กำหนดขึ้น จากนั้นใช้ (\ref{kvl}) และ (\ref{begohm}) ถึง (\ref{endohm}) ตั้งสมการตามจำนวนลูปที่กำหนดไว้เพื่อแก้หา $I$ ในแต่ละลูป
 
-\subsection{การต่อตัวเก็บประจุ, ตัวต้านทาน, และตัวเหนี่ยวนำอย่างง่าย}
+\subsection{การต่อตัวต้านทาน, ตัวเก็บประจุ, และตัวเหนี่ยวนำอย่างง่าย}
 
-พิจารณาการต่อตัวเก็บประจุ $C_1$ และ $C_2$ แบบ\emph{อนุกรม} จะได้ว่า $q$ บนตัวเก็บประจุ $C_1$ จะเท่ากับ $q$ บนตัวเก็บประจุ $C_2$ ดังนั้น
+พิจารณาการต่อตัวต้านทาน $R_1$ และ $R_2$ แบบ\emph{อนุกรม} จะได้ว่ากระแส $i$ บนตัวต้านทาน $R_1$ จะเท่ากับ $I$ บนตัวต้านทาน $R_2$ ดังนั้น
 \[ 
-v_\txt{total}=v_1+v_2=\frac{q}{C_1}+\frac{q}{C_2}
+v_\txt{total}=v_1+v_2=iR_1+iR_2
 \]
-จึงได้ความจุไฟฟ้ารวมเท่ากับ
+จึงได้ความต้านทานรวมเท่ากับ
 \[ 
-\frac{1}{C_\txt{total}}=\frac{1}{C_1}+\frac{1}{C_2}
+R_\txt{total}=R_1+R_2
 \]
-โดยเราสามารถทำแบบนี้ไปได้เรื่อย ๆ ด้วยตัวเก็บประจุกี่ตัวก็ได้ ดังนั้น
-\begin{eqbox}{การต่อตัวเก็บประจุแบบอนุกรม}
-    \frac{1}{C_\txt{total}}=\frac{1}{C_1}+\frac{1}{C_2}+\dots+\frac{1}{C_n}
-\end{eqbox}
-และพิจารณาการต่อตัวเก็บประจุ $C_1$ และ $C_2$ แบบ\emph{ขนาน} จะได้ว่าความต่างศักย์ของตัวเก็บประจุทั้งสองจะต้องเท่ากัน (เพราะเป็นเนื้อตัวนำเดียวกัน) ดังนั้น
-\[ 
-Q_\txt{total}=Q_1+Q_2=C_1v+C_2v
-\]
-จึงได้ความจุไฟฟ้ารวมเท่ากับ
-\[ 
-C_\txt{total}=C_1+C_2
-\]
-โดยเช่นเดียวกับการต่อแบบอนุกรม เราสามารถทำแบบนี้ไปได้เรื่อย ๆ ด้วยตัวเก็บประจุกี่ตัวก็ได้ ดังนั้น
-\newpage
-\begin{eqbox}{การต่อตัวเก็บประจุแบบขนาน}
-    C_\txt{total}=C_1+C_2+\dots+C_n
-\end{eqbox}
-
-ต่อมาเช่นเดียวกับตัวเก็บประจุ พิจารณาการต่อตัวต้านทาน $R_1$ และ $R_2$ แบบอนุกรม จะได้ว่ากระแสไฟฟ้าที่ไหลผ่านตัวต้านทานทั้งสองจะต้องเท่ากัน ดังนั้น
-\[ 
-v_\txt{total}=v_1+v_2=iR_1+iR_2=iR_1+iR_2
-\]
-เราสามารถทำแบบนี้ไปได้เรื่อย ๆ ด้วยตัวต้านทานกี่ตัวก็ได้ ดังนั้น
+โดยเราสามารถทำแบบนี้ไปได้เรื่อย ๆ ด้วยตัวต้านทานกี่ตัวก็ได้ ดังนั้น
 \begin{eqbox}{การต่อตัวต้านทานแบบอนุกรม}
     R_\txt{total}=R_1+R_2+\dots+R_n
 \end{eqbox}
-และพิจารณาการต่อตัวต้านทาน $R_1$ และ $R_2$ แบบขนาน จะได้ว่าความต่างศักย์ของตัวต้านทานทั้งสองจะต้องเท่ากัน ดังนั้น
+และพิจารณาการต่อตัวต้านทาน $R_1$ และ $R_2$ แบบ\emph{ขนาน} จะได้ว่าความต่างศักย์ของตัวต้านทานทั้งสองจะต้องเท่ากัน ดังนั้น
 \[ 
 i_\txt{total}=i_1+i_2=\frac{v}{R_1}+\frac{v}{R_2}
 \]
-เราสามารถทำแบบนี้ไปได้เรื่อย ๆ ด้วยตัวต้านทานกี่ตัวก็ได้ ดังนั้น
+จึงได้ความต้านทานรวมเท่ากับ
+\[ 
+\frac{1}{R_\txt{total}}=\frac{1}{R_1}+\frac{1}{R_2}
+\]
+โดยเช่นเดียวกับการต่อแบบอนุกรม เราสามารถทำแบบนี้ไปได้เรื่อย ๆ ด้วยตัวต้านทานกี่ตัวก็ได้ ดังนั้น
 \begin{eqbox}{การต่อตัวต้านทานแบบขนาน}
     \frac{1}{R_\txt{total}}=\frac{1}{R_1}+\frac{1}{R_2}+\dots+\frac{1}{R_n}
+\end{eqbox}
+
+ต่อมาเช่นเดียวกับตัวต้านทาน พิจารณาการต่อตัวเก็บประจุ $C_1$ และ $C_2$ แบบอนุกรม จะได้ว่า $q$ บนตัวเก็บประจุ $C_1$ จะเท่ากับ $q$ บนตัวเก็บประจุ $C_2$ ดังนั้น
+\[ 
+v_\txt{total}=v_1+v_2=\frac{q}{C_1}+\frac{q}{C_2}
+\]
+เราสามารถทำแบบนี้ไปได้เรื่อย ๆ ด้วยตัวเก็บประจุกี่ตัวก็ได้ ดังนั้น
+\begin{eqbox}{การต่อตัวเก็บประจุแบบอนุกรม}
+    \frac{1}{C_\txt{total}}=\frac{1}{C_1}+\frac{1}{C_2}+\dots+\frac{1}{C_n}
+\end{eqbox}
+และพิจารณาการต่อตัวเก็บประจุ $C_1$ และ $C_2$ แบบขนาน จะได้ว่าความต่างศักย์คร่อมตัวเก็บประจุทั้งสองจะต้องเท่ากัน ดังนั้น
+\[ 
+Q_\txt{total}=Q_1+Q_2=C_1v+C_2v
+\]
+เราสามารถทำแบบนี้ไปได้เรื่อย ๆ ด้วยตัวเก็บประจุกี่ตัวก็ได้ ดังนั้น
+\begin{eqbox}{การต่อตัวเก็บประจุแบบขนาน}
+    C_\txt{total}=C_1+C_2+\dots+C_n
 \end{eqbox}
 
 สุดท้าย พิจารณาการต่อตัวเหนี่ยวนำ $L_1$ และ $L_2$ แบบอนุกรม จะได้ว่ากระแสที่ไหลผ่านตัวเหนี่ยวนำทั้งสองจะต้องเท่ากัน ดังนั้น
@@ -135,7 +134,10 @@ v_\txt{total} = v_1 + v_2=L_1\odv{i}{t}+L_2\odv{i}{t}=L_1\odv{i}{t}+L_2\odv{i}{t
 \[
 i_C = C\cancel{\odv{v}{t}} = 0 
 \]
-ดังนั้นเมื่อ $t\to\infty$ จะสามารถมองได้ว่า $C$ เปรียบเสมือนสายไฟขาด
+ดังนั้นจึงได้ว่า
+\begin{lawbox}{ตัวเก็บประจุที่ Steady State}
+    เมื่อ $t\to\infty$ จะสามารถมองได้ว่าตัวเก็บประจุ $C$ เปรียบเสมือนสายไฟขาด
+\end{lawbox}
 
 \subsection{วงจร RL}
 
@@ -165,17 +167,31 @@ i_C = C\cancel{\odv{v}{t}} = 0
 \[
 v = L\cancel{\odv{i}{t}} = 0 
 \]
-ดังนั้นเมื่อ $t\to\infty$ จะสามารถมองได้ว่า $L$ เปรียบเสมือนสายไฟเปล่า
+ดังนั้นจึงได้ว่า
+\begin{lawbox}{ตัวเหนี่ยวนำที่ Steady State}
+    เมื่อ $t\to\infty$ จะสามารถมองได้ว่าตัวเหนี่ยวนำ $L$ เปรียบเสมือนสายไฟเปล่า
+\end{lawbox}
 
 \subsection{วงจรอันดับหนึ่งในรูปทั่วไป}
 
-\section{วงจรอันดับสอง}
+โดยทั่วไปแล้วสมการเชิงอนุพันธ์ของวงจรอันดับหนึ่งจะอยู่ในรูป
+\[
+A\odv{i}{t} + Bi = C
+\]
+(หรือบางครั้งอาจติดอยู่ในรูป $v$) โดยเมื่อเราแก้สมการออกมาจะได้
+\begin{ieqbox}{คำตอบทั่วไปของวงจรอันดับหนึ่ง}
+    i(t) = \frac{C}{A} + \left(I_0 - \frac{C}{A} \right) e^{-\frac{B}{A}t}
+\end{ieqbox}
+ก็จะได้ว่าโดยทั่วไปแล้ว ค่าคงที่เวลา $\tau$ จะเท่ากับ
+\begin{ieqbox}{ค่าคงที่เวลาโดยทั่วไป}
+    \tau = \frac{A}{B}
+\end{ieqbox}
 
-\subsection{วงจร LC}
+\section{วงจรอันดับสอง}
 
 \subsection{วงจร RLC แบบอนุกรม}
 
-พิจารณากระแก้สมการของวงจรที่เป็น RLC ที่ต่อแบบอนุกรมโดยไม่มีแบตเตอรี่ โดย KVL จะได้ (ให้กระแสไหลออกจากฝั่งลบของตัวเก็บประจุ)
+พิจารณาการแก้สมการของวงจรที่เป็น RLC ที่ต่อแบบอนุกรมโดยไม่มีแบตเตอรี่ โดย KVL จะได้ (ให้กระแสไหลออกจากฝั่งลบของตัวเก็บประจุ)
 \begin{align}
     v_R + v_L + v_C &= 0\notag\\
     \odv{}{t}\ab(v_R + v_L + v_C) &= 0\notag\\
@@ -197,40 +213,53 @@ x^2 + (R/L)x + 1/LC =0
     s_{1,2} \equiv -\alpha \pm \sqrt{\alpha^2 - \omega_0^2}
     \end{equation}
 \end{defbox}
-หมายเหตุ: \emph{โดยเราจะใช้หน่วย $\txt{Np}/\txt{s}$ สำหรับ $\alpha$ แต่จริง ๆ แล้วหน่วย $\txt{Np}$ (neper) นี้เป็นน่วยที่ไม่มีมิติเหมือนกับ $\txt{rad}$}
+หมายเหตุ: \emph{โดยเราจะใช้หน่วย $\unit{Np/s}$ สำหรับ $\alpha$ แต่จริง ๆ แล้วหน่วย $\unit{Np}$ (neper) นี้เป็นน่วยที่ไม่มีมิติเหมือนกับ $\unit{rad}$}
 
-ในที่นี้ก็จะได้
-\begin{eqbox}{Damping Factor และความถี่ Resonant ของ RLC แบบอนุกรม}
-    \alpha = \frac{R}{2L}\qq{และ}\omega_0 = \frac{1}{\sqrt{LC}}
+และเราจะนิยามอัตราส่วนระหว่าง $\alpha$ และ $\omega_0$ ว่า \emph{damping ratio} ($\zeta$) ซึ่งเป็นค่าที่บ่งบอกว่าระบบถูก \emph{damp} ไปแค่ไหน: 
+\begin{defbox}{ Damping Ratio}
+    \begin{equation}
+        \zeta \equiv \frac{\alpha}{\omega_0}
+    \end{equation}
+\end{defbox}
+
+ในที่นี้เราก็จะได้
+\begin{eqbox}{Damping Factor, ความถี่ Resonant, และ Damping Ratio ของ RLC แบบอนุกรม}
+    \alpha = \frac{R}{2L}\qquad\omega_0 = \frac{1}{\sqrt{LC}}\qquad\zeta = \frac{R}{2}\sqrt{\frac{C}{L}}
 \end{eqbox}
 
-เมื่อแก้สมการเชิงอนุพันธ์ ถ้าราก $s_{1,2}$ เป็นจำนวนจริง ($\alpha > \omega_0$) จะได้ว่า
-\begin{eqbox}{วงจร RLC อนุกรมแบบ Underdamped}
-    i(t) = A_1e^{s_1 t} + A_2e^{s_2 t}
+เมื่อแก้สมการเชิงอนุพันธ์ ถ้าราก $s_{1,2}$ เป็นจำนวนจริง ($\zeta > 1$) จะได้ว่า
+\begin{eqbox}{วงจร RLC อนุกรมแบบ Overdamped}
+    i(t) = A_1e^{s_1 t} + A_2e^{s_2 t}\label{starthom}
 \end{eqbox}
-โดยเราจะเรียกว่าเป็นวงจร \emph{underdamped}
+โดยเราจะเรียกว่าเป็นวงจร \emph{overdamped} ซึ่งจะมีกราฟเป็นการลดลงของกระแส
 
-แต่ถ้าราก $s_{1,2}$ เป็นรากซ้ำ ($\alpha = \omega_0$) โดยให้เป็น $s$ จะได้ว่า
+แต่ถ้าราก $s_{1,2}$ เป็นรากซ้ำ ($\zeta = 0$) โดยให้เป็น $s$ จะได้ว่า
 \begin{eqbox}{วงจร RLC อนุกรมแบบ Critically Damped}
-    i(t) = (A_2 + A_1t)e^{st}
+    i(t) = (A_2 + A_1t)e^{st}\label{midhom}
 \end{eqbox}
-โดยเราจะเรียกว่าเป็นวงจร \emph{critically damped}
+โดยเราจะเรียกว่าเป็นวงจร \emph{critically damped} ซึ่งจะมีกราฟเป็นการลดลงของกระแสที่มากที่สุดที่ยังไม่เกิดการสั่นขึ้นลงของกราฟ (decay แบบยังไม่มี oscillatory behavior)
 
-และสุดท้าย ถ้าราก $s_{1,2}$ ไม่เป็นจำนวนจริง ($\alpha < \omega_0$) เราจะนิยาม\emph{ความถี่ damped} (\emph{damped natural frequency}):
+และสุดท้าย ถ้าราก $s_{1,2}$ ไม่เป็นจำนวนจริง ($\zeta < 1$) เราจะนิยาม\emph{ความถี่ damped} (\emph{damped natural frequency}):
 \begin{defbox}{ความถี่ Damped}
     \begin{equation}
         \omega_d \equiv \sqrt{\omega_0^2 - \alpha^2}
     \end{equation}
 \end{defbox}
 และก็จะได้คำตอบของสมการว่า
-\begin{eqbox}{วงจร RLC อนุกรมแบบ Overdamped}
-    i(t) = e^{-\alpha t} \left( A_1 \cos(\omega_d t) + A_2 \sin(\omega_d t) \right)
+\begin{eqbox}{วงจร RLC อนุกรมแบบ Underdamped}
+    i(t) = e^{-\alpha t} \left( A_1 \cos(\omega_d t) + A_2 \sin(\omega_d t) \right)\label{endhom}
 \end{eqbox}
-โดยเราจะเรียกว่าเป็นวงจร \emph{overdamped}
+โดยเราจะเรียกว่าเป็นวงจร \emph{underdamped} ซึ่งกราฟจะมีการสั่นขึ้นลงของกระแสโดยมีแอมพลิจูดลดลงเรื่อย ๆ (decay แบบ oscillatory)
+
+ในกรณีที่เป็นวงจร LC ($R = 0$, $\zeta = 0$) จะได้ว่า $\alpha = 0$ และคำตอบของสมการอยู่ในกรณี underdamped โดยจะคำตอบเป็นดังนี้:
+\begin{eqbox}{จงจร LC แบบอนุกรม}
+    i(t) = A_1 \cos(\omega_d t) + A_2 \sin(\omega_d t)\label{finalhom}
+\end{eqbox}
+โดยเราอาจจะเรียกว่าเป็น RLC แบบ \emph{undamped} ซึ่งกราฟจะมีแค่การสั่นขึ้นลงแต่ไม่มีการลดลงของแอมพลิจูด (completely oscillatory)
 
 \subsection{วงจร RLC แบบขนาน}
 
-พิจารณากระแก้สมการของวงจรที่เป็น RLC ที่ต่อแบบขนานโดยไม่มีแบตเตอรี่ โดย KCL จะได้ (ให้กระแสไหลออกจากฝั่งลบของตัวเก็บประจุ)
+พิจารณาการแก้สมการของวงจรที่เป็น RLC ที่ต่อแบบขนานโดยไม่มีแบตเตอรี่ โดย KCL จะได้ (ให้กระแสไหลออกจากฝั่งลบของตัวเก็บประจุ)
 \begin{align}
     i_R + i_L + i_C &= 0\notag\\
     \odv{}{t}\ab(i_R + i_L + i_C) &= 0\notag\\
@@ -246,24 +275,56 @@ x^2 + (1/RC)x + 1/LC = 0
     s_{1,2} = -\frac{1}{2RC}\pm\sqrt{\ab(\frac{1}{2RC})^2 - \frac{1}{LC}}
 \end{eqbox}
 ก็จะได้ว่า
-\begin{eqbox}{Damping Factor และความถี่ Resonant ของ RLC แบบขนาน}
-    \alpha = \frac{1}{2RC}\qq{และ}\omega_0 = \frac{1}{\sqrt{LC}}
+\begin{eqbox}{Damping Factor, ความถี่ Resonant, และ Damping Ratio ของ RLC แบบขนาน}
+    \alpha = \frac{1}{2RC}\qquad\omega_0 = \frac{1}{\sqrt{LC}}\qquad\zeta = \frac{1}{2R}\sqrt{\frac{L}{C}}
 \end{eqbox}
 
 ต่อมาเมื่อแก้สมการเชิงอนุพันธ์ (เช่นเดียวกับในกรณีต่อแบบอนุกรมแต่ทีนี้หา $v$ แทน $i$) ก็จะได้
-\begin{eqbox}{วงจร RLC ขนานแบบ Underdamped}
+\begin{eqbox}{วงจร RLC ขนานแบบ Overdamped}
     v(t) = A_1e^{s_1 t} + A_2e^{s_2 t}
 \end{eqbox}
-ในกรณี underdamped,
+ในกรณี overdamped,
 \begin{eqbox}{วงจร RLC ขนานแบบ Critically Damped}
     v(t) = (A_2 + A_1t)e^{st}
 \end{eqbox}
 ในกรณี critically damped, และ
-\begin{eqbox}{วงจร RLC ขนานแบบ Overdamped}
+\begin{eqbox}{วงจร RLC ขนานแบบ Underdamped}
     v(t) = e^{-\alpha t} \left( A_1 \cos(\omega_d t) + A_2 \sin(\omega_d t) \right)
 \end{eqbox}
-ในกรณี overdamped
+ในกรณี underdamped
+
+ส่วนในกรณีที่เป็นวงจร LC แบบขนาน ($R\to\infty$, $\zeta = 0$) หรือ RLC ขนานแบบ undamped จะได้ว่า $\alpha = 0$ และมีคำตอบคือ
+\begin{eqbox}{จงจร LC แบบขนาน}
+    v(t) = A_1 \cos(\omega_d t) + A_2 \sin(\omega_d t)
+\end{eqbox}
 
 \subsection{วงจรอันดับสองในรูปทั่วไป}
 
+โดยทั่วไปแล้วสมการเชิงอนุพันธ์ของวงจรอันดับสองจะอยู่ในรูป
+\[
+A\odv[2]{i}{t} + B\odv{i}{t} + Ci = D
+\]
+(หรืออาจติดอยู่ในรูป $v$) โดยจะได้
+\begin{ieqbox}{Damping Factor, ความถี่ Resonant, และ Damping Ratio โดยทั่วไป}
+    \alpha = B\qquad\omega_0 = 2\sqrt{AC}\qquad\zeta = \frac{B}{2\sqrt{AC}}
+\end{ieqbox}
+และจะได้ homogeneous solution เป็น (\ref{starthom}), (\ref{midhom}), (\ref{endhom}), และ (\ref{finalhom}) เมื่อ $\zeta > 1$, $\zeta = 1$, $0 < \zeta < 1$, และ $\zeta = 0$ ตามลำดับ และเมื่อแก้ particular solution ก็จะได้
+\begin{ieqbox}{คำตอบทั่วไปของวงจรอันดับสอง}
+    i(t) = i_h(t) + i_p(t) = i_h(t) + \frac{D}{C}
+\end{ieqbox}
+
 \section{กำลังไฟฟ้า}
+
+\subsection{กำลังไฟฟ้าและประสิทธิภาพ}
+
+จาก (\ref{jouleheat}) เราจะสามารถคำนวณกำลังไฟฟ้า $P$ ได้จาก
+\begin{ieqbox}{กำลังไฟฟ้า}
+    P = IV = I^2R = \frac{V^2}{R} = \odv{Q}{t} \label{power}
+\end{ieqbox}
+($Q$ คือความร้อนที่ได้จากวงจร) ซึ่งเราจะสามารถนำมาใช้คำนวณพลังงานที่เครื่องใช้ไฟฟ้านั้นถูกกระทำ โดยเนื่องจากพลังงานที่เครื่องใช้ไฟฟ้านี้ได้รับเป็นพลังงานความร้อน เราจึงต้องอาศัย \emph{heat engine} ในการเปลี่ยนความร้อนมาเป็นพลังงานที่เราสามารถนำไปใช้ประโยชน์ต่อได้ จึงนิยาม\emph{ประสิทธิภาพ} (\emph{efficiency}: $\eta$) ของเครื่องใช้ไฟฟ้า (heat engine) นี้ว่า
+\begin{defbox}{ประสิทธิภาพ}
+    \begin{equation}
+        \eta \equiv \frac{W}{Q}
+    \end{equation}
+\end{defbox}
+หมายเหตุ: \emph{$Q_C = Q - W$ เป็นความร้อนที่ถูกปล่อยทิ้งลงใน cold sink ซึ่งโดยกฎข้อที่สองของ thermodynamics จะได้ว่า $Q_C \geq 0$ ดังนั้น $\eta \leq 1$}
