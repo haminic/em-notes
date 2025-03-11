@@ -2,4 +2,44 @@
 
 \section{ประจุและพลังงาน}
 
-\subsection{สมการความต่อเนื่อง}
+\subsection{ทฤษฎีบท Poynting}
+
+พิจารณางานที่สนามแม่เหล็กไฟฟ้ากระทำกับประจุหนึ่ง:
+\[
+\odif{W} = q\ab(\vb{E}+\vb{v}\times\vb{B})\cdot\odif{\vbs{\ell}} = q\ab(\vb{E}+\vb{v}\times\vb{B})\cdot \vb{v}\odif{t} = \vb{E}\cdot q\vb{v}\odif{t}
+\]
+ดังนั้นกำลังเท่ากับ
+\begin{equation}
+    P = \odv{W}{t} = \int_\vol\ab(\vb{E}\cdot\vb{J})\odif{\tau}\label{poyntingone}
+\end{equation}
+จาก
+\[
+\vb{J} = -\frac{1}{\mu_0}\ab(\gd\times\vb{B}) - \eps_0\pdv{\vb{E}}{t}
+\]
+เมื่อนำไปแทนใน $\vb{E}\cdot\vb{J}$ แล้วใช้ product rule ก็จะได้
+\begin{equation}
+    \vb{E}\cdot\vb{J} = -\frac{1}{2}\pdv{}{t}\ab(\eps_0E^2 + \frac{1}{\mu_0}B^2) - \frac{1}{\mu_0}\gd\cdot\ab(\vb{E}\times\vb{B})\label{poyntingtwo}
+\end{equation}
+เราจึงนิยาม \emph{Poynting vector}:
+\begin{defbox}{ Poynting Vector}
+    \begin{equation}
+        \vb{S}\equiv\frac{1}{\mu_0}\ab(\vb{E}\times\vb{B})
+    \end{equation}
+\end{defbox}
+นำ (\ref{poyntingtwo}) แทนใน (\ref{poyntingone}) และใช้ divergence theorem จะได้
+\begin{ieqbox}{ทฤษฎีบทของ Poynting}
+    P = -\odv{}{t}\int_\vol u\odif{\tau} - \oint_{\del\vol}\vb{S}\cdot\odif{\vb{a}}    
+\end{ieqbox}
+และสมมติว่าระบบไม่สูญเสียพลังงาน (โดยปกติแล้วไม่สามารถสมมติได้ว่า $U$ คงที่) จะได้
+\begin{equation}
+    \pdv{u}{t}=-\gd\cdot\vb{S}
+\end{equation}
+คล้ายเป็น ``สมการความต่อเนื่อง'' ของพลังงาน
+
+\section{โมเมนตัม}
+
+\subsection{เทนเซอร์ความเค้นของ Maxwell}
+
+ประจุที่เคลื่อนที่จะทำให้เกิดสนามไฟฟ้าพุ่งออจจากประจุและสนามแม่เหล็กเป็นไปตามกฎมือขวา (จะพิสูจน์ในบทการแผ่รังสี) เราจะเห็นได้ว่าแรงแม่เหล็กบนสองประจุที่เคลื่อนที่เข้าหากันในแนวตั้งฉากจะไม่เป็นไปตามกฎข้อที่สามของนิวตัน ดังนั้นจริง ๆ แล้วกฎข้อที่สามไม่เป็นจริงสำหรับแม่เหล็กไฟฟ้า จึงทำให้โมเมนตัมแบบดั้งเดิมไม่อนุรักษ์เช่นกัน เราจึงอาจจะหาพิธีเพิ่มพจน์โมเมนตัมบางอย่างที่เกิดจากสนามเพื่อทำให้โมเมนตัมอนุรักษ์
+
+
