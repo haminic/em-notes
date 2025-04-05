@@ -14,12 +14,15 @@
 \end{equation}
 จาก
 \[
-\vb{J} = -\frac{1}{\mu_0}\ab(\gd\times\vb{B}) - \eps_0\pdv{\vb{E}}{t}
+\vb{J} = \frac{1}{\mu_0}\ab(\gd\times\vb{B}) - \eps_0\pdv{\vb{E}}{t}
 \]
 เมื่อนำไปแทนใน $\vb{E}\cdot\vb{J}$ แล้วใช้ product rule ก็จะได้
-\begin{equation}
-    \vb{E}\cdot\vb{J} = -\frac{1}{2}\pdv{}{t}\ab(\eps_0E^2 + \frac{1}{\mu_0}B^2) - \frac{1}{\mu_0}\gd\cdot\ab(\vb{E}\times\vb{B})\label{poyntingtwo}
-\end{equation}
+\begin{align}
+    \vb{E}\cdot\vb{J} &= \vb{E}\cdot\ab(\frac{1}{\mu_0}\ab(\gd\times\vb{B}) - \eps_0\pdv{\vb{E}}{t})\notag\\
+    &= -\frac{1}{\mu_0}\gd\cdot\ab(\vb{E}\times\vb{B}) + \frac{1}{\mu_0}\vb{B}\cdot\ab(\gd\times\vb{E}) - \eps_0\vb{E}\cdot\pdv{\vb{E}}{t}\notag\\
+    &= -\frac{1}{\mu_0}\vb{B}\cdot\pdv{\vb{B}}{t} - \eps_0\vb{E}\cdot\pdv{\vb{E}}{t} -\frac{1}{\mu_0}\gd\cdot\ab(\vb{E}\times\vb{B})\notag\\
+    &= -\frac{1}{2}\pdv{}{t}\ab(\eps_0E^2 + \frac{1}{\mu_0}B^2) - \frac{1}{\mu_0}\gd\cdot\ab(\vb{E}\times\vb{B})\label{poyntingtwo}
+\end{align}
 เราจึงนิยาม \emph{Poynting vector}:
 \begin{defbox}{ Poynting Vector}
     \begin{equation}
@@ -29,13 +32,19 @@
 นำ (\ref{poyntingtwo}) แทนใน (\ref{poyntingone}) และใช้ divergence theorem จะได้
 
 \begin{ieqbox}{ทฤษฎีบทของ Poynting}
-    P = -\odv{}{t}\int_\vol u\odif{\tau} - \oint_{\del\vol}\vb{S}\cdot\odif{\vb{a}}    
+    P = \odv{W}{t} = -\odv{}{t}\int_\vol u\odif{\tau} - \oint_{\del\vol}\vb{S}\cdot\odif{\vb{a}}    
 \end{ieqbox}
-และสมมติว่าระบบไม่สูญเสียพลังงาน (โดยปกติแล้วไม่สามารถสมมติได้ว่า $U$ คงที่) จะได้
+และถ้าสมมติว่าระบบไม่โดนงานมากระทำเลย (แต่โดยปกติแล้วไม่สามารถทำได้) จะได้
 \begin{equation}
     \pdv{u}{t}=-\gd\cdot\vb{S}
 \end{equation}
-คล้ายเป็น ``สมการความต่อเนื่อง'' ของพลังงาน
+คล้ายกับเป็น ``สมการความต่อเนื่อง'' ของพลังงาน
+
+โดยสมการนี้ก็คือสมการอนุรักษ์พลังงานของแม่เหล็กไฟฟ้านั่นเอง เพราะเมื่ออินทิเกรตบน $\vol$ ที่ใหญ่มาก ๆ (หรือก็คืออินทิเกรตทั่วทุกพื้นที่) จะได้ว่าอินทิกรัล\emph{ฟลักซ์พลังงาน} (อินทิกรัลที่มี Poynting vector)
+\begin{equation}
+    \odv{W}{t} = -\odv{U_\txt{em}}{t}
+\end{equation}
+กล่าวคือ พลังงานที่หายไปจากสนาม จะถูกถ่ายทอดมาเป็นงานที่กระทำกับประจุ
 
 \section{โมเมนตัม}
 
@@ -43,4 +52,99 @@
 
 ประจุที่เคลื่อนที่จะทำให้เกิดสนามไฟฟ้าพุ่งออจจากประจุและสนามแม่เหล็กเป็นไปตามกฎมือขวา (จะพิสูจน์ในบทการแผ่รังสี) เราจะเห็นได้ว่าแรงแม่เหล็กบนสองประจุที่เคลื่อนที่เข้าหากันในแนวตั้งฉากจะไม่เป็นไปตามกฎข้อที่สามของนิวตัน ดังนั้นจริง ๆ แล้วกฎข้อที่สามไม่เป็นจริงสำหรับแม่เหล็กไฟฟ้า จึงทำให้โมเมนตัมแบบดั้งเดิมไม่อนุรักษ์เช่นกัน เราจึงอาจจะหาพิธีเพิ่มพจน์โมเมนตัมบางอย่างที่เกิดจากสนามเพื่อทำให้โมเมนตัมอนุรักษ์
 
+พิจารณาแรงทั้งหมดที่สนามกระทำใน $\vol$:
+\begin{equation}
+    \vb{F} = \int_\vol \ab(\vb{E} + \vb{v}\times\vb{B})\rho\odif{\tau} = \int_\vol\ab(\rho\vb{E} + \vb{J}\times\vb{B})\odif{\tau}\tag{$\star$}\label{forcetensor}
+\end{equation}
+พิจารณาการเขียนแรงต่อปริมาตร $\vb{f} = \rho\vb{E} + \vb{J}\times\vb{B}$ ในรูปที่ติดแค่ $\vb{E}$ และ $\vb{B}$ จะได้
+\begin{align*}
+    \vb{f} &= \eps_0\ab(\gd\cdot\vb{E})\vb{E} + \ab(\frac{1}{\mu_0}\ab(\gd\times\vb{B}) - \eps_0\pdv{\vb{E}}{t})\times\vb{B}\\
+    &= \eps_0\ab(\gd\cdot\vb{E})\vb{E} - \frac{1}{\mu_0}\vb{B}\times\ab(\gd\times\vb{B}) - \eps_0\pdv{\vb{E}}{t}\times\vb{B}\tag{$\star$1}\label{tensorproof}
+\end{align*}
+เนื่องจาก
+\begin{align*}
+    \pdv{\vb{E}}{t}\times\vb{B} &= \pdv{}{t}\ab(\vb{E}\times\vb{B}) - \vb{E}\times\pdv{\vb{B}}{t}\\
+    &= \pdv{}{t}\ab(\vb{E}\times\vb{B}) + \vb{E}\times\ab(\gd\times\vb{E})
+\end{align*}
+แทนใน (\ref{tensorproof}) จะได้ (บวกเข้าด้วย $1/\mu_0\ab(\gd\cdot\vb{B})\vb{B}$)
+\begin{equation}
+    \vb{f} = \eps_0\ab\Big(\ab(\gd\cdot\vb{E})\vb{E} - \vb{E}\times\ab(\gd\times\vb{E})) + \frac{1}{\mu_0}\ab\Big(\ab(\gd\cdot\vb{B})\vb{B} - \vb{B}\times\ab(\gd\times\vb{B})) - \eps_0\pdv{}{t}\ab(\vb{E}\times\vb{B})\tag{$\star$2}\label{tensorproof2}
+\end{equation}
+ต่อมา เนื่องจาก
+\begin{align*}
+    \gd\ab(\vb{E}\cdot\vb{E}) &= \ab(\vb{E}\cdot\gd)\vb{E} + \ab(\vb{E}\cdot\gd)\vb{E} + \vb{E}\times\ab(\gd\times\vb{E}) + \vb{E}\times\ab(\gd\times\vb{E})\\
+    \gd\ab(E^2) &= 2\ab(\vb{E}\cdot\gd)\vb{E} + 2\vb{E}\times\ab(\gd\times\vb{E})\\
+    \vb{E}\times\ab(\gd\times\vb{E}) &= \frac{1}{2}\gd\ab(E^2) - \ab(\vb{E}\cdot\gd)\vb{E}
+\end{align*}
+แทนใน (\ref{tensorproof2}) ก็จะได้
+\begin{align*}
+    \vb{f} =\ \ &\eps_0\ab\Big(\ab(\gd\cdot\vb{E})\vb{E} + \ab(\vb{E}\cdot\gd)\vb{E}) + \frac{1}{\mu_0}\ab\Big(\ab(\gd\cdot\vb{B})\vb{B} + \ab(\vb{B}\cdot\gd)\vb{B})\\ 
+    &-\frac{1}{2}\gd\ab(\eps_0E^2 + \frac{1}{\mu_0}B^2)-\eps_0\pdv{}{t}\ab(\vb{E}\times\vb{B})\tag{$\star$3}\label{tensorproof3}
+\end{align*}
+สามารถเขียนได้อยู่ในรูปที่ง่ายกว่าโดยเราจะนิยาม\emph{เทนเซอร์ความเค้นของ Maxwell} (\emph{Maxwell's stress tensor}) ดังนี้
+\begin{defbox}{เทนเซอร์ความเค้นของ Maxwell}
+    \begin{equation}
+        T_{ij} \equiv \eps_0\ab(E_iE_j - \frac{1}{2}\delta_{ij}E^2) + \frac{1}{\mu_0}\ab(B_iB_j - \frac{1}{2}\delta_{ij}B^2)
+    \end{equation}
+    เมื่อ $\delta_{ij}$ คือ \emph{Kronecker delta} ซึ่งเท่ากับ $1$ เมื่อ $i=j$ มิฉะนั้นเป็น $0$
+\end{defbox}
+โดยสังเกตว่า
+\begin{align*}
+    \ab(\gd\cdot\tsr{T})_j &= \sum_{i=x,y,z}\pdv{}{i}T_{ij}\\
+    &= \eps_0\ab(\ab(\gd\cdot\vb{E})E_j + \ab(\vb{E}\cdot\gd)E_j-\frac{1}{2}\nabla_jE^2) + \frac{1}{\mu_0}\ab(\ab(\gd\cdot\vb{B})B_j + \ab(\vb{B}\cdot\gd)B_j-\frac{1}{2}\nabla_jB^2)
+\end{align*}
+จาก (\ref{tensorproof3}) จึงได้ว่า
+\begin{eqbox}{แรงต่อปริมาตร}
+    \vb{f} = \gd\cdot\tsr{T} - \mu_0\eps_9\pdv{\vb{S}}{t}
+\end{eqbox}
+ดังนั้นแทนกลับใน (\ref{forcetensor}) จะได้
+\begin{ieqbox}{แรงลัพธ์ในรูปเทนเซอร์ความเค้น}
+    \vb{F} = \oint_{\del\vol}\tsr{T}\cdot\odif{\vb{a}} - \mu_0\eps_0\odv{}{t}\int_\vol\vb{S}\odif{\tau}\label{forcestress}
+\end{ieqbox}
+โดยถ้าระบบเป็นระบบสนามสถิตก็จะได้ว่า
+\begin{equation}
+    \vb{F} = \oint_{\del\vol}\tsr{T}\cdot\odif{\vb{a}}
+\end{equation}
 
+\subsection{กฎอนุรักษ์โมเมนตัม}
+
+ถ้าเรานิยาม\emph{โมเมนตัมจากสนามแม่เหล็กไฟฟ้า}ว่า
+\begin{defbox}{โมเมนตัมจากสนามแม่เหล็กไฟฟ้า}
+    \begin{equation}
+        \vb{p}_\txt{em} \equiv \mu_0\eps_0\int \vb{S}\odif{\tau}
+    \end{equation}
+\end{defbox}
+โดยมี\emph{ความหนาแน่นโมเมนตัม} ($\vb{g}$)
+\begin{defbox}{ความหนาแน่นโมเมนตัม}
+    \begin{equation}
+        \vb{g} \equiv \mu_0\eps_0\vb{S} = \eps_0\ab(\vb{E}\times\vb{B})
+    \end{equation}
+\end{defbox}
+จาก (\ref{forcestress}) ก็จะได้เป็นกฎอนุรักษ์โมเมนตัม:
+\begin{ieqbox}{กฎอนุรักษ์โมเมนตัม}
+    \odv{\vb{p}_\txt{mech}}{t} = -\odv{\vb{p}_\txt{em}}{t} + \oint\tsr{T}\cdot\odif{\vb{a}}
+\end{ieqbox}
+และถ้าไม่เกิดการเปลี่ยนแปลงโมเมนตัมเชิงกล จะได้ ``สมการความต่อเนื่อง'' ของโมเมนตัม:
+\begin{equation}
+    \pdv{\vb{g}}{t} = \gd\cdot\tsr{T}
+\end{equation}
+สุดท้าย เช่นเดียวกับกฎอนุรักษ์พลังงาน พจน์\emph{ฟลักซ์โมเมนตัม} (คือพจน์ที่มี stress tensor, โดยในกรณีนี้ flux density จะเป็น $-\tsr{T}$ เพราะในสมการเป็นบวก) จะเข้าใกล้ศูนย์ถ้าอินทิเกรตบนพื้นที่ที่ใหญ่มาก ๆ (อินทิเกรตทั่วทุกพื้นที่) ทำให้เกิดการอนุรักษ์โมเมนตัม
+\begin{equation}
+    \odv{\vb{p}_\txt{mech}}{t} = -\odv{\vb{p}_\txt{em}}{t}
+\end{equation}
+
+\subsection{โมเมนตัมเชิงมุม}
+
+เราสามารถนิยามโมเมนตัมเชิงมุมของสนามแม่เหล็กไฟฟ้ารอบจุด ๆ หนึ่งได้เช่นกัน
+\begin{defbox}{ความหนาแน่นโมเมนตัมเชิงมุม}
+    \begin{equation}
+        \vb{l} \equiv \vb{r}\times\vb{g} = \eps_0\ab\big(\vb{r}\times\ab(\vb{E}\times\vb{B}))
+    \end{equation}
+\end{defbox}
+ก็จะได้
+\begin{defbox}{โมเมนตัมเชิงมุมจากสนามแม่เหล็กไฟฟ้า}
+    \begin{equation}
+        \vb{L}_\txt{em} \equiv \int\vb{l}\odif{\tau}
+    \end{equation}
+\end{defbox}
+โดยโมเมนตัมเชิงมุมนี้ก็อนุรักษ์กับ counterpart ของมันเช่นเดียวกับพลังงานและโมเมนตัมเชิงเส้น
