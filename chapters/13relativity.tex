@@ -4,7 +4,7 @@
 
 \subsection{สัจพจน์ของ Einstein}
 
-ในบทคลื่นแม่เหล็กไฟฟ้าเราจะเห็นว่าแสงเคลื่อนที่ด้วยความเร็ว $c = 1/\sqrt{\mu_0\eps_0}$ แต่ความเร็วนี้เทียบกับอะไรล่ะ? นั่นเป็นคำถามที่นักฟิสิกส์ในยุคก่อน Einstein ได้ถกเถียงกันและได้ตั้งทฤษฎีต่าง ๆ มามากมาย จนกระทั่ง Einstein ได้ลองคิดว่า จริง ๆ แล้วความเร็วแสงนี้อาจเท่ากันหมดไม่ว่าจะเป็นกรอบอ้างอิงเฉื่อยใด ๆ ก็ตาม และความคิดเรื่องสัมพัทธภาพแบบดั้งเดิม (Galileian relativity) ที่เป็นการนำความเร็วมาบวกกันและ simulteneity ของทุกกรอบอ้างอิงเหมือนกัน อาจไม่เป็นจริงก็ได้ โดย Einstein ได้ตั้งข้อสมมติไว้ดังนี้:
+ในบทคลื่นแม่เหล็กไฟฟ้าเราจะเห็นว่าแสงเคลื่อนที่ด้วยความเร็ว $c = 1/\sqrt{\mu_0\eps_0}$ แต่ความเร็วนี้เทียบกับอะไรล่ะ? นั่นเป็นคำถามที่นักฟิสิกส์ในยุคก่อน Einstein ได้ถกเถียงกันและได้ตั้งทฤษฎีต่าง ๆ มามากมาย จนกระทั่ง Einstein ได้ลองคิดว่า จริง ๆ แล้วความเร็วแสงนี้อาจเท่ากันหมดไม่ว่าจะเป็นกรอบอ้างอิงเฉื่อยใด ๆ ก็ตาม และความคิดเรื่องสัมพัทธภาพแบบดั้งเดิม (Galilean relativity) ที่เป็นการนำความเร็วมาบวกกันและ simulteneity ของทุกกรอบอ้างอิงเหมือนกัน อาจไม่เป็นจริงก็ได้ โดย Einstein ได้ตั้งข้อสมมติไว้ดังนี้:
 \begin{lawbox}{สัจพจน์ของ Einstein (Einstein's Postulates)}
     \begin{compactenum}
         \item กฎของฟิสิกส์สามารถใช้ได้บนกรอบอ้างอิงเฉื่อยทุกกรอบ
@@ -63,4 +63,115 @@
     \Delta\bar{x} = \gamma\Delta x\label{lengthcont}
 \end{ieqbox}
 
-สุดท้าย พิจารณา
+สุดท้าย สมมติข้าง ๆ ถนนมีกำแพงที่มีแถบสีน้ำเงินถูกทาไว้ $1$ เมตรเหนือถนนสำหรับผู้สังเกตบนพื้น สมมติมีคน ๆ หนึ่งอยู่บนรถ ถ้าคนนั้นโผล่หัวออกมาจากหน้าต่างแล้วใช้พู่กันทาสีแดงบนกำแพงเหนือถนน $1$ เมตรสำหรับเขา ถ้าสรุปแล้วแถบสีแดงไม่ได้อยู่ที่ตำแหน่งเดียวกันกับแถบสีน้ำเงินจะเกิดข้อขัดแย้ง เพราะโดยสัจพจน์ของ Einstein ในมุมมองผู้สังเกตบนพื้นจะได้ผลลัพธ์ตรงกันข้าม จึงสรุปได้ว่า
+\begin{lawbox}{การแปลงของมิติที่ตั้งฉากกับความเร็ว}
+    มิติที่ตั้งฉากกับความเร็วจะไม่เกิดการหดหรือขยาย
+\end{lawbox}
+
+\subsection{การแปลง Lorentz}
+
+เราจะนิยาม\emph{เหตุการณ์} (\emph{event}) คือชุดของตำแหน่ง $(x,y,z)$ และเวลา $t$ โดยสัมพัทธภาพแบบ Galilean การแปลงพิกัดของเหตุการณ์ $E(x,y,z,t)$ จากกรอบอ้างอิง $\sur$ เป็น $E(\bar{x}, \bar{y}, \bar{z}, \bar{t})$ ในกรอบ $\bar{\sur}$ ซึ่งเคลื่อนที่ด้วยความเร็ว $v\vu{x}$ เทียบ $\sur$ สามารถทำได้โดย
+\begin{equation}
+    \begin{rcases}
+        \bar{x} = x - vt\hspace{5pt}\\
+        \bar{y} = y\\
+        \bar{z} = z\\
+        \bar{t} = t
+    \end{rcases}\label{galileantrans}
+\end{equation}
+ซึ่งจะเรียกว่า\emph{การแปลง Galilean} (\emph{Galilean transformation})
+
+แต่ถ้าเป็นการแปลงแบบสัมพัทธภาพพิเศษ เราจะได้ว่า
+\[
+x = d + vt
+\]
+เมื่อ $d$ คือระยะจาก $\bar{\org}$ ไปยัง $\bar{A}$ (ซึ่งคือจุดในแนวแกน $\bar{x}$ ที่เกิด $E$) ณ เวลา $t$ (ซึ่งเป็นระยะที่วัดในกรอบ $\sur$) โดยถ้าเป็นสัมพัทธภาพ Galilean เราจะได้พจน์ $d$ นี้ก็คือ $\bar{x}$ และได้ดัง (\ref{galileantrans}) แต่จาก (\ref{lengthcont}) เรารู้แล้วว่าจริง ๆ แล้ว
+\[
+d = \frac{1}{\gamma}\bar{x}
+\]
+ดังนั้น
+\begin{equation}
+    \bar{x} = \gamma\ab(x - vt)\tag{$\diamond$1}\label{lorentz1}
+\end{equation}
+แต่ถ้าเราคิดในทางกลับกันโดยวัด $\bar{d}$ ในกรอบ $\bar{\sur}$ จะได้ว่า
+\begin{equation}
+    x = \gamma\ab(\bar{x} + v\bar{t})\tag{$\diamond$2}\label{lorentz2}
+\end{equation}
+จาก (\ref{lorentz1}) และ (\ref{lorentz2}) จะได้แก้ว่า
+\begin{equation}
+    \bar{t} = \gamma\ab(t - \frac{v}{c^2}x)\tag{$\diamond$3}\label{lorentz3}
+\end{equation}
+ดังนั้นโดยสมการ (\ref{lorentz1}) และ (\ref{lorentz3}) เราก็จะได้การแปลงที่สมบูรณ์ ซึ่งเรียกว่าเป็น\emph{การแปลง Lorentz} (\emph{Lorentz transformation}) ดังนี้
+\begin{ieqbox}{การแปลง Lorentz (Lorentz Transformation)}
+    \begin{rcases}
+        \bar{x} = \gamma(x - vt)\hspace{5pt}\\
+        \bar{y} = y\\
+        \bar{z} = z\\
+        \bar{t} = \gamma\ab(t - \dfrac{v}{c^2}x)
+    \end{rcases}\label{lorentztrans}
+\end{ieqbox}
+
+พิจารณาอนุภาคหนึ่งที่เคลื่อนที่ด้วยอัตราเร็ว $u$ ในกรอบ $\sur$ จะได้ว่า
+\[
+u = \odv{x}{t}
+\]
+แต่ใน $\sur'$ จาก (\ref{lorentztrans}) จะได้ว่า
+\[
+\odif{\bar{x}} = \gamma(\odif{x} - v\odif{t})
+\]
+และ
+\[
+\odif{\bar{t}} = \gamma\ab(\odif{t} - \frac{v}{c^2}\odif{x})
+\]
+ก็จะได้อัตราเร็วของอนุภาคนี้ใน $\sur'$ เท่ากับ
+\[
+\bar{u} = \odv{\bar{x}}{\bar{t}} = \frac{\gamma(\odif{x} - v\odif{t})}{\gamma\ab(\odif{t} - v/c^2\odif{x})} = \frac{u - v}{1 - uv/c^2}
+\]
+ได้เป็นสมการรวมความเร็วสัมพัทธ์แบบสัมพัทธภาพพิเศษ
+\begin{eqbox}{กฎการรวมความเร็วของ Einstein}
+    v_{AC} = \frac{v_{AB} + v_{BC}}{1 + v_{AB}v_{BC}/c^2}
+\end{eqbox} 
+
+\section{ปริภูมิ-เวลา}
+
+\subsection{โฟร์เวกเตอร์}
+
+การแปลง Lorentz สามารถเขียนได้อยู่ในรูปที่อ่านง่ายขึ้นถ้าเรานิยาม
+\[
+x^0\equiv ct \qq*{,}\beta\equiv\frac{v}{c}
+\]
+และ $x^1\equiv x$, $x^2\equiv y$, $x^3\equiv z$ จะได้
+\[
+\begin{rcases}
+    \bar{x}^0 = \gamma(x^0 - \beta x^1)\hspace{5pt}\\
+    \bar{x}^1 = \gamma(x^1 - \beta x^0)\\
+    \bar{x}^2 = x^2\\
+    \bar{x}^3 = x^3
+\end{rcases}
+\]
+หรือก็คือ
+\begin{eqbox}{การแปลง Lorentz ในรูปเมทริกซ์}
+    \begin{bmatrix} 
+        \bar{x}^0\\ 
+        \bar{x}^1\\ 
+        \bar{x}^2\\ 
+        \bar{x}^3 
+    \end{bmatrix} = 
+    \begin{bmatrix} 
+        \gamma& -\gamma\beta& 0& 0\\
+        -\gamma\beta& \gamma& 0& 0\\
+        0& 0& 1& 0\\
+        0& 0& 0& 1
+    \end{bmatrix}
+    \begin{bmatrix}
+        x^0\\
+        x^1\\
+        x^2\\
+        x^3
+    \end{bmatrix}
+\end{eqbox}
+ถ้าเรานิยามเมทริกซ์ตรงกลางว่าเป็น $\Lambda$ จะได้ว่า
+\begin{eqbox}{การแปลง Lorentz ในรูป Einstein Summation}
+    \bar{x}^\mu = \Lambda^\mu_\nu x^\nu
+\end{eqbox}
+โดยการคำนวณใน Einstein summation ให้รวมทุก ๆ ค่าที่เป็นไปได้ของทุก index ที่ปรากฎอยู่สองตัวต่อพจน์ เราจะเรียกชุดของตัวเลขสี่ตัวที่แปลงในแบบเดียวกับ $(x^0, x^1, x^2, x^3)$ ว่า\emph{โฟร์เวกเตอร์} (\emph{4-vector})
