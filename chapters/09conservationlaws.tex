@@ -93,14 +93,14 @@
     \ab(\gd\cdot\tsr{T})_j &= \sum_{i=x,y,z}\pdv{}{i}T_{ij}\\
     &= \eps_0\ab(\ab(\gd\cdot\vb{E})E_j + \ab(\vb{E}\cdot\gd)E_j-\frac{1}{2}\nabla_jE^2) + \frac{1}{\mu_0}\ab(\ab(\gd\cdot\vb{B})B_j + \ab(\vb{B}\cdot\gd)B_j-\frac{1}{2}\nabla_jB^2)
 \end{align*}
-จาก (\ref{tensorproof3}) จึงได้ว่า
+(เมื่อ $\vb{a}\cdot \tsr{T} = a_iT_{ij}\vu{j}$ คือ column-wise dot product) จาก (\ref{tensorproof3}) จึงได้ว่า
 \begin{eqbox}{แรงต่อปริมาตร}
     \vb{f} = \gd\cdot\tsr{T} - \mu_0\eps_9\pdv{\vb{S}}{t}
 \end{eqbox}
 ดังนั้นแทนกลับใน (\ref{forcetensor}) จะได้
-\begin{ieqbox}{แรงลัพธ์ในรูปเทนเซอร์ความเค้น}
+\begin{equation}
     \vb{F} = \oint_{\del\vol}\tsr{T}\cdot\odif{\vb{a}} - \mu_0\eps_0\odv{}{t}\int_\vol\vb{S}\odif{\tau}\label{forcestress}
-\end{ieqbox}
+\end{equation}
 โดยถ้าระบบเป็นระบบสนามสถิตก็จะได้ว่า
 \begin{equation}
     \vb{F} = \oint_{\del\vol}\tsr{T}\cdot\odif{\vb{a}}
@@ -120,7 +120,11 @@
         \vb{g} \equiv \mu_0\eps_0\vb{S} = \eps_0\ab(\vb{E}\times\vb{B})
     \end{equation}
 \end{defbox}
-จาก (\ref{forcestress}) ก็จะได้เป็นกฎอนุรักษ์โมเมนตัม:
+จาก (\ref{forcestress}) ก็จะได้
+\begin{ieqbox}{แรงลัพธ์ในรูปเทนเซอร์ความเค้น}
+    \vb{F} = -\odv{}{t}\int_\vol\vb{g}\odif{\tau} + \oint_{\del\vol}\tsr{T}\cdot\odif{\vb{a}}
+\end{ieqbox}
+และจะได้เป็นกฎอนุรักษ์โมเมนตัม:
 \begin{ieqbox}{กฎอนุรักษ์โมเมนตัม}
     \odv{\vb{p}_\txt{mech}}{t} = -\odv{\vb{p}_\txt{em}}{t} + \oint\tsr{T}\cdot\odif{\vb{a}}
 \end{ieqbox}
@@ -147,4 +151,28 @@
         \vb{L}_\txt{em} \equiv \int\vb{l}\odif{\tau}
     \end{equation}
 \end{defbox}
-โดยโมเมนตัมเชิงมุมนี้ก็อนุรักษ์กับ counterpart ของมันเช่นเดียวกับพลังงานและโมเมนตัมเชิงเส้น
+โดยโมเมนตัมเชิงมุมนี้ก็อนุรักษ์กับ counterpart ของมันเช่นเดียวกับพลังงานและโมเมนตัมเชิงเส้น โดยจากทอร์ก:
+\begin{align*}
+    \vbs{\uptau} &= \int_\vol \vb{r} \times \vb{f}\odif{\tau}\\
+    &= \int_\vol \vb{r}\times\ab(\gd\cdot\tsr{T})\odif{\tau} - \odv{}{t}\int_\vol \vb{r}\times\vb{g}\odif{\tau}
+\end{align*}
+เนื่องจาก
+\[
+\int_\vol\vb{r}\times\ab(\gd\times\tsr{T})\odif{\tau} = -\int_\vol\cancel{\ab(\gd\times\vb{r})}\cdot\tsr{T}\odif{\tau} + \int_\vol\gd\cdot\ab(\vb{r}\times\tsr{T})\cdot\odif{\tau} = \oint_{\del\vol}\ab(\vb{r}\times\tsr{T})\cdot\odif{\vb{a}}
+\]
+(เมื่อ $\vb{r}\times\tsr{T}$ เป็น column-wise cross product) ก็จะได้ว่า
+\begin{ieqbox}{ทอร์กในรูปเทนเซอร์ความเค้น}
+    \vbs{\uptau} = -\odv{}{t}\int_\vol\vb{l}\odif{\tau} + \oint_{\del\vol}\ab(\vb{r}\times\tsr{T})\cdot\odif{\vb{a}}
+\end{ieqbox}
+หรือ
+\begin{ieqbox}{กฎอนุรักษ์โมเมนตัมเชิงมุม}
+    \odv{\vb{L}_\txt{mech}}{t} = -\odv{\vb{L}_\txt{em}}{t} + \oint\ab(\vb{r}\times\tsr{T})\cdot\odif{\vb{a}}
+\end{ieqbox}
+ถ้าไม่เกิดการเปลี่ยนแปลงโมเมนตัมเชิงมุม (เชิงกล) จะได้ ``สมการความต่อเนื่อง'' ของโมเมนตัมเชิงมุม:
+\begin{equation}
+    \pdv{\vb{l}}{t} = \gd\cdot\ab(\vb{r}\times\tsr{T})
+\end{equation}
+และเนื่องจากพจน์\emph{ฟลักซ์โมเมนตัมเชิงมุม} ($-\oint(\vb{r}\times\tsr{T})\cdot\odif{\vb{a}}$) จะเข้าใกล้ศูนย์ถ้าอินทิเกรตบนทุกพื้นที่ ทำให้เกิดการอนุรักษ์โมเมนตัมมุม
+\begin{equation}
+    \odv{\vb{L}_\txt{mech}}{t} = -\odv{\vb{L}_\txt{em}}{t}
+\end{equation}
