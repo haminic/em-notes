@@ -77,21 +77,21 @@
 
 \section{ศักย์ไฟฟ้า}
 \subsection{นิยามศักย์ไฟฟ้า}
-เนื่องจาก $\gd\times\vb{E}=0$ โดย Stokes' theorem จะได้ว่า $\int\vb{E}\cdot\odif{\vb{l}}$ ไม่ขึ้นอยู่กับเส้นทาง เราจึงสามารถนิยามฟังก์ชันที่ขึ้นอยู่กับอินทิกรัลของสนามไฟฟ้า ณ ตำแหน่งใด ๆ ได้:
+เนื่องจาก $\gd\times\vb{E}=0$ โดย Stokes' theorem จะได้ว่า $\int\vb{E}\cdot\odif{\vbs{\ell}}$ ไม่ขึ้นอยู่กับเส้นทาง เราจึงสามารถนิยามฟังก์ชันที่ขึ้นอยู่กับอินทิกรัลของสนามไฟฟ้า ณ ตำแหน่งใด ๆ ได้:
 \begin{defbox}{ศักย์ไฟฟ้า}
     ให้ $\mathcal{O}$ เป็นจุดอ้างอิง เราสามารถนิยาม\emph{ศักย์ไฟฟ้า} $V(\vb{r})$ ที่จุด $\vb{r}$ คือ
     \begin{equation}
-        V(\vb{r})\equiv-\int_\mathcal{O}^\vb{r}\vb{E}\cdot\odif{\vb{l}}
+        V(\vb{r})\equiv-\int_\mathcal{O}^\vb{r}\vb{E}\cdot\odif{\vbs{\ell}}
     \end{equation}
     โดยที่ $V$ มีหน่วย SI เป็น $\unit{V}$ (volt) ซึ่งโดยปกติแล้วเราจะนิยามศักย์ไฟฟ้าให้ $\eval{V}_{r\to\infty}=0$
 \end{defbox}
 โดยจะได้\emph{ความต่างศักย์}ระหว่าง $\vb{a}$ และ $\vb{b}$ คือ
 \begin{equation}
-    V(\vb{b})-V(\vb{a})=-\int_\vb{a}^\vb{b}\vb{E}\cdot\odif{\vb{l}}
+    V(\vb{b})-V(\vb{a})=-\int_\vb{a}^\vb{b}\vb{E}\cdot\odif{\vbs{\ell}}
 \end{equation}
 และจาก
 \[ 
-\int_\vb{a}^\vb{b}(\gd V)\cdot\odif{\vb{l}}=V(\vb{b})-V(\vb{a})=-\int_\vb{a}^\vb{b}\vb{E}\cdot\odif{\vb{l}}
+\int_\vb{a}^\vb{b}(\gd V)\cdot\odif{\vbs{\ell}}=V(\vb{b})-V(\vb{a})=-\int_\vb{a}^\vb{b}\vb{E}\cdot\odif{\vbs{\ell}}
 \]
 จะได้ว่า
 \begin{eqbox}{ศักย์ไฟฟ้าในรูป Gradient}
@@ -128,14 +128,14 @@ V(\vb{r})=-\int_\infty^\vb{r}\vb{E}(\vb{r}')\cdot\odif{\vb{l}'}=-\int_\infty^r\k
     E^\perp_\txt{above}-E^\perp_\txt{below}=\frac{\sigma}{\eps_0}
     \]
     จะเห็นได้ว่าส่วนของ $\vb{E}$ ที่ตั้งฉากกับแผ่นประจุจะเกิดความไม่ต่อเนื่องแบบกระโดดด้วยผลต่าง $\frac{\sigma}{\eps_0}$
-    \item พิจารณาอินทิกรัลเส้นรูปสี่เหลี่ยมผืนผ้าเล็ก ๆ ที่ตั้งฉากกับแผ่นประจุ จาก (\ref{curlezero}) และ Stokes' theorem จะได้ว่า $\oint\vb{E}\cdot\odif{\vb{l}}=0$ ดังนั้น
+    \item พิจารณาอินทิกรัลเส้นรูปสี่เหลี่ยมผืนผ้าเล็ก ๆ ที่ตั้งฉากกับแผ่นประจุ จาก (\ref{curlezero}) และ Stokes' theorem จะได้ว่า $\oint\vb{E}\cdot\odif{\vbs{\ell}}=0$ ดังนั้น
     \[ 
     E^\|_\txt{above}-E^\|_\txt{below}=0
     \]
     จะเห็นได้ว่าส่วนของ $\vb{E}$ ที่ขนานกับแผ่นประจุจะยังต่อเนื่องเมื่อผ่านแผ่นประจุ
     \item พิจารณาจุด $\vb{a}$ และ $\vb{b}$ ที่อยู่ใกล้กันมาก ๆ แต่ $\vb{b}$ อยู่ด้านบนแผ่นส่วน $\vb{a}$ อยู่ด้านล่างแผ่น จะได้ว่า
     \[ 
-    V_\txt{above}-V_\txt{below}=V(\vb{b})-V(\vb{a})=-\int_\vb{a}^\vb{b}\vb{E}\cdot\odif{\vb{l}}=0
+    V_\txt{above}-V_\txt{below}=V(\vb{b})-V(\vb{a})=-\int_\vb{a}^\vb{b}\vb{E}\cdot\odif{\vbs{\ell}}=0
     \]
     ดังนั้น $V$ ต่อเนื่องเมื่อผ่านแผ่นประจุ
 \end{enumerate}
