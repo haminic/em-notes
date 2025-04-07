@@ -172,6 +172,75 @@ x^0\equiv ct \qq*{,}\beta\equiv\frac{v}{c}
 \end{eqbox}
 ถ้าเรานิยามเมทริกซ์ตรงกลางว่าเป็น $\Lambda$ จะได้ว่า
 \begin{eqbox}{การแปลง Lorentz ในรูป Einstein Summation}
-    \bar{x}^\mu = \Lambda^\mu_\nu x^\nu
+    \bar{x}^\mu = \tensor{\Lambda}{^\mu_\nu} x^\nu
 \end{eqbox}
 โดยการคำนวณใน Einstein summation ให้รวมทุก ๆ ค่าที่เป็นไปได้ของทุก index ที่ปรากฎอยู่สองตัวต่อพจน์ เราจะเรียกชุดของตัวเลขสี่ตัวที่แปลงในแบบเดียวกับ $(x^0, x^1, x^2, x^3)$ ว่า\emph{โฟร์เวกเตอร์} (\emph{4-vector})
+
+โดยเราจะมีผลคูณเชิงสเกลาร์ของโฟร์เวกเตอร์ดังนี้
+\begin{eqbox}{ผลคูณเชิงสเกลาร์ของโฟร์เวกเตอร์}
+    -a^0b^0 + a^1b^1 + a^2b^2 + a^3b^3
+\end{eqbox}
+โดยลองพิจารณาการแปลงพิกิดจาก $\sur$ ไปเป็น $\sur'$ ซึ่งเป็นการแปลง Lorentz ในแนวแกน $x$ เช่นเดิม จะได้ว่า
+\begin{align*}
+    -\bar{a}^0\bar{b}^0 + \bar{a}^1\bar{b}^1 + \bar{a}^2\bar{b}^2 + \bar{a}^3\bar{b}^3 &= -\gamma^2\ab(a^0 - \beta a^1)\ab(b^0 - \beta b^1) + \gamma^2\ab(a^1 - \beta a^0)\ab(b^1 - \beta b^0) + a^2b^2 + a^3b^3\\
+    &= \gamma^2\ab\Big(-(1 - \beta^2)a^0b^0 + (1 - \beta^2)a^1b^1) + a^2b^2 + a^3b^3\\
+    &= -a^0b^0 + a^1b^1 + a^2b^2 + a^3b^3
+\end{align*}
+เนื่องจากพจน์สามพจน์ด้านหลังเป็นเพียง dot product ของทรีเวกเตอร์ (3-vector) จึงทำให้สมการนี้ก็ต้องเป็นจริงเมื่อ $\sur'$ เคลื่อนที่ในแนวอื่นด้วย จึงได้ว่าผลคูณเชิงสเกลาร์นี้ \emph{invariant} ภายใต้การแปลง Lorentz
+
+โดยเพื่อให้ง่ายต่อการดูเครื่องหมายติดลบตรงพิกัดเวลา เราจะนิยามเวกเตอร์ \emph{covariant} $a_\mu$ ดังนี้
+\begin{defbox}{เวกเตอร์ Covariant}
+    \begin{equation}
+        a_\mu = (a_0, a_1, a_2, a_3) \equiv (-a^0, a^1, a^2, a^3)
+    \end{equation}
+\end{defbox}
+โดยเราจะเรียกโฟร์เวกเตอร์ $a^\mu$ ปกติว่าเป็นเวกเตอร์ \emph{contravariant} เราจะเรียกเทนเซอร์ที่อธิบายการแปลงจาก contravariant เป็น covariant vector ว่าเป็นเทนเซอร์\emph{เทนเซอร์เมทริก Minkowski} (\emph{Minkowski metric}: $g_{\mu\nu}$)
+\begin{defbox}{ Minkowski Metric}
+    \begin{equation}
+        g_{\mu\nu} \equiv \begin{bmatrix}
+            -1 & 0 & 0 & 0\\
+            0 & 1 & 0 & 0\\
+            0 & 0 & 1 & 0\\
+            0 & 0 & 0 & 1
+        \end{bmatrix}
+    \end{equation}
+\end{defbox}
+หมายเหตุ: \emph{บางที่อาจนิยาม $g_{\mu\nu}$ แบบกลับเครื่องหมาย แต่สุดท้ายแล้วผลคูณเชิงสเกลาร์ก็จะ invariant อยู่ดี}
+
+ดังนั้นเราจะสามารถเขียนผลคูณเชิงสเกลาร์ได้ว่า
+\begin{lawbox}{ผลคูณเชิงสเกลาร์ของโฟร์เวกเตอร์}
+    \begin{equation}
+        a_\mu b^\mu = a^\mu b_\mu = -a^0b^0 + a^1b^1 + a^2b^2 + a^3b^3
+    \end{equation}
+    คือผลคูณเชองสเกลาร์ของโฟร์เวกเตอร์ $a^\mu$ และ $b^\mu$ ซึ่งจะ invariant ภายใต้การแปลง Lorentz
+\end{lawbox}
+
+\subsection{Invariant Interval}
+
+เช่นเดียวกับเวกเตอณ์ปกติ เราสามารถนิยาม ``ขนาด'' ของโฟร์เวกเตอร์ได้จากการนำเวกเตอร์มาคูณเชิงสเกลาร์กับตัวมันเอง
+\[
+a^\mu a_\mu
+\]
+โดยเราจะแบ่งเป็น $3$ กรณี
+\begin{defbox}{ Spacelike, Timelike, Lightlike}
+    เราจะเรียกโฟร์เวกเตอร์ $a^\mu$ ว่า\emph{เหมือนปริภูมิ} (\emph{spacelike}) ถ้า
+    \[
+    a^\mu a_\mu > 0
+    \]
+    จะเรียกว่า\emph{เหมือนเวลา} (\emph{timelike}) ถ้า
+    \[
+    a^\mu a_\mu < 0
+    \]
+    และจะเรียกว่า\emph{เหมือนแสง} (\emph{lightlike}) ถ้า
+    \[
+    a^\mu a_\mu = 0
+    \]
+\end{defbox}
+
+สมมติเรามีเหตุการณ์ $A$ และ $B$ ซึ่งมีโฟร์เวกเตอร์ที่อธิบายตำแน่งในปริภูมิ-เวลา $x_A^\mu$ และ $x_B^\mu$ ตามลำดับ และให้ $\Delta x^\mu \equiv x_A^\mu - x_B^\mu$ เราจะนิยาม \emph{invariant interval} ระหว่างสองเหตุการณ์นั้นว่า
+\begin{defbox}{ Invariant Interval}
+    \begin{equation}
+        I \equiv \Delta x^\mu\Delta x_\mu = -c^2t^2 + d^2
+    \end{equation}
+    เมื่อ $t$ เวลาระหว่างสองเหตุการณ์นั้น และ $d$ คือระยะระหว่างสองเหตุการณ์นั้น
+\end{defbox}
