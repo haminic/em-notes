@@ -102,14 +102,14 @@ d = \frac{1}{\gamma}\bar{x}
     \bar{t} = \gamma\ab(t - \frac{v}{c^2}x)\tag{$\diamond$3}\label{lorentz3}
 \end{equation}
 ดังนั้นโดยสมการ (\ref{lorentz1}) และ (\ref{lorentz3}) เราก็จะได้การแปลงที่สมบูรณ์ ซึ่งเรียกว่าเป็น\emph{การแปลง Lorentz} (\emph{Lorentz transformation}) ดังนี้
-\begin{ieqbox}{การแปลง Lorentz (Lorentz Transformation)}
+\begin{eqbox}{การแปลง Lorentz (Lorentz Transformation)}
     \begin{rcases}
         \bar{x} = \gamma(x - vt)\hspace{5pt}\\
         \bar{y} = y\\
         \bar{z} = z\\
         \bar{t} = \gamma\ab(t - \dfrac{v}{c^2}x)
     \end{rcases}\label{lorentztrans}
-\end{ieqbox}
+\end{eqbox}
 
 พิจารณาอนุภาคหนึ่งที่เคลื่อนที่ด้วยอัตราเร็ว $u$ ในกรอบ $\sur$ จะได้ว่า
 \[
@@ -129,10 +129,10 @@ u = \odv{x}{t}
 \]
 ได้เป็นสมการรวมความเร็วสัมพัทธ์แบบสัมพัทธภาพพิเศษ
 \begin{eqbox}{กฎการรวมความเร็วของ Einstein}
-    v_{AC} = \frac{v_{AB} + v_{BC}}{1 + v_{AB}v_{BC}/c^2}
+    v_{AC} = \frac{v_{AB} + v_{BC}}{1 + v_{AB}v_{BC}/c^2}\label{einsvelo}
 \end{eqbox} 
 
-\section{ปริภูมิ-เวลา}
+\section{โครงสร้างของปริภูมิเวลา}
 
 \subsection{โฟร์เวกเตอร์}
 
@@ -150,7 +150,7 @@ x^0\equiv ct \qq*{,}\beta\equiv\frac{v}{c}
 \end{rcases}
 \]
 หรือก็คือ
-\begin{eqbox}{การแปลง Lorentz ในรูปเมทริกซ์}
+\begin{ieqbox}{การแปลง Lorentz ในรูปเมทริกซ์}
     \begin{bmatrix} 
         \bar{x}^0\\ 
         \bar{x}^1\\ 
@@ -168,12 +168,12 @@ x^0\equiv ct \qq*{,}\beta\equiv\frac{v}{c}
         x^1\\
         x^2\\
         x^3
-    \end{bmatrix}
-\end{eqbox}
+    \end{bmatrix}\label{lorentzmatrix}
+\end{ieqbox}
 ถ้าเรานิยามเมทริกซ์ตรงกลางว่าเป็น $\Lambda$ จะได้ว่า
-\begin{eqbox}{การแปลง Lorentz ในรูป Einstein Summation}
+\begin{ieqbox}{การแปลงของการกระจัด}
     \bar{x}^\mu = \tensor{\Lambda}{^\mu_\nu} x^\nu
-\end{eqbox}
+\end{ieqbox}
 โดยการคำนวณใน Einstein summation ให้รวมทุก ๆ ค่าที่เป็นไปได้ของทุก index ที่ปรากฎอยู่สองตัวต่อพจน์ เราจะเรียกชุดของตัวเลขสี่ตัวที่แปลงในแบบเดียวกับ $(x^0, x^1, x^2, x^3)$ ว่า\emph{โฟร์เวกเตอร์} (\emph{4-vector})
 
 โดยเราจะมีผลคูณเชิงสเกลาร์ของโฟร์เวกเตอร์ดังนี้
@@ -215,6 +215,29 @@ x^0\equiv ct \qq*{,}\beta\equiv\frac{v}{c}
     คือผลคูณเชองสเกลาร์ของโฟร์เวกเตอร์ $a^\mu$ และ $b^\mu$ ซึ่งจะ invariant ภายใต้การแปลง Lorentz
 \end{lawbox}
 
+สุดท้ายเราจะนิยามค่าที่เกี่ยวข้องกับความเร็วเพิ่มเติมอีกค่อคือ \emph{rapidity} ($\theta$)
+\begin{defbox}{ Rapidity}
+    \begin{equation}
+        \theta \equiv \artanh\ab(v / c)
+    \end{equation}
+\end{defbox}
+ซึ่งบางครั้งอาจมีประโยชน์กว่าความเร็ว เพราะจะได้
+\[
+\beta = \tanh\theta\qq{และ}\gamma = \cosh\theta
+\]
+จาก (\ref{lorentzmatrix}) จะเห็นว่าการแปลง Lorentz คล้ายกับการหมุนเลย โดยเฉพาะถ้าปริภูมิเวลาเป็นสองมิติจะได้
+\[
+\Lambda = 
+\begin{bmatrix}
+    \cosh\theta & -\sinh\theta\\
+    -\sinh\theta & \cosh\theta
+\end{bmatrix}
+\]
+และจาก (\ref{einsvelo}) จะได้
+\begin{eqbox}{กฎการรวม Rapidity}
+    \theta_{AC} = \theta_{AB} + \theta_{BC}
+\end{eqbox}
+
 \subsection{Invariant Interval}
 
 เช่นเดียวกับเวกเตอณ์ปกติ เราสามารถนิยาม ``ขนาด'' ของโฟร์เวกเตอร์ได้จากการนำเวกเตอร์มาคูณเชิงสเกลาร์กับตัวมันเอง
@@ -237,10 +260,115 @@ a^\mu a_\mu
     \]
 \end{defbox}
 
-สมมติเรามีเหตุการณ์ $A$ และ $B$ ซึ่งมีโฟร์เวกเตอร์ที่อธิบายตำแน่งในปริภูมิ-เวลา $x_A^\mu$ และ $x_B^\mu$ ตามลำดับ และให้ $\Delta x^\mu \equiv x_A^\mu - x_B^\mu$ เราจะนิยาม \emph{invariant interval} ระหว่างสองเหตุการณ์นั้นว่า
+สมมติเรามีเหตุการณ์ $A$ และ $B$ ซึ่งมีโฟร์เวกเตอร์ที่อธิบายตำแหน่งในปริภูมิเวลา $x_A^\mu$ และ $x_B^\mu$ ตามลำดับ และให้ $\Delta x^\mu \equiv x_A^\mu - x_B^\mu$ เราจะนิยาม \emph{invariant interval} ของการกระจัดระหว่างสองเหตุการณ์นั้นว่า
 \begin{defbox}{ Invariant Interval}
     \begin{equation}
         I \equiv \Delta x^\mu\Delta x_\mu = -c^2t^2 + d^2
     \end{equation}
     เมื่อ $t$ เวลาระหว่างสองเหตุการณ์นั้น และ $d$ คือระยะระหว่างสองเหตุการณ์นั้น
 \end{defbox}
+
+\subsection{แผนภาพปริภูมิเวลา}
+
+ถ้าอยากวาด trajectory ของอนุภาคหนึ่งออกมา เราสามารถนำมันมาพล็อตใน\emph{แผนภาพปริภูมิเวลา} (หรือ\emph{แผนภาพ Minkowski}) ได้ โดยให้แกนตั้งเป็นแกน $ct$ และแกนนอน (หรือระนาบนอน) เป็นแกน $x$ (และ $y$) เราจะเรียกเส้นที่ระบุการเดินทางของอนุภาคนั้นว่าเป็น \emph{world line} ของอนุภาค กรวยที่กวาดโดยแสงจากจุดกำเนิดในทิศเวลาเป็นบวกจะเรียกว่า \emph{forward light cone} และกรวยที่ไปในฝั่งเวลาติดลบเรียกว่า \emph{backward light cone} โดยภายใน forward light cone เราจะเรียกว่าเป็น\emph{อนาคต}ของอนุภาค ภายใน backward light cone เรียกว่าเป็น\emph{อดีต}ของอนุภาค และบริเวณนอกเหนือจากนั้นทั้งหมดเรียกว่าเป็น\emph{ปัจจุบัน}ของอนุภาค สังเกตว่าไม่ว่าอนุภาคนั้นจะเดินทางอย่างไรก็ตาม อนุภาคนั้นไม่มีทางที่จะส่งผลกระทบใค ๆ ต่อเหตุการณ์ทุกเหตุการณ์ในบริเวณปัจจุบันของอนุภาคเลย
+
+เนื่องจาก interval $I = x^2 - c^2t^2$ invariant บนการแปลง Lorentz ดังนั้นไม่เราจะแปลง Lorentz ด้วยกรอบอ้างอิงเฉื่อยใด ๆ เหตุการณ์ทุกเหตุการณ์จะต้องอยู่บน hyperboloid (หรือ hyperbola ในกรณีมีแค่แกน $x$) เดียวกันในปริภูมิเวลา ถ้า interval จาก $\org$ ไปที่เหตุการณ์เหมือนเวลา เหตุการณ์จะอยู่บน \emph{hyperboloid of two sheets} แต่ถ้าเหมือนปริภูมิ เหตุการณ์นั้นจะอยู่บน \emph{hyperboloid of one sheet} จึงทำให้ถ้าการกระจัดระกว่างเหตุการณ์สองเตุการณ์เหมือนเวลา ถ้าให้เหตุการณ์หนึ่งเป็นจุดกำเนิด ไม่ว่าจะแปลง Lorentz ยังไง เหตุการณ์อีกเหตุการณ์ก็จะต้องอยู่ใน light cone เดิม (เพราะจะต้องอยู่บน hyperboloid of two sheets เดียวกันกับตอนก่อนที่จะ transform และเหตุการณ์ไม่สามารถ teleport ไปอีกฝั้งของ hyperboloid ได้ภายใต้การแปลง Lorentz) จึงทำให้เรายังนิยามความสัมพันธ์แบบเกิดก่อน-เกิดหลัง (causality) ระหว่างสองเหตุการณ์ได้ เมื่อการกระจัดระกว่างสองเหตุการณ์เหมือนเวลา (หรือเหมือนแสง) (แต่ในทางกลับกัน ถ้าการกระจัดเหมือนปริภูมิ จะทำให้ความเกิดก่อน-หลังของเหตุการณ์ขึ้นอยู่กับกรอบอ้างอิงที่เราพิจารณา)
+
+\section{กลศาสตร์เชิงสัมพัทธภาพ}
+
+\subsection{เวลาแท้และความเร็วแท้}
+
+เราจะนิยาม\emph{เวลาแท้} (\emph{proper time}: $\tau$) คือเวลาจริง ๆ ที่ผ่านไป เมื่อวัดโดยกรอบอ้างอิงของอนุภาคนั้น ๆ หรือ
+\begin{defbox}{เวลาแท้}
+    \begin{equation}
+        \odif{\tau} = \sqrt{1 - u^2/c^2}\odif{t}
+    \end{equation}
+\end{defbox}
+โดยจะเห็นได้ว่าเวลาแท้นี้ invariant บนการแปลง Lorentz
+
+และจะนิยาม\emph{ความเร็วแท้} (\emph{proper velocity}: $\vbs{\upeta}$) คือระยะทางที่วัตถุเคลื่อนที่ได้ต่อหน่วยเวลาแท้ของวัตถุนั้น ๆ หรือก็คือ
+\begin{defbox}{ความเร็วแท้}
+    \begin{equation}
+        \vbs{\upeta} \equiv \odv{\vbs{\ell}}{\tau}
+    \end{equation}
+\end{defbox}
+โดยจะเร็วความเร็ว $\vb{u}$ ปกติ ($\odif{\vbs{\ell}}/\odif{t}$) ว่า\emph{ความเร็วสามัญ} (\emph{ordinary velocity}) และได้
+\begin{equation}
+    \vbs{\upeta} = \frac{1}{\sqrt{1 - u^2/c^2}}\vb{u}
+\end{equation}
+
+โดยเราจะนิยามโฟร์เวกเตอร์ของความเร็วแท้ (\emph{4-velocity}) คือ
+\begin{defbox}{โฟร์เวกเตอร์ของความเร็วแท้}
+    \begin{equation}
+        \eta^\mu \equiv \odv{x^\mu}{\tau}
+    \end{equation}
+\end{defbox}
+ซึ่งมี component เวลา ($\eta^0$) เท่ากับ
+\begin{equation}
+    \eta^0 = \odv{x^0}{\tau} = \frac{c\odif{t}}{\odif{\tau}} = \frac{c}{\sqrt{1 - u^2/c^2}}
+\end{equation}
+เราสามารถเห็นได้ว่าความเร็วแท้นี้เป็นโฟร์เวกเตอร์จริง ๆ เพราะเวกเตอร์นี้แปลงแบบ Lorentz ภายใต้การเปลี่ยนกรอบอ้างอิงเช่นเดียวกับการกระจัด:
+\begin{ieqbox}{การแปลงของความเร็วแท้}
+    \bar{\eta}^\mu = \tensor{\Lambda}{^\mu_\nu}\eta^\nu
+\end{ieqbox}
+หมายเหตุ: \emph{จะเห็นว่าความเร็วแท้นี้เหมือนเวลาเสมอเพราะ}
+\begin{equation}
+    \eta^\mu\eta_\mu = \frac{-c^2}{1 - u^2/c^2} + \vbs{\upeta}\cdot\vbs{\upeta} = \frac{-c^2}{1 - u^2/c^2} + \frac{u^2}{1 - u^2/c^2} = -c^2 < 0\label{timelikevelo}
+\end{equation}
+
+\subsection{โมเมนตัมและพลังงานเชิงสัมพัทธภาพ}
+
+เราจะนิยามโมเมนตัมตามที่ใช้ในสัมพัทธภาพพิเศษด้วยควมเร็วแท้แทนความเร็วสามัญ:
+\begin{defbox}{โมเมนตัมเชิงสัมพัทธภาพ}
+    \begin{equation}
+        \vb{p} \equiv m\vbs{\upeta} = \frac{m\vb{u}}{\sqrt{1-u^2/c^2}}
+    \end{equation}
+\end{defbox}
+วึ่งเป็น component ปริภูมิของ\emph{โฟร์เวกเตอร์พลังงาน-โมเมนตัม} (เรียกสั้น ๆ ว่า\emph{โฟร์เวกเตอร์โมเมนตัม})
+\begin{defbox}{โฟร์เวกเตอร์โมเมนตัม}
+    \begin{equation}
+        p^\mu \equiv m\eta^\mu
+    \end{equation}
+\end{defbox}
+โดยที่ component เวลาของโฟร์เวกเตอร์นี้คือ
+\begin{equation}
+    p^0 = m\eta^0 = \frac{mc}{\sqrt{1 - u^2/c^2}}
+\end{equation}
+ซึ่ง Einstein ได้ระบุไว้ว่า $p^0 c$ นี้คือพลังงาน:
+\begin{defbox}{พลังงานเชิงสัมพัทธภาพ}
+    \begin{equation}
+        E \equiv \frac{mc^2}{\sqrt{1 - u^2/c^2}}
+    \end{equation}
+\end{defbox}
+จะเห็นว่าพลังงานนี้ไม่เป็็นศูนย์แม้มองในกรอบอ้างอิงที่ทำให้อนุภาคอยู่นิ่ง โดยเราจะเรียกพลังงานนี้ว่า\emph{พลังงานนิ่ง} (\emph{rest energy}):
+\begin{defbox}{พลังงานนิ่ง}
+    \begin{equation}
+        E_\txt{rest} \equiv mc^2
+    \end{equation}
+\end{defbox}
+และส่วนที่เหลือของพลังงานเมื่อนำ rest energy ออกจะเป็นพลังงานจลน์
+\begin{defbox}{พลังงานจลน์เชิงสัมพัทธภาพ}
+    \begin{equation}
+        E_\txt{kin} \equiv E - mc^2 = mc^2\ab(\frac{1}{\sqrt{1 - u^2/c^2} - 1})
+    \end{equation}
+\end{defbox}
+
+ซึ่งจากการทดลองต่าง ๆ โดยนักฟิสิกส์ สรุปออกมาได้ว่า
+\begin{lawbox}{กฎอนุรักษ์พลังงานและโมเมนตัม}
+    ในทุก ๆ ระบบปิด พลังงานและโมเมนตัมเชิงสัมพัทธภาพจะอนุรักษ์
+\end{lawbox}
+หมายเหตุ: \emph{มวลในที่นีจะไม่อนุรักษ์ แต่จะอนุรักษ์ร่วมกับพลังงานในรูป rest energy}
+
+ต่อมา พิจารณาผลคูณเชองสเกลาร์ของ $p^\mu$ กับตัวมันเอง:
+\[
+p^\mu p_\mu = -(p^0)^2 + \vb{p}\cdot\vb{p} = -E^2/c^2 + p^2
+\]
+แต่จาก (\ref{timelikevelo}) จะได้ว่า $p^\mu p_\mu = m^2\eta^\mu\eta_\mu = -m^2c^2$ ดังนั้น
+\begin{ieqbox}{สมการพลังงาน-โมเมนตัม}
+    E^2 - p^2c^2 = m^2c^4
+\end{ieqbox}
+ซึ่งสามารถนำมาใช้หาพลังงานเมื่อรู้โมเมนตัมและหาโมเมนตัมเมื่อรู้พลังงานได้
+
+โดยเช่นเดียวกับกลศาสตร์ดั้งเดิม เราจะเรียกการชนที่อนุรักษ์พลังงานจลน์ (และสุดท้ายจะอนุรักษ์มวลด้วย) ว่าเป็น\emph{การชนแบบยืดหยุ่น}
+
+\subsection{การกระเจิง Compton}
