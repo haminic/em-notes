@@ -321,7 +321,7 @@ a^\mu a_\mu
 เราจะนิยามโมเมนตัมตามที่ใช้ในสัมพัทธภาพพิเศษด้วยควมเร็วแท้แทนความเร็วสามัญ:
 \begin{defbox}{โมเมนตัมเชิงสัมพัทธภาพ}
     \begin{equation}
-        \vb{p} \equiv m\vbs{\upeta} = \frac{m\vb{u}}{\sqrt{1-u^2/c^2}}
+        \vb{p} \equiv m\vbs{\upeta} = \frac{m\vb{u}}{\sqrt{1-u^2/c^2}}\label{relmomentum}
     \end{equation}
 \end{defbox}
 วึ่งเป็น component ปริภูมิของ\emph{โฟร์เวกเตอร์พลังงาน-โมเมนตัม} (เรียกสั้น ๆ ว่า\emph{โฟร์เวกเตอร์โมเมนตัม})
@@ -337,7 +337,7 @@ a^\mu a_\mu
 ซึ่ง Einstein ได้ระบุไว้ว่า $p^0 c$ นี้คือพลังงาน:
 \begin{defbox}{พลังงานเชิงสัมพัทธภาพ}
     \begin{equation}
-        E \equiv \frac{mc^2}{\sqrt{1 - u^2/c^2}}
+        E \equiv \frac{mc^2}{\sqrt{1 - u^2/c^2}}\label{relenergy}
     \end{equation}
 \end{defbox}
 จะเห็นว่าพลังงานนี้ไม่เป็็นศูนย์แม้มองในกรอบอ้างอิงที่ทำให้อนุภาคอยู่นิ่ง โดยเราจะเรียกพลังงานนี้ว่า\emph{พลังงานนิ่ง} (\emph{rest energy}):
@@ -349,7 +349,7 @@ a^\mu a_\mu
 และส่วนที่เหลือของพลังงานเมื่อนำ rest energy ออกจะเป็นพลังงานจลน์
 \begin{defbox}{พลังงานจลน์เชิงสัมพัทธภาพ}
     \begin{equation}
-        E_\txt{kin} \equiv E - mc^2 = mc^2\ab(\frac{1}{\sqrt{1 - u^2/c^2} - 1})
+        E_\txt{kin} \equiv E - mc^2 = mc^2\ab(\frac{1}{\sqrt{1 - u^2/c^2}} - 1)
     \end{equation}
 \end{defbox}
 
@@ -365,10 +365,61 @@ p^\mu p_\mu = -(p^0)^2 + \vb{p}\cdot\vb{p} = -E^2/c^2 + p^2
 \]
 แต่จาก (\ref{timelikevelo}) จะได้ว่า $p^\mu p_\mu = m^2\eta^\mu\eta_\mu = -m^2c^2$ ดังนั้น
 \begin{ieqbox}{สมการพลังงาน-โมเมนตัม}
-    E^2 - p^2c^2 = m^2c^4
+    E^2 - p^2c^2 = m^2c^4\label{energymomentum}
 \end{ieqbox}
 ซึ่งสามารถนำมาใช้หาพลังงานเมื่อรู้โมเมนตัมและหาโมเมนตัมเมื่อรู้พลังงานได้
 
-โดยเช่นเดียวกับกลศาสตร์ดั้งเดิม เราจะเรียกการชนที่อนุรักษ์พลังงานจลน์ (และสุดท้ายจะอนุรักษ์มวลด้วย) ว่าเป็น\emph{การชนแบบยืดหยุ่น}
+\subsection{จลนศาสตร์เชิงสัมพัทธภาพ}
 
-\subsection{การกระเจิง Compton}
+สังเกตว่าในกลศาสตร์ดั้งเดิม ถ้าอนุภาคไม่มีมวล พลังงานและโมเมนตัมจะเป็น $0$ แต่ในสัมพัทธภาพพิเศษเราสามารถมีอนุภาคไร้มวลที่มีพลังงานและโมเมนตัมได้ (เพราะจาก (\ref{relmomentum}) และ (\ref{relenergy}) ถ้า $u = c$ จะได้ $0/0$ ซึ่งเป็นรูปไม่กำหนด) โดยจาก (\ref{energymomentum}) ก็จะได้ว่า
+\begin{eqbox}{สมการพลังงาน-โมเมนตัมของอนุภาคไร้มวล}
+    E = pc
+\end{eqbox}
+และจากกลศาสตร์ควอนตัมเราสามารถใช้สูตรของ Planck มาใช้ร่วมกันในโจทย์ปัญหาได้:
+\begin{ieqbox}{สูตรของ Planck}
+    E = h\nu\label{planck}
+\end{ieqbox}
+เมื่อ $h$ คือ\emph{ค่าคงที่ Planck} (\emph{Planck's constant}) มีค่าประมาณ $\qty{6.626e-34}{J.s}$
+
+และสุดท้าย เช่นเดียวกับกลศาสตร์ดั้งเดิม เราจะเรียกการชนที่อนุรักษ์พลังงานจลน์ (และสุดท้ายจะอนุรักษ์มวลด้วย) ว่าเป็น\emph{การชนแบบยืดหยุ่น}
+
+\begin{corbox}{ตัวอย่าง (การกระเจิง Compton)}
+    โฟตอนที่มีความยาวคลื่น $\lambda_0$ พุ่งเข้าไปในแนวแกน $+x$ เข้าชนกับอิเล็กตรอนซึ่งอยู่นิ่ง ทำให้โฟตอน ``เด้ง'' ออกจากอิเล็กตอนด้วยมุมที่เบนออกไปจากแกน $x$ ขนาด $\theta$ ขึ้นไปในแนวแกน $y$ จงหาความยาวคลื่น $\lambda$ ของโฟตอนหลังชนในรูป $\theta$
+\end{corbox}
+
+\begin{soln}
+    เริ่มจากการหา $E$ ในรูป $\theta$ ก่อน กำหนดให้ก่อนชนโฟตอนมีพลังงาน $E_0 = hc/\lambda_0$ และมุมที่อิเล็กตรอนเบนออกไปจากแกน $x$ คือ $\phi$ พิจารณากฎอนุรักษ์ดมเมนตัมในแกน $y$ จะได้
+    \begin{align*}
+        p_e\sin\phi &= p_\gamma\sin\theta \\
+        \sin\phi &= \frac{E}{p_ec}\sin\theta\tag{$\circledast$1}\label{compton1}
+    \end{align*}
+    ในแนวแกน $x$ ได้
+    \begin{align*}
+        p_0 = \frac{E_0}{c} &= p_\gamma\cos\theta + p_e\cos\phi \\
+        &\overset{\text{\ref{compton1}}}{=} \frac{E}{c}\cos\theta + p_e\sqrt{1 - \ab(\frac{E}{p_ec}\sin\theta)^2}\\
+        \ab(E_0 - E\cos\theta)^2 &= p_e^2c^2 - e^2\sin^2\theta\\
+        p_e^2c^2 &= E_0^2 -2E_0E\cos\theta + E^2\tag{$\circledast$2}\label{compton2}
+    \end{align*}
+    สุดท้าย พิจารณากฎอนุรักษ์พลังงาน
+    \begin{align}
+        E_0 + m_ec^2 &= E + E_e\notag\\
+        &= E + \sqrt{m_e^2c^4 + p_e^2c^2}\notag\\
+        &\overset{\text{\ref{compton2}}}{=} E + \sqrt{m_e^2c^4 + E_0^2 - 2E_0E\cos\theta + E^2}\notag\\
+        \ab(E_0 + m_ec^2 - E)^2 &= m_e^2c^4 + E_0^2 - 2E_0E\cos\theta + E^2\notag\\
+        \cancel{E_0^2} + \cancel{m_e^2c^4} + \cancel{E^2} + 2E_0m_ec^2 - 2E_0E - 2 Em_ec^2 &= \cancel{m_e^2c^4} + \cancel{E_0^2} - 2E_0E\cos\theta + \cancel{E^2}\notag\\
+        E_0m_ec^2 &= E\ab(E_0 + m_ec^2 - E_0\cos\theta)\notag\\
+        E &= \frac{1}{\ab(1 - \cos\theta)/m_ec^2 + 1/E_0}
+    \end{align}
+    เมื่อนำ (\ref{planck}) แทนเข้าไปจะได้ว่า
+    \begin{eqbox}{การกระเจิง Compton}
+        \lambda = \lambda_0 + \frac{h}{m_ec}\ab(1 - \cos\theta)
+    \end{eqbox}
+    โดยเราจะเรียกพจน์ $\lambda_c = h/m_ec \approx \qty{2.43e-12}{m}$ ว่า\emph{ความยาวคลื่น Compton} ของอิเล็กตรอน
+\end{soln}
+
+\subsection{พลศาสตร์เชิงสัมพัทธภาพ}
+
+เนื่องจากกฎอนุรักษ์โมเมนตัมและพลังงานเป็นจริงเมื่อใช้โมเมนตัมและพลังงานเชิงสัมพัทธภาพ กฎข้อที่สองของนิวตันก็เป็นจริงเช่นกัน:
+\begin{ieqbox}{กฎข้อที่สองของนิวตัน}
+    \vb{F} = \odv{\vb{p}}{t}
+\end{ieqbox}
