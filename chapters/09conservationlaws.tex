@@ -1,6 +1,6 @@
 \chapter{กฎอนุรักษ์}
 
-\section{ประจุและพลังงาน}
+\section{พลังงาน}
 
 \subsection{ทฤษฎีบท Poynting}
 
@@ -93,9 +93,9 @@
     \ab(\gd\cdot\tsr{T})_j &= \sum_{i=x,y,z}\pdv{}{i}T_{ij}\\
     &= \eps_0\ab(\ab(\gd\cdot\vb{E})E_j + \ab(\vb{E}\cdot\gd)E_j-\frac{1}{2}\nabla_jE^2) + \frac{1}{\mu_0}\ab(\ab(\gd\cdot\vb{B})B_j + \ab(\vb{B}\cdot\gd)B_j-\frac{1}{2}\nabla_jB^2)
 \end{align*}
-(เมื่อ $\vb{a}\cdot \tsr{T} = a_iT_{ij}\vu{j}$ คือ column-wise dot product) จาก (\ref{tensorproof3}) จึงได้ว่า
+(เมื่อ $(\vb{a}\cdot \tsr{T})_j = a_iT_{ij}$ คือ column-wise dot product) จาก (\ref{tensorproof3}) จึงได้ว่า
 \begin{eqbox}{แรงต่อปริมาตร}
-    \vb{f} = \gd\cdot\tsr{T} - \mu_0\eps_9\pdv{\vb{S}}{t}
+    \vb{f} = \gd\cdot\tsr{T} - \mu_0\eps_0\pdv{\vb{S}}{t}
 \end{eqbox}
 ดังนั้นแทนกลับใน (\ref{forcetensor}) จะได้
 \begin{equation}
