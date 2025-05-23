@@ -10,9 +10,9 @@
 \end{eqbox}
 เมื่อ $I_m$ และ $V_m$ คือ\emph{แอมพลิจูด}ของกราฟไซน์และ $\omega$ เรียกว่า\emph{ความถี่เชิงมุม} โดย argument ที่อยู่ในฟังก์ชันเราจะเรียกว่า\emph{เฟส} ณ ขณะนั้น และเราจะนิยาม\emph{คาบ} ($T$) และ\emph{ความถี่} ($f$) ตามปกติ:
 \begin{defbox}{คาบและความถี่}
-    \begin{equation}
+    \begin{equation*}
         T\equiv\frac{2\pi}{\omega}\qq{และ}f\equiv\frac{1}{T} = \frac{\omega}{2\pi}
-    \end{equation}
+    \end{equation*}
 \end{defbox} 
 
 โดยยกตัวอย่างแหล่งกำเนิดไฟฟ้ากระแสสลับ เช่น ลองพิจารณาสายไฟที่หมุนรอบแกน $x$ และมีสนามแม่เหล็กสม่ำเสมอขนาด $B$ ชี้ในแกน $+y$ ก็จะได้ว่าถ้าเราหมุนลูปสายไฟนี้ด้วยอัตราเร็วเชิงมุม $\omega$ แล้วก็จะได้ว่า
@@ -36,9 +36,9 @@ v(t) = Ri(t) = I_mR\cos\omega t = V_m\cos\omega t
 ดังนั้น
 \begin{lawbox}{เฟสของ v และ i บนตัวต้านทาน}
     เฟสของ $v$ และ $i$ จะ\emph{ตรงกัน}บนตัวต้านทาน $R$ โดยที่
-    \begin{equation}
+    \begin{equation*}
         V_m = RI_m\label{resac}
-    \end{equation}
+    \end{equation*}
 \end{lawbox}
 
 พิจารณาตัวเก็บประจุเมื่อให้ $v(t) = V_m\cos\omega t$ จะได้ว่า
@@ -48,9 +48,9 @@ i(t) = C\odv{v}{t} = CV_m\odv{}{t}\cos\omega t = -\omega CV_m\sin\omega t = I_m\
 ดังนั้น
 \begin{lawbox}{เฟสของ v และ i บนตัวเก็บประจุ}
     เฟสของ $i$ จะนำ $v$ อยู่ $\pi/2$ บนตัวเก็บประจุ $C$ โดยที่
-    \begin{equation}
+    \begin{equation*}
         V_m = \ab(\frac{1}{\omega C})I_m\label{capac}
-    \end{equation}
+    \end{equation*}
 \end{lawbox}
 
 สุดท้าย พิจารณาตัวเหนี่ยวนำเมื่อให้ $i(t) = I_m\cos\omega t$ จะได้ว่า
@@ -60,16 +60,16 @@ v(t) = L\odv{i}{t} = LI_m\odv{}{t}\cos\omega t = -\omega LI_m\sin\omega t = V_m\
 ดังนั้น
 \begin{lawbox}{เฟสของ v และ i บนตัวเหนี่ยวนำ}
     เฟสของ $v$ จะนำ $i$ อยู่ $\pi/2$ บนตัวเหนี่ยวนำ $L$ โดยที่
-    \begin{equation}
+    \begin{equation*}
         V_m = \ab(\omega L)I_m\label{indac}
-    \end{equation}
+    \end{equation*}
 \end{lawbox}
 
 สังเกตว่าสมการ (\ref{resac}) ถึง (\ref{indac}) หน้าตาคล้ายกับกฎของ Ohm เราจึงนิยามค่าความต้านทานเสมือนของตัวเก็บประจุและตัวเหนี่ยวนำว่า \emph{รีแอคแตนซ์เชิงประจุ}และ\emph{รีแอคแตนซ์เชิงเหนี่ยวนำ} (\emph{capacitive}/\emph{inductive reactance}: $X_C$ และ $X_L$) ดังนี้:
 \begin{defbox}{ Reactance}
-    \begin{equation}
+    \begin{equation*}
         X_C \equiv \frac{1}{\omega C}\qq{และ}X_L \equiv \omega L
-    \end{equation}
+    \end{equation*}
 \end{defbox}
 
 \section{เฟสเซอร์}
@@ -84,9 +84,9 @@ a(t) = A_m\cos\ab(\omega t + \phi) = \Re(A_me^{j\phi}\cex) \equiv \Re(\tilde{A}\
 \]
 (ในการวิเคราะห์วงจรเราจะใช้ $j$ แทนหน่วยจินตภาพเพราะ $i$ ซ้ำกับกระแส) โดยจำนวนเชิงซ้อน $\tilde{A}$ เรียกว่าเป็นรูปใน\emph{โดเมนเฟสเซอร์}/\emph{ความถี่} (\emph{phasor}/\emph{frequency domain}) ของ $a(t)$ (โดยจะเรียก $a(t)$ ว่ารูป \emph{time domain}) โดยเราจะแทน $\tilde{A} = A_me^{j\phi}$ ด้วยสัญลักษณ์
 \begin{defbox}{สัญลักษณ์แทนจำนวนเชิงซ้อนในการวิเคราะห์วงจร}
-    \begin{equation}
+    \begin{equation*}
         A_m\phase{\phi} \equiv A_me^{j\phi} = \tilde{A} 
-    \end{equation}
+    \end{equation*}
 \end{defbox}
 ซึ่งเป็นรูปที่มีประโยชน์ในการวิเคราะห์ steady state ของวงจรไฟฟ้ากระแสสลับ เพราะเราสามารถที่จะดำเนินการบวกและลบบน frequency domain เพื่อหา $\tilde{I}_\txt{total}$ หรือ $\tilde{V}_\txt{total}$ ได้เลย (เนื่องจากที่ steady state มี $\omega$ คงที่)
 
@@ -109,9 +109,9 @@ a(t) = A_m\cos\ab(\omega t + \phi) = \Re(A_me^{j\phi}\cex) \equiv \Re(\tilde{A}\
 \end{lawbox}
 เราจึงจะนิยามค่า\emph{อิมพีแดนซ์} (\emph{impedance}: $Z$) และ\emph{แอดมิตแทนซ์} (\emph{admittance}: $Y$) ว่า
 \begin{defbox}{ Impedance และ Admittance}
-    \begin{equation}
+    \begin{equation*}
         Z\equiv \frac{\tilde{V}}{\tilde{I}}\qq{และ} Y\equiv\frac{1}{Z}=\frac{\tilde{I}}{\tilde{V}}
-    \end{equation}
+    \end{equation*}
 \end{defbox}
 
 โดยที่ในส่วนจริงและส่วนจินตภาพของ impedance จะเป็นส่วนความต้านทาน (resistance: $R$) และส่วน reactance ($X$) ตามลำดับ:
@@ -210,9 +210,9 @@ A\odv[2]{i}{t} + B\odv{i}{t} + Ci = D
 เนื่องจาก $\tilde{V} = Z\tilde{I}$ ถ้าอยากให้เฟสตรงกัน $Z$ ต้องมีแต่ส่วนความต้านทาน (reactance เป็น 0) ดังนั้น
 \begin{lawbox}{ความถี่ Resonant}
     ความถี่ resonant ($\omega_0$) คือความถี่เชิงมุมที่ทำให้
-    \begin{equation}
+    \begin{equation*}
         \Im(Z) = 0
-    \end{equation}
+    \end{equation*}
 \end{lawbox}
 ยกตัวอย่างเช่น
 \begin{corbox}{ตัวอย่าง}
@@ -282,17 +282,17 @@ V_\txt{eff} = \sqrt{\ab<v^2>}
 
 และเราจะนิยาม $\tilde{I}_\txt{rms}$ และ $\tilde{V}_\txt{rms}$ ว่า
 \begin{defbox}{กระแสและความต่างศักย์ rms ในรูปเฟสเซอร์}
-    \begin{equation}
+    \begin{equation*}
         \tilde{I}_\txt{rms} \equiv I_\txt{rms}\phase{\phi_i}\qq{และ}\tilde{V}_\txt{rms} \equiv V_\txt{rms}\phase{\phi_v}
-    \end{equation}
+    \end{equation*}
 \end{defbox}
 
 \subsection{กำลังไฟฟ้าเชิงซ้อน}
 
 สังเกตว่ากำลังไฟฟ้าเฉลียนี้เราสามารถหาได้จาก
-\begin{equation}
+\begin{eqnobox}
     P = \Re(\tilde{I}_\txt{rms}^*\tilde{V}_\txt{rms}) = \frac{1}{2}\Re(\tilde{I}^*\tilde{V})
-\end{equation}
+\end{eqnobox}
 (เมื่อ ${}^*$ แทน complex conjugate) ดังนั้นจึงนิยาม\emph{กำลังไฟฟ้าเชิงซ้อน} (\emph{complex power}: $\tilde{P}$) ว่า
 \begin{defbox}{กำลังไฟฟ้าเชิงซ้อน}
     \begin{equation}
@@ -305,39 +305,39 @@ V_\txt{eff} = \sqrt{\ab<v^2>}
 \end{defbox}
 ซึ่งจะมีหน่วย SI เป็น $\unit{VA}$ (volt-ampere) เพื่อแสดงให้เห็นว่าไม่ใช่กำลังจริง ๆ โดยจะเรียกขนาดของมันว่า\emph{กำลังปรากฏ} (\emph{apparent power}: $S$), ส่วนจริงของมัน ($P$) ตามด้านบน คือ\emph{กำลังจริง} ($P$), และส่วนจินตภาพเรียกว่า\emph{กำลังเชิงรีแอค} (\emph{reactive power}: $Q$) ซึ่งมีหน่วย SI เป็น $\unit{VA}$ เช่นกัน สรุปก็คือ
 \begin{defbox}{กำลังปรากฏ}
-    \begin{equation}
+    \begin{equation*}
         S \equiv |\tilde{S}| = I_\txt{rms}V_\txt{rms}
-    \end{equation}
+    \end{equation*}
 \end{defbox}
 (เหตุผลที่เรียกกำลังปรากฏเพราะเป็นค่าที่ดูเหมือนจะเป็นกำลังจริง ๆ แต่ไม่ใช่) และ
 \begin{defbox}{กำลังเชิงรีแอค}
-    \begin{equation}
+    \begin{equation*}
         Q \equiv \Im(\tilde{S}) = I_\txt{rms}V_\txt{rms}\sin(\phi_v - \phi_i)
-    \end{equation}
+    \end{equation*}
 \end{defbox}
 
 โดยกำลังเชิงซ้อนนี้ยังคงเป็นค่าที่อนุรักษ์เหมือนกับกำลังจริง กล่าวคือ
-\begin{equation}
+\begin{eqnobox}
     \tilde{S} = \tilde{S}_1 + \tilde{S}_2 + \dots + \tilde{S}_n
-\end{equation}
+\end{eqnobox}
 
 \subsection{การคิดค่าไฟ}
 
 ไฟฟ้าที่ใช้กันทั่วไปตามบ้านเรือนนั้นเป็นไฟฟ้ากระแสสลับที่มีค่า emf ยังผลประมาณ $\qty{220}{V}$ โดยการคิดค่าไฟนั้นอาจมีหรือไม่มีส่วนแรกที่คงที่และมีอีกส่วนหลังที่แปรผันตามพลังงานที่ใช้ (นับเป็นเงินต่อหน่วยหรือต่อ $\unit{kWh}$) เช่น ในประเทศไทยมีอัตราค่าไฟดังนี้:
 \begin{table}[h]
     \centering
-    \begin{tabular}{|c|c|}
-        \hline
-        \bfseries{หน่วยที่ใช้ (หน่วย)} & \bfseries{อัตราค่าไฟ (บาท/หน่วย)} \\
-        \hline
-        $1-15$ & $2.3488$ \\
-        $16-25$ & $2.9882$ \\
-        $26-35$ & $3.2405$ \\
-        $36-100$ & $3.6237$ \\
-        $101-150$ & $3.7171$ \\
-        $151-400$ & $4.2218$ \\
+    \begin{tabular}{cc}
+        \toprule
+        \bfseries หน่วยที่ใช้ (หน่วย) & \bfseries อัตราค่าไฟ (บาท/หน่วย) \\
+        \midrule
+        $1\text{–}15$ & $2.3488$ \\
+        $16\text{–}25$ & $2.9882$ \\
+        $26\text{–}35$ & $3.2405$ \\
+        $36\text{–}100$ & $3.6237$ \\
+        $101\text{–}150$ & $3.7171$ \\
+        $151\text{–}400$ & $4.2218$ \\
         $401$ ขึ้นไป & $4.4217$ \\
-        \hline
+        \bottomrule
     \end{tabular}
 \end{table}
 

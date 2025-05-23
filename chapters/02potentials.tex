@@ -6,9 +6,9 @@
     ถ้า $V$ เป็นผลเฉลยของสมการ Laplace แล้ว
     \begin{compactenum}
         \item $V$ มีค่าเท่ากับค่าเฉลี่ยของ $V$ รอบ ๆ หรือก็คือ สำหรับทุก $\vb{r}$ และพื้นผิวทรงกลม $\sur$ รัศมี $R$ ที่มีจุดศูนย์กลางที่ $\vb{r}$ จะได้ว่า
-        \begin{equation}
+        \begin{equation*}
             V(\vb{r})=\frac{1}{4\pi R^2}\oint_\sur V\odif{a}
-        \end{equation}
+        \end{equation*}
         \item $V$ ไม่มีค่าสุดขีดสัมพัทธ์ นั่นคือค่าสุดขีดทั้งหมดของ $V$ ในปริมาตร $\vol$ จะอยู่บน $\del\vol$ เท่านั้น
     \end{compactenum}
 \end{lawbox}
@@ -104,7 +104,7 @@
 \subsection{การแยกตัวแปรบนพิกัดคาร์ทีเซียน}
 เริ่มจากการ ``เดา" ว่า 
 \[
-V(x,y,z)=X(x)Y(y)Z(z)
+V(x,y,z)=X(x)\,Y(y)\,Z(z)
 \]
 ดังนั้นจากสมการ Laplace จะได้ว่า
 \begin{align*}
@@ -139,20 +139,20 @@ V(x,y,z)=X(x)Y(y)Z(z)
     \end{cases}
 \end{eqbox}
 หรือแทนตัวแปร $t\mapsto(\pi/a)t$ ได้เป็น
-\begin{equation}
+\begin{eqnobox}
     \int_0^a\sin\ab(\frac{n\pi t}{a})\sin\ab(\frac{n'\pi t}{a})\odif{t}=\begin{cases}
         0&\qq{ถ้า $n'\neq n$}\\
         \dfrac{a}{2}&\qq{ถ้า $n'=n$}
     \end{cases}\label{fourierint}
-\end{equation}
+\end{eqnobox}
 ดังนั้นถ้าต้องการหาสัมประสิทธิ์ของพจน์ที่ $n$ ที่ทำให้อนุกรม Fourier เท่ากับฟังก์ชัน $V(x)$ ฝั่งซ้าย:
 \[
 V(x)=\sum_{n=0}^\infty c_n\sin\ab(\frac{n\pi x}{a})
 \]
 สามารถคูณ $\sin\ab(n\pi x/a)$ เข้าไปทั้งสองฝั่งแล้วอินทิเกรตโดยใช้ (\ref{fourierint}) จะได้
-\begin{equation}
+\begin{eqnobox}
     C_n=\int_0^a V(x)\sin\ab(\frac{n\pi x}{a})\odif{x}
-\end{equation}
+\end{eqnobox}
 เหตุผลที่เราสามารถทำแบบนี้กับเซตของฟังก์ชัน $\sin$ เหล่านั้นได้เป็นเพราะ
 \begin{enumerate}
     \item เซตของฟังก์ชันนี้เป็นเซตที่\emph{สมบูรณ์} (\emph{complete}) หมายความว่า ฟังก์ชันใด ๆ สามารถถูกเขียนได้ในรูปผลบวกเชิงเส้นของฟังก์ชันในเซต
@@ -226,12 +226,12 @@ V(r,\theta,\phi)=R(r)\,\Theta(\theta)
     \end{cases}
 \end{eqbox}
 หรือเมื่อแทนค่า $x=\cos\theta$ จะได้
-\begin{equation}
+\begin{eqnobox}
     \int_{0}^\pi P_l(\cos\theta)\,P_{l'}(\cos\theta)\sin\theta\odif{\theta}=\begin{cases}
         0&\qq{ถ้า $l'\neq l$}\\
         \dfrac{2}{2l+1}&\qq{ถ้า $l'=l$}
     \end{cases}
-\end{equation}
+\end{eqnobox}
 ซึ่งสามารถใช้ในการแก้หาสัมประสิทธิ์ของคำตอบสุดท้ายที่เป็นการนำคำตอบแบบแยกตัวแปรมาบวกกันได้
 \subsection{การแยกตัวแปรบนพิกัดทรงกระบอก}
 จะพิจารณาระบบที่สมมาตรแบบทรงกระบอก (สมมาตรในแนวแกน $z$) ดังนั้นให้
@@ -262,9 +262,9 @@ V(s,\phi,z)=S(s)\,\Phi(\phi)
 แต่เมื่อ $k=0$ จะได้คำตอบเดียวคือค่าคงที่ ซึ่งไม่ครบกับอันดับของสมการ (เมื่อนำมารวมกันตอนสุดท้ายอาจทำให้ได้คำตอบไม่ครบได้ แต่กรณีของ $\Phi$ เหตุผลที่ไม่นำ $A\phi+B$ ที่เป็นผลเฉลยในกรณี $k=0$ มาใช้เพราะว่าเห็นชัดว่า $A$ ต้องเป็น $0$ ซึ่งรวมอยู่ในกรณี $k=0$ ของ $A\sin k\phi + B\cos k\phi$ อยู่แล้ว) จึงต้องคิดแยกกรณี:
 \begin{lawbox}{กรณี k = 0}
     สมการ (\ref{cylde}) ถ้า $k=0$ จะได้คำตอบคือ
-    \begin{equation}
+    \begin{equation*}
         S(s)=A\log s+B
-    \end{equation}
+    \end{equation*}
     เมื่อ $A$ และ $B$ คือค่าคงที่
 \end{lawbox}
 โดยในการหาสัมประสิทธิ์ของคำตอบต่อไปให้ใช้การวิเคราะห์ Fourier แบบเดียวกับพิกัดคาร์ทีเซียน
@@ -284,9 +284,9 @@ V(\vb{r})=\kem\ab(\frac{q}{\rad_+}-\frac{q}{\rad_-})
 \frac{1}{\rad_\pm}\approx \frac{1}{r}\ab(1\mp\frac{d}{r}\cos\theta)^{-1/2}\approx\frac{1}{r}\ab(1\pm \frac{d}{2r}\cos\theta)
 \]
 ก็จะได้ว่าที่ระยะ $r$ ไกล ๆ จาก dipole:
-\begin{equation}
+\begin{eqnobox}
     V(\vb{r})\approx\kem\frac{qd\cos\theta}{r^2}\label{dipolefar}
-\end{equation}
+\end{eqnobox}
 และเช่นเดียวกัน quadrupole, octopole, ... จะมีศักย์ที่โตแบบ $1/r^3$, $1/r^4$, ... ตามลำดับ ที่ระยะไกล ๆ
 
 ดังนั้นเราจึงอาจหาวิธีเขียนศักย์ของการกระจายตัวของประจุแบบใด ๆ ให้อยู่ในรูปอนุกรมของพจน์ multipole ($1/r$, $1/r^2$, $1/r^3$, ...) เพื่อที่จะประมาณค่าศักย์ไกล ๆ ด้วยพจน์ monopole และ dipole ได้:
@@ -296,13 +296,13 @@ V(\vb{r})=\kem\ab(\frac{q}{\rad_+}-\frac{q}{\rad_-})
 \rad^2=r^2+(r')^2-2rr'\cos\alpha=r^2\ab(1+\ab(\frac{r'}{r})^2-2\ab(\frac{r'}{r})\cos\alpha)
 \]
 ดังนั้น
-\begin{equation}
+\begin{eqnobox}
     \frac{1}{\rad}=\frac{1}{r}\ab(1+\ab(\frac{r'}{r})\ab(\frac{r'}{r}-2\cos\alpha))^{-1/2}\label{multipoleex}
-\end{equation}
+\end{eqnobox}
 จากนั้นใช้ทฤษฎีบททวินามกับ (\ref{multipoleex}) และ (\ref{rodrigues}) จะพิสูจน์ได้ว่า
-\begin{equation}
+\begin{eqnobox}
     \frac{1}{\rad}=\frac{1}{r}\sum_{n=0}^\infty\ab(\frac{r'}{r})^nP_n(\cos\alpha)\label{mpradinv}
-\end{equation}
+\end{eqnobox}
 นำไปแทนใน (\ref{potentialcont}) ก็จะได้ว่า
 \begin{ieqbox}{การกระจาย Multipole}
     V(\vb{r})=\kem\sum_{n=0}^\infty\frac{1}{r^{n+1}}\int(r')^n\,P_n(\cos\alpha)\,\rho(\vb{r}')\odif{\tau'}\label{multipole}
@@ -328,9 +328,9 @@ V_\txt{dip}(\vb{r})=\kem\frac{\vu{r}}{r^2}\cdot\int\vb{r}'\rho(\vb{r}')\odif{\ta
 \]
 อินทิกรัลในด้านขวาไม่ขึ้นกับ $\vb{r}$ ดังนั้นเราจะนิยาม \emph{dipole moment} $\vb{p}$ รอบจุด ๆ หนึ่งว่า:
 \begin{defbox}{ Electric Dipole Moment}
-    \begin{equation}
+    \begin{equation*}
         \vb{p}\equiv\int\vb{r}'\rho(\vb{r}')\odif{\tau'}
-    \end{equation}
+    \end{equation*}
 \end{defbox}
 ก็จะได้ว่าพจน์ dipole คือ:
 \begin{eqbox}{พจน์ Dipole}
@@ -340,9 +340,9 @@ V_\txt{dip}(\vb{r})=\kem\frac{\vu{r}}{r^2}\cdot\int\vb{r}'\rho(\vb{r}')\odif{\ta
 
 \subsection{Dipole บริสุทธิ์}
 จาก (\ref{dipolefar}) จะได้ว่า dipole จะเหลือแค่พจน์ dipole ในการกระจาย multipole ถ้าระยะ $\vb{r}$ ไกลมาก ๆ หรืออาจมองกลับกันว่าถ้าระยะ $d$ น้อยมาก ๆ ก็จะเหลือแค่พจน์ dipole เช่นกัน ดังนั้นถ้าเรามองในลิมิต $q\to\infty$ และ $d\to0$ โดยให้ $\vb{p}=q\vb{d}$ คงที่ตลอด จะได้\emph{จุด dipole บริสุทธิ์} ที่จะมีสนามศักย์เป็นเพียง
-\begin{equation}
+\begin{eqnobox}
     V(\vb{r})=V_\txt{dip}(\vb{r})=\kem\frac{p\cos\alpha}{r^2}
-\end{equation}
+\end{eqnobox}
 ถ้ากำหนดว่า $\vb{p}$ ชี้ในทิศ $+z$ ก็จะได้
 \[
 V(\vb{r})=\kem\frac{p\cos\theta}{r^2}

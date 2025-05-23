@@ -3,18 +3,18 @@
 \subsection{แรง Coulomb}
 \begin{lawbox}{กฎของ Coulomb}
     สำหรับจุดประจุที่อยู่นิ่ง $q_1$ และ $q_2$ จะได้ว่าแรงที่กระทำต่อประจุ $q_1$ คือ
-    \begin{equation}
+    \begin{equation*}
         \vb{F} = \kem q_1q_2\frac{\vb{r}_1-\vb{r}_2}{\abs{\vb{r}_1-\vb{r}_2}^3} = \kem\frac{q_1q_2}{\rad^2}\vus{\rad}\label{coulomb}
-    \end{equation}
+    \end{equation*}
     เมื่อ $\vbs{\rad}$ คือเวกเตอร์จาก $q_1$ ไป $q_2$
 \end{lawbox}
 โดยประจุไฟฟ้าในหน่วย SI คือ $\unit{C}$ (coulomb) และ $\eps_0 \approx \qty{8.854e-12}{C^2.N^{-1}.m^{-2}}$ เป็นค่าคงที่ที่เรียกว่า\emph{สภาพยอมในสุญญากาศ} (\emph{permittivity of free space}) เราจะเรียกแรงนี้ว่า\emph{แรง Coulomb}
 \subsection{สนามไฟฟ้า}
 สังเกตว่าถ้ามีประจุวางไว้อยู่แล้ว เราสามารถนิยาม\emph{สนามไฟฟ้า}ได้ดังนี้:
 \begin{defbox}{สนามไฟฟ้า}
-\begin{equation}
+\begin{equation*}
     \vb{E}(\vb{r})\equiv\frac{\vb{F}(\vb{r})}{q}
-\end{equation}
+\end{equation*}
 \end{defbox}
 และโดยกฎของ Coulomb (\ref{coulomb}) จะได้ว่า
 \begin{eqbox}{สนามไฟฟ้าของจุดประจุ}
@@ -30,28 +30,28 @@
 \subsection{ฟลักซ์ไฟฟ้าและกฎของ Gauss}
 \begin{defbox}{ฟลักซ์ไฟฟ้า}
     ฟลักซ์ของ $\vb{E}$ ที่ผ่านผิว $\sur$ คือ
-    \begin{equation}
+    \begin{equation*}
         \Phi_E\equiv\int_\sur\vb{E}\cdot\odif{\vb{a}}
-    \end{equation}
+    \end{equation*}
 \end{defbox}
 พิจารณาพื้นผิวปิด $\sur$ ที่มีจุดประจุ $q$ อยู่ภายในและพื้นที่เล็ก ๆ $\odif{\tau}$ บน $\sur$ โดยมี $\vbs{\rad}$ เป็นเวกเตอร์จาก $q$ มายัง $\odif{a}$ และ $\odif{a'}$ เป็นภาพฉายของ $\odif{a}$ มาตั้งฉากกับ $\vbs{\rad}$ จะได้
 \[ 
 \vb{E}\cdot \odif{\vb{a}}=\kem\frac{q}{\rad^2}\odif{a}\cos\theta=\kem\frac{q}{\rad^2}\odif{a'}=\frac{q}{4\pi\eps_0}\odif{\Omega}
 \]
 เมื่อ $\odif{\Omega}$ คือมุมสเตอเรเดียนเทียบกับตำแหน่งของประจุ $q$ ดังนั้นฟลักซ์ไฟฟ้าจาก $q$ ที่ผ่านพื้นผิว $\sur$ เท่ากับ
-\begin{equation}
+\begin{eqnobox}
 \Phi_E^{(q\,\txt{in})}=\oint_\sur\vb{E}\cdot\odif{\vb{a}}=\frac{q}{4\pi\eps_0}\oint_\sur\odif{\Omega}=\frac{q}{4\pi\eps_0}\cdot4\pi=\frac{q}{\eps_0}
-\end{equation}
+\end{eqnobox}
 โดยทำในทำนองเดียวกันจะเห็นว่าถ้า $q$ อยู่นอก $\sur$ แล้ว $\vb{E}\cdot\odif{\vb{a}}=(\cst)\odif{\Omega}$ จะมีคู่ของมันที่เครื่องหมายตรงข้ามในอีกฝั่งของ $\sur$ จึงทำให้ตัดกันหมด ดังนั้นในกรณีจุดประจุ $q$ อยู่นอก $\sur$ จะได้ว่าฟลักซ์ไฟฟ้า:
-\begin{equation}
+\begin{eqnobox}
 \Phi_E^{(q\,\txt{out})}=\oint_\sur\vb{E}\cdot\odif{\vb{a}}=0
-\end{equation}
+\end{eqnobox}
 ดังนั้นจึงได้
 \begin{lawbox}{กฎของ Gauss (Integral form)}
     สำหรับทุกพื้นผิวปิดจะได้ว่าฟลักซ์ไฟฟ้าที่ผ่านผิวนั้นเท่ากับ
-    \begin{equation}
+    \begin{equation*}
         \Phi_E=\oint\vb{E}\cdot\odif{\vb{a}}=\frac{Q_\txt{enc}}{\eps_0}\label{gauss}
-    \end{equation}
+    \end{equation*}
 \end{lawbox}
 
 \subsection{Divergence และ Curl ของสนามไฟฟ้าสถิต}
@@ -66,9 +66,9 @@
 \]
 ก็จะได้
 \begin{lawbox}{กฎของ Gauss (Differential form)}
-    \begin{equation}
+    \begin{equation*}
         \gd\cdot\vb{E} = \frac{\rho}{\eps_0}\label{gaussde}
-    \end{equation}
+    \end{equation*}
 \end{lawbox}
 และเนื่องจาก curl ของจุดประจุเท่ากับ $\vb{0}$ ดังนั้นจึงได้ว่า curl ของสนาม $\vb{E}$ สถิตใด ๆ จึงเท่ากับ $\vb{0}$ ด้วย
 \begin{ieqbox}{กฎของ Faraday สำหรับสนามไฟฟ้าสถิต}
@@ -80,15 +80,15 @@
 เนื่องจาก $\gd\times\vb{E}=0$ โดย Stokes' theorem จะได้ว่า $\int\vb{E}\cdot\odif{\vbs{\ell}}$ ไม่ขึ้นอยู่กับเส้นทาง เราจึงสามารถนิยามฟังก์ชันที่ขึ้นอยู่กับอินทิกรัลของสนามไฟฟ้า ณ ตำแหน่งใด ๆ ได้:
 \begin{defbox}{ศักย์ไฟฟ้า}
     ให้ $\mathcal{O}$ เป็นจุดอ้างอิง เราสามารถนิยาม\emph{ศักย์ไฟฟ้า} $V(\vb{r})$ ที่จุด $\vb{r}$ คือ
-    \begin{equation}
+    \begin{equation*}
         V(\vb{r})\equiv-\int_\mathcal{O}^\vb{r}\vb{E}\cdot\odif{\vbs{\ell}}
-    \end{equation}
+    \end{equation*}
     โดยที่ $V$ มีหน่วย SI เป็น $\unit{V}$ (volt) ซึ่งโดยปกติแล้วเราจะนิยามศักย์ไฟฟ้าให้ $\eval{V}_{r\to\infty}=0$
 \end{defbox}
 โดยจะได้\emph{ความต่างศักย์}ระหว่าง $\vb{a}$ และ $\vb{b}$ คือ
-\begin{equation}
+\begin{eqnobox}
     V(\vb{b})-V(\vb{a})=-\int_\vb{a}^\vb{b}\vb{E}\cdot\odif{\vbs{\ell}}
-\end{equation}
+\end{eqnobox}
 และจาก
 \[ 
 \int_\vb{a}^\vb{b}(\gd V)\cdot\odif{\vbs{\ell}}=V(\vb{b})-V(\vb{a})=-\int_\vb{a}^\vb{b}\vb{E}\cdot\odif{\vbs{\ell}}
@@ -100,13 +100,13 @@
 อีกสมการหนึ่งที่สำคัญที่ได้จากศักย์ไฟฟ้าโดยนำสมการ (\ref{gdephi}) ไปแทนใน (\ref{gaussde}) จะได้
 \begin{lawbox}{สมการ Poisson}
     สำหรับสนามศักย์ไฟฟ้า $ V$:
-    \begin{equation}
+    \begin{equation*}
         \nabla^2 V = -\frac{\rho}{\eps_0}\label{poissoneq}
-    \end{equation}
+    \end{equation*}
     โดยถ้า $\rho=0$ จะได้\emph{สมการ Laplace}
-    \begin{equation}
+    \begin{equation*}
         \nabla^2 V = 0\label{laplaceeq}
-    \end{equation}
+    \end{equation*}
 \end{lawbox}
 โดยสามารถหา $V$ ของจุดประจุ $q$ ได้จากกฎของ Coulomb (\ref{coulomb}):
 \[ 
@@ -141,18 +141,18 @@ V(\vb{r})=-\int_\infty^\vb{r}\vb{E}(\vb{r}')\cdot\odif{\vbs{\ell}'}=-\int_\infty
 \end{enumerate}
 จึงสรุปได้ดังนี้:
 \begin{lawbox}{สภาวะขอบเขตของ $\vb{E}$ และ $V$ เมื่อผ่านแผ่นประจุบาง}
-บนแผ่นประจุที่มีความหนาแน่นเชิงพื้นที่ $\sigma$ จะได้ว่า
-\begin{equation}
-    V_\txt{above}=V_\txt{below}\label{boundarystart}
-\end{equation}
-และ
-\begin{equation}
-    \vb{E}_\txt{above}-\vb{E}_\txt{below}=\frac{\sigma}{\eps_0}\vu{n}
-\end{equation}
-เมื่อ $\vu{n}$ คือเวกเตอร์หนึ่งหน่วยที่ตั้งฉากกับแผ่นประจุที่ชี้จากด้านล่างไปด้านบน หรือเขียนอีกอย่างหนึ่งได้ว่า
-\begin{equation}
-    \pdv{V_\txt{above}}{n}-\pdv{V_\txt{below}}{n}=-\frac{\sigma}{\eps_0}\label{boundaryend}
-\end{equation}
+    บนแผ่นประจุที่มีความหนาแน่นเชิงพื้นที่ $\sigma$ จะได้ว่า
+    \begin{equation}
+        V_\txt{above}=V_\txt{below}\label{boundarystart}
+    \end{equation}
+    และ
+    \begin{equation}
+        \vb{E}_\txt{above}-\vb{E}_\txt{below}=\frac{\sigma}{\eps_0}\vu{n}
+    \end{equation}
+    เมื่อ $\vu{n}$ คือเวกเตอร์หนึ่งหน่วยที่ตั้งฉากกับแผ่นประจุที่ชี้จากด้านล่างไปด้านบน หรือเขียนอีกอย่างหนึ่งได้ว่า
+    \begin{equation}
+        \pdv{V_\txt{above}}{n}-\pdv{V_\txt{below}}{n}=-\frac{\sigma}{\eps_0}\label{boundaryend}
+    \end{equation}
 \end{lawbox}
 
 \section{งานและพลังงาน}
@@ -170,9 +170,9 @@ V(\vb{r})=-\int_\infty^\vb{r}\vb{E}(\vb{r}')\cdot\odif{\vbs{\ell}'}=-\int_\infty
 \Delta U_k=q_k V_\txt{ext}(\vb{r}_k)
 \]
 เนื่องจากนิยามให้ $\eval{U}_{r\to\infty}=\eval{qV}_{r\to\infty}=0$ ก็จะได้
-\begin{equation}
+\begin{eqnobox}
 U_\txt{ext}=\sum_k\Delta U_k=\sum_kq_k V_\txt{ext}(\vb{r}_k)
-\end{equation}
+\end{eqnobox}
 หรือขยายมาในกรณีต่อเนื่องก็คือ
 \begin{ieqbox}{พลังงานศักย์ไฟฟ้าจากสนามภายนอก}
     U_\txt{ext}=\int\rho V_\txt{ext}\odif{\tau}
@@ -182,9 +182,9 @@ U_\txt{ext}=\sum_k\Delta U_k=\sum_kq_k V_\txt{ext}(\vb{r}_k)
 U_k=\sum_{k'<k}q_k V_{k'}(\vb{r}_k)=\kem\sum_{k'<k}\frac{q_kq_{k'}}{\rad_{kk'}}
 \]
 ดังนั้นโดยใช้ความสมมาตร
-\begin{equation}
+\begin{eqnobox}
 U=\kem\sum_{k}\sum_{k'<k}\frac{q_kq_{k'}}{\rad_{kk'}}=\frac{1}{2}\kem\sum_{k\neq k'}\frac{q_kq_{k'}}{\rad_{kk'}}\label{disintenergy}
-\end{equation}
+\end{eqnobox}
 แต่ในกรณีต่อเนื่องเราไม่จำเป็นต้องสนใจเงื่อนไข $k\neq k'$ เพราะอินทิกรัลลู่เข้าและส่วนที่มาจาก $k = k'$ สามารถมองเป็นส่วนพลังงานที่มาจากประจุที่ใกล้กันมาก ๆ ได้ จึงได้ว่า
 \[ 
 U=\frac{1}{2}\kem\iint\frac{\rho(\vb{r})\,\rho(\vb{r}')}{\rad}\odif{\tau',\tau}
@@ -224,17 +224,17 @@ U=U_\txt{int}+U_\txt{ext}=\frac{1}{2}\int\rho V_\txt{int}\odif{\tau}+\int\rho V_
     &=\eps_0\int_\vol\vb{E}_\txt{ext}\cdot\vb{E}_\txt{int}\odif{\tau}
 \end{align*}
 นำไปแทนในสมการ $U$ และใช้ร่วมกับ (\ref{energydensity}) จะได้
-\begin{equation}
+\begin{eqnobox}
 U=\int u(\vb{r})\odif{\tau}\qq{เมื่อ}u(\vb{r})=\frac{\eps_0}{2}\ab\Big(E_\txt{int}^2(\vb{r})+2\vb{E}_\txt{int}(\vb{r})\cdot\vb{E}_\txt{ext}(\vb{r}))
-\end{equation}
+\end{eqnobox}
 ซึ่งจริง ๆ แล้วเหมือนกับ (\ref{energydensity}) เลย โดยบวกเข้าลบออกด้วย $E_\txt{ext}^2(\vb{r})$ ใน $u(\vb{r})$ และให้ $\vb{E}=\vb{E}_\txt{int}+\vb{E}_\txt{ext}$ จะได้
 \[ 
 U=\frac{\eps_0}{2}\int E^2(\vb{r})\odif{\tau}-\underbrace{\frac{\eps_0}{2}\int E_\txt{ext}^2(\vb{r})\odif{\tau}}_{\cst}
 \]
 เนื่องจากพจน์ด้านหลังเป็นค่าคงที่ เราจึงสามารถให้พจน์นั้นเป็นค่าอ้างอิงได้ จึงได้ว่าเราสามารถใช้ (\ref{energydensity}) ได้ในทุกกรณี เพียงแค่ต้องรวม $\vb{E}_\txt{ext}$ ไปด้วย:
-\begin{equation}
+\begin{eqnobox}
     U'=\frac{\eps_0}{2}\int E^2(\vb{r})\odif{\tau}
-\end{equation}
+\end{eqnobox}
 สุดท้ายจะเป็นพิสูจน์ทฤษฎีบท:
 \begin{ieqbox}{Green's Reciprocity Theorem}
     \int\rho_1 V_2\odif{\tau}=\int\rho_2 V_1\odif{\tau}\label{recipstatic}
@@ -307,9 +307,9 @@ U=\frac{\eps_0}{2}\int E^2(\vb{r})\odif{\tau}-\underbrace{\frac{\eps_0}{2}\int E
 \subsection{ความจุไฟฟ้า}
 เมื่อมีตัวนำสองตัวโดยตัวหนึ่งมีประจุ $+Q$ และอีกตัว $-Q$ เนื่องจากเมื่อ $Q$ เพิ่มขึ้นจำนวน $k$ เท่า จะได้ว่าทำให้ $\sigma$ บนทั้งสองประจุเพิ่มขึ้นเป็น $k$ เท่าเช่นกัน (เพราะมีการจัดเรียงแบบเดียวเท่านั้นที่ทำให้เนื้อตัวนำมี $\vb{E}=\vb{0}$ ซึ่งจะพิสูจน์ในบทถัดไป) ส่งผลให้ $\vb{E}$ เพิ่มเป็น $k$ เท่า จึงทำให้ความต่างศักย์ $V=V_{+}-V_-$ ก็เพิ่มขึ้นเป็น $k$ เท่าด้วย จึงสรุปได้ว่า $Q\propto V$ ดังนั้นเราสามารถนิยามค่าคงที่การแปรผันนี้ว่า\emph{ความจุไฟฟ้า} (\emph{capacitance}: $C$) ดังนี้
 \begin{defbox}{ความจุไฟฟ้า}
-    \begin{equation}
+    \begin{equation*}
         C\equiv\frac{Q}{V}
-    \end{equation}
+    \end{equation*}
     โดย $C$ นี้มีหน่วย SI คือ $\unit{F}$ (farad)
 \end{defbox}
 ส่วนความจุไฟฟ้าของตัวนำตัวเดียว (self-capacitance) คือให้จินตนาการว่ามีตัวนำเปลือกทรงกลมที่มีรัศมีใหญ่มาก ๆ หรือก็คือให้ใช้ $V$ เป็น $V$ ของตัวนำโดยมีจุดอ้างอิงเป็น $\infty$

@@ -9,13 +9,13 @@
 t = \frac{\lambda}{v_\txt{thermal}} 
 \]
 ก็จะได้ขนาดของความเร็วเร็วเฉลี่ยหรือ\emph{อัตราเร็วลอยเลื่อน} (\emph{drift velocity}) เท่ากับ
-\begin{equation}
+\begin{eqnobox}
     v_d = \frac{1}{2}at = \frac{a\lambda}{2v_\txt{thermal}}\label{drift}
-\end{equation}
+\end{eqnobox}
 ดังนั้นกระแสจึงเท่ากับ
-\begin{equation} 
+\begin{eqnobox} 
     \vb{J} = ne\vb{v}_d = ne\frac{\lambda\vb{a}}{2v_\txt{thermal}} = \ab(\frac{\cancel{n}e\lambda}{2v_\txt{thermal}\cancel{n}m_e})\vb{F} = \ab(\frac{ne^2\lambda}{2v_\txt{thermal}m_e})\vb{f}\label{ohmapprox} 
-\end{equation}
+\end{eqnobox}
 จะเห็นว่าโดยปกติแล้วสำหรับวัสดุทั่วไป $\vb{J}$ จึงแปรผันตรงกับ $\vb{f}$:
 \begin{eqbox}{สมการการแปรผันตรงของกระแสกับแรง} 
     \vb{J} = \sigma\vb{f} 
@@ -39,9 +39,9 @@ t = \frac{\lambda}{v_\txt{thermal}}
 เมื่อ $R$ เป็นค่าคงที่\emph{ความต้านทาน}ระหว่างสองจุดนั้น (ในการคำนวณหาความต้านทานใช้ (\ref{ohme}) ตามในแต่ละระบบได้เลย) โดย $R$ นี้มีหน่วย SI คือ $\unit{\ohm}$ (ohm)
 
 ในกรณีที่กระแสไหลแบบคงที่ในสสารเนื้อเดียวกันที่เป็นไปตามกฎของ Ohm จาก (\ref{gdjzero}) จะได้ว่า
-\begin{equation} 
+\begin{eqnobox} 
     \gd\cdot\vb{E} = \frac{1}{\sigma}\gd\cdot\vb{J} = 0 
-\end{equation}
+\end{eqnobox}
 ดังนั้นในบริเวณที่สสารเป็นไปตามกฎของ Ohm ก็จะไม่มีประจุตกค้างอยู่ภายในเลย จึงทำให้สามารถใช้ทริคในการแก้ศักย์และสนามจากสมการ Laplace ได้ตามปกติ
 
 สุดท้าย จาก (\ref{ohmapprox}) เนื่องจากแรงที่ออกนั้นไม่ส่งผลในอัตราเร็วลอยเลื่อนเพิ่มขึ้นเลย ดังนั้นพลังงานส่วนมากจากการชนจะถูกเปลี่ยนเป็นความร้อน โดยถ้ามีประจุไหลต่อเวลาเท่ากับ $I$ โดยศักย์ของประจุลดลง $V$ ก็จะได้
@@ -63,22 +63,22 @@ t = \frac{\lambda}{v_\txt{thermal}}
 \end{enumerate}
 เราจึงนิยามผลของแรงทั้งหมดภายในวงจรว่า\emph{แรงเคลื่อนไฟฟ้า}หรือ \emph{emf} (\emph{electromotive force}: $\emf$):
 \begin{defbox}{แรงเคลื่อนไฟฟ้า} 
-    \begin{equation} 
+    \begin{equation*} 
         \emf \equiv \oint \vb{f}\cdot\odif{\vbs{\ell}} = \oint \vb{f}_s\cdot\odif{\vbs{\ell}} 
-    \end{equation} 
+    \end{equation*} 
 \end{defbox}
 เนื่องจากสนามไฟฟ้าสถิต $\oint \vb{E}\cdot\odif{\vbs{\ell}} = 0$ โดย $\emf$ นี้มีหน่วยเป็น $\unit{V}$ เช่นเดียวกับศักย์ไฟฟ้า
 
 หมายเหตุ: \emph{emf นี้นิยามเป็นค่า ณ ขณะหนึ่งเท่านั้น ดังนั้นเมื่อสายไฟขยับ เราจะใช้ $\odif{\vbs{\ell}}$ เป็นทิศเดียวกับสายไฟจริง ๆ ไม่ต้องคำนึงถึงความเร็ว}
 
 พิจารณาในสภาวะสมดุลหลังจากต่อแบตเตอรี่: สมมติแหล่งกำเนิดเป็นแบตเตอรี่ไร้ความต้านทาน ($\sigma = \infty$) ก็จะได้ว่าแรงที่ออกในการเคลื่อนประจุเป็น $0$ ดังนั้น $\vb{0} = \vb{f} = \vb{f}_s + \vb{E}$ ก็จะได้
-\begin{equation} 
+\begin{eqnobox} 
     V = -\int_{\vb{a}}^{\vb{b}} \vb{E}\cdot\odif{\vbs{\ell}} = \int_{\vb{a}}^{\vb{b}} \vb{f}_s\cdot\odif{\vbs{\ell}} = \oint \vb{f}_s\cdot\odif{\vbs{\ell}} = \emf 
-\end{equation}
+\end{eqnobox}
 แต่ถ้าแบตเตอรี่นี้มีความต้านทาน $r$ (หมายความว่าถ้าตัดแรง $\vb{f}_s$ ออกแล้วความต่างศักย์ $V_\txt{off} = \int\vb{E}_\txt{off}\cdot\odif{\vbs{\ell}} = Ir$) สมการด้านบนจะไม่เป็นจริง โดยจะได้
-\begin{equation} 
+\begin{eqnobox} 
     V = -\int_{\vb{a}}^{\vb{b}} \vb{E}\cdot\odif{\vbs{\ell}} = \int_{\vb{a}}^{\vb{b}} \ab(\vb{f}_s - \frac{\vb{J}}{\sigma})\cdot\odif{\vbs{\ell}} = \emf + \int_{\vb{a}}^{\vb{b}} \vb{E}_\txt{off}\cdot\odif{\vbs{\ell}} = \emf - V_\txt{off} = \emf - Ir 
-\end{equation}
+\end{eqnobox}
 
 \subsection{แรงเคลื่อนไฟฟ้าจากสายไฟเคลื่อนที่}
 
@@ -178,9 +178,9 @@ t = \frac{\lambda}{v_\txt{thermal}}
 
 พิจารณาขดลวดสายไฟสองขดลวดที่วางไว้อยู่นิ่ง ถ้าลวดเส้นที่หนึ่งมีกระแส $I_1$ ไหลผ่านจะทำให้เกิดสนามแม่เหล็ก $\vb{B}_1$ และจะเกิดฟลักซ์แม่เหล็ก $\Phi_2$ ผ่านขดลวดที่สอง เนื่องจากกฎ Biot-Savart จะได้ว่า $B_1\propto I_1$ ดังนั้น $\Phi_2\propto I_1$ โดยเราจะเรียกค่าคงที่การแปรผันนี้ว่า\emph{ความเหนี่ยวนำร่วมกัน} (\emph{mutual inductance}: $M_{21}$) ของขดลวดทั้งสอง:
 \begin{defbox}{ความเหนี่ยวนำร่วมกัน}
-    \begin{equation}
+    \begin{equation*}
         M_{21} \equiv \frac{\Phi_2}{I_1}\qq{หรือ}\Phi_2 = M_{21}I_1
-    \end{equation}
+    \end{equation*}
 \end{defbox}
 พิจารณาการหา $M_{21}$ โดยเราจะเริ่มจาก $\Phi_2$ และใช้ Stokes' theorem:
 \[
@@ -193,9 +193,9 @@ t = \frac{\lambda}{v_\txt{thermal}}
 
 จริง ๆ แล้วการเหนี่ยวนำให้เกิดการเปลี่ยนแปลงฟลักซ์แม่เหล็กของสายไฟ ไม่จำเป็นต้องใช้สายไฟสองเส้นก็ได้ เราจึงนิยาม\emph{ความเหนี่ยวนำตัวเอง} (\emph{self inductance}: $L$) หรืออาจจะเรียกสั้น ๆ ว่า\emph{ความเหนี่ยวนำ} ดังนี้
 \begin{defbox}{ความเหนี่ยวนำ}
-    \begin{equation}
+    \begin{equation*}
         L \equiv \frac{\Phi_B}{I}\qq{หรือ}\Phi_B = LI
-    \end{equation}
+    \end{equation*}
 \end{defbox}
 ความเหนี่ยวนำมีหน่วยเป็น $\unit{H}$ (henry) และโดยกฎของ Faraday ก็จะได้ว่าเมื่อพยายามจะทำให้เกิดการเปลี่ยนแปลงของกระแสในวงจรแบบ quasistatic แล้วจะเกิด emf ในทิศย้อนศร (back emf) เป็นแรงเคลื่อนไฟฟ้าต้านการเปลี่ยนแปลงของกระแส:
 \begin{eqbox}{Back Emf}
@@ -219,9 +219,9 @@ t = \frac{\lambda}{v_\txt{thermal}}
 U = \frac{1}{2} \Phi_B I = \frac{1}{2} I \int \vb{B}\cdot\odif{\vb{a}} = \frac{1}{2} I \int \ab(\gd\times\vb{A})\cdot\odif{\vb{a}} = \frac{1}{2} I \oint \vb{A}\cdot\odif{\vbs{\ell}} = \frac{1}{2} \oint\ab(\vb{A}\cdot\vb{I})\odif{\ell}
 \]
 ขยายมาในสามมิติจะได้
-\begin{equation}
+\begin{eqnobox}
     U = \frac{1}{2} \int\ab(\vb{A}\cdot\vb{J})\odif{\tau}
-\end{equation}
+\end{eqnobox}
 ใช้ (\ref{amperedif}) ก็จะได้
 \begin{align*}
     U &= \frac{1}{2\mu_0} \int_\vol\ab(\vb{A}\cdot\ab(\gd\times\vb{B}))\odif{\tau}\\
@@ -234,9 +234,9 @@ U = \frac{1}{2} \Phi_B I = \frac{1}{2} I \int \vb{B}\cdot\odif{\vb{a}} = \frac{1
 \end{ieqbox}
 โดยเราสามารถใช้ (\ref{magnetdensity}) และ (\ref{energyinductor}) เพื่อนิยามความเหนี่ยวนำที่เป็นระบบสายไฟเชิงพื้นที่หรือเชิงปริมาตรได้ (การหาฟลักซ์จากระบบเหล่านี้อาจไม่มีนิยามี่ตายตัว) ดังนี้
 \begin{defbox}{ความเหนี่ยวนำจากพลังงาน}
-    \begin{equation}
+    \begin{equation*}
         L \equiv \frac{1}{\mu_0I^2}\int B^2 \odif{\tau}
-    \end{equation}
+    \end{equation*}
 \end{defbox}
 
 \section{สมการ Maxwell}

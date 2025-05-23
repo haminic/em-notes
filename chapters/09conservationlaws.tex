@@ -9,25 +9,28 @@
 \odif{W} = q\ab(\vb{E}+\vb{v}\times\vb{B})\cdot\odif{\vbs{\ell}} = q\ab(\vb{E}+\vb{v}\times\vb{B})\cdot \vb{v}\odif{t} = \vb{E}\cdot q\vb{v}\odif{t}
 \]
 ดังนั้นกำลังเท่ากับ
-\begin{equation}
+\begin{eqnobox}
     P = \odv{W}{t} = \int_\vol\ab(\vb{E}\cdot\vb{J})\odif{\tau}\label{poyntingone}
-\end{equation}
+\end{eqnobox}
 จาก
 \[
 \vb{J} = \frac{1}{\mu_0}\ab(\gd\times\vb{B}) - \eps_0\pdv{\vb{E}}{t}
 \]
 เมื่อนำไปแทนใน $\vb{E}\cdot\vb{J}$ แล้วใช้ product rule ก็จะได้
-\begin{align}
-    \vb{E}\cdot\vb{J} &= \vb{E}\cdot\ab(\frac{1}{\mu_0}\ab(\gd\times\vb{B}) - \eps_0\pdv{\vb{E}}{t})\notag\\
-    &= -\frac{1}{\mu_0}\gd\cdot\ab(\vb{E}\times\vb{B}) + \frac{1}{\mu_0}\vb{B}\cdot\ab(\gd\times\vb{E}) - \eps_0\vb{E}\cdot\pdv{\vb{E}}{t}\notag\\
-    &= -\frac{1}{\mu_0}\vb{B}\cdot\pdv{\vb{B}}{t} - \eps_0\vb{E}\cdot\pdv{\vb{E}}{t} -\frac{1}{\mu_0}\gd\cdot\ab(\vb{E}\times\vb{B})\notag\\
-    &= -\frac{1}{2}\pdv{}{t}\ab(\eps_0E^2 + \frac{1}{\mu_0}B^2) - \frac{1}{\mu_0}\gd\cdot\ab(\vb{E}\times\vb{B})\label{poyntingtwo}
-\end{align}
+\begin{align*}
+    \vb{E}\cdot\vb{J} &= \vb{E}\cdot\ab(\frac{1}{\mu_0}\ab(\gd\times\vb{B}) - \eps_0\pdv{\vb{E}}{t})\\
+    &= -\frac{1}{\mu_0}\gd\cdot\ab(\vb{E}\times\vb{B}) + \frac{1}{\mu_0}\vb{B}\cdot\ab(\gd\times\vb{E}) - \eps_0\vb{E}\cdot\pdv{\vb{E}}{t}\\
+    &= -\frac{1}{\mu_0}\vb{B}\cdot\pdv{\vb{B}}{t} - \eps_0\vb{E}\cdot\pdv{\vb{E}}{t} -\frac{1}{\mu_0}\gd\cdot\ab(\vb{E}\times\vb{B})
+\end{align*}
+เนื่องจาก $\pdv{}{t}A^2 = \pdv{}{t}\vb{A}\cdot\vb{A} = 2\vb{A}\cdot\pdv{\vb{A}}{t}$ ดังนั้น
+\begin{eqnobox}
+    \vb{E}\cdot\vb{J} = -\frac{1}{2}\pdv{}{t}\ab(\eps_0E^2 + \frac{1}{\mu_0}B^2) - \frac{1}{\mu_0}\gd\cdot\ab(\vb{E}\times\vb{B})\label{poyntingtwo}
+\end{eqnobox}
 เราจึงนิยาม \emph{Poynting vector}:
 \begin{defbox}{ Poynting Vector}
-    \begin{equation}
+    \begin{equation*}
         \vb{S}\equiv\frac{1}{\mu_0}\ab(\vb{E}\times\vb{B})
-    \end{equation}
+    \end{equation*}
 \end{defbox}
 นำ (\ref{poyntingtwo}) แทนใน (\ref{poyntingone}) และใช้ divergence theorem จะได้
 
@@ -35,15 +38,15 @@
     P = \odv{W}{t} = -\odv{}{t}\int_\vol u\odif{\tau} - \oint_{\del\vol}\vb{S}\cdot\odif{\vb{a}}    
 \end{ieqbox}
 และถ้าสมมติว่าระบบไม่โดนงานมากระทำเลย (แต่โดยปกติแล้วไม่สามารถทำได้) จะได้
-\begin{equation}
+\begin{eqnobox}
     \pdv{u}{t}=-\gd\cdot\vb{S}
-\end{equation}
+\end{eqnobox}
 คล้ายกับเป็น ``สมการความต่อเนื่อง'' ของพลังงาน
 
 โดยสมการนี้ก็คือสมการอนุรักษ์พลังงานของแม่เหล็กไฟฟ้านั่นเอง เพราะเมื่ออินทิเกรตบน $\vol$ ที่ใหญ่มาก ๆ (หรือก็คืออินทิเกรตทั่วทุกพื้นที่) จะได้ว่าอินทิกรัล\emph{ฟลักซ์พลังงาน} (อินทิกรัลที่มี Poynting vector)
-\begin{equation}
+\begin{eqnobox}
     \odv{W}{t} = -\odv{U_\txt{em}}{t}
-\end{equation}
+\end{eqnobox}
 กล่าวคือ พลังงานที่หายไปจากสนาม จะถูกถ่ายทอดมาเป็นงานที่กระทำกับประจุ
 
 \section{โมเมนตัม}
@@ -83,9 +86,9 @@
 \end{align*}
 สามารถเขียนได้อยู่ในรูปที่ง่ายกว่าโดยเราจะนิยาม\emph{เทนเซอร์ความเค้นของ Maxwell} (\emph{Maxwell's stress tensor}) ดังนี้
 \begin{defbox}{เทนเซอร์ความเค้นของ Maxwell}
-    \begin{equation}
+    \begin{equation*}
         T_{ij} \equiv \eps_0\ab(E_iE_j - \frac{1}{2}\delta_{ij}E^2) + \frac{1}{\mu_0}\ab(B_iB_j - \frac{1}{2}\delta_{ij}B^2)
-    \end{equation}
+    \end{equation*}
     เมื่อ $\delta_{ij}$ คือ \emph{Kronecker delta} ซึ่งเท่ากับ $1$ เมื่อ $i=j$ มิฉะนั้นเป็น $0$
 \end{defbox}
 โดยสังเกตว่า
@@ -98,27 +101,27 @@
     \vb{f} = \gd\cdot\tsr{T} - \mu_0\eps_0\pdv{\vb{S}}{t}
 \end{eqbox}
 ดังนั้นแทนกลับใน (\ref{forcetensor}) จะได้
-\begin{equation}
+\begin{eqnobox}
     \vb{F} = \oint_{\del\vol}\tsr{T}\cdot\odif{\vb{a}} - \mu_0\eps_0\odv{}{t}\int_\vol\vb{S}\odif{\tau}\label{forcestress}
-\end{equation}
+\end{eqnobox}
 โดยถ้าระบบเป็นระบบสนามสถิตก็จะได้ว่า
-\begin{equation}
+\begin{eqnobox}
     \vb{F} = \oint_{\del\vol}\tsr{T}\cdot\odif{\vb{a}}
-\end{equation}
+\end{eqnobox}
 
 \subsection{กฎอนุรักษ์โมเมนตัม}
 
 ถ้าเรานิยาม\emph{โมเมนตัมจากสนามแม่เหล็กไฟฟ้า}ว่า
 \begin{defbox}{โมเมนตัมจากสนามแม่เหล็กไฟฟ้า}
-    \begin{equation}
+    \begin{equation*}
         \vb{p}_\txt{em} \equiv \mu_0\eps_0\int \vb{S}\odif{\tau}
-    \end{equation}
+    \end{equation*}
 \end{defbox}
 โดยมี\emph{ความหนาแน่นโมเมนตัม} ($\vb{g}$)
 \begin{defbox}{ความหนาแน่นโมเมนตัม}
-    \begin{equation}
+    \begin{equation*}
         \vb{g} \equiv \mu_0\eps_0\vb{S} = \eps_0\ab(\vb{E}\times\vb{B})
-    \end{equation}
+    \end{equation*}
 \end{defbox}
 จาก (\ref{forcestress}) ก็จะได้
 \begin{ieqbox}{แรงลัพธ์ในรูปเทนเซอร์ความเค้น}
@@ -129,27 +132,27 @@
     \odv{\vb{p}_\txt{mech}}{t} = -\odv{\vb{p}_\txt{em}}{t} + \oint\tsr{T}\cdot\odif{\vb{a}}
 \end{ieqbox}
 และถ้าไม่เกิดการเปลี่ยนแปลงโมเมนตัมเชิงกล จะได้ ``สมการความต่อเนื่อง'' ของโมเมนตัม:
-\begin{equation}
+\begin{eqnobox}
     \pdv{\vb{g}}{t} = \gd\cdot\tsr{T}
-\end{equation}
+\end{eqnobox}
 สุดท้าย เช่นเดียวกับกฎอนุรักษ์พลังงาน พจน์\emph{ฟลักซ์โมเมนตัม} (คือพจน์ที่มี stress tensor, โดยในกรณีนี้ flux density จะเป็น $-\tsr{T}$ เพราะในสมการเป็นบวก) จะเข้าใกล้ศูนย์ถ้าอินทิเกรตบนพื้นที่ที่ใหญ่มาก ๆ (อินทิเกรตทั่วทุกพื้นที่) ทำให้เกิดการอนุรักษ์โมเมนตัม
-\begin{equation}
+\begin{eqnobox}
     \odv{\vb{p}_\txt{mech}}{t} = -\odv{\vb{p}_\txt{em}}{t}
-\end{equation}
+\end{eqnobox}
 
 \subsection{โมเมนตัมเชิงมุม}
 
 เราสามารถนิยามโมเมนตัมเชิงมุมของสนามแม่เหล็กไฟฟ้ารอบจุด ๆ หนึ่งได้เช่นกัน
 \begin{defbox}{ความหนาแน่นโมเมนตัมเชิงมุม}
-    \begin{equation}
+    \begin{equation*}
         \vb{l} \equiv \vb{r}\times\vb{g} = \eps_0\ab\big(\vb{r}\times\ab(\vb{E}\times\vb{B}))
-    \end{equation}
+    \end{equation*}
 \end{defbox}
 ก็จะได้
 \begin{defbox}{โมเมนตัมเชิงมุมจากสนามแม่เหล็กไฟฟ้า}
-    \begin{equation}
+    \begin{equation*}
         \vb{L}_\txt{em} \equiv \int\vb{l}\odif{\tau}
-    \end{equation}
+    \end{equation*}
 \end{defbox}
 โดยโมเมนตัมเชิงมุมนี้ก็อนุรักษ์กับ counterpart ของมันเช่นเดียวกับพลังงานและโมเมนตัมเชิงเส้น โดยจากทอร์ก:
 \begin{align*}
@@ -169,10 +172,10 @@
     \odv{\vb{L}_\txt{mech}}{t} = -\odv{\vb{L}_\txt{em}}{t} + \oint\ab(\vb{r}\times\tsr{T})\cdot\odif{\vb{a}}
 \end{ieqbox}
 ถ้าไม่เกิดการเปลี่ยนแปลงโมเมนตัมเชิงมุม (เชิงกล) จะได้ ``สมการความต่อเนื่อง'' ของโมเมนตัมเชิงมุม:
-\begin{equation}
+\begin{eqnobox}
     \pdv{\vb{l}}{t} = \gd\cdot\ab(\vb{r}\times\tsr{T})
-\end{equation}
+\end{eqnobox}
 และเนื่องจากพจน์\emph{ฟลักซ์โมเมนตัมเชิงมุม} ($-\oint(\vb{r}\times\tsr{T})\cdot\odif{\vb{a}}$) จะเข้าใกล้ศูนย์ถ้าอินทิเกรตบนทุกพื้นที่ ทำให้เกิดการอนุรักษ์โมเมนตัมมุม
-\begin{equation}
+\begin{eqnobox}
     \odv{\vb{L}_\txt{mech}}{t} = -\odv{\vb{L}_\txt{em}}{t}
-\end{equation}
+\end{eqnobox}

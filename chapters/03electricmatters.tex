@@ -16,13 +16,13 @@
     p_i = \alpha_{ij}E_j
 \end{eqbox}
 หรือก็คือ
-\begin{equation}
+\begin{eqnobox}
 \begin{rcases}
     &p_x = \alpha_{xx}E_x+\alpha_{xy}E_y+\alpha_{xz}E_z\hspace{5pt}\\
     &p_y = \alpha_{yx}E_x+\alpha_{yy}E_y+\alpha_{yz}E_z\\
     &p_z = \alpha_{zx}E_x+\alpha_{zy}E_y+\alpha_{zz}E_z
 \end{rcases}
-\end{equation}
+\end{eqnobox}
 (ถ้าเลือกแกนดี ๆ จะทำให้เหลือแค่พจน์ $\alpha_{xx}$, $\alpha_{yy}$, และ $\alpha_{zz}$ ได้)
 \subsection{การหมุนของโมเลกุลมีขั้ว}
 พิจารณาโมเลกุลน้ำ ($\mathrm{H}_2\mathrm{O}$) รูปร่างของโมเลกุลนี้จะมีออกซิเจนอยู่ตรงกลางที่เชื่อมอยู่กับไฮโดรเจน $2$ อะตอม โดยจะมีมุมบิดไป $105\dg$ การที่โมเลกุลน้ำมีลักษณะแบบนี้จะทำให้ฝั่งหนึ่งของโมเลกุลมีประจุบวกและอีกฝั่งหนึ่งมีประจุลบจึงทำให้โมเลกุลน้ำนี้เป็น dipole อยู่แล้ว (โดยจะเรียกโมเลกุลแบบนี้ว่า\emph{มีขั้ว}) ถ้าโมเลกุลนี้อยู่ในสนามไฟฟ้าสม่ำเสมอ $\vb{E}$ (หรือเปลี่ยนแปลงไม่มาก) แรงลัพธ์ของโมเลกุลจะเป็น $\vb{0}$ ก็จริง แต่ฝั่งบวกจะเกิดแรงกระทำในทิศเดียวกับ $\vb{E}$ ส่วนฝั่งลบจะเกิดแรงในทิศตรงข้าม จึงทำให้เกิดทอร์กบนโมเลกุล ถ้ากำหนดให้ $\vb{d}$ เป็นเวกเตอร์จากจุดศูนย์กลางของฝั่งลบไปยังฝั่งบวก จะหาทอร์กได้ดังนี้:
@@ -50,9 +50,9 @@
 \subsection{เวกเตอร์โพลาไรเซชัน}
 สองหัวข้อด้านต้นเป็นตัวอย่างของการโพลาไรซ์ไดอิเล็กทริก โดยทั้งสองกรณีมีสิ่งที่เหมือนกันก็คือ: ทำให้เกิด dipole เล็ก ๆ จำนวนมากชี้ในทิศเดียวกับสนามไฟฟ้า ซึ่งเราจะนิยาม\emph{โพลาไรเซชัน} $\vb{P}$ คือ:
 \begin{defbox}{โพลาไรเซชัน}
-\begin{equation}
+\begin{equation*}
     \vb{P} \equiv \odv{\vb{p}}{\tau} = \text{\emph{dipole moment ต่อหน่วยปริมาตร}}
-\end{equation}
+\end{equation*}
 \end{defbox}
 จริง ๆ แล้วโพลาไรเซชันนี้ซับซ้อนกว่าสองกรณีที่กล่าวมาและวัตถุที่ถูกโพลาไรซ์สามารถทำให้คงสภาพโพลาไรเซชันนี้ไว้ได้ด้วย เพราะฉะนั้นจากนี้เราจึงจะเลิกสนใจแหล่งกำเนิดของเวกเตอร์โพลาไรเซชันและใช้ตามนิยามไปเลย
 
@@ -102,18 +102,18 @@
 ดังนั้นถ้าเรานิยาม
 \begin{defbox}{การกระจัดไฟฟ้า}
     \emph{การกระจัดไฟฟ้า} (\emph{electric displacement}: $\vb{D}$) นิยามดังนี้:
-    \begin{equation}
+    \begin{equation*}
         \vb{D}\equiv\eps_0\vb{E}+\vb{P}
-    \end{equation}
+    \end{equation*}
 \end{defbox}
 ก็จะได้ว่า
 \begin{ieqbox}{กฎของ Gauss สำหรับระบบที่มีไดอิเล็กทริก}
     \gd\cdot\vb{D}=\rho_f\qq{และ}\oint\vb{D}\cdot\odif{\vb{a}}=Q_{f\,\txt{enc}}\label{gaussd}
 \end{ieqbox}
 เวกเตอร์การกระจัดไฟฟ้านี้มีสมบัติคล้าย ๆ $\vb{E}$ แต่ต้องระวังเพราะสนาม $\vb{E}$ ที่หาได้จากเพียง $\rho$ (ด้วยกฎของ Gauss) เป็นเพราะว่ายังมีอีกเงื่อนไขที่ $\gd\times\vb{E}=\vb{0}$ ด้วย แต่ในกรณีของการกระจัดไฟฟ้า
-\begin{equation}
+\begin{eqnobox}
 \gd\times\vb{D}=\gd\times\eps_0\vb{E}+\gd\times\vb{P}=\gd\times\vb{P}\label{curld}
-\end{equation}
+\end{eqnobox}
 ไม่จำเป็นต้องเป็น $\vb{0}$ ดังนั้น $\vb{D}$ จึงไม่ได้กำหนดโดยเพียง $\rho_f$
 \subsection{รอยต่อแผ่นประจุสำหรับการกระจัดไฟฟ้า}
 ต่อมาเช่นเดียวกับ $\vb{E}$ และ $V$ เรามาดูสมบัติของ $\vb{D}$ ในบริเวณแผ่นประจุบาง ๆ ที่มีความหนาแน่นประจุเชิงพื้นที่ $\sigma_f$:
@@ -141,28 +141,28 @@
 \]
 จึงได้ว่า $\vb{D}\propto\vb{E}$ ด้วย เราจึงนิยาม\emph{สภาพยอมทางไฟฟ้า} (\emph{electric permittivity}) ว่า
 \begin{defbox}{สภาพยอมทางไฟฟ้า}
-\begin{equation}
+\begin{equation*}
     \eps\equiv\eps_0\ab(1+\chi_e)
-\end{equation}
+\end{equation*}
 \end{defbox}
 ก็จะได้ว่า
-\begin{equation}
+\begin{eqnobox}
     \vb{D}=\eps\vb{E}
-\end{equation}
+\end{eqnobox}
 และนิยาม\emph{สภาพยอมสัมพัทธ์}หรือ\emph{ค่าคงที่ไดอิเล็กทริก}ว่า
 \begin{defbox}{ค่าคงที่ไดอิเล็กทริก}
-\begin{equation}
+\begin{equation*}
     \eps_r\equiv 1+\chi_e = \frac{\eps}{\eps_0}
-\end{equation}
+\end{equation*}
 \end{defbox}
 พิจารณาภายในบริเวณที่มี $\chi_e$ คงที่ จะได้ว่า
 \[
 \gd\cdot\vb{D}=\rho_f\qq{และ}\gd\times\vb{D}=\vb{0}
 \]
 โดย Helmholtz's theorem จึงได้ว่า
-\begin{equation}
+\begin{eqnobox}
     \vb{D}=\eps_0\vb{E}_\txt{vac}
-\end{equation}
+\end{eqnobox}
 เมื่อ $\vb{E}_\txt{vac}$ คือสนามไฟฟ้าเมื่อระบบอยู่ในสุญญากาศ ก็จะได้
 \begin{eqbox}{สภาพยอมทางไฟฟ้าในไดอิเล็กทริกเชิงเส้น}
     \vb{E}=\frac{1}{\eps}\vb{D}=\frac{1}{\eps_r}\vb{E}_\txt{vac}
@@ -174,13 +174,13 @@
     P_i=\eps_0\chi_{e,ij}E_j
 \end{eqbox}
 หรือก็คือ
-\begin{equation}
+\begin{eqnobox}
 \begin{rcases}
     &P_x = \eps_0(\chi_{e,xx}E_x+\chi_{e,xy}E_y+\chi_{e,xz}E_z)\hspace{5pt}\\
     &P_y = \eps_0(\chi_{e,yx}E_x+\chi_{e,yy}E_y+\chi_{e,yz}E_z)\\
     &P_z = \eps_0(\chi_{e,zx}E_x+\chi_{e,zy}E_y+\chi_{e,zz}E_z)
 \end{rcases}
-\end{equation}
+\end{eqnobox}
 \subsection{ปัญหาสภาวะขอบเขตเกี่ยวกับไดอิเล็กทริกเชิงเส้น}
 เนื่องจาก
 \[
@@ -207,17 +207,17 @@
 \end{corbox}
 \begin{soln}
 เห็นชัดว่าระบบนี้ในพิกัดทรงกลมจะสมมาตรแบบ azimuth ดังนั้นใช้คำตอบของสมการ Laplace จาก (\ref{sphere1}) และ (\ref{sphere2}) ได้ว่าข้างในไดอิเล็กทริก ($r<R$):
-\begin{equation}
+\begin{equation*}
     V(r,\theta)=\sum_{l=0}^\infty A_lr^l\,P_l(\cos\theta)\tag{$\star$1}\label{exdi1}
-\end{equation}
+\end{equation*}
 ข้างนอกไดอิเล็กทริกจะต้องมี $V(r,\theta)$ เมื่อ $r\to\infty$ เป็น
 \[
 V(r,\theta)\approx -E_0r\cos\theta
 \]
 ก็จะได้ว่าที่ $r>R$:
-\begin{equation}
+\begin{equation*}
     V(r,\theta)=-E_0r\cos\theta+\sum_{l=0}^\infty \frac{B_l}{r^{l+1}}P_l(\cos\theta)\tag{$\star$2}\label{exdi2}
-\end{equation}
+\end{equation*}
 เนื่องจาก $V$ ต้องต่อเนื่องที่ $r=R$ จาก (\ref{exdi1}) และ (\ref{exdi2}) จะได้ว่า
 \begin{alignat*}{2}
     A_1R&=-E_0R+\dfrac{B_1}{R^2}&\qq{เมื่อ $l=1$}\\
@@ -272,13 +272,13 @@ A_1=\frac{-3E_0}{2+\eps_r}
 \odif{U}=\odif{W}=F_\txt{ext}\odif{x}
 \]
 ดังนั้นแรงที่สนามกระทำเท่ากับ
-\begin{equation}
+\begin{equation*}
     F=-F_\txt{ext}=-\odv{U}{x}\tag{$\blacklozenge$1}\label{forcedi}
-\end{equation}
+\end{equation*}
 พิจารณาความจุไฟฟ้ารวมของตัวเก็บประจุที่มีระยะเหลื่อม $x$ ใด ๆ:
-\begin{equation}
+\begin{equation*}
 C=C_1+C_2=\frac{wx}{d}\eps_0+\frac{w(l-x)}{d}\eps_r\eps_0=\frac{\eps_0w}{d}\ab\big(\eps_rl-\chi_ex)\tag{$\blacklozenge$2}\label{forcedi2}
-\end{equation}
+\end{equation*}
 จะได้พลังงานสะสมในตัวเก็บประจุที่มีระยะเหลื่อม $x$ ใด ๆ เท่ากับ
 \[
 U=\frac{1}{2}\frac{Q^2}{C}

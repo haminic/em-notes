@@ -32,9 +32,9 @@
 \end{align*}
 ดังนั้นถ้าเรานิยาม
 \begin{defbox}{ Lorentz Factor}
-    \begin{equation}
+    \begin{equation*}
         \gamma \equiv \frac{1}{\sqrt{1 - v^2/c^2}}
-    \end{equation}
+    \end{equation*}
 \end{defbox}
 ก็จะได้ว่า
 \begin{ieqbox}{การขยายขนาดของเวลา (Time Dilation)}
@@ -71,14 +71,14 @@
 \subsection{การแปลง Lorentz}
 
 เราจะนิยาม\emph{เหตุการณ์} (\emph{event}) คือชุดของตำแหน่ง $(x,y,z)$ และเวลา $t$ โดยสัมพัทธภาพแบบ Galilean การแปลงพิกัดของเหตุการณ์ $E(x,y,z,t)$ จากกรอบอ้างอิง $\sur$ เป็น $E(\bar{x}, \bar{y}, \bar{z}, \bar{t})$ ในกรอบ $\bar{\sur}$ ซึ่งเคลื่อนที่ด้วยความเร็ว $v\vu{x}$ เทียบ $\sur$ สามารถทำได้โดย
-\begin{equation}
+\begin{eqnobox}
     \begin{rcases}
         \bar{x} = x - vt\hspace{5pt}\\
         \bar{y} = y\\
         \bar{z} = z\\
         \bar{t} = t
     \end{rcases}\label{galileantrans}
-\end{equation}
+\end{eqnobox}
 ซึ่งจะเรียกว่า\emph{การแปลง Galilean} (\emph{Galilean transformation})
 
 แต่ถ้าเป็นการแปลงแบบสัมพัทธภาพพิเศษ เราจะได้ว่า
@@ -190,36 +190,36 @@ x^0\equiv ct \qq*{,}\beta\equiv\frac{v}{c}
 
 โดยเพื่อให้ง่ายต่อการดูเครื่องหมายติดลบตรงพิกัดเวลา เราจะนิยามเวกเตอร์ \emph{covariant} $a_\mu$ ดังนี้
 \begin{defbox}{เวกเตอร์ Covariant}
-    \begin{equation}
+    \begin{equation*}
         a_\mu = (a_0, a_1, a_2, a_3) \equiv (-a^0, a^1, a^2, a^3)
-    \end{equation}
+    \end{equation*}
 \end{defbox}
 โดยเราจะเรียกโฟร์เวกเตอร์ $a^\mu$ ปกติว่าเป็นเวกเตอร์ \emph{contravariant} เราจะเรียกเทนเซอร์ที่อธิบายการแปลงจาก contravariant เป็น covariant vector ว่าเป็น\emph{เทนเซอร์เมทริก Minkowski} (\emph{Minkowski metric}: $g_{\mu\nu}$)
 \begin{defbox}{ Minkowski Metric}
-    \begin{equation}
+    \begin{equation*}
         g_{\mu\nu} \equiv \begin{bmatrix}
             -1 & 0 & 0 & 0\\
             0 & 1 & 0 & 0\\
             0 & 0 & 1 & 0\\
             0 & 0 & 0 & 1
         \end{bmatrix}
-    \end{equation}
+    \end{equation*}
 \end{defbox}
 หมายเหตุ: \emph{บางที่อาจนิยาม $g_{\mu\nu}$ แบบกลับเครื่องหมาย แต่สุดท้ายแล้วผลคูณเชิงสเกลาร์ก็จะ invariant อยู่ดี}
 
 ดังนั้นเราจะสามารถเขียนผลคูณเชิงสเกลาร์ได้ว่า
 \begin{lawbox}{ผลคูณเชิงสเกลาร์ของโฟร์เวกเตอร์}
-    \begin{equation}
+    \begin{equation*}
         a_\mu b^\mu = a^\mu b_\mu = -a^0b^0 + a^1b^1 + a^2b^2 + a^3b^3
-    \end{equation}
+    \end{equation*}
     คือผลคูณเชิงสเกลาร์ของโฟร์เวกเตอร์ $a^\mu$ และ $b^\mu$ ซึ่งจะ invariant ภายใต้การแปลง Lorentz
 \end{lawbox}
 
 สุดท้ายเราจะนิยามค่าที่เกี่ยวข้องกับความเร็วเพิ่มเติมอีกค่อคือ \emph{rapidity} ($\theta$)
 \begin{defbox}{ Rapidity}
-    \begin{equation}
+    \begin{equation*}
         \theta \equiv \artanh\ab(v / c)
-    \end{equation}
+    \end{equation*}
 \end{defbox}
 ซึ่งบางครั้งอาจมีประโยชน์กว่าความเร็ว เพราะจะได้
 \[
@@ -262,9 +262,9 @@ a^\mu a_\mu
 
 สมมติเรามีเหตุการณ์ $A$ และ $B$ ซึ่งมีโฟร์เวกเตอร์ที่อธิบายตำแหน่งในปริภูมิเวลา $x_A^\mu$ และ $x_B^\mu$ ตามลำดับ และให้ $\Delta x^\mu \equiv x_A^\mu - x_B^\mu$ เราจะนิยาม \emph{invariant interval} ของการกระจัดระหว่างสองเหตุการณ์นั้นว่า
 \begin{defbox}{ Invariant Interval}
-    \begin{equation}
+    \begin{equation*}
         I \equiv \Delta x^\mu\Delta x_\mu = -c^2t^2 + d^2
-    \end{equation}
+    \end{equation*}
     เมื่อ $t$ เวลาระหว่างสองเหตุการณ์นั้น และ $d$ คือระยะระหว่างสองเหตุการณ์นั้น
 \end{defbox}
 
@@ -280,60 +280,60 @@ a^\mu a_\mu
 
 เราจะนิยาม\emph{เวลาแท้} (\emph{proper time}: $\tau$) คือเวลาจริง ๆ ที่ผ่านไป เมื่อวัดโดยกรอบอ้างอิงของอนุภาคนั้น ๆ หรือ
 \begin{defbox}{เวลาแท้}
-    \begin{equation}
+    \begin{equation*}
         \odif{\tau} = \sqrt{1 - u^2/c^2}\odif{t}
-    \end{equation}
+    \end{equation*}
 \end{defbox}
 โดยจะเห็นได้ว่าเวลาแท้นี้ invariant บนการแปลง Lorentz
 
 และจะนิยาม\emph{ความเร็วแท้} (\emph{proper velocity}: $\vbs{\upeta}$) คือระยะทางที่วัตถุเคลื่อนที่ได้ต่อหน่วยเวลาแท้ของวัตถุนั้น ๆ หรือก็คือ
 \begin{defbox}{ความเร็วแท้}
-    \begin{equation}
+    \begin{equation*}
         \vbs{\upeta} \equiv \odv{\vbs{\ell}}{\tau}
-    \end{equation}
+    \end{equation*}
 \end{defbox}
 โดยจะเร็วความเร็ว $\vb{u}$ ปกติ ($\odif{\vbs{\ell}}/\odif{t}$) ว่า\emph{ความเร็วสามัญ} (\emph{ordinary velocity}) และได้
-\begin{equation}
+\begin{eqnobox}
     \vbs{\upeta} = \frac{1}{\sqrt{1 - u^2/c^2}}\vb{u}
-\end{equation}
+\end{eqnobox}
 
 โดยเราจะนิยามโฟร์เวกเตอร์ของความเร็วแท้ (\emph{4-velocity}) คือ
 \begin{defbox}{โฟร์เวกเตอร์ของความเร็วแท้}
-    \begin{equation}
+    \begin{equation*}
         \eta^\mu \equiv \odv{x^\mu}{\tau}
-    \end{equation}
+    \end{equation*}
 \end{defbox}
 ซึ่งมี component เวลา ($\eta^0$) เท่ากับ
-\begin{equation}
+\begin{eqnobox}
     \eta^0 = \odv{x^0}{\tau} = \frac{c\odif{t}}{\odif{\tau}} = \frac{c}{\sqrt{1 - u^2/c^2}}
-\end{equation}
+\end{eqnobox}
 เราสามารถเห็นได้ว่าความเร็วแท้นี้เป็นโฟร์เวกเตอร์จริง ๆ เพราะเวกเตอร์นี้แปลงแบบ Lorentz ภายใต้การเปลี่ยนกรอบอ้างอิงเช่นเดียวกับการกระจัด:
 \begin{ieqbox}{การแปลงของความเร็วแท้}
     \bar{\eta}^\mu = \tensor{\Lambda}{^\mu_\nu}\eta^\nu
 \end{ieqbox}
 หมายเหตุ: \emph{จะเห็นว่าความเร็วแท้นี้เหมือนเวลาเสมอเพราะ}
-\begin{equation}
+\begin{eqnobox}
     \eta^\mu\eta_\mu = \frac{-c^2}{1 - u^2/c^2} + \vbs{\upeta}\cdot\vbs{\upeta} = \frac{-c^2}{1 - u^2/c^2} + \frac{u^2}{1 - u^2/c^2} = -c^2 < 0\label{timelikevelo}
-\end{equation}
+\end{eqnobox}
 
 \subsection{โมเมนตัมและพลังงานเชิงสัมพัทธภาพ}
 
 เราจะนิยามโมเมนตัมตามที่ใช้ในสัมพัทธภาพพิเศษด้วยควมเร็วแท้แทนความเร็วสามัญ:
 \begin{defbox}{โมเมนตัมเชิงสัมพัทธภาพ}
-    \begin{equation}
+    \begin{equation*}
         \vb{p} \equiv m\vbs{\upeta} = \frac{m\vb{u}}{\sqrt{1-u^2/c^2}}\label{relmomentum}
-    \end{equation}
+    \end{equation*}
 \end{defbox}
 ซึ่งเป็น component ปริภูมิของ\emph{โฟร์เวกเตอร์พลังงาน-โมเมนตัม} (เรียกสั้น ๆ ว่า\emph{โฟร์โมเมนตัม})
 \begin{defbox}{โฟร์โมเมนตัม}
-    \begin{equation}
+    \begin{equation*}
         p^\mu \equiv m\eta^\mu
-    \end{equation}
+    \end{equation*}
 \end{defbox}
 โดยที่ component เวลาของโฟร์เวกเตอร์นี้คือ
-\begin{equation}
+\begin{eqnobox}
     p^0 = m\eta^0 = \frac{mc}{\sqrt{1 - u^2/c^2}}
-\end{equation}
+\end{eqnobox}
 และจาก (\ref{timelikevelo}) จะได้
 \begin{eqbox}{ขนาดของโฟร์โมเมนตัม}
     p^\mu p_\mu = -m^2c^2
@@ -341,21 +341,21 @@ a^\mu a_\mu
 
 ซึ่ง Einstein ได้ระบุไว้ว่า $p^0 c$ นี้คือพลังงาน:
 \begin{defbox}{พลังงานเชิงสัมพัทธภาพ}
-    \begin{equation}
+    \begin{equation*}
         E \equiv \frac{mc^2}{\sqrt{1 - u^2/c^2}}\label{relenergy}
-    \end{equation}
+    \end{equation*}
 \end{defbox}
 จะเห็นว่าพลังงานนี้ไม่เป็นศูนย์แม้มองในกรอบอ้างอิงที่ทำให้อนุภาคอยู่นิ่ง โดยเราจะเรียกพลังงานนี้ว่า\emph{พลังงานนิ่ง} (\emph{rest energy}):
 \begin{defbox}{พลังงานนิ่ง}
-    \begin{equation}
+    \begin{equation*}
         E_\txt{rest} \equiv mc^2
-    \end{equation}
+    \end{equation*}
 \end{defbox}
 และส่วนที่เหลือของพลังงานเมื่อนำ rest energy ออกจะเป็นพลังงานจลน์
 \begin{defbox}{พลังงานจลน์เชิงสัมพัทธภาพ}
-    \begin{equation}
+    \begin{equation*}
         E_\txt{kin} \equiv E - mc^2 = mc^2\ab(\frac{1}{\sqrt{1 - u^2/c^2}} - 1)
-    \end{equation}
+    \end{equation*}
 \end{defbox}
 
 ซึ่งจากการทดลองต่าง ๆ โดยนักฟิสิกส์ สรุปออกมาได้ว่า
@@ -406,15 +406,18 @@ p^\mu p_\mu = -(p^0)^2 + \vb{p}\cdot\vb{p} = -E^2/c^2 + p^2
         p_e^2c^2 &= E_0^2 -2E_0E\cos\theta + E^2\tag{$\circledast$2}\label{compton2}
     \end{align*}
     สุดท้าย พิจารณากฎอนุรักษ์พลังงาน
-    \begin{align}
-        E_0 + m_ec^2 &= E + E_e\notag\\
-        &= E + \sqrt{m_e^2c^4 + p_e^2c^2}\notag\\
-        &\overset{\text{\ref{compton2}}}{=} E + \sqrt{m_e^2c^4 + E_0^2 - 2E_0E\cos\theta + E^2}\notag\\
-        \ab(E_0 + m_ec^2 - E)^2 &= m_e^2c^4 + E_0^2 - 2E_0E\cos\theta + E^2\notag\\
-        % \cancel{E_0^2} + \cancel{m_e^2c^4} + \cancel{E^2} + 2E_0m_ec^2 - 2E_0E - 2 Em_ec^2 &= \cancel{m_e^2c^4} + \cancel{E_0^2} - 2E_0E\cos\theta + \cancel{E^2}\notag\\
-        E_0m_ec^2 &= E\ab(E_0 + m_ec^2 - E_0\cos\theta)\notag\\
-        E &= \frac{1}{\ab(1 - \cos\theta)/m_ec^2 + 1/E_0}
-    \end{align}
+    \begin{align*}
+        E_0 + m_ec^2 &= E + E_e\\
+        &= E + \sqrt{m_e^2c^4 + p_e^2c^2}\\
+        &\overset{\text{\ref{compton2}}}{=} E + \sqrt{m_e^2c^4 + E_0^2 - 2E_0E\cos\theta + E^2}\\
+        \ab(E_0 + m_ec^2 - E)^2 &= m_e^2c^4 + E_0^2 - 2E_0E\cos\theta + E^2\\
+        % \cancel{E_0^2} + \cancel{m_e^2c^4} + \cancel{E^2} + 2E_0m_ec^2 - 2E_0E - 2 Em_ec^2 &= \cancel{m_e^2c^4} + \cancel{E_0^2} - 2E_0E\cos\theta + \cancel{E^2}\\
+        E_0m_ec^2 &= E\ab(E_0 + m_ec^2 - E_0\cos\theta)
+    \end{align*}
+    หรือก็คือ
+    \begin{eqnobox}
+        E = \frac{1}{\ab(1 - \cos\theta)/m_ec^2 + 1/E_0}
+    \end{eqnobox}
     เมื่อนำ (\ref{planck}) แทนเข้าไปจะได้ว่า
     \begin{eqbox}{การกระเจิง Compton}
         \lambda = \lambda_0 + \frac{h}{m_ec}\ab(1 - \cos\theta)
@@ -428,9 +431,9 @@ P^\mu = \sum_i p_i^\mu = \ab(\frac{E_\txt{total}}{c}, \vb{p}_\txt{total})
 \]
 เนื่องจากขนาดของโฟร์โมเมนตัมรวมนี้คงที่เสมอ เราจึงจะนิยาม\emph{มวลนิ่ง} (\emph{invariant mass}: $M$) ของระบบ:
 \begin{defbox}{มวลนิ่ง}
-    \begin{equation}
+    \begin{equation*}
         -M^2c^2 = P_\mu P^\mu
-    \end{equation}
+    \end{equation*}
 \end{defbox}
 
 TODO: Threshold Energy

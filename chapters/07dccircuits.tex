@@ -192,12 +192,14 @@ A\odv{i}{t} + Bi = C
 \subsection{วงจร RLC แบบอนุกรม}
 
 พิจารณาการแก้สมการของวงจรที่เป็น RLC ที่ต่อแบบอนุกรมโดยไม่มีแบตเตอรี่ โดย KVL จะได้ (ให้กระแสไหลออกจากฝั่งลบของตัวเก็บประจุ)
-\begin{align}
-    v_R + v_L + v_C &= 0\notag\\
-    \odv{}{t}\ab(v_R + v_L + v_C) &= 0\notag\\
-    L\odv[2]{i}{t} + R\odv{i}{t} + \frac{1}{C}i &= 0\label{rlcseries}
-\end{align}
-
+\begin{align*}
+    v_R + v_L + v_C &= 0\\
+    \odv{}{t}\ab(v_R + v_L + v_C) &= 0
+\end{align*}
+ก็จะได้
+\begin{eqnobox}
+    L\odv[2]{i}{t} + R\odv{i}{t} + \frac{1}{C}i = 0\label{rlcseries}
+\end{eqnobox}
 เราสามารถแก้สมการนี้ได้โดยการใช้ราก $s_{1,2}$ ของ characteristic equation:
 \[
 x^2 + (R/L)x + 1/LC =0
@@ -209,17 +211,17 @@ x^2 + (R/L)x + 1/LC =0
 
 โดยเราจะนิยามราก $s_{1,2}$ ของสมการว่าเป็น\emph{ความถี่ธรรมชาติ}ของวงจร และก็จะนิยาม \emph{damping factor} ($\alpha$) และ\emph{ความถี่ resonant} ($\omega_0$) (\emph{undamped natural frequency}) ดังนี้:
 \begin{defbox}{ Damping Factor และความถี่ Resonant}
-    \begin{equation}
+    \begin{equation*}
     s_{1,2} \equiv -\alpha \pm \sqrt{\alpha^2 - \omega_0^2}
-    \end{equation}
+    \end{equation*}
 \end{defbox}
 หมายเหตุ: \emph{โดยเราจะใช้หน่วย $\unit{Np/s}$ สำหรับ $\alpha$ แต่จริง ๆ แล้วหน่วย $\unit{Np}$ (neper) นี้เป็นน่วยที่ไม่มีมิติเหมือนกับ $\unit{rad}$}
 
 และเราจะนิยามอัตราส่วนระหว่าง $\alpha$ และ $\omega_0$ ว่า \emph{damping ratio} ($\zeta$) ซึ่งเป็นค่าที่บ่งบอกว่าระบบถูก \emph{damp} ไปแค่ไหน: 
 \begin{defbox}{ Damping Ratio}
-    \begin{equation}
+    \begin{equation*}
         \zeta \equiv \frac{\alpha}{\omega_0}
-    \end{equation}
+    \end{equation*}
 \end{defbox}
 
 ในที่นี้เราก็จะได้
@@ -241,9 +243,9 @@ x^2 + (R/L)x + 1/LC =0
 
 และสุดท้าย ถ้าราก $s_{1,2}$ ไม่เป็นจำนวนจริง ($\zeta < 1$) เราจะนิยาม\emph{ความถี่ damped} (\emph{damped natural frequency}):
 \begin{defbox}{ความถี่ Damped}
-    \begin{equation}
+    \begin{equation*}
         \omega_d \equiv \sqrt{\omega_0^2 - \alpha^2}
-    \end{equation}
+    \end{equation*}
 \end{defbox}
 และก็จะได้คำตอบของสมการว่า
 \begin{eqbox}{วงจร RLC อนุกรมแบบ Underdamped}
@@ -262,10 +264,12 @@ x^2 + (R/L)x + 1/LC =0
 พิจารณาการแก้สมการของวงจรที่เป็น RLC ที่ต่อแบบขนานโดยไม่มีแบตเตอรี่ โดย KCL จะได้ (ให้กระแสไหลออกจากฝั่งลบของตัวเก็บประจุ)
 \begin{align}
     i_R + i_L + i_C &= 0\notag\\
-    \odv{}{t}\ab(i_R + i_L + i_C) &= 0\notag\\
-    C\odv[2]{v}{t} + \frac{1}{R}\odv{v}{t} + \frac{1}{L}v &= 0\label{rlcparallel}
+    \odv{}{t}\ab(i_R + i_L + i_C) &= 0\notag
 \end{align}
-
+หรือ
+\begin{eqnobox}
+    C\odv[2]{v}{t} + \frac{1}{R}\odv{v}{t} + \frac{1}{L}v = 0\label{rlcparallel}
+\end{eqnobox}
 ก็จะได้ characteristic equation:
 \[
 x^2 + (1/RC)x + 1/LC = 0
@@ -323,8 +327,8 @@ A\odv[2]{i}{t} + B\odv{i}{t} + Ci = D
 \end{ieqbox}
 ($Q$ คือความร้อนที่ได้จากวงจร) ซึ่งเราจะสามารถนำมาใช้คำนวณพลังงานที่เครื่องใช้ไฟฟ้านั้นถูกกระทำ โดยเนื่องจากพลังงานที่เครื่องใช้ไฟฟ้านี้ได้รับเป็นพลังงานความร้อน เราจึงต้องอาศัย \emph{heat engine} ในการเปลี่ยนความร้อนมาเป็นพลังงานที่เราสามารถนำไปใช้ประโยชน์ต่อได้ จึงนิยาม\emph{ประสิทธิภาพ} (\emph{efficiency}: $\eta$) ของเครื่องใช้ไฟฟ้า (heat engine) นี้ว่า
 \begin{defbox}{ประสิทธิภาพ}
-    \begin{equation}
+    \begin{equation*}
         \eta \equiv \frac{W}{Q}
-    \end{equation}
+    \end{equation*}
 \end{defbox}
 หมายเหตุ: \emph{$Q_C = Q - W$ เป็นความร้อนที่ถูกปล่อยทิ้งลงใน cold sink ซึ่งโดยกฎข้อที่สองของ thermodynamics จะได้ว่า $Q_C > 0$ ดังนั้น $\eta < 1$}

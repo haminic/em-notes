@@ -39,17 +39,17 @@
 ดังนั้นได้ว่า
 \begin{corbox}{งานของแรงแม่เหล็ก}
     แรงแม่เหล็กไม่ทำงาน:
-    \begin{equation}
+    \begin{equation*}
         W_\txt{mag}=0
-    \end{equation}
+    \end{equation*}
 \end{corbox}
 
 \subsection{กระแสไฟฟ้า}
 \begin{defbox}{กระแสไฟฟ้า}
     กระแสไฟฟ้า ($\vb{I}$) ของจุดหนึ่งในสายไฟคือปริมาณประจุที่เคลื่อนที่ผ่านจุด ๆ นั้นต่อหน่วยเวลา หรือก็คือ
-    \begin{equation}
+    \begin{equation*}
         \vb{I} = \lambda\vb{v}
-    \end{equation}
+    \end{equation*}
     โดยกระแสไฟฟ้านี้มีหน่วย SI คือ $\unit{A}$ (ampere หรือ amp)
 \end{defbox}
 พิจารณา
@@ -61,9 +61,9 @@
     \vb{F}_\txt{mag}=\int\ab(\vb{I}\times\vb{B})\odif{\ell}\label{magforcei}
 \end{eqbox}
 หรือก็คือ
-\begin{equation}
+\begin{eqnobox}
     \vb{F}_\txt{mag}=\int\ab(I\odif{\vbs{\ell}}\times\vb{B})
-\end{equation}
+\end{eqnobox}
 
 ต่อมา หากประจุที่เคลื่อนที่เป็นประจุจากความหนาแน่นในสองหรือสามมิติ เราจะนิยาม:
 \begin{defbox}{ความหนาแน่นกระแสไฟฟ้า}
@@ -77,9 +77,9 @@
     \end{equation}
 \end{defbox}
 โดยเราจึงสามารถหากระแสไฟฟ้าที่ไหลผ่านผิว ๆ หนึ่งหรือเส้น ๆ หนึ่งได้จาก
-\begin{equation}
+\begin{eqnobox}
     I = \int \vb{K}\cdot\odif{\vbs{\ell}}\qq{และ} I = \int \vb{J}\cdot\odif{\vb{a}}
-\end{equation}
+\end{eqnobox}
 และเช่นเดียวกับ (\ref{magforcei}) จะได้ว่า
 \begin{corbox}{แรงแม่เหล็กบนกระแสในสองและสามมิติ}
     \begin{equation}
@@ -92,9 +92,9 @@
 \end{corbox}
 
 จากสมการ (\ref{curdensdef}) จะได้ว่า
-\begin{equation}
+\begin{eqnobox}
     I=\int_{\sur}\vb{J}\cdot \odif{\vb{a}}
-\end{equation}
+\end{eqnobox}
 และเนื่องจากประจุที่ไหลออก ($I$) จะต้องเท่ากับประจุที่หายไป ดังนั้น
 \[
 \int_\vol\ab(\gd\cdot \vb{J}) \odif{\tau} = \oint_{\del\vol} \vb{J}\cdot \odif{\vb{a}} = I = -\odv{Q_\txt{enc}}{t} = -\odv{}{t}\int_\vol\rho \odif{\tau} = -\int_\vol\ab(\pdv{\rho}{\tau})\odif{\tau}
@@ -107,19 +107,19 @@
 \section{กฎของ Biot-Savart}
 \subsection{ระบบกระแสคงที่}
 ในบทก่อน ๆ เราได้หาสนามไฟฟ้าในระบบที่เป็นประจุหยุดนิ่งไปแล้วหรือก็คือเป็นระบบ\emph{ไฟฟ้าสถิต} (\emph{electrostatics}) ต่อมาในกรณีสนามแม่เหล็ก ในการที่ระบบจะเป็น\emph{แม่เหล็กสถิต} (\emph{magnetostatics}) ระบบจะต้องมีกระแสคงเดิมตลอดเวลา หรือก็คือ:
-\begin{equation}
+\begin{eqnobox}
     \pdv{\rho}{t} = 0\qq{และ}\pdv{\vb{J}}{t} = 0
-\end{equation}
+\end{eqnobox}
 เมื่อนำไปแทนใน (\ref{contj}) จะได้ว่า
-\begin{equation}
+\begin{eqnobox}
     \gd\cdot\vb{J}=0\label{gdjzero}
-\end{equation}
+\end{eqnobox}
 โดยในระบบกระแสคงที่นี้เราจะหาสนามแม่เหล็กได้จาก:
 \begin{lawbox}{กฎของ Biot-Savart}
     สนามแม่เหล็ก $\vb{B}$ ที่ตำแหน่ง $\vb{r}$ ในระบบที่เป็นแม่เหล็กสถิต หาได้จาก
-    \begin{equation}
+    \begin{equation*}
         \vb{B}(\vb{r}) = \frac{\mu_0}{4\pi}\int\frac{\vb{I}\times\vus{\rad}}{\rad^2}\odif{\ell'} = \frac{\mu_0}{4\pi}I\int\frac{\odif{\vbs{\ell}'}\times\vus{\rad}}{\rad^2}\label{biot}
-    \end{equation}
+    \end{equation*}
 \end{lawbox}
 เมื่อ $\mu_0 \approx \qty{1.257e-6}{N.A^{-2}} \approx 4\pi\times 10^{-7}\,\unit{N.A^{-2}}$ คือ\emph{สภาพซึมผ่านได้ของสุญญากาศ} (\emph{permeability of free space}) โดยในกรณีความหนาแน่นกระแส:
 \begin{eqbox}{กฎของ Biot-Savart ของกระแสในสองและสามมิติ}
@@ -193,9 +193,9 @@
 \]
 ในกรณีของสนามแม่เหล็ก เรามี (\ref{gaussb}) ที่กล่าวว่า $\gd\cdot\vb{B} = 0$ จึงทำให้เราสามารถนิยาม\emph{ศักย์แม่เหล็ก}ซึ่งเป็นสนามเวกเตอร์ได้ว่า
 \begin{defbox}{ศักย์แม่เหล็ก}
-    \begin{equation}
+    \begin{equation*}
         \vb{B} = \gd\times\vb{A}\label{magpot}
-    \end{equation}
+    \end{equation*}
 \end{defbox}
 พิจารณา (\ref{amperedif}):
 \begin{align*}
@@ -230,14 +230,14 @@ V(\vb{r}) = \frac{1}{4\pi\eps_0}\int\frac{\rho(\vb{r}')}{\rad} \odif{\tau'}
 โดยเราจะเรียกพจน์ฝั่งขวาว่า\emph{ฟลักซ์แม่เหล็ก} ($\Phi_B$):
 \begin{defbox}{ฟลักซ์แม่เหล็ก}
     ฟลักซ์ของ $\vb{B}$ ที่ผ่านผิว $\sur$ คือ
-    \begin{equation}
+    \begin{equation*}
         \Phi_B\equiv\int_\sur\vb{B}\cdot\odif{\vb{a}}
-    \end{equation}
+    \end{equation*}
 \end{defbox}
 ดังนั้นสมการด้านบนก็จะได้ว่า
-\begin{equation}
+\begin{eqnobox}
     \oint\vb{A}\cdot\odif{\vbs{\ell}} = \Phi_B\label{atofluxb}
-\end{equation}
+\end{eqnobox}
 ซึ่งสามารถนำมาใช้หา $\vb{A}$ ได้เช่นเดียวกับการใช้ (\ref{ampereint}) ในการหา $\vb{B}$ ในระบบที่มีความสมมาตร
 
 \subsection{สภาวะขอบเขต}
@@ -347,9 +347,9 @@ V(\vb{r}) = \frac{1}{4\pi\eps_0}\int\frac{\rho(\vb{r}')}{\rad} \odif{\tau'}
 \]
 เราจึงนิยาม \emph{magnetic dipole moment} ($\vb{m}$):
 \begin{defbox}{ Magnetic Dipole Moment}
-    \begin{equation}
+    \begin{equation*}
         \vb{m}\equiv I\int\odif{\vb{a}} = I\vb{a}
-    \end{equation}
+    \end{equation*}
 \end{defbox}
 ก็จะได้ว่า
 \begin{eqbox}{พจน์ Dipole}
